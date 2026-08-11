@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflow Agent — Mapping View</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    background: #f4f4f4;
+    color: #161616;
+    line-height: 1.5;
+  }
+
+  /* ── App shell ─────────────────────────────────── */
+  .shell {
+    display: flex;
+    height: 100vh;
+    max-width: 1360px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  }
+
+  /* ── Left: Workspace ──────────────────────────── */
+  .workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-right: 1px solid #e0e0e0;
+    min-width: 0;
+  }
+
+  /* Header */
+  .artifact-header {
+    padding: 20px 24px 0;
+    flex-shrink: 0;
+  }
+  .artifact-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .artifact-title { font-size: 20px; font-weight: 600; }
+  .badge-preview {
+    background: #e8e8e8; color: #525252; font-size: 11px;
+    font-weight: 500; padding: 2px 8px; border-radius: 20px;
+  }
+  .artifact-desc { font-size: 13px; color: #525252; max-width: 680px; margin-bottom: 16px; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; border-bottom: 1px solid #e0e0e0;
+    padding: 0 24px; flex-shrink: 0;
+  }
+  .tab {
+    padding: 10px 16px; font-size: 14px; color: #525252; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px; user-select: none;
+  }
+  .tab:hover { color: #161616; }
+  .tab.active { color: #0f62fe; border-bottom-color: #0f62fe; font-weight: 500; }
+
+  /* ── Technical area ───────────────────────────── */
+  .technical-area {
+    flex: 1; display: flex; flex-direction: column;
+    overflow: hidden; position: relative;
+  }
+
+  /* Node canvas */
+  .node-canvas {
+    flex-shrink: 0; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px 32px; background: #f9f9f9;
+    transition: height 0.25s ease; position: relative;
+  }
+  .node-canvas.drawer-open { height: 120px; padding: 12px 32px; }
+  .node-canvas.drawer-open .node-icon { width: 40px; height: 40px; font-size: 17px; }
+  .node-canvas.drawer-open .node-label { font-size: 10px; }
+
+  .node-flow { display: flex; align-items: center; gap: 0; }
+  .node {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; cursor: pointer;
+  }
+  .node-icon {
+    width: 54px; height: 54px; border-radius: 10px;
+    border: 1.5px solid #e0e0e0; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; transition: border-color 0.15s, box-shadow 0.15s;
+    flex-shrink: 0; position: relative;
+  }
+  .node.active .node-icon { border-color: #0f62fe; box-shadow: 0 0 0 3px #d0e2ff; }
+  .node-label { font-size: 11px; color: #525252; text-align: center; max-width: 72px; line-height: 1.3; }
+  .node.active .node-label { color: #0f62fe; font-weight: 600; }
+
+  /* SVG arrow between nodes */
+  .node-connector {
+    display: flex; align-items: flex-end; padding-bottom: 24px;
+  }
+  .node-connector svg { display: block; }
+
+  /* ── Mapping drawer ───────────────────────────── */
+  .drawer {
+    background: #fff; border-top: 1px solid #e0e0e0;
+    display: flex; flex-direction: column; flex: 1; min-height: 0;
+  }
+
+  /* Drawer top bar */
+  .drawer-topbar {
+    display: flex; align-items: center;
+    padding: 10px 20px; border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0; gap: 12px; background: #fff;
+  }
+  .drawer-connector-icon {
+    width: 30px; height: 30px; border-radius: 6px;
+    background: #f0f0f0; display: flex; align-items: center;
+    justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .drawer-connector-name { font-size: 15px; font-weight: 600; flex: 1; color: #161616; }
+  .drawer-connector-desc { font-size: 12px; color: #525252; font-weight: 400; }
+  .tree-toggle-row {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: #525252; cursor: pointer; flex-shrink: 0;
+  }
+  .toggle-pill {
+    width: 34px; height: 18px; background: #8d8d8d; border-radius: 10px;
+    position: relative; transition: background 0.15s; flex-shrink: 0;
+  }
+  .toggle-pill::after {
+    content: ""; position: absolute; top: 2px; left: 2px;
+    width: 14px; height: 14px; background: #fff; border-radius: 50%;
+    transition: transform 0.15s;
+  }
+  .toggle-pill.on { background: #0f62fe; }
+  .toggle-pill.on::after { transform: translateX(16px); }
+  .drawer-close {
+    background: none; border: none; cursor: pointer;
+    color: #525252; font-size: 18px; padding: 4px; line-height: 1; border-radius: 4px;
+  }
+  .drawer-close:hover { background: #f4f4f4; }
+
+  /* ── Two-panel split mapping area ────────────── */
+  .mapping-split {
+    flex: 1; display: flex; min-height: 0; position: relative; overflow: hidden;
+  }
+
+  /* Left: Incoming data panel */
+  .panel-source {
+    width: 42%; border-right: 1px solid #e0e0e0;
+    display: flex; flex-direction: column; flex-shrink: 0;
+  }
+  .panel-target {
+    flex: 1; display: flex; flex-direction: column;
+  }
+
+  /* Panel headers */
+  .panel-header {
+    padding: 10px 18px; font-size: 12px; font-weight: 600;
+    color: #525252; text-transform: uppercase; letter-spacing: 0.05em;
+    border-bottom: 1px solid #e0e0e0; background: #f4f4f4; flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .panel-search {
+    padding: 8px 12px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0;
+  }
+  .search-input {
+    width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;
+    padding: 6px 10px; font-size: 12px; color: #161616;
+    background: #fff; outline: none;
+  }
+  .search-input:focus { border-color: #0f62fe; }
+
+  .panel-scroll { flex: 1; overflow-y: auto; }
+
+  /* ── Source tree items ──────────────────────── */
+  .source-group { border-bottom: 1px solid #f0f0f0; }
+  .source-group-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 14px; cursor: pointer; user-select: none;
+    font-size: 13px; font-weight: 500; color: #161616;
+  }
+  .source-group-header:hover { background: #f9f9f9; }
+  .group-icon {
+    width: 24px; height: 24px; border-radius: 5px;
+    border: 1px solid #e0e0e0; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0;
+  }
+  .chevron { font-size: 10px; color: #8d8d8d; margin-right: 2px; transition: transform 0.15s; }
+  .source-group.open .chevron { transform: rotate(90deg); }
+
+  .source-field-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 14px 7px 44px; cursor: pointer;
+    font-size: 13px; color: #161616; user-select: none;
+    position: relative;
+    transition: background 0.1s;
+  }
+  .source-field-item:hover { background: #edf5ff; }
+  .source-field-item.mapped { background: #edf5ff; }
+  .source-field-item.mapped::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: #0f62fe; border-radius: 0 2px 2px 0;
+  }
+  .source-field-item .field-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #c6c6c6; flex-shrink: 0;
+  }
+  .source-field-item.mapped .field-dot { background: #0f62fe; }
+  .source-fields-list { display: none; }
+  .source-group.open .source-fields-list { display: block; }
+
+  /* ── Arrow connector zone (SVG overlay) ─────── */
+  .arrow-zone {
+    width: 80px; flex-shrink: 0; position: relative;
+    background: #fff; border-right: 1px solid #e0e0e0;
+    overflow: visible;
+  }
+  .arrow-svg {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: visible; pointer-events: none;
+  }
+
+  /* ── Target (Action configure) fields ─────── */
+  .target-inner {
+    padding: 0 0 16px;
+  }
+  .connector-section {
+    padding: 10px 16px 4px;
+  }
+  .connector-section-header {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: #161616; margin-bottom: 6px;
+  }
+  .connector-badge {
+    width: 22px; height: 22px; border-radius: 4px; border: 1px solid #e0e0e0;
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+  }
+  .collapse-btn { font-size: 11px; color: #8d8d8d; margin-left: auto; cursor: pointer; }
+
+  /* Target field rows */
+  .target-field-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 16px; margin: 0 0 2px;
+    font-size: 13px; min-height: 38px;
+    position: relative;
+  }
+  .target-field-row:hover { background: #f9f9f9; }
+  .tf-label { flex: 1; color: #161616; font-size: 13px; min-width: 0; }
+  .tf-required { color: #da1e28; font-size: 11px; margin-left: 2px; }
+
+  /* Value display (filled) */
+  .tf-value {
+    flex-shrink: 0; max-width: 220px;
+    display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  }
+  .val-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    border-radius: 12px; padding: 2px 10px 2px 8px; font-size: 12px; font-weight: 500;
+    white-space: nowrap;
+  }
+  .val-chip.dynamic {
+    background: #e8f1ff; border: 1px solid #a6c8ff; color: #0043ce;
+  }
+  .val-chip.static {
+    background: #defbe6; border: 1px solid #a7f0ba; color: #044317;
+  }
+  .val-chip .chip-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.6;
+  }
+
+  /* Empty field placeholder */
+  .tf-empty {
+    flex-shrink: 0; padding: 3px 10px; border: 1px dashed #c6c6c6;
+    border-radius: 4px; font-size: 12px; color: #8d8d8d;
+    background: #fafafa; cursor: pointer;
+  }
+  .tf-empty:hover { border-color: #0f62fe; color: #0f62fe; }
+
+  /* Inline text + chip combo */
+  .tf-mixed { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .tf-mixed-text { font-size: 12px; color: #525252; font-style: italic; }
+
+  /* ── Section label rows ──────────────────────── */
+  .section-label-row {
+    padding: 6px 16px 2px; font-size: 11px; font-weight: 600;
+    color: #8d8d8d; text-transform: uppercase; letter-spacing: 0.05em;
+    background: #f9f9f9; border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0; margin-top: 4px;
+  }
+
+  /* ── Right: Agent panel ──────────────────────── */
+  .agent-panel {
+    width: 300px; min-width: 280px;
+    display: flex; flex-direction: column; flex-shrink: 0;
+    border-left: 1px solid #e0e0e0; background: #fff;
+  }
+  .agent-header {
+    padding: 14px 16px; border-bottom: 1px solid #e0e0e0;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .agent-label { font-size: 13px; font-weight: 600; color: #525252; }
+  .agent-messages {
+    flex: 1; overflow-y: auto; padding: 14px 14px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .msg-user {
+    align-self: flex-end; background: #f4f4f4;
+    border-radius: 12px 12px 2px 12px; padding: 9px 13px;
+    font-size: 13px; max-width: 210px; color: #161616;
+  }
+  .msg-agent-row { display: flex; gap: 8px; align-items: flex-start; }
+  .agent-avatar {
+    width: 26px; height: 26px; border-radius: 50%; background: #e8daff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0;
+  }
+  .msg-agent {
+    background: #f4f4f4; border-radius: 2px 12px 12px 12px;
+    padding: 9px 13px; font-size: 13px; max-width: 210px;
+    color: #161616; line-height: 1.5;
+  }
+  .msg-meta { font-size: 11px; color: #8d8d8d; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .quick-actions { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .quick-action {
+    border: 1px solid #0f62fe; border-radius: 20px; padding: 6px 14px;
+    font-size: 12px; color: #0f62fe; cursor: pointer; background: none; text-align: left;
+  }
+  .quick-action:hover { background: #edf5ff; }
+  .agent-input-row {
+    padding: 10px 14px; border-top: 1px solid #e0e0e0;
+    display: flex; gap: 8px; align-items: center; flex-shrink: 0;
+  }
+  .agent-input {
+    flex: 1; border: 1px solid #e0e0e0; border-radius: 20px;
+    padding: 7px 13px; font-size: 13px; outline: none; background: #f9f9f9;
+  }
+  .agent-input:focus { border-color: #0f62fe; background: #fff; }
+  .agent-send {
+    background: #0f62fe; border: none; border-radius: 50%;
+    width: 30px; height: 30px; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+
+  /* Pane visibility */
+  .mapping-pane { display: none; }
+  .mapping-pane.active { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; }
+
+  /* ── Flat (table) view ───────────────────────────── */
+  .flat-view {
+    flex: 1; overflow-y: auto; padding: 0 0 16px;
+    display: none;
+  }
+  .flat-view.active { display: block; }
+
+  .flat-table-header {
+    display: grid; grid-template-columns: 1fr 40px 1fr;
+    padding: 10px 20px 8px; font-size: 12px; font-weight: 600;
+    color: #161616; border-bottom: 1px solid #e0e0e0;
+    background: #f4f4f4; position: sticky; top: 0; z-index: 1;
+  }
+  .flat-table-header span:last-child { padding-left: 8px; }
+
+  .flat-row {
+    display: grid; grid-template-columns: 1fr 40px 1fr;
+    padding: 9px 20px; font-size: 13px; color: #161616;
+    border-bottom: 1px solid #f0f0f0; align-items: center;
+  }
+  .flat-row:hover { background: #f9f9f9; }
+  .flat-row .arrow { text-align: center; color: #8d8d8d; font-size: 14px; }
+  .flat-row .src-name { color: #161616; }
+  .flat-row .tgt-name { padding-left: 8px; color: #161616; }
+  .flat-empty {
+    padding: 24px 20px; font-size: 13px; color: #8d8d8d;
+    font-style: italic;
+  }
+
+  /* Proto note */
+  .proto-note {
+    position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
+    background: #393939; color: #fff; font-size: 11px; padding: 5px 14px;
+    border-radius: 20px; pointer-events: none; opacity: 0.75; z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ═══════════════════ WORKSPACE (LEFT) ═══════════════════ -->
+  <div class="workspace">
+
+    <div class="artifact-header">
+      <div class="artifact-title-row">
+        <span class="artifact-title">Notify team on new Salesforce leads</span>
+        <span class="badge-preview">Preview</span>
+      </div>
+      <p class="artifact-desc">
+        When a new lead is created in Salesforce, post a Slack alert to the #inbound-leads channel with the lead's name and contact details.
+      </p>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">Business</div>
+      <div class="tab active">Technical</div>
+    </div>
+
+    <div class="technical-area">
+
+      <!-- ── Node canvas ── -->
+      <div class="node-canvas" id="node-canvas">
+        <div class="node-flow">
+
+          <div class="node active" id="node-sf" onclick="activateNode('sf')">
+            <div class="node-icon">🔵</div>
+            <div class="node-label">Lead created</div>
+          </div>
+
+          <div class="node-connector">
+            <svg width="48" height="22" viewBox="0 0 48 22">
+              <line x1="0" y1="11" x2="40" y2="11" stroke="#8d8d8d" stroke-width="1.5"/>
+              <polygon points="40,6 48,11 40,16" fill="#8d8d8d"/>
+            </svg>
+          </div>
+
+          <div class="node" id="node-slack" onclick="activateNode('slack')">
+            <div class="node-icon">💬</div>
+            <div class="node-label">Post to Slack</div>
+          </div>
+
+          <div class="node-connector">
+            <svg width="48" height="22" viewBox="0 0 48 22">
+              <line x1="0" y1="11" x2="40" y2="11" stroke="#8d8d8d" stroke-width="1.5"/>
+              <polygon points="40,6 48,11 40,16" fill="#8d8d8d"/>
+            </svg>
+          </div>
+
+          <div class="node" id="node-logger" onclick="activateNode('logger')">
+            <div class="node-icon">📋</div>
+            <div class="node-label">Log actions</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Drawer ── -->
+      <div class="drawer" id="mapping-drawer">
+
+        <!-- Drawer top bar -->
+        <div class="drawer-topbar">
+          <div class="drawer-connector-icon" id="drawer-icon">🔵</div>
+          <div style="flex:1; min-width:0;">
+            <div class="drawer-connector-name" id="drawer-name">Salesforce — Lead created</div>
+            <div class="drawer-connector-desc" id="drawer-desc">Data produced when a new lead arrives. Used to fill in the steps below.</div>
+          </div>
+          <div class="tree-toggle-row" onclick="toggleTree()">
+            <div class="toggle-pill" id="tree-toggle"></div>
+            <span>Tree view</span>
+          </div>
+          <button class="drawer-close">✕</button>
+        </div>
+
+        <!-- ────── SALESFORCE TRIGGER PANE ────── -->
+        <div class="mapping-pane active" id="pane-sf">
+
+          <!-- Flat view (default, toggle OFF) -->
+          <div class="flat-view active" id="flat-sf">
+            <div class="flat-table-header">
+              <span>Incoming data</span>
+              <span></span>
+              <span>Salesforce — Lead created</span>
+            </div>
+            <div class="flat-empty">This step is a trigger — it produces data but has no field mappings to configure.</div>
+          </div>
+
+          <!-- Tree view (toggle ON) -->
+          <div class="mapping-split" id="tree-sf" style="display:none; flex:1; min-height:0; overflow:hidden;">
+
+            <div class="panel-source">
+              <div class="panel-header">📥 Incoming data</div>
+              <div class="panel-search">
+                <input class="search-input" type="text" placeholder="🔍  Search fields…">
+              </div>
+              <div class="panel-scroll">
+                <div class="source-group open" id="sg-sf-trigger">
+                  <div class="source-group-header" onclick="toggleGroup('sg-sf-trigger')">
+                    <span class="chevron">▶</span>
+                    <span class="group-icon">🔵</span>
+                    <span>Lead created — Salesforce</span>
+                  </div>
+                  <div class="source-fields-list">
+                    <div class="source-field-item mapped" data-field="sf-firstName">
+                      <span class="field-dot"></span> First name
+                    </div>
+                    <div class="source-field-item mapped" data-field="sf-email">
+                      <span class="field-dot"></span> Email address
+                    </div>
+                    <div class="source-field-item mapped" data-field="sf-company">
+                      <span class="field-dot"></span> Company
+                    </div>
+                    <div class="source-field-item" data-field="sf-lastName">
+                      <span class="field-dot"></span> Last name
+                    </div>
+                    <div class="source-field-item" data-field="sf-phone">
+                      <span class="field-dot"></span> Phone number
+                    </div>
+                    <div class="source-field-item" data-field="sf-title">
+                      <span class="field-dot"></span> Job title
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow-zone" id="arrow-zone-sf">
+              <svg class="arrow-svg" id="arrows-sf"></svg>
+            </div>
+
+            <div class="panel-target">
+              <div class="panel-header">⚙️ Action configure</div>
+              <div class="panel-scroll">
+                <div class="target-inner">
+                  <div class="connector-section">
+                    <div class="connector-section-header">
+                      <span class="connector-badge">🔵</span>
+                      Salesforce — Lead created (Trigger)
+                      <span class="collapse-btn">▲</span>
+                    </div>
+                    <div style="padding: 8px 4px; font-size:13px; color:#525252;">
+                      This step starts the workflow. No extra settings needed — it automatically passes all lead data to the next step.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ────── SLACK PANE ────── -->
+        <div class="mapping-pane" id="pane-slack">
+
+          <!-- Flat view (default, toggle OFF) -->
+          <div class="flat-view active" id="flat-slack">
+            <div class="flat-table-header">
+              <span>Incoming data</span>
+              <span></span>
+              <span>Post Message to Channel — Slack</span>
+            </div>
+            <div class="flat-row" style="align-items: flex-start; padding-top: 12px; padding-bottom: 12px;">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <span class="src-name" style="font-weight:500;">First name, Email address, Company</span>
+                <span style="font-size:11px; color:#8d8d8d;">3 fields combined</span>
+              </div>
+              <span class="arrow" style="padding-top:2px;">→</span>
+              <div class="tgt-name" style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font-size:12px; font-weight:500; color:#161616;">Message</span>
+                <span style="font-size:12px; color:#525252; line-height:1.5;">
+                  🔔 New lead: <span style="color:#0043ce; font-weight:500;">{{firstName}}</span> from <span style="color:#0043ce; font-weight:500;">{{company}}</span><br>
+                  📧 <span style="color:#0043ce; font-weight:500;">{{email}}</span><br>
+                  Posted to <span style="color:#044317; font-weight:500;">#inbound-leads</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tree view (toggle ON) -->
+          <div class="mapping-split" id="tree-slack" style="display:none; flex:1; min-height:0; overflow:hidden;">
+
+            <div class="panel-source">
+              <div class="panel-header">📥 Incoming data</div>
+              <div class="panel-search">
+                <input class="search-input" type="text" placeholder="🔍  Search fields…">
+              </div>
+              <div class="panel-scroll">
+                <div class="source-group open" id="sg-slack-sf">
+                  <div class="source-group-header" onclick="toggleGroup('sg-slack-sf')">
+                    <span class="chevron">▶</span>
+                    <span class="group-icon">🔵</span>
+                    <span>Lead created — Salesforce</span>
+                  </div>
+                  <div class="source-fields-list">
+                    <div class="source-field-item mapped" data-field="sl-firstName">
+                      <span class="field-dot"></span> First name
+                    </div>
+                    <div class="source-field-item mapped" data-field="sl-email">
+                      <span class="field-dot"></span> Email address
+                    </div>
+                    <div class="source-field-item mapped" data-field="sl-company">
+                      <span class="field-dot"></span> Company
+                    </div>
+                    <div class="source-field-item" data-field="sl-lastName">
+                      <span class="field-dot"></span> Last name
+                    </div>
+                    <div class="source-field-item" data-field="sl-phone">
+                      <span class="field-dot"></span> Phone number
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow-zone" id="arrow-zone-slack">
+              <svg class="arrow-svg" id="arrows-slack"></svg>
+            </div>
+
+            <div class="panel-target">
+              <div class="panel-header">⚙️ Action configure</div>
+              <div class="panel-scroll">
+                <div class="target-inner">
+                  <div class="connector-section">
+                    <div class="connector-section-header">
+                      <span class="connector-badge">💬</span>
+                      Post Message to Channel — Slack
+                      <span class="collapse-btn">▲</span>
+                    </div>
+
+                    <div class="section-label-row">Connected from your data</div>
+
+                    <div class="target-field-row" id="tf-message" data-anchor="true" style="align-items: flex-start; padding-top: 10px; padding-bottom: 10px;">
+                      <span class="tf-label">Message <span class="tf-required">*</span></span>
+                      <div class="tf-value" style="flex-direction:column; gap:6px; align-items:flex-start;">
+                        <div class="tf-mixed" style="flex-wrap:wrap;">
+                          <span class="val-chip dynamic" style="font-size:11px;"><span class="chip-dot"></span> First name</span>
+                          <span class="tf-mixed-text">+</span>
+                          <span class="val-chip dynamic" style="font-size:11px;"><span class="chip-dot"></span> Email</span>
+                          <span class="tf-mixed-text">+</span>
+                          <span class="val-chip dynamic" style="font-size:11px;"><span class="chip-dot"></span> Company</span>
+                        </div>
+                        <div style="font-size:12px; color:#525252; line-height:1.6; border-left:2px solid #d0e2ff; padding-left:8px; margin-top:2px;">
+                          🔔 New lead: <span style="color:#0043ce; font-weight:500;">{{firstName}}</span> from <span style="color:#0043ce; font-weight:500;">{{company}}</span><br>
+                          📧 <span style="color:#0043ce; font-weight:500;">{{email}}</span><br>
+                          Posted to <span style="color:#044317; font-weight:500;">#inbound-leads</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section-label-row">Set by AI</div>
+
+                    <div class="target-field-row" id="tf-channel-id">
+                      <span class="tf-label">Send to channel <span class="tf-required">*</span></span>
+                      <div class="tf-value">
+                        <span class="val-chip static"><span class="chip-dot"></span> #inbound-leads</span>
+                      </div>
+                    </div>
+                    <div class="target-field-row">
+                      <span class="tf-label">Channel type</span>
+                      <div class="tf-value">
+                        <span class="val-chip static"><span class="chip-dot"></span> Public</span>
+                      </div>
+                    </div>
+                    <div class="target-field-row">
+                      <span class="tf-label">Show link previews?</span>
+                      <div class="tf-value">
+                        <span class="val-chip static"><span class="chip-dot"></span> Yes</span>
+                      </div>
+                    </div>
+                    <div class="target-field-row">
+                      <span class="tf-label">Format message text</span>
+                      <div class="tf-value">
+                        <span class="val-chip static"><span class="chip-dot"></span> Full</span>
+                      </div>
+                    </div>
+
+                    <div class="section-label-row">Not filled in</div>
+
+                    <div class="target-field-row">
+                      <span class="tf-label">Attachments</span>
+                      <span class="tf-empty">+ Add a value</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ────── LOGGER PANE ────── -->
+        <div class="mapping-pane" id="pane-logger">
+
+          <!-- Flat view (default, toggle OFF) -->
+          <div class="flat-view active" id="flat-logger">
+            <div class="flat-table-header">
+              <span>Incoming data</span>
+              <span></span>
+              <span>Log actions — Logger</span>
+            </div>
+            <div class="flat-row">
+              <span class="src-name">Message ID</span>
+              <span class="arrow">→</span>
+              <span class="tgt-name">Log message</span>
+            </div>
+          </div>
+
+          <!-- Tree view (toggle ON) -->
+          <div class="mapping-split" id="tree-logger" style="display:none; flex:1; min-height:0; overflow:hidden;">
+
+            <div class="panel-source">
+              <div class="panel-header">📥 Incoming data</div>
+              <div class="panel-search">
+                <input class="search-input" type="text" placeholder="🔍  Search fields…">
+              </div>
+              <div class="panel-scroll">
+                <div class="source-group open" id="sg-logger-slack">
+                  <div class="source-group-header" onclick="toggleGroup('sg-logger-slack')">
+                    <span class="chevron">▶</span>
+                    <span class="group-icon">💬</span>
+                    <span>Post Message — Slack</span>
+                  </div>
+                  <div class="source-fields-list">
+                    <div class="source-field-item mapped" data-field="lg-msgid">
+                      <span class="field-dot"></span> Message ID
+                    </div>
+                    <div class="source-field-item" data-field="lg-ts">
+                      <span class="field-dot"></span> Timestamp
+                    </div>
+                    <div class="source-field-item" data-field="lg-channel">
+                      <span class="field-dot"></span> Channel name
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow-zone" id="arrow-zone-logger">
+              <svg class="arrow-svg" id="arrows-logger"></svg>
+            </div>
+
+            <div class="panel-target">
+              <div class="panel-header">⚙️ Action configure</div>
+              <div class="panel-scroll">
+                <div class="target-inner">
+                  <div class="connector-section">
+                    <div class="connector-section-header">
+                      <span class="connector-badge">📋</span>
+                      Log actions — Logger
+                      <span class="collapse-btn">▲</span>
+                    </div>
+
+                    <div class="section-label-row">Set by AI</div>
+
+                    <div class="target-field-row">
+                      <span class="tf-label">Log level</span>
+                      <div class="tf-value">
+                        <span class="val-chip static"><span class="chip-dot"></span> Info</span>
+                      </div>
+                    </div>
+
+                    <div class="section-label-row">Connected from your data</div>
+
+                    <div class="target-field-row" id="tf-log-msg" data-anchor="true">
+                      <span class="tf-label">Log message</span>
+                      <div class="tf-value">
+                        <span class="val-chip dynamic"><span class="chip-dot"></span> Message ID</span>
+                      </div>
+                    </div>
+
+                    <div class="section-label-row">Not filled in</div>
+
+                    <div class="target-field-row">
+                      <span class="tf-label">Custom label</span>
+                      <span class="tf-empty">+ Add a value</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /drawer -->
+    </div><!-- /technical-area -->
+  </div><!-- /workspace -->
+
+  <!-- ═══════════════════ AGENT PANEL (RIGHT) ═══════════════════ -->
+  <div class="agent-panel">
+    <div class="agent-header">
+      <span class="agent-label">watsonx</span>
+      <span style="font-size:11px; color:#8d8d8d;">12:46</span>
+    </div>
+
+    <div class="agent-messages">
+
+      <div class="msg-user">
+        Create a workflow: when a new lead is added in Salesforce, post to Slack and log everything
+      </div>
+
+      <div class="msg-agent-row">
+        <div class="agent-avatar">🤖</div>
+        <div>
+          <div class="msg-meta">
+            <span>watsonx 12:46</span>
+          </div>
+          <div class="msg-agent">
+            Done! I've created your workflow. It triggers when a new Salesforce lead is added, posts the lead's details to <strong>#inbound-leads</strong> on Slack, and logs the result.
+            <br><br>
+            Click any step above to see what's connected.
+          </div>
+          <div class="quick-actions" style="margin-top:8px;">
+            <button class="quick-action">Review connections</button>
+            <button class="quick-action">Test with sample data</button>
+            <button class="quick-action">Open in webMethods ↗</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="agent-input-row">
+      <input class="agent-input" type="text" placeholder="Type something…">
+      <button class="agent-send">▶</button>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<div class="proto-note">Prototype — click any node to see its connections</div>
+
+<script>
+  let currentNode = 'sf';
+
+  const nodeConfig = {
+    sf: {
+      icon: '🔵',
+      name: 'Salesforce — Lead created (Trigger)',
+      desc: 'Data produced when a new lead arrives. Used to fill in the steps below.',
+      pane: 'pane-sf',
+      arrowSvg: null   // trigger: no arrows drawn
+    },
+    slack: {
+      icon: '💬',
+      name: 'Slack — Post Message to Channel',
+      desc: 'Sends a message to your Slack channel using lead details from Salesforce.',
+      pane: 'pane-slack',
+      arrowSvg: 'arrows-slack'
+    },
+    logger: {
+      icon: '📋',
+      name: 'Logger — Log actions',
+      desc: 'Records details from the previous step for audit and troubleshooting.',
+      pane: 'pane-logger',
+      arrowSvg: 'arrows-logger'
+    }
+  };
+
+  function activateNode(id) {
+    // Deselect all nodes
+    ['sf', 'slack', 'logger'].forEach(n => {
+      document.getElementById('node-' + n).classList.remove('active');
+    });
+    document.getElementById('node-' + id).classList.add('active');
+
+    // Shrink canvas once anything is selected
+    document.getElementById('node-canvas').classList.add('drawer-open');
+
+    // Update drawer header
+    const cfg = nodeConfig[id];
+    document.getElementById('drawer-icon').textContent = cfg.icon;
+    document.getElementById('drawer-name').textContent = cfg.name;
+    document.getElementById('drawer-desc').textContent = cfg.desc;
+
+    // Swap panes
+    document.querySelectorAll('.mapping-pane').forEach(p => p.classList.remove('active'));
+    document.getElementById(cfg.pane).classList.add('active');
+
+    currentNode = id;
+
+    // Draw arrows after pane is visible
+    requestAnimationFrame(() => drawArrows(id));
+  }
+
+  // ── Arrow drawing ─────────────────────────────────────────────
+  // Maps: { sourceFieldId → targetFieldId } for each pane
+  const arrowMaps = {
+    slack: [
+      { from: 'sl-firstName', to: 'tf-message' },
+      { from: 'sl-email',     to: 'tf-message' },
+      { from: 'sl-company',   to: 'tf-message' }
+    ],
+    logger: [
+      { from: 'lg-msgid', to: 'tf-log-msg' }
+    ]
+  };
+
+  function drawArrows(nodeId) {
+    const cfg = nodeConfig[nodeId];
+    if (!cfg.arrowSvg) return;
+    const svg = document.getElementById(cfg.arrowSvg);
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const map = arrowMaps[nodeId];
+    if (!map) return;
+
+    const zone = svg.closest('.arrow-zone');
+    const zoneRect = zone.getBoundingClientRect();
+
+    map.forEach(({ from, to }) => {
+      const fromEl = document.querySelector(`[data-field="${from}"]`);
+      const toEl = document.getElementById(to);
+      if (!fromEl || !toEl) return;
+
+      const fromRect = fromEl.getBoundingClientRect();
+      const toRect   = toEl.getBoundingClientRect();
+
+      // Y centres relative to the arrow zone
+      const y1 = fromRect.top + fromRect.height / 2 - zoneRect.top;
+      const y2 = toRect.top   + toRect.height  / 2 - zoneRect.top;
+
+      const x1 = 0;                         // left edge of zone
+      const x2 = zoneRect.width;            // right edge of zone
+      const mid = zoneRect.width / 2;
+
+      // Bezier: start left, curve to right
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d',
+        `M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2 - 8} ${y2}`
+      );
+      path.setAttribute('stroke', '#0f62fe');
+      path.setAttribute('stroke-width', '1.5');
+      path.setAttribute('fill', 'none');
+      path.setAttribute('opacity', '0.75');
+
+      // Arrowhead
+      const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      const ax = x2 - 8;
+      const ay = y2;
+      arrow.setAttribute('points',
+        `${ax},${ay - 5} ${ax + 8},${ay} ${ax},${ay + 5}`
+      );
+      arrow.setAttribute('fill', '#0f62fe');
+      arrow.setAttribute('opacity', '0.75');
+
+      svg.appendChild(path);
+      svg.appendChild(arrow);
+    });
+  }
+
+  // Update arrows on window resize
+  window.addEventListener('resize', () => drawArrows(currentNode));
+
+  // ── Group toggle ──────────────────────────────────────────────
+  function toggleGroup(id) {
+    document.getElementById(id).classList.toggle('open');
+    requestAnimationFrame(() => drawArrows(currentNode));
+  }
+
+  // ── Tree view toggle ──────────────────────────────────────────
+  let treeOn = false;
+  function toggleTree() {
+    treeOn = !treeOn;
+    document.getElementById('tree-toggle').classList.toggle('on', treeOn);
+    applyViewMode();
+    if (treeOn) {
+      requestAnimationFrame(() => drawArrows(currentNode));
+    }
+  }
+
+  function applyViewMode() {
+    ['sf', 'slack', 'logger'].forEach(function(id) {
+      var flatEl = document.getElementById('flat-' + id);
+      var treeEl = document.getElementById('tree-' + id);
+      if (!flatEl || !treeEl) return;
+      flatEl.style.display = treeOn ? 'none' : 'block';
+      treeEl.style.display = treeOn ? 'flex' : 'none';
+    });
+  }
+
+  // ── Boot ──────────────────────────────────────────────────────
+  activateNode('slack');
+  applyViewMode(); // start in flat view
+</script>
+
+</body>
+</html>

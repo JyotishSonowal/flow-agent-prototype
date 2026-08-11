@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow Agent — watsonx</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+  <link rel="stylesheet" href="css/workspace.css" />
+</head>
+<body>
+  <!-- Top nav bar -->
+  <header class="nav-bar">
+    <span class="nav-logo">IBM watsonx</span>
+    <span class="nav-title">Flow Agent</span>
+  </header>
+
+  <!-- Main layout -->
+  <main class="app-layout">
+    <!-- Left canvas pane -->
+    <section class="canvas-pane" id="canvasPane">
+      <!-- Workspace panel (hidden by default) -->
+      <div class="workspace-panel hidden" id="workspacePanel">
+        <div class="workspace-header">
+          <div class="workspace-title-row">
+            <span class="workspace-title">Sync Salesforce accounts to HubSpot contacts by ACV</span>
+            <span class="status-badge status-draft" id="workspaceBadge">Draft</span>
+          </div>
+          <div class="workspace-controls">
+            <button class="icon-btn" title="i/o">i/o</button>
+            <button class="icon-btn" title="Download">⬇</button>
+            <button class="icon-btn" title="Expand">⤢</button>
+            <button class="icon-btn" id="closeWorkspaceBtn" title="Close">✕</button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="workspace-tabs" id="workspaceTabs">
+          <button class="tab-btn active" data-tab="business">Business view</button>
+          <button class="tab-btn" data-tab="technical">Technical view</button>
+        </div>
+
+        <!-- Tab: Business view -->
+        <div class="tab-content" id="tabBusiness">
+          <ol class="business-steps" id="businessStepsList"></ol>
+        </div>
+
+        <!-- Tab: Technical view -->
+        <div class="tab-content hidden" id="tabTechnical">
+          <div class="accordion" id="accordionSteps"></div>
+        </div>
+
+        <!-- Full mapping view (replaces tab content) -->
+        <div class="full-mapping-view hidden" id="fullMappingView">
+          <div class="mapping-nav">
+            <button class="back-link" id="backToTechnicalBtn">← Return to technical view</button>
+            <label class="toggle-label">
+              <input type="checkbox" id="mappedDataOnlyToggle" /> Mapped data only
+            </label>
+          </div>
+          <div id="fullMappingTable"></div>
+        </div>
+
+        <!-- Test report view -->
+        <div class="test-report-view hidden" id="testReportView">
+          <div class="test-report-header">
+            <div>
+              <strong>Test report</strong>
+              <span class="muted"> Created on: 12/10/26</span>
+            </div>
+            <div class="workspace-controls">
+              <button class="icon-btn" title="Download">⬇</button>
+              <button class="icon-btn" title="Expand">⤢</button>
+              <button class="icon-btn" id="closeTestReportBtn" title="Close">✕</button>
+            </div>
+          </div>
+          <div id="testReportContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right chat pane -->
+    <section class="chat-pane">
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input-area" id="chatInputArea">
+        <div class="input-bar">
+          <label class="paperclip-btn" id="paperclipBtn" title="Attach file">
+            🖇
+            <input type="file" id="fileInput" style="display:none" />
+          </label>
+          <div class="input-chip-wrap">
+            <div class="file-chip hidden" id="fileChip">
+              <span id="fileChipName"></span>
+              <button class="chip-remove" id="fileChipRemove">✕</button>
+            </div>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type something..." />
+          </div>
+          <button class="send-btn" id="sendBtn" title="Send">➤</button>
+        </div>
+        <p class="disclaimer">Accuracy of generated answers may vary. Please double-check responses.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Hidden file input for native picker -->
+  <script src="js/flow-data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Technical View — Properties + Mapping</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'Segoe UI', sans-serif; font-size: 14px; background: #e5e5e5; color: #161616; }
+input[type="radio"], input[type="checkbox"] { display: none; }
+
+.shell { display: flex; height: 100vh; background: #fff; max-width: 1100px; margin: 0 auto; box-shadow: 0 0 12px rgba(0,0,0,.15); }
+.left  { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #e0e0e0; overflow: hidden; min-width: 0; }
+
+/* title */
+.titlebar { padding: 14px 18px 0; border-bottom: 1px solid #e0e0e0; flex-shrink: 0; }
+.title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+h1 { font-size: 17px; font-weight: 600; }
+.badge { font-size: 11px; padding: 1px 7px; border-radius: 2px; border: 1px solid; white-space: nowrap; display: inline-block; }
+.b-draft  { background:#fff8e1; color:#795548; border-color:#ffe082; }
+.b-static { background:#edf5ff; color:#0043ce; border-color:#a6c8ff; }
+.b-acct   { background:#defbe6; color:#0e6027; border-color:#a7f0ba; }
+.b-nest   { background:#f6f2ff; color:#6929c4; border-color:#d4bbff; font-size:10px; padding:0 5px; }
+.sub { font-size: 12px; color: #6f6f6f; margin-bottom: 10px; }
+.tabs { display: flex; }
+.tab { padding: 8px 16px; font-size: 14px; color: #525252; border-bottom: 2px solid transparent; }
+.tab.on { color: #161616; border-bottom-color: #0f62fe; font-weight: 500; }
+
+/* canvas */
+.canvas { background: #f4f4f4; padding: 10px 18px; border-bottom: 1px solid #e0e0e0; flex-shrink: 0; }
+.ro { font-size: 11px; color: #525252; background: #fff; border: 1px solid #c6c6c6; border-radius: 10px; padding: 2px 9px; display: inline-block; margin-bottom: 8px; }
+.nodes { display: flex; align-items: center; gap: 2px; }
+.node-lbl { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 4px; cursor: pointer; min-width: 68px; }
+.node-lbl:hover { background: #e8e8e8; }
+.node-lbl .ico { width: 44px; height: 44px; border-radius: 4px; border: 1px solid #c6c6c6; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.node-lbl .nlbl { font-size: 11px; color: #525252; text-align: center; line-height: 1.3; max-width: 68px; }
+.arrow { color: #8d8d8d; padding: 0 4px; font-size: 14px; padding-bottom: 18px; }
+
+/* active node highlighting */
+#n-trigger:checked ~ .shell .left .canvas label[for="n-trigger"] .ico,
+#n-sf:checked      ~ .shell .left .canvas label[for="n-sf"]      .ico,
+#n-slack:checked   ~ .shell .left .canvas label[for="n-slack"]   .ico,
+#n-logger:checked  ~ .shell .left .canvas label[for="n-logger"]  .ico
+{ border: 2px solid #0f62fe; background: #edf5ff; }
+#n-trigger:checked ~ .shell .left .canvas label[for="n-trigger"] .nlbl,
+#n-sf:checked      ~ .shell .left .canvas label[for="n-sf"]      .nlbl,
+#n-slack:checked   ~ .shell .left .canvas label[for="n-slack"]   .nlbl,
+#n-logger:checked  ~ .shell .left .canvas label[for="n-logger"]  .nlbl
+{ color: #0f62fe; font-weight: 500; }
+
+/* detail panels — all hidden by default */
+.detail { flex: 1; overflow-y: auto; }
+.nd { display: none; }
+#n-trigger:checked ~ .shell .left .detail .nd-trigger { display: block; }
+#n-sf:checked      ~ .shell .left .detail .nd-sf      { display: block; }
+#n-slack:checked   ~ .shell .left .detail .nd-slack   { display: block; }
+#n-logger:checked  ~ .shell .left .detail .nd-logger  { display: block; }
+
+/* connector header */
+.conn-hd { display: flex; align-items: center; gap: 8px; padding: 12px 18px 10px; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; background: #fff; z-index: 5; }
+.conn-ico { width: 26px; height: 26px; border-radius: 3px; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.conn-name { font-size: 15px; font-weight: 600; flex: 1; }
+.conn-desc { font-size: 12px; color: #6f6f6f; padding: 8px 18px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.5; }
+
+/* sections */
+.section { border-bottom: 1px solid #e0e0e0; }
+.sec-hd { display: flex; align-items: center; gap: 8px; padding: 10px 18px 8px; }
+.sec-title { font-size: 13px; font-weight: 600; flex: 1; }
+
+/* edit mode toggle */
+.edit-lbl   { font-size: 12px; color: #0f62fe; cursor: pointer; padding: 4px 10px; border-radius: 2px; border: 1px solid #0f62fe; background: none; white-space: nowrap; display: inline-block; }
+.edit-lbl:hover { background: #edf5ff; }
+.save-lbl   { font-size: 12px; color: #fff; cursor: pointer; padding: 4px 10px; border-radius: 2px; border: 1px solid #0f62fe; background: #0f62fe; white-space: nowrap; display: inline-block; }
+.cancel-lbl { font-size: 12px; color: #0f62fe; cursor: pointer; padding: 4px 10px; border-radius: 2px; border: 1px solid #0f62fe; background: none; white-space: nowrap; display: inline-block; }
+.btns { display: flex; gap: 6px; }
+
+.view-ctrl { display: flex; }
+.edit-ctrl  { display: none; }
+#e-sf:checked     ~ .shell .left .detail .nd-sf     .view-ctrl { display: none; }
+#e-sf:checked     ~ .shell .left .detail .nd-sf     .edit-ctrl { display: flex; }
+#e-slack:checked  ~ .shell .left .detail .nd-slack  .view-ctrl { display: none; }
+#e-slack:checked  ~ .shell .left .detail .nd-slack  .edit-ctrl { display: flex; }
+#e-logger:checked ~ .shell .left .detail .nd-logger .view-ctrl { display: none; }
+#e-logger:checked ~ .shell .left .detail .nd-logger .edit-ctrl { display: flex; }
+
+/* property rows */
+.props { padding: 0 18px 12px; }
+.pr { padding: 6px 0; border-bottom: 1px solid #f4f4f4; }
+.pr:last-child { border-bottom: none; }
+.pl { font-size: 11px; color: #6f6f6f; font-weight: 500; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-bottom: 3px; }
+.pv { font-size: 13px; color: #161616; line-height: 1.45; word-break: break-word; }
+.pv.clip { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+/* read vs edit */
+.rv { display: block; }
+.re { display: none; }
+#e-sf:checked     ~ .shell .left .detail .nd-sf     .rv { display: none; }
+#e-sf:checked     ~ .shell .left .detail .nd-sf     .re { display: block; }
+#e-slack:checked  ~ .shell .left .detail .nd-slack  .rv { display: none; }
+#e-slack:checked  ~ .shell .left .detail .nd-slack  .re { display: block; }
+#e-logger:checked ~ .shell .left .detail .nd-logger .rv { display: none; }
+#e-logger:checked ~ .shell .left .detail .nd-logger .re { display: block; }
+
+/* form inputs */
+.fi, .fs, .ft {
+  width: 100%; font-size: 13px; font-family: inherit; color: #161616;
+  background: #fff; border: 1px solid #8d8d8d; border-bottom: 2px solid #0f62fe;
+  padding: 6px 10px; border-radius: 2px 2px 0 0; outline: none; display: block;
+}
+.ft { resize: vertical; min-height: 60px; }
+.fs {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M5 6L0 0h10z' fill='%23525252'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 8px center; padding-right: 26px; cursor: pointer;
+}
+
+/* nested groups */
+.nt { display: none; }
+.nl { display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 5px 0; font-size: 12px; color: #525252; }
+.nl:hover { color: #161616; }
+.chv { font-size: 9px; width: 12px; display: inline-block; transition: transform .15s; }
+.nn  { font-weight: 500; flex: 1; }
+.nc  { font-size: 11px; color: #8d8d8d; background: #f4f4f4; padding: 1px 6px; border-radius: 8px; }
+.nb  { display: none; padding-left: 18px; border-left: 2px solid #e0e0e0; margin-left: 6px; }
+.nt:checked + .nl .chv { transform: rotate(90deg); }
+.nt:checked + .nl + .nb { display: block; }
+
+/* tree view toggle */
+.tw { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #525252; cursor: pointer; }
+.sw { width: 28px; height: 16px; background: #8d8d8d; border-radius: 8px; position: relative; flex-shrink: 0; }
+.sw::after { content: ''; position: absolute; width: 12px; height: 12px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: left .15s; }
+.mt { display: block; } /* table */
+.mk { display: none;  } /* tree */
+#tv-trigger:checked ~ .shell .left .detail .nd-trigger .sw,
+#tv-sf:checked      ~ .shell .left .detail .nd-sf      .sw,
+#tv-slack:checked   ~ .shell .left .detail .nd-slack   .sw,
+#tv-logger:checked  ~ .shell .left .detail .nd-logger  .sw
+{ background: #0f62fe; }
+#tv-trigger:checked ~ .shell .left .detail .nd-trigger .sw::after,
+#tv-sf:checked      ~ .shell .left .detail .nd-sf      .sw::after,
+#tv-slack:checked   ~ .shell .left .detail .nd-slack   .sw::after,
+#tv-logger:checked  ~ .shell .left .detail .nd-logger  .sw::after
+{ left: 14px; }
+#tv-trigger:checked ~ .shell .left .detail .nd-trigger .mt,
+#tv-sf:checked      ~ .shell .left .detail .nd-sf      .mt,
+#tv-slack:checked   ~ .shell .left .detail .nd-slack   .mt,
+#tv-logger:checked  ~ .shell .left .detail .nd-logger  .mt
+{ display: none; }
+#tv-trigger:checked ~ .shell .left .detail .nd-trigger .mk,
+#tv-sf:checked      ~ .shell .left .detail .nd-sf      .mk,
+#tv-slack:checked   ~ .shell .left .detail .nd-slack   .mk,
+#tv-logger:checked  ~ .shell .left .detail .nd-logger  .mk
+{ display: block; }
+
+/* mapping table */
+.mw { padding: 0 18px 20px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 380px; }
+th { font-size: 11px; font-weight: 600; color: #525252; text-transform: uppercase; letter-spacing: .04em; padding: 7px 8px 7px 0; border-bottom: 1px solid #e0e0e0; text-align: left; }
+.mr td { padding: 4px 8px 4px 0; font-size: 12px; border-bottom: 1px solid #f4f4f4; vertical-align: middle; }
+.mr:last-child td { border-bottom: none; }
+.gr td { padding: 10px 0 4px; }
+.gc { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #525252; }
+.gi { width: 18px; height: 18px; border: 1px solid #e0e0e0; background: #f4f4f4; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+.ac { text-align: center; width: 44px; }
+.al { display: inline-block; width: 32px; height: 1px; background: #8d8d8d; position: relative; vertical-align: middle; }
+.al::after { content: ''; position: absolute; right: -1px; top: -3px; border-left: 5px solid #8d8d8d; border-top: 3px solid transparent; border-bottom: 3px solid transparent; }
+.al.e { background: transparent; }  .al.e::after { display: none; }
+.sf  { color: #6f6f6f; padding-left: 22px; }
+.sf.m{ color: #161616; }
+.sf.d1 { padding-left: 38px; }
+.tg  { color: #161616; font-size: 12px; }
+.tg.e{ color: #c6c6c6; font-style: italic; }
+
+/* tree */
+.tree { font-family: monospace; font-size: 12px; line-height: 1.8; padding-bottom: 8px; }
+.tr { padding: 1px 0; border-bottom: 1px solid #f4f4f4; color: #161616; }
+.tr.u { color: #c6c6c6; }
+
+/* right / chat */
+.right { width: 290px; flex-shrink: 0; display: flex; flex-direction: column; background: #161616; color: #f4f4f4; }
+.cht-hd { padding: 11px 14px; border-bottom: 1px solid #393939; display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.aib { font-size: 9px; font-weight: 700; background: #0f62fe; color: #fff; padding: 2px 4px; border-radius: 2px; }
+.cht-t { font-size: 13px; font-weight: 500; flex: 1; }
+.msgs { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+.msg { display: flex; flex-direction: column; gap: 3px; }
+.msg.u { align-items: flex-end; }
+.msg.a { align-items: flex-start; }
+.bub { padding: 7px 11px; border-radius: 4px; font-size: 12px; line-height: 1.5; max-width: 210px; }
+.msg.u .bub { background: #393939; border-radius: 4px 4px 0 4px; }
+.msg.a .bub { background: #262626; border-left: 2px solid #0f62fe; border-radius: 0 4px 4px 4px; }
+.mlbl { font-size: 10px; color: #8d8d8d; }
+.chps { padding: 0 14px 12px; display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
+.chp { font-size: 12px; color: #78a9ff; border: 1px solid #393939; background: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; text-align: left; font-family: inherit; }
+.chp:hover { background: #262626; }
+.inpr { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-top: 1px solid #393939; flex-shrink: 0; }
+.inp { flex: 1; background: #262626; border: 1px solid #393939; color: #f4f4f4; font-size: 12px; padding: 6px 9px; border-radius: 2px; outline: none; font-family: inherit; }
+.inp::placeholder { color: #6f6f6f; }
+::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-thumb { background: #c6c6c6; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ── STATE CONTROLS (hidden) ── -->
+<input type="radio" name="node" id="n-trigger" checked>
+<input type="radio" name="node" id="n-sf">
+<input type="radio" name="node" id="n-slack">
+<input type="radio" name="node" id="n-logger">
+<input type="checkbox" id="e-sf">
+<input type="checkbox" id="e-slack">
+<input type="checkbox" id="e-logger">
+<input type="checkbox" id="tv-trigger">
+<input type="checkbox" id="tv-sf">
+<input type="checkbox" id="tv-slack">
+<input type="checkbox" id="tv-logger">
+
+<div class="shell">
+
+  <!-- ════ LEFT ════ -->
+  <div class="left">
+
+    <div class="titlebar">
+      <div class="title-row">
+        <h1>Create new Salesforce leads</h1>
+        <span class="badge b-draft">Preview</span>
+      </div>
+      <div class="sub">Process workflow</div>
+      <div class="tabs">
+        <div class="tab">Business</div>
+        <div class="tab on">Technical</div>
+      </div>
+    </div>
+
+    <div class="canvas">
+      <span class="ro">✎ Read-only</span>
+      <div class="nodes">
+        <label class="node-lbl" for="n-trigger"><div class="ico">🌀</div><div class="nlbl">Lead created</div></label>
+        <span class="arrow">→</span>
+        <label class="node-lbl" for="n-sf"><div class="ico">☁️</div><div class="nlbl">Create Salesforce lead</div></label>
+        <span class="arrow">→</span>
+        <label class="node-lbl" for="n-slack"><div class="ico">💬</div><div class="nlbl">Slack notification</div></label>
+        <span class="arrow">→</span>
+        <label class="node-lbl" for="n-logger"><div class="ico">📋</div><div class="nlbl">Log actions</div></label>
+      </div>
+    </div>
+
+    <div class="detail">
+
+      <!-- ── TRIGGER ── -->
+      <div class="nd nd-trigger">
+        <div class="conn-hd"><div class="conn-ico">🌀</div><span class="conn-name">Marketo — Lead created</span></div>
+        <div class="conn-desc">Fires when a new lead is created in Marketo. Trigger nodes have no configurable static properties — all fields below are available as inputs to the next step.</div>
+        <div class="section">
+          <div class="sec-hd">
+            <span class="sec-title">Mapping</span>
+            <label class="tw" for="tv-trigger"><div class="sw"></div> Tree view</label>
+          </div>
+          <div class="mw">
+            <div class="mt">
+              <table>
+                <thead><tr><th style="width:50%">Outgoing fields</th><th style="width:8%"></th><th>Available to next step</th></tr></thead>
+                <tbody>
+                  <tr class="mr"><td><span class="sf m">firstName</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">lastName</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">email</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">company</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">jobTitle</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">source</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">address <span style="color:#8d8d8d;font-size:10px">(4 fields)</span></span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">object</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">address.street</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">address.city</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">address.state</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">address.zip</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf m">customFields <span style="color:#8d8d8d;font-size:10px">(5 fields)</span></span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">object</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">customFields.leadScore</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">customFields.leadSource</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">customFields.tags</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">customFields.region</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                  <tr class="mr"><td><span class="sf d1">customFields.tier</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">available</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mk tree">
+              <div class="tr">firstName</div><div class="tr">lastName</div><div class="tr">email</div>
+              <div class="tr">company</div><div class="tr">jobTitle</div><div class="tr">source</div>
+              <div class="tr">address/</div>
+              <div class="tr">&nbsp;&nbsp;└─ address.street</div><div class="tr">&nbsp;&nbsp;└─ address.city</div>
+              <div class="tr">&nbsp;&nbsp;└─ address.state</div><div class="tr">&nbsp;&nbsp;└─ address.zip</div>
+              <div class="tr">customFields/</div>
+              <div class="tr">&nbsp;&nbsp;└─ customFields.leadScore</div><div class="tr">&nbsp;&nbsp;└─ customFields.leadSource</div>
+              <div class="tr">&nbsp;&nbsp;└─ customFields.tags</div><div class="tr">&nbsp;&nbsp;└─ customFields.region</div>
+              <div class="tr">&nbsp;&nbsp;└─ customFields.tier</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SALESFORCE ── -->
+      <div class="nd nd-sf">
+        <div class="conn-hd"><div class="conn-ico">☁️</div><span class="conn-name">Salesforce — Create lead</span></div>
+        <div class="conn-desc">Creates a Lead record in Salesforce using Marketo data. Static values below were configured during the conversation with the agent.</div>
+        <div class="section">
+          <div class="sec-hd">
+            <span class="sec-title">Properties</span>
+            <div class="view-ctrl"><label class="edit-lbl" for="e-sf">✎ Edit properties</label></div>
+            <div class="edit-ctrl btns"><label class="cancel-lbl" for="e-sf">Cancel</label><label class="save-lbl" for="e-sf">Save</label></div>
+          </div>
+          <div class="props">
+            <div class="pr"><div class="pl">Account <span class="badge b-acct">Account</span></div>
+              <div class="rv"><span class="pv">Salesforce — prod-instance</span></div>
+              <div class="re"><select class="fs"><option selected>Salesforce — prod-instance</option><option>Salesforce — sandbox</option></select></div></div>
+            <div class="pr"><div class="pl">Lead source <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">Marketo sync</span></div>
+              <div class="re"><input class="fi" type="text" value="Marketo sync"></div></div>
+            <div class="pr"><div class="pl">Owner assignment <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">Round-robin</span></div>
+              <div class="re"><select class="fs"><option selected>Round-robin</option><option>First available</option><option>Territory-based</option></select></div></div>
+            <div class="pr"><div class="pl">Duplicate check <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">true</span></div>
+              <div class="re"><select class="fs"><option selected>true</option><option>false</option></select></div></div>
+            <div class="pr"><div class="pl">Notify on create <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">false</span></div>
+              <div class="re"><select class="fs"><option>true</option><option selected>false</option></select></div></div>
+            <div class="pr"><div class="pl">Lead rating <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">Hot</span></div>
+              <div class="re"><select class="fs"><option selected>Hot</option><option>Warm</option><option>Cold</option></select></div></div>
+            <!-- nested -->
+            <div class="pr">
+              <input class="nt" type="checkbox" id="nsf1">
+              <label class="nl" for="nsf1"><span class="chv">▶</span><span class="nn">Advanced config</span><span class="nc">4 properties</span><span class="badge b-nest">Nested</span></label>
+              <div class="nb">
+                <div class="pr"><div class="pl">Currency <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">USD</span></div>
+                  <div class="re"><select class="fs"><option selected>USD</option><option>EUR</option><option>GBP</option><option>INR</option></select></div></div>
+                <div class="pr"><div class="pl">Language <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">en_US</span></div>
+                  <div class="re"><input class="fi" type="text" value="en_US"></div></div>
+                <div class="pr"><div class="pl">Record type <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">Standard</span></div>
+                  <div class="re"><select class="fs"><option selected>Standard</option><option>Partner</option><option>Government</option></select></div></div>
+                <div class="pr"><div class="pl">Fiscal year <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">FY2026</span></div>
+                  <div class="re"><input class="fi" type="text" value="FY2026"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="sec-hd"><span class="sec-title">Mapping</span><label class="tw" for="tv-sf"><div class="sw"></div> Tree view</label></div>
+          <div class="mw">
+            <div class="mt"><table>
+              <thead><tr><th style="width:46%">Incoming data</th><th style="width:8%"></th><th>Create Salesforce lead</th></tr></thead>
+              <tbody>
+                <tr class="gr"><td colspan="3"><div class="gc"><span class="gi">🌀</span><span>Lead created</span></div></td></tr>
+                <tr class="mr"><td><span class="sf m">firstName</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.FirstName</span></td></tr>
+                <tr class="mr"><td><span class="sf m">lastName</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.LastName</span></td></tr>
+                <tr class="mr"><td><span class="sf m">email</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.Email</span></td></tr>
+                <tr class="mr"><td><span class="sf m">company</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.Company</span></td></tr>
+                <tr class="mr"><td><span class="sf m">jobTitle</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.Title</span></td></tr>
+                <tr class="mr"><td><span class="sf m">source</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.LeadSource</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">address.street</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.Street</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">address.city</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.City</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">address.state</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.State</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">address.zip</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">not mapped</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">customFields.leadScore</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">Lead.Rating__c</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">customFields.leadSource</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">not mapped</span></td></tr>
+                <tr class="mr"><td><span class="sf d1">customFields.tags</span></td><td class="ac"><div class="al e"></div></td><td><span class="tg e">not mapped</span></td></tr>
+              </tbody>
+            </table></div>
+            <div class="mk tree">
+              <div class="tr">firstName → Lead.FirstName</div><div class="tr">lastName → Lead.LastName</div>
+              <div class="tr">email → Lead.Email</div><div class="tr">company → Lead.Company</div>
+              <div class="tr">jobTitle → Lead.Title</div><div class="tr">source → Lead.LeadSource</div>
+              <div class="tr">&nbsp;&nbsp;└─ address.street → Lead.Street</div>
+              <div class="tr">&nbsp;&nbsp;└─ address.city → Lead.City</div>
+              <div class="tr">&nbsp;&nbsp;└─ address.state → Lead.State</div>
+              <div class="tr u">&nbsp;&nbsp;└─ address.zip → (not mapped)</div>
+              <div class="tr">&nbsp;&nbsp;└─ customFields.leadScore → Lead.Rating__c</div>
+              <div class="tr u">&nbsp;&nbsp;└─ customFields.leadSource → (not mapped)</div>
+              <div class="tr u">&nbsp;&nbsp;└─ customFields.tags → (not mapped)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SLACK ── -->
+      <div class="nd nd-slack">
+        <div class="conn-hd"><div class="conn-ico">💬</div><span class="conn-name">Slack — Post message to channel</span></div>
+        <div class="conn-desc">Posts a message to Slack when a lead is created. All values below were set during the conversation with the agent — none came from dynamic mapping.</div>
+        <div class="section">
+          <div class="sec-hd">
+            <span class="sec-title">Properties</span>
+            <div class="view-ctrl"><label class="edit-lbl" for="e-slack">✎ Edit properties</label></div>
+            <div class="edit-ctrl btns"><label class="cancel-lbl" for="e-slack">Cancel</label><label class="save-lbl" for="e-slack">Save</label></div>
+          </div>
+          <div class="props">
+            <div class="pr"><div class="pl">Account <span class="badge b-acct">Account</span></div>
+              <div class="rv"><span class="pv">Slack — acme-workspace</span></div>
+              <div class="re"><select class="fs"><option selected>Slack — acme-workspace</option><option>Slack — sandbox</option></select></div></div>
+            <div class="pr"><div class="pl">Channel type <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">Public channel</span></div>
+              <div class="re"><select class="fs"><option selected>Public channel</option><option>Private channel</option><option>Direct message</option></select></div></div>
+            <div class="pr"><div class="pl">Channel <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">#general</span></div>
+              <div class="re"><input class="fi" type="text" value="#general"></div></div>
+            <div class="pr"><div class="pl">Message <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv clip">Hi ${firstName}! You are enrolled in this program now. Please review the terms &amp; conditions. Also inform your team about event timings &amp; venue details.</span></div>
+              <div class="re"><textarea class="ft" rows="3">Hi ${firstName}! You are enrolled in this program now. Please review the terms & conditions. Also inform your team about event timings & venue details.</textarea></div></div>
+            <div class="pr"><div class="pl">Parse message <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">full</span></div>
+              <div class="re"><select class="fs"><option selected>full</option><option>none</option></select></div></div>
+            <div class="pr"><div class="pl">Link names <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">false</span></div>
+              <div class="re"><select class="fs"><option>true</option><option selected>false</option></select></div></div>
+            <div class="pr"><div class="pl">Unfurl links <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">true</span></div>
+              <div class="re"><select class="fs"><option selected>true</option><option>false</option></select></div></div>
+            <div class="pr"><div class="pl">Unfurl media <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">false</span></div>
+              <div class="re"><select class="fs"><option>true</option><option selected>false</option></select></div></div>
+            <!-- nested attachments -->
+            <div class="pr">
+              <input class="nt" type="checkbox" id="nsl1">
+              <label class="nl" for="nsl1"><span class="chv">▶</span><span class="nn">Attachments</span><span class="nc">4 properties</span><span class="badge b-nest">Nested</span></label>
+              <div class="nb">
+                <div class="pr"><div class="pl">Fallback text <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">New lead notification</span></div>
+                  <div class="re"><input class="fi" type="text" value="New lead notification"></div></div>
+                <div class="pr"><div class="pl">Colour <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">#36a64f</span></div>
+                  <div class="re"><input class="fi" type="text" value="#36a64f"></div></div>
+                <div class="pr"><div class="pl">Footer <span class="badge b-static">Static value</span></div>
+                  <div class="rv"><span class="pv">Powered by IWHI</span></div>
+                  <div class="re"><input class="fi" type="text" value="Powered by IWHI"></div></div>
+                <!-- nested level 2 -->
+                <div class="pr">
+                  <input class="nt" type="checkbox" id="nsl2">
+                  <label class="nl" for="nsl2"><span class="chv">▶</span><span class="nn">Fields</span><span class="nc">3 properties</span><span class="badge b-nest">Nested</span></label>
+                  <div class="nb">
+                    <div class="pr"><div class="pl">Title <span class="badge b-static">Static value</span></div>
+                      <div class="rv"><span class="pv">Lead name</span></div>
+                      <div class="re"><input class="fi" type="text" value="Lead name"></div></div>
+                    <div class="pr"><div class="pl">Value <span class="badge b-static">Static value</span></div>
+                      <div class="rv"><span class="pv">${firstName} ${lastName}</span></div>
+                      <div class="re"><input class="fi" type="text" value="${firstName} ${lastName}"></div></div>
+                    <div class="pr"><div class="pl">Short <span class="badge b-static">Static value</span></div>
+                      <div class="rv"><span class="pv">true</span></div>
+                      <div class="re"><select class="fs"><option selected>true</option><option>false</option></select></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="sec-hd"><span class="sec-title">Mapping</span><label class="tw" for="tv-slack"><div class="sw"></div> Tree view</label></div>
+          <div class="mw">
+            <div class="mt"><table>
+              <thead><tr><th style="width:46%">Incoming data</th><th style="width:8%"></th><th>Slack notification</th></tr></thead>
+              <tbody>
+                <tr class="gr"><td colspan="3"><div class="gc"><span class="gi">🌀</span><span>Lead created</span></div></td></tr>
+                <tr class="mr"><td><span class="sf m">firstName</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">message (interpolated)</span></td></tr>
+                <tr class="mr"><td><span class="sf m">lastName</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">message (interpolated)</span></td></tr>
+              </tbody>
+            </table></div>
+            <div class="mk tree">
+              <div class="tr">firstName → message (interpolated)</div>
+              <div class="tr">lastName → message (interpolated)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOGGER ── -->
+      <div class="nd nd-logger">
+        <div class="conn-hd"><div class="conn-ico">📋</div><span class="conn-name">Logger — Log actions</span></div>
+        <div class="conn-desc">Outputs all previous activity results to the console log for debugging and audit trail.</div>
+        <div class="section">
+          <div class="sec-hd">
+            <span class="sec-title">Properties</span>
+            <div class="view-ctrl"><label class="edit-lbl" for="e-logger">✎ Edit properties</label></div>
+            <div class="edit-ctrl btns"><label class="cancel-lbl" for="e-logger">Cancel</label><label class="save-lbl" for="e-logger">Save</label></div>
+          </div>
+          <div class="props">
+            <div class="pr"><div class="pl">Log level <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">INFO</span></div>
+              <div class="re"><select class="fs"><option>DEBUG</option><option selected>INFO</option><option>WARN</option><option>ERROR</option></select></div></div>
+            <div class="pr"><div class="pl">Include timestamp <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">true</span></div>
+              <div class="re"><select class="fs"><option selected>true</option><option>false</option></select></div></div>
+            <div class="pr"><div class="pl">Prefix <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">[IWHI-AUDIT]</span></div>
+              <div class="re"><input class="fi" type="text" value="[IWHI-AUDIT]"></div></div>
+            <div class="pr"><div class="pl">Max message length <span class="badge b-static">Static value</span></div>
+              <div class="rv"><span class="pv">2048</span></div>
+              <div class="re"><input class="fi" type="text" value="2048"></div></div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="sec-hd"><span class="sec-title">Mapping</span><label class="tw" for="tv-logger"><div class="sw"></div> Tree view</label></div>
+          <div class="mw">
+            <div class="mt"><table>
+              <thead><tr><th style="width:46%">Incoming data</th><th style="width:8%"></th><th>Log actions</th></tr></thead>
+              <tbody>
+                <tr class="gr"><td colspan="3"><div class="gc"><span class="gi">💬</span><span>Slack notification</span></div></td></tr>
+                <tr class="mr"><td><span class="sf m">Text</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">log.message</span></td></tr>
+                <tr class="mr"><td><span class="sf m">Channel</span></td><td class="ac"><div class="al"></div></td><td><span class="tg">log.destination</span></td></tr>
+              </tbody>
+            </table></div>
+            <div class="mk tree">
+              <div class="tr">Text → log.message</div>
+              <div class="tr">Channel → log.destination</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /detail -->
+  </div><!-- /left -->
+
+  <!-- ════ RIGHT: CHAT ════ -->
+  <div class="right">
+    <div class="cht-hd"><span class="aib">AI</span><span class="cht-t">watsonx</span></div>
+    <div class="msgs">
+      <div class="msg u"><div class="mlbl">You · 12:46</div><div class="bub">Create new leads from Marketo in Salesforce, send Slack alert, log everything</div></div>
+      <div class="msg a"><div class="mlbl"><span class="aib">AI</span> watsonx · 12:46</div><div class="bub">Here's a preview. Click any node above to inspect its properties and mapping.</div></div>
+    </div>
+    <div class="chps">
+      <button class="chp">Review mapping</button>
+      <button class="chp">Test with sample data</button>
+      <button class="chp">Open in webMethods ↗</button>
+    </div>
+    <div class="inpr"><input class="inp" placeholder="Type something…"></div>
+  </div>
+
+</div>
+</body>
+</html>

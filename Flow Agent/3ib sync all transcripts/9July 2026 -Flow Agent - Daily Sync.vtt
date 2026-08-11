@@ -1,0 +1,5862 @@
+WEBVTT
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/9-0
+00:00:07.036 --> 00:00:08.156
+<v Prasad GSK>Yeah, it started.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/10-0
+00:00:08.516 --> 00:00:09.276
+<v Jyotish Sonowal>Yeah, all right.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/11-0
+00:00:12.636 --> 00:00:14.636
+<v Jyotish Sonowal>Let me know once my screen is visible.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/12-0
+00:00:16.156 --> 00:00:16.956
+<v Prasad GSK>Yes, it is.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/15-0
+00:00:17.236 --> 00:00:22.221
+<v Jyotish Sonowal>Yeah, okay, so this is a very early draft.
+Time and I had one discussion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/15-1
+00:00:22.221 --> 00:00:26.128
+<v Jyotish Sonowal>He shared some feedback.
+So I want this more to be like a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/15-2
+00:00:26.128 --> 00:00:30.371
+<v Jyotish Sonowal>conversation starter.
+This is not like a final design that I'm</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/15-3
+00:00:30.371 --> 00:00:31.516
+<v Jyotish Sonowal>sharing with you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/14-0
+00:00:31.076 --> 00:00:33.454
+<v Thamizharasu Soundrapandian>No, just a question. Sorry to interrupt,
+Jyotish,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/14-1
+00:00:33.454 --> 00:00:35.356
+<v Thamizharasu Soundrapandian>since we are discussing this UX journey.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/17-0
+00:00:36.476 --> 00:00:41.360
+<v Thamizharasu Soundrapandian>Shall we also include someone who is
+going to implement this for the flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/17-1
+00:00:41.360 --> 00:00:41.756
+<v Thamizharasu Soundrapandian>agent?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/19-0
+00:00:44.916 --> 00:00:45.916
+<v Jyotish Sonowal>Who is it?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/18-0
+00:00:45.116 --> 00:00:45.596
+<v Prasad GSK>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/20-0
+00:00:46.476 --> 00:00:46.876
+<v Prasad GSK>Should.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/21-0
+00:00:48.396 --> 00:00:52.796
+<v Prasad GSK>No, the RAMALINGAM is is is to join.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/22-0
+00:00:53.636 --> 00:00:57.378
+<v Thamizharasu Soundrapandian>RAMALINGAM primarily taking care of the
+backend stuff, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/22-1
+00:00:57.378 --> 00:01:00.516
+<v Thamizharasu Soundrapandian>But who will be implementing this from
+the UA side?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/23-0
+00:01:01.836 --> 00:01:02.396
+<v Prasad GSK>Of.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/24-0
+00:01:01.996 --> 00:01:04.476
+<v Jyotish Sonowal>I think he's added Santhosh and
+Aleemullah on the call.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/25-0
+00:01:05.196 --> 00:01:07.996
+<v Prasad GSK>Okay, let me request to John.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/27-0
+00:01:06.716 --> 00:01:10.476
+<v Thamizharasu Soundrapandian>Yes, bring someone,
+otherwise it might be a surprise to them.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/26-0
+00:01:08.476 --> 00:01:08.956
+<v Jyotish Sonowal>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/28-0
+00:01:11.756 --> 00:01:14.716
+<v Prasad GSK>Yeah, yeah, yeah, correct. So,
+I'm trying to pull a limp.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/32-0
+00:01:19.836 --> 00:01:23.337
+<v Sonal Mehta>Jyotish,
+the overall experience would be aligned</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/32-1
+00:01:23.337 --> 00:01:28.839
+<v Sonal Mehta>with the current Bifrost UI, right?
+Only the artifact data would differ from</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/30-0
+00:01:25.516 --> 00:01:26.076
+<v Jyotish Sonowal>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/31-0
+00:01:28.236 --> 00:01:29.996
+<v Thamizharasu Soundrapandian>That's a ground rule, Sonal.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/32-2
+00:01:28.839 --> 00:01:29.196
+<v Sonal Mehta>work.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/33-0
+00:01:33.356 --> 00:01:35.676
+<v Jyotish Sonowal>Yes, we can't make anything different.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/34-0
+00:01:35.356 --> 00:01:38.220
+<v Thamizharasu Soundrapandian>Yeah,
+the experience should not be deviated</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/36-0
+00:01:37.916 --> 00:01:42.296
+<v Sonal Mehta>No,
+since you mentioned that the experience</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/34-1
+00:01:38.220 --> 00:01:39.196
+<v Thamizharasu Soundrapandian>from launchpad.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/36-1
+00:01:42.296 --> 00:01:47.273
+<v Sonal Mehta>is going to, yeah,
+it's a different or something,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/36-2
+00:01:47.273 --> 00:01:50.956
+<v Sonal Mehta>that's why you need UI people, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/35-0
+00:01:49.556 --> 00:01:50.316
+<v Thamizharasu Soundrapandian>Yeah, let's see.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/37-0
+00:01:51.996 --> 00:01:55.596
+<v Thamizharasu Soundrapandian>Yeah, definitely we need, no, my point is.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-0
+00:01:57.156 --> 00:02:01.924
+<v Thamizharasu Soundrapandian>So something is specific to flow,
+especially on the technical view, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-1
+00:02:01.924 --> 00:02:06.692
+<v Thamizharasu Soundrapandian>And I don't know how that will be plugged
+into this conversational window.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-2
+00:02:06.692 --> 00:02:11.714
+<v Thamizharasu Soundrapandian>Somehow we have done this for workflow,
+and I don't know whether we need to do</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-3
+00:02:11.714 --> 00:02:15.528
+<v Thamizharasu Soundrapandian>anything special,
+but it will be always good if someone who</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-4
+00:02:15.528 --> 00:02:20.741
+<v Thamizharasu Soundrapandian>has to implement this and they can also
+raise some concerns if they have anything</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/39-5
+00:02:20.741 --> 00:02:22.076
+<v Thamizharasu Soundrapandian>on the UX. That's my.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/40-0
+00:02:22.316 --> 00:02:23.676
+<v Thamizharasu Soundrapandian>Primary int.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/38-0
+00:02:25.516 --> 00:02:26.196
+<v Sonal Mehta>Right.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/41-0
+00:02:28.236 --> 00:02:28.676
+<v Sonal Mehta>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/42-0
+00:02:28.276 --> 00:02:30.636
+<v Thamizharasu Soundrapandian>Even otherwise, we have the recording if..
+.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/44-0
+00:02:29.836 --> 00:02:34.476
+<v Sonal Mehta>I think Ashok, yeah,
+Ashok is also aware of correct Ashok</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/44-1
+00:02:34.476 --> 00:02:36.236
+<v Sonal Mehta>about the UI elements.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/46-0
+00:02:43.596 --> 00:02:45.436
+<v Ashok Kumar B M>Yes, yes, yes, sir.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/47-0
+00:02:43.676 --> 00:02:45.596
+<v Sonal Mehta>Okay, I think we can continue, Priya.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/51-0
+00:02:46.636 --> 00:02:50.136
+<v Thamizharasu Soundrapandian>Prasad, if nobody is picking up your call,
+leave it. Anyhow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/48-0
+00:02:47.596 --> 00:02:47.756
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/51-1
+00:02:50.136 --> 00:02:54.094
+<v Thamizharasu Soundrapandian>we are recording this meeting.
+You can share the recording with them</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/49-0
+00:02:52.796 --> 00:02:53.356
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/51-2
+00:02:54.094 --> 00:02:55.356
+<v Thamizharasu Soundrapandian>later. We'll continue.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/53-0
+00:02:55.996 --> 00:03:00.150
+<v Prasad GSK>Okay, let's continue. I'm trying to pull.
+They might join a bit late.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/54-0
+00:02:59.996 --> 00:03:03.436
+<v Thamizharasu Soundrapandian>That's fine, yeah, that's fine. Go ahead,
+Jyotish.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/53-1
+00:03:00.150 --> 00:03:01.396
+<v Prasad GSK>Let's continue. Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/52-0
+00:03:02.236 --> 00:03:02.636
+<v Jyotish Sonowal>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/55-0
+00:03:04.076 --> 00:03:07.261
+<v Jyotish Sonowal>So let's start with the prompt,
+the sample,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/55-1
+00:03:07.261 --> 00:03:12.401
+<v Jyotish Sonowal>like 3 prompts which Thanmayi shared.
+So we start with that first one,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/55-2
+00:03:12.401 --> 00:03:16.165
+<v Jyotish Sonowal>gain all Salesforce accounts with gain
+site person.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/55-3
+00:03:16.165 --> 00:03:21.667
+<v Jyotish Sonowal>So the same panel that we have for
+launchpad and there'll be some reasoning</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/55-4
+00:03:21.667 --> 00:03:21.956
+<v Jyotish Sonowal>and.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/56-0
+00:03:23.116 --> 00:03:26.575
+<v Jyotish Sonowal>It will ask you some questions if it's
+not clear. Now,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/56-1
+00:03:26.575 --> 00:03:31.543
+<v Jyotish Sonowal>these examples I've just borrowed from
+the demo which Ramu had shared earlier.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/56-2
+00:03:31.543 --> 00:03:36.636
+<v Jyotish Sonowal>So it's going to ask you these questions
+and you can answer it conversationally.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-0
+00:03:40.236 --> 00:03:43.593
+<v Jyotish Sonowal>Once you get this response,
+there are multiple things can happen.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-1
+00:03:43.593 --> 00:03:46.645
+<v Jyotish Sonowal>So right, I mean,
+there could be some cases where it's very</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-2
+00:03:46.645 --> 00:03:50.663
+<v Jyotish Sonowal>clear the agent is going to know that
+this is something that can be built only</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-3
+00:03:50.663 --> 00:03:53.054
+<v Jyotish Sonowal>with a flow service.
+You can't use a workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-4
+00:03:53.054 --> 00:03:55.902
+<v Jyotish Sonowal>And in some cases,
+it might also see what you have been</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-5
+00:03:55.902 --> 00:03:58.293
+<v Jyotish Sonowal>using.
+If a user has always been creating flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/57-6
+00:03:58.293 --> 00:04:00.276
+<v Jyotish Sonowal>services or some logic has to be built.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/58-0
+00:04:00.876 --> 00:04:02.796
+<v Jyotish Sonowal>basis which recommendation should come in.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/60-0
+00:04:01.116 --> 00:04:05.756
+<v Thamizharasu Soundrapandian>So that is my first question, Jyotish,
+since you gave the prompt.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/59-0
+00:04:04.556 --> 00:04:04.876
+<v Jyotish Sonowal>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/63-0
+00:04:06.916 --> 00:04:11.660
+<v Thamizharasu Soundrapandian>What is the starting point?
+I opened the window, the chat window,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/61-0
+00:04:10.316 --> 00:04:10.396
+<v Jyotish Sonowal>Huh?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/63-1
+00:04:11.660 --> 00:04:15.756
+<v Thamizharasu Soundrapandian>and you gave the prompt.
+And how this agent will decide.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/62-0
+00:04:12.556 --> 00:04:13.036
+<v Jyotish Sonowal>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/65-0
+00:04:16.956 --> 00:04:21.711
+<v Thamizharasu Soundrapandian>whether this is a workflow or flow.
+Should we even have that question?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/65-1
+00:04:21.711 --> 00:04:24.858
+<v Thamizharasu Soundrapandian>Because today we are supporting only
+workflow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/65-2
+00:04:24.858 --> 00:04:30.282
+<v Thamizharasu Soundrapandian>so there is no clarification is required.
+But tomorrow when we bring flow agent,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/64-0
+00:04:28.836 --> 00:04:29.476
+<v Jyotish Sonowal>Mmh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/65-3
+00:04:30.282 --> 00:04:34.635
+<v Thamizharasu Soundrapandian>then there might be some confirmation is
+required from the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/65-4
+00:04:34.635 --> 00:04:37.916
+<v Thamizharasu Soundrapandian>If I specifically mention create a flow
+service.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/66-0
+00:04:38.316 --> 00:04:43.436
+<v Thamizharasu Soundrapandian>With this use case, then it is clear,
+but if I give a prompt directly.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/67-0
+00:04:44.476 --> 00:04:50.024
+<v Thamizharasu Soundrapandian>Somewhere it should be instructed, right?
+So maybe you can add a note.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/69-0
+00:04:47.916 --> 00:04:52.379
+<v Jyotish Sonowal>Yes, so, so this is already there, Tom.
+Like, for example,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/67-1
+00:04:50.024 --> 00:04:51.196
+<v Thamizharasu Soundrapandian>We need to see.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/69-1
+00:04:52.379 --> 00:04:58.280
+<v Jyotish Sonowal>once I've answered these questions,
+I've said, OK, this looks like something,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/69-2
+00:04:58.280 --> 00:05:02.819
+<v Jyotish Sonowal>like some example I put,
+and I recommend that we use a flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/69-3
+00:05:02.819 --> 00:05:05.996
+<v Jyotish Sonowal>service to handle this reliably. OK, so...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/68-0
+00:05:04.796 --> 00:05:07.101
+<v Thamizharasu Soundrapandian>So,
+who will who will decide and how this</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/68-1
+00:05:07.101 --> 00:05:09.076
+<v Thamizharasu Soundrapandian>will be decided? That's my question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/70-0
+00:05:10.636 --> 00:05:12.076
+<v Jyotish Sonowal>The agent will decide.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/71-0
+00:05:13.476 --> 00:05:15.036
+<v Thamizharasu Soundrapandian>what data will pack this up.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/72-0
+00:05:15.996 --> 00:05:16.716
+<v Thamizharasu Soundrapandian>Next question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/73-0
+00:05:17.356 --> 00:05:20.884
+<v Jyotish Sonowal>So looking at the prompt,
+you should be able to tell, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/73-1
+00:05:20.884 --> 00:05:25.337
+<v Jyotish Sonowal>Like there'll be some cases where you can
+build that same automation using a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/73-2
+00:05:25.337 --> 00:05:28.113
+<v Jyotish Sonowal>workflow and a flow service.
+But in some cases,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/73-3
+00:05:28.113 --> 00:05:32.566
+<v Jyotish Sonowal>maybe you can only build it using a flow
+service. That could be one. Second,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/73-4
+00:05:32.566 --> 00:05:36.556
+<v Jyotish Sonowal>I was thinking is if I, if as a user,
+I mostly create flow services.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/74-0
+00:05:37.596 --> 00:05:39.116
+<v Jyotish Sonowal>Then I should be default.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/78-0
+00:05:37.996 --> 00:05:40.613
+<v Thamizharasu Soundrapandian>No,
+I'm just trying to help the engineering</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/78-1
+00:05:40.613 --> 00:05:44.181
+<v Thamizharasu Soundrapandian>team in order to classify how this
+decision can be arrived.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/75-0
+00:05:41.036 --> 00:05:41.516
+<v Jyotish Sonowal>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/78-2
+00:05:44.181 --> 00:05:48.819
+<v Thamizharasu Soundrapandian>Maybe based on the connector availability
+across different flavors or account</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/78-3
+00:05:48.819 --> 00:05:52.387
+<v Thamizharasu Soundrapandian>availability, I don't know,
+but I'm just giving a heads up.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/78-4
+00:05:52.387 --> 00:05:55.836
+<v Thamizharasu Soundrapandian>If this has to be handled,
+some intelligence to be built.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/76-0
+00:05:53.236 --> 00:05:53.596
+<v Jyotish Sonowal>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/79-0
+00:05:57.116 --> 00:05:57.916
+<v Thamizharasu Soundrapandian>Behind the scene.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/77-0
+00:05:58.796 --> 00:05:59.436
+<v Jyotish Sonowal>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/80-0
+00:05:59.916 --> 00:06:00.316
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/81-0
+00:05:59.996 --> 00:06:04.271
+<v Prasad GSK>Yeah,
+and and also who will do it is a big</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/81-1
+00:06:04.271 --> 00:06:11.032
+<v Prasad GSK>question, right, Dam? Like,
+is it within the scope of a flow agent,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/81-2
+00:06:11.032 --> 00:06:15.505
+<v Prasad GSK>RSC?
+Is it that AICS team who is handling it</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/81-3
+00:06:15.505 --> 00:06:20.476
+<v Prasad GSK>will decide,
+and then and and then it handles to?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/82-0
+00:06:20.796 --> 00:06:23.756
+<v Prasad GSK>Flow agent, so that is also a question,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/84-0
+00:06:24.236 --> 00:06:28.587
+<v Thamizharasu Soundrapandian>Yeah,
+so this is where I wanted a master agent</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/84-1
+00:06:28.587 --> 00:06:30.716
+<v Thamizharasu Soundrapandian>for integration itself.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/83-0
+00:06:31.916 --> 00:06:32.076
+<v Prasad GSK>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/85-0
+00:06:32.316 --> 00:06:36.551
+<v Thamizharasu Soundrapandian>Behind the master agent,
+there will be workflow agent, flow agent,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/85-1
+00:06:36.551 --> 00:06:40.533
+<v Thamizharasu Soundrapandian>and in future I can also have runtime
+management agent, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/85-2
+00:06:40.533 --> 00:06:45.147
+<v Thamizharasu Soundrapandian>Something behind the scene of the
+integration agent that's simply making</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/85-3
+00:06:45.147 --> 00:06:48.370
+<v Thamizharasu Soundrapandian>some decision.
+But today we don't have that layer.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/85-4
+00:06:48.370 --> 00:06:52.036
+<v Thamizharasu Soundrapandian>All our agents are directly plugged into
+the other layer.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/86-0
+00:06:52.556 --> 00:06:57.822
+<v Thamizharasu Soundrapandian>There is one more agent.
+I don't know which agent, but in between,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/86-1
+00:06:57.822 --> 00:07:01.358
+<v Thamizharasu Soundrapandian>in front of that,
+we have the bifrost agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/86-2
+00:07:01.358 --> 00:07:05.681
+<v Thamizharasu Soundrapandian>And bifrost agent,
+maybe we need to discuss with them,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/86-3
+00:07:05.681 --> 00:07:10.396
+<v Thamizharasu Soundrapandian>Ramu or someone.
+Somewhere this decision has to be arrived.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/87-0
+00:07:11.916 --> 00:07:17.791
+<v Thamizharasu Soundrapandian>Or if the user directly start clicking
+the flow service action,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/87-1
+00:07:17.791 --> 00:07:20.636
+<v Thamizharasu Soundrapandian>then there is no such question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/88-0
+00:07:23.996 --> 00:07:25.556
+<v Thamizharasu Soundrapandian>Yeah, go ahead, Sonal.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/89-0
+00:07:29.116 --> 00:07:35.127
+<v Sonal Mehta>Tom, there would be a preference, right?
+Like when you are under the flow service</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/89-1
+00:07:35.127 --> 00:07:40.039
+<v Sonal Mehta>page and user initiate a chat,
+the context would be helpful there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/89-2
+00:07:40.039 --> 00:07:44.291
+<v Sonal Mehta>Second, every data,
+I mean all the data connector related</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/89-3
+00:07:44.291 --> 00:07:47.076
+<v Sonal Mehta>specifically, we are dumping into UAC.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/90-0
+00:07:47.516 --> 00:07:52.730
+<v Sonal Mehta>Correct.
+So UAC integration should be both in</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/90-1
+00:07:52.730 --> 00:07:57.036
+<v Sonal Mehta>workflow agent and flow service agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/91-0
+00:07:57.916 --> 00:08:02.008
+<v Sonal Mehta>And explicitly, one should be prioritized,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/91-1
+00:08:02.008 --> 00:08:08.636
+<v Sonal Mehta>Like if it goes to a workflow agent and
+if it doesn't finds the connector, so...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/92-0
+00:08:09.916 --> 00:08:14.149
+<v Sonal Mehta>I mean, behind the scene,
+it should not be shown to the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/92-1
+00:08:14.149 --> 00:08:17.700
+<v Sonal Mehta>It could be like a background processing
+happening,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/92-2
+00:08:17.700 --> 00:08:23.367
+<v Sonal Mehta>like which connector is meant for what,
+and then the final outcome would be there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/92-3
+00:08:23.367 --> 00:08:28.556
+<v Sonal Mehta>An agent says that, workflow agent says,
+okay, it can't handle the request.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/93-0
+00:08:29.116 --> 00:08:34.153
+<v Sonal Mehta>Flow service can handle it,
+and then it can be back with back back</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/93-1
+00:08:34.153 --> 00:08:39.790
+<v Sonal Mehta>with the flow if user is not explicitly
+right writing that it it is a flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/93-2
+00:08:39.790 --> 00:08:43.248
+<v Sonal Mehta>service or a workflow,
+but for the phase one,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/93-3
+00:08:43.248 --> 00:08:49.036
+<v Sonal Mehta>what do you what do you feel like the
+experience which we are talking about?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/94-0
+00:08:49.676 --> 00:08:53.583
+<v Sonal Mehta>on the choice of selecting a workflow or
+flow service.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/94-1
+00:08:53.583 --> 00:08:57.419
+<v Sonal Mehta>Should it be upfront or we have to apply
+the, I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/94-2
+00:08:57.419 --> 00:09:02.036
+<v Sonal Mehta>intelligence at that layer as well for
+the first cut, phase one.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/95-0
+00:09:01.516 --> 00:09:07.680
+<v Thamizharasu Soundrapandian>So, my for first cut,
+maybe we can start with the flow or</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/95-1
+00:09:07.680 --> 00:09:08.636
+<v Thamizharasu Soundrapandian>workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/96-0
+00:09:09.756 --> 00:09:15.871
+<v Thamizharasu Soundrapandian>And all these intelligence can be built
+in the super layer. I want that layer.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/96-1
+00:09:15.871 --> 00:09:20.361
+<v Thamizharasu Soundrapandian>And behind that layer,
+we will plug all the other agents,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/96-2
+00:09:20.361 --> 00:09:24.308
+<v Thamizharasu Soundrapandian>workflow agent, flow agent,
+and the future agents.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/96-3
+00:09:24.308 --> 00:09:30.036
+<v Thamizharasu Soundrapandian>And the decision has to be made at the
+parent layer. Okay. But for the...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/97-0
+00:09:30.436 --> 00:09:35.174
+<v Thamizharasu Soundrapandian>immediate milestone one,
+if we couldn't achieve this,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/97-1
+00:09:35.174 --> 00:09:41.403
+<v Thamizharasu Soundrapandian>maybe we need to take the direct route.
+Okay. User, take the decision.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/97-2
+00:09:41.403 --> 00:09:46.316
+<v Thamizharasu Soundrapandian>He wants to create flow.
+Then he tells this explicitly.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/98-0
+00:09:47.196 --> 00:09:52.751
+<v Thamizharasu Soundrapandian>And click that particular action,
+and then start conversing with an agent</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/98-1
+00:09:52.751 --> 00:09:56.504
+<v Thamizharasu Soundrapandian>that that route we can take. OK,
+add a note here,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/98-2
+00:09:56.504 --> 00:09:59.356
+<v Thamizharasu Soundrapandian>Jyotish will revisit this, find a way.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/99-0
+00:10:12.156 --> 00:10:12.436
+<v Thamizharasu Soundrapandian>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/100-0
+00:10:12.756 --> 00:10:15.476
+<v Prasad GSK>And then the journey can start, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/101-0
+00:10:12.996 --> 00:10:17.543
+<v Jyotish Sonowal>So I have a thought on that, Prasad.
+If you see all of our prompts,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/101-1
+00:10:17.543 --> 00:10:22.089
+<v Jyotish Sonowal>even in the prompt library,
+or like when you see the way people are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/101-2
+00:10:22.089 --> 00:10:25.432
+<v Jyotish Sonowal>typing,
+I don't know whether they will type build</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/101-3
+00:10:25.432 --> 00:10:30.246
+<v Jyotish Sonowal>a workflow versus a flow service.
+What if they just say I want to build</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/101-4
+00:10:30.246 --> 00:10:31.316
+<v Jyotish Sonowal>this automation?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/104-0
+00:10:32.476 --> 00:10:37.428
+<v Jyotish Sonowal>So we have to think if the intelligence
+layer that Tom is talking about doesn't</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/102-0
+00:10:32.676 --> 00:10:33.636
+<v Prasad GSK>Correct, correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/104-1
+00:10:37.428 --> 00:10:40.956
+<v Jyotish Sonowal>exist on day one,
+we still have to tell them that, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/104-2
+00:10:40.956 --> 00:10:45.288
+<v Jyotish Sonowal>we have two available, like, no options.
+This flow service does this,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/104-3
+00:10:45.288 --> 00:10:50.116
+<v Jyotish Sonowal>workflow does this. You make a selection.
+If we can't build our intelligence.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/105-0
+00:10:51.156 --> 00:10:53.816
+<v Jyotish Sonowal>Because yes,
+if they write in the prompt itself that I</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/105-1
+00:10:53.816 --> 00:10:56.862
+<v Jyotish Sonowal>want to build a workflow,
+that is the easiest way to go ahead,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/105-2
+00:10:56.862 --> 00:10:59.956
+<v Jyotish Sonowal>right? But what if they don't?
+We need to have a fallback then.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/106-0
+00:11:01.756 --> 00:11:07.379
+<v Prasad GSK>Yeah, yeah. So, Tom,
+shall we create one epic mostly for AICS</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/106-1
+00:11:07.379 --> 00:11:11.550
+<v Prasad GSK>team, right?
+To take this kind of a decision,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/106-2
+00:11:11.550 --> 00:11:16.356
+<v Prasad GSK>either to choose the workflow agent or a
+flow agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/107-0
+00:11:17.716 --> 00:11:20.996
+<v Prasad GSK>Shall we create an epic and then hand it
+over to them?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/108-0
+00:11:21.396 --> 00:11:23.076
+<v Thamizharasu Soundrapandian>Yeah, we can, we can have one.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/109-0
+00:11:24.116 --> 00:11:24.516
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/111-0
+00:11:28.276 --> 00:11:33.882
+<v Sonal Mehta>But is it like UAC,
+we need to then push all the intelligence</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/111-1
+00:11:33.882 --> 00:11:38.764
+<v Sonal Mehta>to the UAC,
+right from the connectors to the existing</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/111-2
+00:11:38.764 --> 00:11:41.476
+<v Sonal Mehta>flow service or something. So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/112-0
+00:11:40.996 --> 00:11:43.998
+<v Thamizharasu Soundrapandian>Yeah, so take a case,
+the connector metadata,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/112-1
+00:11:43.998 --> 00:11:48.826
+<v Thamizharasu Soundrapandian>my assumption is that in which flavor
+this connector is applicable. Flow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/112-2
+00:11:48.826 --> 00:11:54.242
+<v Thamizharasu Soundrapandian>workflow, Dev, something like that, right?
+So if we have that intelligence as part</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/112-3
+00:11:54.242 --> 00:11:58.678
+<v Thamizharasu Soundrapandian>of the connector metadata,
+then we should be able to arrive to this</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/112-4
+00:11:58.678 --> 00:11:59.396
+<v Thamizharasu Soundrapandian>conclusion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/116-0
+00:11:59.876 --> 00:12:06.698
+<v Thamizharasu Soundrapandian>But it's a predefined intelligence,
+but I'm thinking even beyond, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/114-0
+00:12:06.196 --> 00:12:06.556
+<v Sonal Mehta>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/116-1
+00:12:06.698 --> 00:12:10.810
+<v Thamizharasu Soundrapandian>If the agent can decide what will best
+fit,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/115-0
+00:12:07.596 --> 00:12:07.996
+<v Sonal Mehta>Absolutely.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/116-2
+00:12:10.810 --> 00:12:18.006
+<v Thamizharasu Soundrapandian>even if these connectors are available
+across different integration flavors,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/116-3
+00:12:18.006 --> 00:12:20.996
+<v Thamizharasu Soundrapandian>based on our historical pattern.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/117-0
+00:12:21.556 --> 00:12:26.607
+<v Thamizharasu Soundrapandian>Maybe the agent should suggest, okay,
+this might be a best fit for this use</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/117-1
+00:12:26.607 --> 00:12:30.196
+<v Thamizharasu Soundrapandian>case, something like that.
+Maybe that is future goal,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/117-2
+00:12:30.196 --> 00:12:34.316
+<v Thamizharasu Soundrapandian>not immediate target,
+but that's how I want to achieve in the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/117-3
+00:12:34.316 --> 00:12:38.436
+<v Thamizharasu Soundrapandian>future. But for now,
+we can go with some static intelligence.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/119-0
+00:12:42.756 --> 00:12:48.713
+<v Prasad GSK>Okay, so for Q3, let's proceed with that,
+some kind of a static intelligence.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/118-0
+00:12:48.596 --> 00:12:48.916
+<v Thamizharasu Soundrapandian>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/119-1
+00:12:48.713 --> 00:12:52.836
+<v Prasad GSK>We'll create an epic and then we'll
+target it for Q4.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/120-0
+00:12:53.396 --> 00:12:54.756
+<v Thamizharasu Soundrapandian>Yep, agree.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/121-0
+00:12:55.476 --> 00:12:55.796
+<v Jyotish Sonowal>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/122-0
+00:12:56.116 --> 00:12:56.836
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/123-0
+00:12:58.676 --> 00:13:02.110
+<v Jyotish Sonowal>So,
+say user has said continue with flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/123-1
+00:13:02.110 --> 00:13:06.046
+<v Jyotish Sonowal>service,
+in which case we will first ask for a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/123-2
+00:13:06.046 --> 00:13:06.716
+<v Jyotish Sonowal>project.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/124-0
+00:13:08.356 --> 00:13:13.225
+<v Jyotish Sonowal>This I think we also touched upon this
+topic yesterday in our discussion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/124-1
+00:13:13.225 --> 00:13:16.712
+<v Jyotish Sonowal>And in Launchpad,
+I've seen that we are for workflow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/124-2
+00:13:16.712 --> 00:13:21.647
+<v Jyotish Sonowal>creation also we are asking for a project.
+So this is the first selection.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/124-3
+00:13:21.647 --> 00:13:26.516
+<v Jyotish Sonowal>If agent is again intelligent enough,
+it should be able to recommend one.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/125-0
+00:13:26.676 --> 00:13:30.392
+<v Jyotish Sonowal>project and continue. If not,
+then it should recommend that these are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/125-1
+00:13:30.392 --> 00:13:33.417
+<v Jyotish Sonowal>like few projects you can select bases,
+whatever reason,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/125-2
+00:13:33.417 --> 00:13:37.716
+<v Jyotish Sonowal>like you know these accounts are already
+set up or whatever reason that's there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/126-0
+00:13:39.556 --> 00:13:41.716
+<v Jyotish Sonowal>Post project selection.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/127-0
+00:13:44.036 --> 00:13:48.673
+<v Jyotish Sonowal>We'll see a business view;
+technical view is not there right now,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/127-1
+00:13:48.673 --> 00:13:51.835
+<v Jyotish Sonowal>but you'll see some kind of a business
+view,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/127-2
+00:13:51.835 --> 00:13:57.526
+<v Jyotish Sonowal>which will give you a high-level logic of
+how this flow service would, you know,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/127-3
+00:13:57.526 --> 00:14:00.617
+<v Jyotish Sonowal>look like,
+and then there has to be certain</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/127-4
+00:14:00.617 --> 00:14:03.076
+<v Jyotish Sonowal>configuration which has to be done.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/128-0
+00:14:03.236 --> 00:14:08.338
+<v Jyotish Sonowal>conversationally and the user has to
+answer all of those things on chat.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/128-1
+00:14:08.338 --> 00:14:13.371
+<v Jyotish Sonowal>And once that validation is done,
+you will get to see a technical view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/128-2
+00:14:13.371 --> 00:14:18.403
+<v Jyotish Sonowal>It's basically a representation of the
+current existing technical view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/128-3
+00:14:18.403 --> 00:14:22.876
+<v Jyotish Sonowal>We have some other account authoring
+buttons and all, but I've.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/129-0
+00:14:22.956 --> 00:14:29.019
+<v Jyotish Sonowal>Just skip one for the mapping.
+So if you click on that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/129-1
+00:14:29.019 --> 00:14:34.756
+<v Jyotish Sonowal>you will see the mapping on the same
+workspace view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/130-0
+00:14:37.556 --> 00:14:40.907
+<v Jyotish Sonowal>Once you are happy with this,
+you can continue typing,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/130-1
+00:14:40.907 --> 00:14:44.807
+<v Jyotish Sonowal>you can continue playing around with it.
+And once you're happy,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/130-2
+00:14:44.807 --> 00:14:46.756
+<v Jyotish Sonowal>you can say create flow service.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/131-0
+00:14:49.036 --> 00:14:52.996
+<v Jyotish Sonowal>which will then create the flow service
+and then you can test it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-0
+00:14:55.316 --> 00:14:59.538
+<v Jyotish Sonowal>And if the test is successful,
+I'll need here, I'll need help with, like,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-1
+00:14:59.538 --> 00:15:02.447
+<v Jyotish Sonowal>you know,
+the design for the test report in a flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-2
+00:15:02.447 --> 00:15:05.014
+<v Jyotish Sonowal>service,
+but once you're happy with the flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-3
+00:15:05.014 --> 00:15:08.038
+<v Jyotish Sonowal>service you have tested,
+everything is working fine,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-4
+00:15:08.038 --> 00:15:11.346
+<v Jyotish Sonowal>you can then I,
+the agent will give you a suggestion that</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/132-5
+00:15:11.346 --> 00:15:15.796
+<v Jyotish Sonowal>I can deploy it on your preferred,
+you know, runtime this cloud runtime or...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/133-0
+00:15:15.956 --> 00:15:20.592
+<v Jyotish Sonowal>you can select a different runtime.
+So if you want to continue with cloud</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/133-1
+00:15:20.592 --> 00:15:23.536
+<v Jyotish Sonowal>runtime,
+you continue it and it gets executed.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/133-2
+00:15:23.536 --> 00:15:27.546
+<v Jyotish Sonowal>It will give you a link on the of where
+to find on the product.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/133-3
+00:15:27.546 --> 00:15:31.994
+<v Jyotish Sonowal>And if you decide to change the, you know,
+select a different runtime,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/133-4
+00:15:31.994 --> 00:15:36.316
+<v Jyotish Sonowal>you can give the options on the chat
+itself and user can select and.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/134-0
+00:15:36.436 --> 00:15:36.956
+<v Jyotish Sonowal>deployed.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/135-0
+00:15:38.436 --> 00:15:42.354
+<v Jyotish Sonowal>So this is the flow that we have right
+now. I think there are a lot of,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/135-1
+00:15:42.354 --> 00:15:46.435
+<v Jyotish Sonowal>maybe there are a lot of other complex
+use cases that we have not covered,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/135-2
+00:15:46.435 --> 00:15:50.026
+<v Jyotish Sonowal>but at a very happy path,
+I think this is what we wanted to share</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/136-0
+00:15:49.876 --> 00:15:54.210
+<v Thamizharasu Soundrapandian>So what is this action shown at the
+bottom? Create new flow service.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/135-3
+00:15:50.026 --> 00:15:50.516
+<v Jyotish Sonowal>with you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/136-1
+00:15:54.210 --> 00:15:56.596
+<v Thamizharasu Soundrapandian>Now this is a new conversation, is it?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/138-0
+00:15:56.436 --> 00:15:59.636
+<v Jyotish Sonowal>Yeah, yeah, you can start a new one, um,
+and yeah, yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/137-0
+00:15:58.116 --> 00:15:59.996
+<v Thamizharasu Soundrapandian>Okay, okay, understood. Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/140-0
+00:16:04.316 --> 00:16:06.116
+<v Jyotish Sonowal>Any questions, comments?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/139-0
+00:16:05.156 --> 00:16:05.476
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/141-0
+00:16:05.556 --> 00:16:06.916
+<v Thamizharasu Soundrapandian>No open for question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/143-0
+00:16:07.716 --> 00:16:13.499
+<v Prasad GSK>So in the business view,
+the agent has to give the business view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/143-1
+00:16:13.499 --> 00:16:16.916
+<v Prasad GSK>Is it typically how that should happen?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/144-0
+00:16:18.916 --> 00:16:22.458
+<v Thamizharasu Soundrapandian>I think Sonal you can explain that
+because you have done that for workflow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/144-1
+00:16:22.458 --> 00:16:22.836
+<v Thamizharasu Soundrapandian>already.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/146-0
+00:16:26.116 --> 00:16:29.449
+<v Sonal Mehta>So,
+business view is equivalent to planner</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/146-1
+00:16:29.449 --> 00:16:33.092
+<v Sonal Mehta>data,
+which we are generating Prasad over here</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/146-2
+00:16:33.092 --> 00:16:37.355
+<v Sonal Mehta>in workflow.
+How it happens is we have steps like step</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/146-3
+00:16:37.355 --> 00:16:41.541
+<v Sonal Mehta>one is your trigger node,
+step 2 is your action node,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/146-4
+00:16:41.541 --> 00:16:44.796
+<v Sonal Mehta>step 3 is loop node, and so on. So, but...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/145-0
+00:16:42.676 --> 00:16:43.236
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/149-0
+00:16:44.916 --> 00:16:48.383
+<v Sonal Mehta>But in flow, the icons, Jyotish,
+what are they?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/147-0
+00:16:47.956 --> 00:16:48.476
+<v Jyotish Sonowal>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/149-1
+00:16:48.383 --> 00:16:52.356
+<v Sonal Mehta>They are the placeholder for icon or are
+we expecting?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/151-0
+00:16:51.756 --> 00:16:56.350
+<v Jyotish Sonowal>Yeah, these are placeholder for icons,
+so that's what I wanted to also like</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/151-1
+00:16:56.350 --> 00:17:00.158
+<v Jyotish Sonowal>discuss, like, you know,
+the business view for a flow service,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/151-2
+00:17:00.158 --> 00:17:03.302
+<v Jyotish Sonowal>because I noticed that in the flow
+service we have,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/151-3
+00:17:03.302 --> 00:17:07.593
+<v Jyotish Sonowal>we I didn't see icons right,
+the the visual representation is a little</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/151-4
+00:17:07.593 --> 00:17:10.676
+<v Jyotish Sonowal>different, so yeah,
+this this I wanted to discuss.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/150-0
+00:17:07.796 --> 00:17:08.476
+<v Sonal Mehta>Correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-0
+00:17:11.556 --> 00:17:16.440
+<v Jyotish Sonowal>Do we have icons that we can use or do we
+have to do this just pure text? Also,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-1
+00:17:16.440 --> 00:17:19.614
+<v Jyotish Sonowal>what do we put in the text? I mean,
+this is, again,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-2
+00:17:19.614 --> 00:17:24.254
+<v Jyotish Sonowal>I picked this directly from Rama's demo.
+So whether we'll be able to have a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-3
+00:17:24.254 --> 00:17:29.260
+<v Jyotish Sonowal>heading, a name of a node and description,
+because there we are not showing error</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-4
+00:17:29.260 --> 00:17:33.716
+<v Jyotish Sonowal>handling and those other details,
+but if that is required, not required,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/152-5
+00:17:33.716 --> 00:17:36.036
+<v Jyotish Sonowal>I think that's all we need to discuss.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/153-0
+00:17:38.676 --> 00:17:42.442
+<v Sonal Mehta>Okay,
+but what is the point is like we in</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/153-1
+00:17:42.442 --> 00:17:48.359
+<v Sonal Mehta>planner, that is a mermaid diagram, right?
+If you have seen that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/153-2
+00:17:48.359 --> 00:17:54.007
+<v Sonal Mehta>So it is also representing the flow going
+from where to where,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/153-3
+00:17:54.007 --> 00:17:56.876
+<v Sonal Mehta>like a loop is happening and if.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/154-0
+00:17:56.956 --> 00:18:04.135
+<v Sonal Mehta>condition is met, then it proceeds to map.
+But if not met, like else part,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/154-1
+00:18:04.135 --> 00:18:10.930
+<v Sonal Mehta>then how we can go back to the previous
+loop and verify the next step.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/154-2
+00:18:10.930 --> 00:18:15.716
+<v Sonal Mehta>Like if you're skipping the execution on
+failure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/155-0
+00:18:15.756 --> 00:18:19.636
+<v Sonal Mehta>or are you continuing the execution on
+failure? So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/156-0
+00:18:19.876 --> 00:18:21.636
+<v Jyotish Sonowal>So, yeah, so that's why.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/157-0
+00:18:20.796 --> 00:18:22.436
+<v Sonal Mehta>It is a graphical structure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-0
+00:18:23.236 --> 00:18:25.774
+<v Jyotish Sonowal>Yeah,
+so I had the same conversation with Tam.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-1
+00:18:25.774 --> 00:18:28.636
+<v Jyotish Sonowal>Like there were two parts.
+If you remember the demo,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-2
+00:18:28.636 --> 00:18:31.552
+<v Jyotish Sonowal>there was a moment diagram and then there
+were steps,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-3
+00:18:31.552 --> 00:18:35.116
+<v Jyotish Sonowal>I think execution steps or something,
+which was a list of things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-4
+00:18:35.116 --> 00:18:39.166
+<v Jyotish Sonowal>So what I've done is I'm assuming the
+list of steps are things that we are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/158-5
+00:18:39.166 --> 00:18:42.676
+<v Jyotish Sonowal>doing. So I've just put that. But again,
+that's a good question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/159-0
+00:18:43.116 --> 00:18:48.717
+<v Jyotish Sonowal>If it, if it is actually a linear process,
+will our user be able will see this and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/159-1
+00:18:48.717 --> 00:18:54.183
+<v Jyotish Sonowal>really be able to visualize what the,
+you know, flow service is gonna look like,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/159-2
+00:18:54.183 --> 00:18:58.502
+<v Jyotish Sonowal>or do we need to add, like,
+if or it will be a non-linear flow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/159-3
+00:18:58.502 --> 00:19:01.876
+<v Jyotish Sonowal>in which case we might have to, like,
+you know...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/160-0
+00:19:02.036 --> 00:19:08.196
+<v Jyotish Sonowal>like make some minor modifications to the
+business view. That's open for discussion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/161-0
+00:19:08.516 --> 00:19:13.738
+<v Sonal Mehta>Yeah, and the same for workflows.
+So today also we are only showing the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/161-1
+00:19:13.738 --> 00:19:18.669
+<v Sonal Mehta>node, like loop, that's it.
+What is happening inside the loop node,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/161-2
+00:19:18.669 --> 00:19:24.180
+<v Sonal Mehta>we are not actually showcasing the
+business or technical business plan data</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/161-3
+00:19:24.180 --> 00:19:27.516
+<v Sonal Mehta>to the user today.
+So we may need to make it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/163-0
+00:19:28.116 --> 00:19:34.054
+<v Sonal Mehta>more graphical rather than linear.
+So maybe we can think on it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/163-1
+00:19:34.054 --> 00:19:39.249
+<v Sonal Mehta>Plus showing icon,
+is it required because these are the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/163-2
+00:19:39.249 --> 00:19:44.073
+<v Sonal Mehta>certain steps.
+So loop and if you have seen in flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/163-3
+00:19:44.073 --> 00:19:48.805
+<v Sonal Mehta>service,
+you won't be getting any icon data there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/163-4
+00:19:48.805 --> 00:19:50.196
+<v Sonal Mehta>For Salesforce.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/162-0
+00:19:49.396 --> 00:19:49.796
+<v Jyotish Sonowal>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/164-0
+00:19:50.276 --> 00:19:55.242
+<v Sonal Mehta>And wherever the application name is
+there, we can bring that icon.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/164-1
+00:19:55.242 --> 00:20:01.156
+<v Sonal Mehta>But what is the utility of showing the
+icon on top of each step? Is it required?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/165-0
+00:20:00.436 --> 00:20:04.763
+<v Jyotish Sonowal>So, it's, yeah,
+so mostly it is to just keep the,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/165-1
+00:20:04.763 --> 00:20:08.916
+<v Jyotish Sonowal>you know,
+designs consistent with the workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-0
+00:20:10.436 --> 00:20:12.880
+<v Jyotish Sonowal>So we don't want to create different
+designs.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-1
+00:20:12.880 --> 00:20:15.324
+<v Jyotish Sonowal>We want to create something which is
+similar.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-2
+00:20:15.324 --> 00:20:19.733
+<v Jyotish Sonowal>If there are icons that we need to create
+for a few, maybe we could consider that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-3
+00:20:19.733 --> 00:20:22.230
+<v Jyotish Sonowal>But what you are recommending, like,
+you know,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-4
+00:20:22.230 --> 00:20:26.479
+<v Jyotish Sonowal>it doesn't show certain details and all.
+And if that requires us to revisit the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-5
+00:20:26.479 --> 00:20:28.976
+<v Jyotish Sonowal>business view,
+then we might have to make that</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/166-6
+00:20:28.976 --> 00:20:30.676
+<v Jyotish Sonowal>consistent for workflow as well.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/167-0
+00:20:31.316 --> 00:20:35.956
+<v Jyotish Sonowal>And again, Thanmayi,
+you can like share your thoughts on this.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/168-0
+00:20:37.076 --> 00:20:40.415
+<v Thamizharasu Soundrapandian>Yeah,
+I'm still processing what Sonal raised</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/168-1
+00:20:40.415 --> 00:20:44.273
+<v Thamizharasu Soundrapandian>earlier, right?
+So this is a linear representation,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/168-2
+00:20:44.273 --> 00:20:48.280
+<v Thamizharasu Soundrapandian>but in real time,
+if we expand this view to represent</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/168-3
+00:20:48.280 --> 00:20:54.068
+<v Thamizharasu Soundrapandian>whatever the data we have to communicate,
+then it will be mostly aligned with</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/168-4
+00:20:54.068 --> 00:20:56.516
+<v Thamizharasu Soundrapandian>technical view. It should not be.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/169-0
+00:20:57.996 --> 00:21:02.286
+<v Thamizharasu Soundrapandian>Right, say, for example, the if condition,
+and there is an else condition,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/169-1
+00:21:02.286 --> 00:21:04.116
+<v Thamizharasu Soundrapandian>and where this else will be fit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/170-0
+00:21:05.636 --> 00:21:11.842
+<v Thamizharasu Soundrapandian>Right? And similarly, the try-catch block,
+are we going to represent those things?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/170-1
+00:21:11.842 --> 00:21:15.281
+<v Thamizharasu Soundrapandian>I don't know.
+And that part we have to think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/170-2
+00:21:15.281 --> 00:21:19.992
+<v Thamizharasu Soundrapandian>And do we really need to show everything
+in the business view?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/170-3
+00:21:19.992 --> 00:21:25.076
+<v Thamizharasu Soundrapandian>That is my other question.
+Because business view at the high level.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/173-0
+00:21:26.396 --> 00:21:30.774
+<v Thamizharasu Soundrapandian>We are going to show, okay,
+how this integration is going to look</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/173-1
+00:21:30.774 --> 00:21:34.356
+<v Thamizharasu Soundrapandian>like at the higher level,
+not at the deep dive level.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/173-2
+00:21:34.356 --> 00:21:37.076
+<v Thamizharasu Soundrapandian>Deep level will be in the technical view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/172-0
+00:21:36.996 --> 00:21:37.476
+<v Jyotish Sonowal>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/174-0
+00:21:39.236 --> 00:21:45.476
+<v Thamizharasu Soundrapandian>Do we even need to show the if condition
+loop and all? That's my part.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/176-0
+00:21:47.316 --> 00:21:51.351
+<v Prasad GSK>No,
+I think as part of the demo what Rama has</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/176-1
+00:21:51.351 --> 00:21:56.088
+<v Prasad GSK>shown, right, there are some steps.
+Step one, step 2,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/176-2
+00:21:56.088 --> 00:22:01.351
+<v Prasad GSK>whatever kind of a thing.
+It's kind of an algorithm, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/176-3
+00:22:01.351 --> 00:22:04.596
+<v Prasad GSK>Can we just show those steps? Can we?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/175-0
+00:22:03.796 --> 00:22:08.196
+<v Jyotish Sonowal>These are those steps.
+I'm just copied those steps. Yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/177-0
+00:22:05.636 --> 00:22:09.633
+<v Prasad GSK>Yeah, yeah, I understand. Correct,
+correct. So, anyway,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/177-1
+00:22:09.633 --> 00:22:12.916
+<v Prasad GSK>because that is going to be sequential,
+so...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/178-0
+00:22:14.036 --> 00:22:14.356
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/180-0
+00:22:15.716 --> 00:22:19.708
+<v Prasad GSK>I'm just thinking, you see,
+otherwise it becomes complicated.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/180-1
+00:22:19.708 --> 00:22:25.051
+<v Prasad GSK>Assume that whatever the steps which are
+shown sequentially are going to come here</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/180-2
+00:22:25.051 --> 00:22:26.596
+<v Prasad GSK>horizontally, that's it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/181-0
+00:22:29.396 --> 00:22:30.876
+<v Prasad GSK>Hey, Rama, please go ahead.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-0
+00:22:34.716 --> 00:22:38.615
+<v Ramanarayanan Balasubramanian>Sorry, I joined a little late.
+The point what I was trying is the reason</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-1
+00:22:38.615 --> 00:22:41.980
+<v Ramanarayanan Balasubramanian>behind showing the if condition,
+all those things are stamped.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-2
+00:22:41.980 --> 00:22:44.597
+<v Ramanarayanan Balasubramanian>Just to give a double confirmation for
+the user,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-3
+00:22:44.597 --> 00:22:47.214
+<v Ramanarayanan Balasubramanian>I have considered those important things,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-4
+00:22:47.214 --> 00:22:50.365
+<v Ramanarayanan Balasubramanian>The person who is doing might be a
+business user, correct?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/182-5
+00:22:50.365 --> 00:22:53.516
+<v Ramanarayanan Balasubramanian>That's the reason we are showing that
+business view there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/184-0
+00:22:53.876 --> 00:22:58.864
+<v Ramanarayanan Balasubramanian>So we have to double confirm him in his
+language where he can understand. Look,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/184-1
+00:22:58.864 --> 00:23:02.293
+<v Ramanarayanan Balasubramanian>I'm going to,
+I will ensure that I will go through all</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/184-2
+00:23:02.293 --> 00:23:06.782
+<v Ramanarayanan Balasubramanian>your records and I will respect your
+conditions, etc. and other things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/184-3
+00:23:06.782 --> 00:23:10.960
+<v Ramanarayanan Balasubramanian>So that is that is the thing.
+And another another thing is map all</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/185-0
+00:23:10.516 --> 00:23:14.554
+<v Thamizharasu Soundrapandian>Just to answer this, Ramu,
+just hold your thoughts.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/184-4
+00:23:10.960 --> 00:23:11.396
+<v Ramanarayanan Balasubramanian>things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/185-1
+00:23:14.554 --> 00:23:18.981
+<v Thamizharasu Soundrapandian>Just to answer your first question,
+our first statement,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/185-2
+00:23:18.981 --> 00:23:24.184
+<v Thamizharasu Soundrapandian>I slightly differ from that,
+meaning the flow service is primarily</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/185-3
+00:23:24.184 --> 00:23:29.076
+<v Thamizharasu Soundrapandian>targeted for the technical user, right,
+not the business user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/186-0
+00:23:29.476 --> 00:23:35.316
+<v Thamizharasu Soundrapandian>But only we are enabling the technical
+user to achieve certain task using agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/187-0
+00:23:36.276 --> 00:23:40.348
+<v Thamizharasu Soundrapandian>So in that case, now my thought is, okay,
+for workflow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/187-1
+00:23:40.348 --> 00:23:46.020
+<v Thamizharasu Soundrapandian>we are representing the whole intent at
+the high level with certain boxes and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/187-2
+00:23:46.020 --> 00:23:49.874
+<v Thamizharasu Soundrapandian>some information.
+And if he wanted to see a detailed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/187-3
+00:23:49.874 --> 00:23:53.655
+<v Thamizharasu Soundrapandian>information,
+he has to go to the technical view and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/187-4
+00:23:53.655 --> 00:23:56.636
+<v Thamizharasu Soundrapandian>there we are showing the actual workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/188-0
+00:23:57.756 --> 00:23:58.276
+<v Thamizharasu Soundrapandian>Here.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/189-0
+00:23:59.316 --> 00:24:03.956
+<v Thamizharasu Soundrapandian>This primary persona is none other than...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/190-0
+00:24:05.396 --> 00:24:10.982
+<v Thamizharasu Soundrapandian>the technical user, the developer.
+And if we render a business view,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/190-1
+00:24:10.982 --> 00:24:16.001
+<v Thamizharasu Soundrapandian>my recommendation is it should be high
+level, because anyhow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/190-2
+00:24:16.001 --> 00:24:22.316
+<v Thamizharasu Soundrapandian>if he wanted to see the detailed view,
+there is a technical view next to this</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/190-3
+00:24:22.316 --> 00:24:25.716
+<v Thamizharasu Soundrapandian>business view, right? And he can see that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/191-0
+00:24:26.036 --> 00:24:30.516
+<v Thamizharasu Soundrapandian>But if you represent the business view
+also, then it should be meaningful.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/192-0
+00:24:31.876 --> 00:24:34.356
+<v Thamizharasu Soundrapandian>So when you say if...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/193-0
+00:24:35.236 --> 00:24:36.516
+<v Thamizharasu Soundrapandian>and without the else.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/194-0
+00:24:37.396 --> 00:24:42.821
+<v Thamizharasu Soundrapandian>Then it will confuse where the else will
+fit here if I have a flow with the else</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/194-1
+00:24:42.821 --> 00:24:43.156
+<v Thamizharasu Soundrapandian>also.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-0
+00:24:44.356 --> 00:24:47.723
+<v Ramanarayanan Balasubramanian>No, Dan, I get it, Dan.
+That's the reason we have been spending</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-1
+00:24:47.723 --> 00:24:50.196
+<v Ramanarayanan Balasubramanian>so much time to make it make all those
+things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-2
+00:24:50.196 --> 00:24:54.141
+<v Ramanarayanan Balasubramanian>And that is the reason we added that
+error handling, try catch, et cetera,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-3
+00:24:54.141 --> 00:24:58.245
+<v Ramanarayanan Balasubramanian>the understanding the technical audience,
+et cetera. To answer your question,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/195-0
+00:24:55.316 --> 00:24:55.516
+<v Thamizharasu Soundrapandian>Uh-huh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/196-0
+00:24:57.236 --> 00:24:57.876
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-4
+00:24:58.245 --> 00:25:01.085
+<v Ramanarayanan Balasubramanian>that is the reason we added so many
+things into this.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/197-5
+00:25:01.085 --> 00:25:02.716
+<v Ramanarayanan Balasubramanian>But it is when we say business.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-0
+00:25:02.836 --> 00:25:06.556
+<v Ramanarayanan Balasubramanian>I don't know whether the business view is
+the right acronym for this case or</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-1
+00:25:06.556 --> 00:25:10.518
+<v Ramanarayanan Balasubramanian>anything. It is basically at a high level.
+I'm showing you the flow chart, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/198-0
+00:25:09.716 --> 00:25:10.276
+<v Thamizharasu Soundrapandian>Correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-2
+00:25:10.518 --> 00:25:13.755
+<v Ramanarayanan Balasubramanian>And that's the reason we have made all
+this. So it's a flow chart.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-3
+00:25:13.755 --> 00:25:17.282
+<v Ramanarayanan Balasubramanian>The reason behind that is, see,
+what is that additional value we have to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-4
+00:25:17.282 --> 00:25:20.229
+<v Ramanarayanan Balasubramanian>bring for the persona?
+That persona is already smart, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/199-5
+00:25:20.229 --> 00:25:22.596
+<v Ramanarayanan Balasubramanian>And this is Jyotish,
+I want to discuss with you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/201-0
+00:25:23.316 --> 00:25:27.597
+<v Ramanarayanan Balasubramanian>There are two ways a developer will,
+sorry to divulge stamp, but I want to,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/201-1
+00:25:27.597 --> 00:25:32.328
+<v Ramanarayanan Balasubramanian>this is the right topic that Sangam. See,
+there are two ways a developer will write</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/200-0
+00:25:30.436 --> 00:25:30.596
+<v Thamizharasu Soundrapandian>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/201-2
+00:25:32.328 --> 00:25:36.496
+<v Ramanarayanan Balasubramanian>a code, right? One is following the SDLC,
+which is basically I gather the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/201-3
+00:25:36.496 --> 00:25:39.030
+<v Ramanarayanan Balasubramanian>requirements,
+I understand the requirements,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/201-4
+00:25:39.030 --> 00:25:42.916
+<v Ramanarayanan Balasubramanian>I go from there and I do that, right?
+But this persona when he sees.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-0
+00:25:43.156 --> 00:25:45.599
+<v Ramanarayanan Balasubramanian>he would expect, oh,
+first show me what you have.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-1
+00:25:45.599 --> 00:25:48.188
+<v Ramanarayanan Balasubramanian>Show me the code, right?
+Something that is, that is,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-2
+00:25:48.188 --> 00:25:50.778
+<v Ramanarayanan Balasubramanian>there is a different set of developers
+there, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/202-0
+00:25:50.756 --> 00:25:50.956
+<v Thamizharasu Soundrapandian>No.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-3
+00:25:50.778 --> 00:25:54.344
+<v Ramanarayanan Balasubramanian>Where they'll be immediately,
+they would love to see what is the output.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-4
+00:25:54.344 --> 00:25:57.129
+<v Ramanarayanan Balasubramanian>And from there they will say, hey,
+can you correct this?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-5
+00:25:57.129 --> 00:26:00.158
+<v Ramanarayanan Balasubramanian>Can you correct this?
+Can you correct this? So there are two,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/203-6
+00:26:00.158 --> 00:26:02.356
+<v Ramanarayanan Balasubramanian>two kind of persona experience itself
+there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-0
+00:26:02.756 --> 00:26:05.086
+<v Ramanarayanan Balasubramanian>Right.
+That is something I don't know whether</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-1
+00:26:05.086 --> 00:26:08.632
+<v Ramanarayanan Balasubramanian>you already thought about it.
+That is also I was mulling around today</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-2
+00:26:08.632 --> 00:26:12.228
+<v Ramanarayanan Balasubramanian>to see if there is something we can do or
+anything like that. But Tam,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-3
+00:26:12.228 --> 00:26:14.912
+<v Ramanarayanan Balasubramanian>I agree to you.
+But the thing here is at a very high</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-4
+00:26:14.912 --> 00:26:17.343
+<v Ramanarayanan Balasubramanian>level,
+we so else and all will show them the we</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/204-5
+00:26:17.343 --> 00:26:19.116
+<v Ramanarayanan Balasubramanian>would have asked the questions and.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/205-0
+00:26:17.876 --> 00:26:23.564
+<v Thamizharasu Soundrapandian>So Rama, one question to you,
+since you did some research on this,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/205-1
+00:26:23.564 --> 00:26:28.317
+<v Thamizharasu Soundrapandian>in this diagram,
+we are showing something on the second</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/205-2
+00:26:28.317 --> 00:26:32.392
+<v Thamizharasu Soundrapandian>text, right? First icon,
+then the primary text,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/205-3
+00:26:32.392 --> 00:26:36.636
+<v Thamizharasu Soundrapandian>and the secondary text.
+So will you be able to...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/206-0
+00:26:37.156 --> 00:26:42.220
+<v Thamizharasu Soundrapandian>get those intelligence also every time.
+If there is a if else,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/206-1
+00:26:42.220 --> 00:26:46.881
+<v Thamizharasu Soundrapandian>then try catch and all those things.
+If that is possible,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/206-2
+00:26:46.881 --> 00:26:52.989
+<v Thamizharasu Soundrapandian>then I recommend to have the else
+condition can be mentioned as a secondary</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/206-3
+00:26:52.989 --> 00:26:54.436
+<v Thamizharasu Soundrapandian>text below the if.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/207-0
+00:26:55.956 --> 00:26:57.956
+<v Ramanarayanan Balasubramanian>Yeah, yeah, we can do that.
+We can do that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/209-0
+00:26:58.436 --> 00:27:02.436
+<v Thamizharasu Soundrapandian>Yeah, then then I'm good.
+This will give a clear picture for me.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/208-0
+00:27:01.916 --> 00:27:02.036
+<v Ramanarayanan Balasubramanian>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-0
+00:27:03.036 --> 00:27:06.152
+<v Ramanarayanan Balasubramanian>But we didn't think about icon, right?
+Like Prasad was saying,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-1
+00:27:06.152 --> 00:27:09.862
+<v Ramanarayanan Balasubramanian>the thought process for us are step by
+step, like how a flow works, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-2
+00:27:09.862 --> 00:27:12.384
+<v Ramanarayanan Balasubramanian>Flow doesn't work horizontal,
+flow works vertical.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-3
+00:27:12.384 --> 00:27:15.698
+<v Ramanarayanan Balasubramanian>So that is where we thought.
+Now when you are bringing this into a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-4
+00:27:15.698 --> 00:27:18.913
+<v Ramanarayanan Balasubramanian>horizontal environment,
+that's where the user experience we have</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-5
+00:27:18.913 --> 00:27:22.870
+<v Ramanarayanan Balasubramanian>defined. And the second user experience,
+which I definitely want to think about</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/210-6
+00:27:22.870 --> 00:27:24.156
+<v Ramanarayanan Balasubramanian>and hear your thoughts is.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-0
+00:27:24.596 --> 00:27:29.095
+<v Ramanarayanan Balasubramanian>How would a developer will do that, right?
+Because they will jump and try to see an</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-1
+00:27:29.095 --> 00:27:32.951
+<v Ramanarayanan Balasubramanian>output and from there they want to edit
+so that they feel like they are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-2
+00:27:32.951 --> 00:27:36.003
+<v Ramanarayanan Balasubramanian>contributing more into that, right?
+That is one thought.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-3
+00:27:36.003 --> 00:27:39.805
+<v Ramanarayanan Balasubramanian>The second thought is, hey, you know what?
+Technically you are strong.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-4
+00:27:39.805 --> 00:27:43.179
+<v Ramanarayanan Balasubramanian>I'm not going to bother you there,
+but business analysis wise,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/211-5
+00:27:43.179 --> 00:27:44.036
+<v Ramanarayanan Balasubramanian>I will help you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/212-0
+00:27:44.276 --> 00:27:49.002
+<v Ramanarayanan Balasubramanian>That is the reason the questioning still
+we are making it strong and we are asking</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/212-1
+00:27:49.002 --> 00:27:53.045
+<v Ramanarayanan Balasubramanian>so many relevant questions as applicable,
+et cetera, and other things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/212-2
+00:27:53.045 --> 00:27:57.430
+<v Ramanarayanan Balasubramanian>So what is that persona level experience
+is something I would request if you</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/212-3
+00:27:57.430 --> 00:28:00.334
+<v Ramanarayanan Balasubramanian>already thought about it, fine.
+That is one thing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/212-4
+00:28:00.334 --> 00:28:03.636
+<v Ramanarayanan Balasubramanian>I just want you to please think on it,
+mull on it, and...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/214-0
+00:28:04.836 --> 00:28:07.818
+<v Ramanarayanan Balasubramanian>You have a lot of people,
+developers there, just check them that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/214-1
+00:28:07.818 --> 00:28:08.676
+<v Ramanarayanan Balasubramanian>Another thing is...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/213-0
+00:28:08.116 --> 00:28:08.476
+<v Prasad GSK>Sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/215-0
+00:28:10.916 --> 00:28:12.196
+<v Prasad GSK>Yeah, good, good, good.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/217-0
+00:28:13.796 --> 00:28:17.223
+<v Ramanarayanan Balasubramanian>Yeah, may I proceed? Yeah,
+another thing is how the approval</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/216-0
+00:28:15.236 --> 00:28:16.676
+<v Prasad GSK>Yeah, yeah, yeah, yeah, please.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/217-1
+00:28:17.223 --> 00:28:20.480
+<v Ramanarayanan Balasubramanian>happened, Jyotish,
+because we have to show this and do an</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/217-2
+00:28:20.480 --> 00:28:23.401
+<v Ramanarayanan Balasubramanian>approval, right?
+Then only the technical view goes,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/217-3
+00:28:23.401 --> 00:28:27.783
+<v Ramanarayanan Balasubramanian>or we just we just continue from there,
+because this is the responsible part,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/217-4
+00:28:27.783 --> 00:28:29.636
+<v Ramanarayanan Balasubramanian>right? We just want to make sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/218-0
+00:28:30.036 --> 00:28:34.036
+<v Thamizharasu Soundrapandian>I think that step happened a little
+earlier, I believe. We are...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/219-0
+00:28:33.476 --> 00:28:35.316
+<v Ramanarayanan Balasubramanian>Oh, okay, okay, okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/220-0
+00:28:35.076 --> 00:28:36.676
+<v Thamizharasu Soundrapandian>Okay, so, so now...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/221-0
+00:28:35.796 --> 00:28:39.033
+<v Prasad GSK>That was my question.
+That was my question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/221-1
+00:28:39.033 --> 00:28:44.036
+<v Prasad GSK>Are we taking that approval in the
+previous? I don't remember that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/222-0
+00:28:43.036 --> 00:28:46.076
+<v Ramanarayanan Balasubramanian>No,
+but before showing the before showing the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/223-0
+00:28:43.076 --> 00:28:46.508
+<v Thamizharasu Soundrapandian>Yeah, yeah, so, so,
+so can you go go to the next screen? No,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/222-1
+00:28:46.076 --> 00:28:47.596
+<v Ramanarayanan Balasubramanian>plan, you know, before.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/223-1
+00:28:46.508 --> 00:28:48.196
+<v Thamizharasu Soundrapandian>can you go to the next screen?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/224-0
+00:28:49.156 --> 00:28:50.196
+<v Prasad GSK>A previous.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/225-0
+00:28:49.316 --> 00:28:51.236
+<v Jyotish Sonowal>Before or after previous?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/226-0
+00:28:50.996 --> 00:28:53.316
+<v Prasad GSK>Previous, previous screen.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/227-0
+00:28:52.636 --> 00:28:54.836
+<v Thamizharasu Soundrapandian>No,
+here we are selecting the project next.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/228-0
+00:28:54.356 --> 00:28:55.556
+<v Prasad GSK>Only the Rajat.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/229-0
+00:28:55.876 --> 00:28:56.356
+<v Thamizharasu Soundrapandian>Next.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/230-0
+00:28:57.516 --> 00:29:01.841
+<v Thamizharasu Soundrapandian>This is a preview. Next,
+continue with the validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/230-1
+00:29:01.841 --> 00:29:07.818
+<v Thamizharasu Soundrapandian>After the validation, then our workflow,
+we used to have one action, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/230-2
+00:29:07.818 --> 00:29:09.076
+<v Thamizharasu Soundrapandian>Create workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/231-0
+00:29:10.676 --> 00:29:11.556
+<v Thamizharasu Soundrapandian>That is that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/232-0
+00:29:11.156 --> 00:29:12.356
+<v Jyotish Sonowal>Yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/234-0
+00:29:14.036 --> 00:29:16.756
+<v Thamizharasu Soundrapandian>Ah, so, so, so after I click.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/233-0
+00:29:14.276 --> 00:29:15.236
+<v Jyotish Sonowal>Grill for service.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/235-0
+00:29:17.876 --> 00:29:20.581
+<v Thamizharasu Soundrapandian>Then only this will be created.
+By this time,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/235-1
+00:29:20.581 --> 00:29:22.756
+<v Thamizharasu Soundrapandian>I will have my technical views ready.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/236-0
+00:29:23.396 --> 00:29:27.238
+<v Ramanarayanan Balasubramanian>No, no, I won't have that time,
+because first I want to make sure user</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/236-1
+00:29:27.238 --> 00:29:31.080
+<v Ramanarayanan Balasubramanian>approves the plan before I do the heavy
+lifting of taking the grammar,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/236-2
+00:29:31.080 --> 00:29:34.110
+<v Ramanarayanan Balasubramanian>mulling on that grammar,
+doing all those things, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/236-3
+00:29:34.110 --> 00:29:38.060
+<v Ramanarayanan Balasubramanian>Because the technical view is basically
+an iframe of example I'm saying,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/236-4
+00:29:38.060 --> 00:29:41.956
+<v Ramanarayanan Balasubramanian>iframe of the actual flow, correct?
+I don't want to spend time on that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/237-0
+00:29:42.196 --> 00:29:46.094
+<v Ramanarayanan Balasubramanian>Unless I know whether I have understood
+the problem statement correctly or not,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/237-1
+00:29:46.094 --> 00:29:47.556
+<v Ramanarayanan Balasubramanian>so can you please go, Jyotish?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/238-0
+00:29:48.836 --> 00:29:49.476
+<v Ramanarayanan Balasubramanian>I'm back.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/239-0
+00:29:48.996 --> 00:29:50.596
+<v Jyotish Sonowal>I'll okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/241-0
+00:29:50.836 --> 00:29:54.674
+<v Ramanarayanan Balasubramanian>You have that recording right?
+Where here we have to say, hey,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/241-1
+00:29:54.674 --> 00:29:58.207
+<v Ramanarayanan Balasubramanian>this is what the plan could you approve
+or modify, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/241-2
+00:29:58.207 --> 00:30:01.983
+<v Ramanarayanan Balasubramanian>So this we give the user the liberty
+rather than we spending,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/241-3
+00:30:01.983 --> 00:30:06.064
+<v Ramanarayanan Balasubramanian>we spending up on another agent to do
+that, etc. and other things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/241-4
+00:30:06.064 --> 00:30:08.196
+<v Ramanarayanan Balasubramanian>So please think about it. And then.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/240-0
+00:30:07.476 --> 00:30:09.396
+<v Jyotish Sonowal>Rama one point.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/245-0
+00:30:07.556 --> 00:30:12.075
+<v Thamizharasu Soundrapandian>No, Rama, one question.
+If I'm not okay with this proposed plan,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/245-1
+00:30:12.075 --> 00:30:15.621
+<v Thamizharasu Soundrapandian>the business view,
+then I can still modify using a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/242-0
+00:30:12.676 --> 00:30:13.476
+<v Ramanarayanan Balasubramanian>You can modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/245-2
+00:30:15.621 --> 00:30:19.236
+<v Thamizharasu Soundrapandian>conversation.
+I don't need anything from the agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/243-0
+00:30:17.636 --> 00:30:19.236
+<v Ramanarayanan Balasubramanian>Yes, yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/245-3
+00:30:19.236 --> 00:30:23.060
+<v Thamizharasu Soundrapandian>I'll just tell, okay? And once this, yeah,
+I saw that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/244-0
+00:30:20.316 --> 00:30:23.350
+<v Ramanarayanan Balasubramanian>In the demo I showed you, right?
+In the demo I showed you,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/245-4
+00:30:23.060 --> 00:30:27.996
+<v Thamizharasu Soundrapandian>What I'm saying is after this view is
+generated, I'll go through that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/244-1
+00:30:23.350 --> 00:30:24.276
+<v Ramanarayanan Balasubramanian>that modification.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/246-0
+00:30:28.116 --> 00:30:31.325
+<v Thamizharasu Soundrapandian>and I'm now fine,
+then I'll do a validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/246-1
+00:30:31.325 --> 00:30:36.673
+<v Thamizharasu Soundrapandian>Validation will do the account and
+everything is properly selected and set</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/246-2
+00:30:36.673 --> 00:30:41.879
+<v Thamizharasu Soundrapandian>for this thing. Once everything is set,
+then this create flow will come.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/246-3
+00:30:41.879 --> 00:30:47.156
+<v Thamizharasu Soundrapandian>By the time this flow is ready and I can
+see the technical view and then.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/247-0
+00:30:47.196 --> 00:30:53.266
+<v Thamizharasu Soundrapandian>When I click create view, create flow,
+then this flow will be actually created.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/247-1
+00:30:53.266 --> 00:30:56.756
+<v Thamizharasu Soundrapandian>Until then,
+it's all in memory manipulations.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/248-0
+00:30:55.996 --> 00:30:59.396
+<v Ramanarayanan Balasubramanian>No, what is what is technical view here?
+It's the actual flow, correct?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/250-0
+00:30:59.876 --> 00:31:05.716
+<v Thamizharasu Soundrapandian>Not the actual flow. Flow is not created.
+It is a representation of your intent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/252-0
+00:31:06.596 --> 00:31:09.876
+<v Ramanarayanan Balasubramanian>How is it different from a business view
+then? Because what I have...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/251-0
+00:31:07.076 --> 00:31:07.316
+<v Thamizharasu Soundrapandian>The.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/255-0
+00:31:09.156 --> 00:31:13.999
+<v Thamizharasu Soundrapandian>No business, no,
+this is a full grammatical representation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/255-1
+00:31:13.999 --> 00:31:20.053
+<v Thamizharasu Soundrapandian>Business view at the high level,
+some dummy boxes. OK, just to illustrate.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/255-2
+00:31:20.053 --> 00:31:26.348
+<v Thamizharasu Soundrapandian>OK, this is what we are going to do,
+but this one you can see the mapping and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/253-0
+00:31:26.316 --> 00:31:26.516
+<v Prasad GSK>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/255-3
+00:31:26.348 --> 00:31:27.236
+<v Thamizharasu Soundrapandian>everything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/257-0
+00:31:27.556 --> 00:31:30.598
+<v Thamizharasu Soundrapandian>Okay,
+I have set all these things just to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/254-0
+00:31:27.796 --> 00:31:28.116
+<v Prasad GSK>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/257-1
+00:31:30.598 --> 00:31:34.436
+<v Thamizharasu Soundrapandian>verify. Once I'm done,
+then I can click create flow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/256-0
+00:31:32.916 --> 00:31:33.396
+<v Prasad GSK>So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-0
+00:31:33.236 --> 00:31:35.665
+<v Ramanarayanan Balasubramanian>So Jyotish,
+can you update it as an example for the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-1
+00:31:35.665 --> 00:31:38.934
+<v Ramanarayanan Balasubramanian>same thing, this technical view,
+the business view, whatever we have,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-2
+00:31:38.934 --> 00:31:42.671
+<v Ramanarayanan Balasubramanian>can you convert that into a technical
+view so at least I have an understanding?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-3
+00:31:42.671 --> 00:31:44.866
+<v Ramanarayanan Balasubramanian>And Sonal,
+today what I heard is for workflow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-4
+00:31:44.866 --> 00:31:48.509
+<v Ramanarayanan Balasubramanian>you are just taking the actual workflow
+and showing in technical view, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/258-5
+00:31:48.509 --> 00:31:49.396
+<v Ramanarayanan Balasubramanian>Is it not the case?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-0
+00:31:50.676 --> 00:31:53.232
+<v Sonal Mehta>Yes,
+so in technical view is the actual</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-1
+00:31:53.232 --> 00:31:57.257
+<v Sonal Mehta>workflow. Basically,
+we could put a workflow which is in draft</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/259-0
+00:31:54.436 --> 00:31:54.996
+<v Ramanarayanan Balasubramanian>Correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-2
+00:31:57.257 --> 00:32:00.388
+<v Sonal Mehta>state.
+So there are certain states which we have</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/260-0
+00:31:58.116 --> 00:31:58.476
+<v Thamizharasu Soundrapandian>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-3
+00:32:00.388 --> 00:32:03.519
+<v Sonal Mehta>given.
+It's like draft state and once user says,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-4
+00:32:03.519 --> 00:32:06.906
+<v Sonal Mehta>okay, everything is good,
+you can create a workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/261-5
+00:32:06.906 --> 00:32:10.356
+<v Sonal Mehta>Then only that workflow will be converted
+from draft.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/262-0
+00:32:10.436 --> 00:32:13.676
+<v Sonal Mehta>To non-drop,
+like it would be pushed to the.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/263-0
+00:32:11.556 --> 00:32:15.593
+<v Ramanarayanan Balasubramanian>No, understood, understood, Sonal,
+but there is there is a heavy lifting</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/263-1
+00:32:15.593 --> 00:32:19.740
+<v Ramanarayanan Balasubramanian>which is happening where the entire
+process we are doing without even user</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/263-2
+00:32:19.740 --> 00:32:24.219
+<v Ramanarayanan Balasubramanian>confirming that they are okay with it,
+correct? Even if it is in the draft mode,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/263-3
+00:32:24.219 --> 00:32:27.980
+<v Ramanarayanan Balasubramanian>it is in the draft mode. So my point is,
+we show the business view,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/263-4
+00:32:27.980 --> 00:32:31.076
+<v Ramanarayanan Balasubramanian>ask for users approval,
+and then do the technical view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-0
+00:32:31.556 --> 00:32:34.985
+<v Sonal Mehta>Actually,
+we had this discussion with Keesa when we</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-1
+00:32:34.985 --> 00:32:38.083
+<v Sonal Mehta>had the initial design right.
+So what we said,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/264-0
+00:32:35.236 --> 00:32:35.796
+<v Ramanarayanan Balasubramanian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/266-0
+00:32:37.476 --> 00:32:38.196
+<v Jyotish Sonowal>So, what?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-2
+00:32:38.083 --> 00:32:42.633
+<v Sonal Mehta>business view would get generated.
+Technical will only generate once</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-3
+00:32:42.633 --> 00:32:45.797
+<v Sonal Mehta>everything is, you know,
+confirmed by the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/267-0
+00:32:45.636 --> 00:32:46.116
+<v Ramanarayanan Balasubramanian>Correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-4
+00:32:45.797 --> 00:32:50.083
+<v Sonal Mehta>But then the point was,
+we are showing business view. It's very,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/268-5
+00:32:50.083 --> 00:32:50.676
+<v Sonal Mehta>you know.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/270-0
+00:32:50.876 --> 00:32:55.531
+<v Sonal Mehta>A high level as Sam is pointing out,
+like it should be very high level,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/270-1
+00:32:55.531 --> 00:32:58.375
+<v Sonal Mehta>it should not give you more technical
+data.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/270-2
+00:32:58.375 --> 00:33:02.383
+<v Sonal Mehta>Technical view is the actual
+representation of your artifact,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/270-3
+00:33:02.383 --> 00:33:06.585
+<v Sonal Mehta>like the technicality,
+the mapping and all. So for flow service,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/270-4
+00:33:06.585 --> 00:33:10.916
+<v Sonal Mehta>I feel anyway that business view which we
+are generating for flow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/271-0
+00:33:10.956 --> 00:33:16.169
+<v Sonal Mehta>Pro service, it's a plan, it's a step of,
+I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/271-1
+00:33:16.169 --> 00:33:24.719
+<v Sonal Mehta>the algorithm data technical view we can
+generate or not that I will that I think</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/271-2
+00:33:24.719 --> 00:33:30.036
+<v Sonal Mehta>Ashok can answer, but Jyotish before that,
+like...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/272-0
+00:33:30.196 --> 00:33:35.174
+<v Sonal Mehta>Before we create a workflow, right,
+there is a state where we are not</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/272-1
+00:33:35.174 --> 00:33:39.725
+<v Sonal Mehta>generating a technical view.
+It is just a business view is only</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/274-0
+00:33:39.556 --> 00:33:44.676
+<v Jyotish Sonowal>Yes, which is even here,
+so after validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/272-2
+00:33:39.725 --> 00:33:40.436
+<v Sonal Mehta>generated.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/273-0
+00:33:41.316 --> 00:33:41.876
+<v Sonal Mehta>Correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/276-0
+00:33:45.636 --> 00:33:49.735
+<v Jyotish Sonowal>After validation and if you've configured
+everything that is when you generate a</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/276-1
+00:33:49.735 --> 00:33:51.556
+<v Jyotish Sonowal>technical view. Now I had a related.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/278-0
+00:33:50.756 --> 00:33:53.916
+<v Ramanarayanan Balasubramanian>Sorry, Jyotish, just to just to be clear,
+when you say validation,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/277-0
+00:33:52.916 --> 00:33:53.156
+<v Jyotish Sonowal>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/278-1
+00:33:53.916 --> 00:33:55.236
+<v Ramanarayanan Balasubramanian>what is the validation here?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/279-0
+00:33:56.196 --> 00:33:59.130
+<v Ramanarayanan Balasubramanian>Because it is not clear.
+You are saying you are checking for</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/279-1
+00:33:59.130 --> 00:34:02.065
+<v Ramanarayanan Balasubramanian>account or anything or you as a user I'm
+approving the plan.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/279-2
+00:34:02.065 --> 00:34:03.796
+<v Ramanarayanan Balasubramanian>What do you mean by validation here?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/281-0
+00:34:03.316 --> 00:34:06.248
+<v Jyotish Sonowal>You're not approving a plan. Yeah,
+you're looking for accounts,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/280-0
+00:34:05.596 --> 00:34:05.876
+<v Ramanarayanan Balasubramanian>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/281-1
+00:34:06.248 --> 00:34:08.996
+<v Jyotish Sonowal>you're looking for like missing lookups
+and all and then...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-0
+00:34:09.636 --> 00:34:11.988
+<v Ramanarayanan Balasubramanian>Those are all those are all internal,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-1
+00:34:11.988 --> 00:34:15.228
+<v Ramanarayanan Balasubramanian>Those are all we don't need to get an
+approval from the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-2
+00:34:15.228 --> 00:34:18.782
+<v Ramanarayanan Balasubramanian>Those are a mandatory steps.
+See today what is happening here is if</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-3
+00:34:18.782 --> 00:34:22.127
+<v Ramanarayanan Balasubramanian>you if you see the video there,
+it starts with integration pre,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-4
+00:34:22.127 --> 00:34:25.838
+<v Ramanarayanan Balasubramanian>I forgot that, precondition check.
+So there in the precondition check,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/283-5
+00:34:25.838 --> 00:34:27.876
+<v Ramanarayanan Balasubramanian>we are validating all these things. So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/282-0
+00:34:27.716 --> 00:34:28.436
+<v Jyotish Sonowal>So, this...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/285-0
+00:34:27.956 --> 00:34:33.236
+<v Ramanarayanan Balasubramanian>Those are all those are all not this.
+If you see the video there or I can show.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/284-0
+00:34:32.956 --> 00:34:33.076
+<v Jyotish Sonowal>Eng.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/286-0
+00:34:33.956 --> 00:34:36.996
+<v Prasad GSK>This is questioning.
+This is questioning after.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/288-0
+00:34:35.436 --> 00:34:39.556
+<v Ramanarayanan Balasubramanian>No, no, no, before questioning itself,
+we have a validation step.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/287-0
+00:34:38.596 --> 00:34:39.076
+<v Prasad GSK>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/289-0
+00:34:40.636 --> 00:34:41.636
+<v Ramanarayanan Balasubramanian>Let me quickly show you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/290-0
+00:34:40.836 --> 00:34:42.916
+<v Prasad GSK>What validation?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/291-0
+00:34:43.316 --> 00:34:45.236
+<v Ramanarayanan Balasubramanian>I will show you, I will show you,
+I will show you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/294-0
+00:34:47.276 --> 00:34:49.396
+<v Prasad GSK>In the winter, Pradeep,
+you have a question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/293-0
+00:34:48.036 --> 00:34:48.516
+<v Ramanarayanan Balasubramanian>Arfath.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-0
+00:34:49.956 --> 00:34:52.688
+<v Ramanarayanan Balasubramanian>Sorry, you are seeing my screen? So here,
+I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/295-0
+00:34:52.196 --> 00:34:53.156
+<v Prasad GSK>Oh, yes, yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-1
+00:34:52.688 --> 00:34:56.185
+<v Ramanarayanan Balasubramanian>we are happy to modify however we want to.
+Just a thought. See,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-2
+00:34:56.185 --> 00:35:00.065
+<v Ramanarayanan Balasubramanian>what happens is here we have the
+precondition check where we check for</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-3
+00:35:00.065 --> 00:35:03.562
+<v Ramanarayanan Balasubramanian>whether that account is there.
+All those information are there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-4
+00:35:03.562 --> 00:35:07.933
+<v Ramanarayanan Balasubramanian>I know we haven't integrated the USC,
+so we have some dummy account as a on the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/296-5
+00:35:07.933 --> 00:35:10.556
+<v Ramanarayanan Balasubramanian>on the local mock mock API and we are
+doing it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/297-0
+00:35:10.836 --> 00:35:16.026
+<v Ramanarayanan Balasubramanian>So we do that check prior itself and
+everything pass only then we start asking</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/297-1
+00:35:16.026 --> 00:35:21.346
+<v Ramanarayanan Balasubramanian>the questions. So why can't it be there?
+And we just ask the user to approve the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/297-2
+00:35:21.346 --> 00:35:25.156
+<v Ramanarayanan Balasubramanian>plan. So here if we are,
+what we are asking is like this.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/298-0
+00:35:27.436 --> 00:35:28.196
+<v Ramanarayanan Balasubramanian>Hey, I...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/299-0
+00:35:27.636 --> 00:35:30.676
+<v Prasad GSK>But that is still conversational, OK?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/300-0
+00:35:30.476 --> 00:35:32.438
+<v Ramanarayanan Balasubramanian>No, no, only one place we are asking,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/300-1
+00:35:32.438 --> 00:35:34.836
+<v Ramanarayanan Balasubramanian>And we are very clearly saying what are
+you approving?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-0
+00:35:36.036 --> 00:35:39.600
+<v Ramanarayanan Balasubramanian>When you say validation,
+I don't understand what is the validation</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/301-0
+00:35:36.596 --> 00:35:37.156
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/302-0
+00:35:38.436 --> 00:35:38.916
+<v Thamizharasu Soundrapandian>So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-1
+00:35:39.600 --> 00:35:42.153
+<v Ramanarayanan Balasubramanian>there.
+Am I validating the plan or like Jyotish</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-2
+00:35:42.153 --> 00:35:44.387
+<v Ramanarayanan Balasubramanian>said,
+I'm validating the account or is it</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-3
+00:35:44.387 --> 00:35:47.206
+<v Ramanarayanan Balasubramanian>everything?
+So here I should not ask the user about,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-4
+00:35:47.206 --> 00:35:49.546
+<v Ramanarayanan Balasubramanian>it's a mandate.
+I have to validate account.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-5
+00:35:49.546 --> 00:35:53.801
+<v Ramanarayanan Balasubramanian>I have to validate all those things.
+I should not even ask the user to do that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/303-6
+00:35:53.801 --> 00:35:55.716
+<v Ramanarayanan Balasubramanian>What I have to use, ask the user is.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/305-0
+00:35:55.956 --> 00:35:59.056
+<v Ramanarayanan Balasubramanian>Are you approving it or not? Right?
+So that is the thing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/305-1
+00:35:59.056 --> 00:36:03.118
+<v Ramanarayanan Balasubramanian>And here it also tells the next step.
+So that I will be very clear about my</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/305-2
+00:36:03.118 --> 00:36:07.233
+<v Ramanarayanan Balasubramanian>next step. Look, once you approve,
+these are the next steps I'm going to do.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/305-3
+00:36:07.233 --> 00:36:08.836
+<v Ramanarayanan Balasubramanian>So a user is very clear about.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/304-0
+00:36:07.996 --> 00:36:08.516
+<v Thamizharasu Soundrapandian>Six.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/306-0
+00:36:09.316 --> 00:36:14.996
+<v Thamizharasu Soundrapandian>So, one, one point, Ramu,
+so can you share your screen again?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/307-0
+00:36:15.076 --> 00:36:16.116
+<v Ramanarayanan Balasubramanian>Oh yeah, yeah, sorry.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/308-0
+00:36:20.756 --> 00:36:22.836
+<v Thamizharasu Soundrapandian>So, what my understanding was...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/311-0
+00:36:23.796 --> 00:36:28.872
+<v Thamizharasu Soundrapandian>The steps will be represented as a
+business view, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/309-0
+00:36:28.036 --> 00:36:28.556
+<v Ramanarayanan Balasubramanian>Tax.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/311-1
+00:36:28.872 --> 00:36:35.670
+<v Thamizharasu Soundrapandian>in a high level boxes and some text.
+And then you have 3 follow up action,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/310-0
+00:36:30.916 --> 00:36:31.316
+<v Ramanarayanan Balasubramanian>Got it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/311-2
+00:36:35.670 --> 00:36:39.931
+<v Thamizharasu Soundrapandian>right?
+The next actions and any of that can be</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/311-3
+00:36:39.931 --> 00:36:43.556
+<v Thamizharasu Soundrapandian>represented. But this approve or modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/312-0
+00:36:44.196 --> 00:36:49.585
+<v Thamizharasu Soundrapandian>It's not explicit, but if I'm okay,
+I will select any one of the proposed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/312-1
+00:36:49.585 --> 00:36:53.518
+<v Thamizharasu Soundrapandian>action. If not,
+I will converse again and continue my</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/312-2
+00:36:53.518 --> 00:36:57.159
+<v Thamizharasu Soundrapandian>edit. That's how this whole thing will go,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/312-3
+00:36:57.159 --> 00:37:00.436
+<v Thamizharasu Soundrapandian>So this approve yes or no will not be
+there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/313-0
+00:37:01.716 --> 00:37:02.836
+<v Thamizharasu Soundrapandian>But it is implicit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/316-0
+00:37:01.956 --> 00:37:04.280
+<v Ramanarayanan Balasubramanian>No,
+there are three advantages you get with</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/316-1
+00:37:04.280 --> 00:37:07.027
+<v Ramanarayanan Balasubramanian>that, TAM. One,
+what you are doing today is you are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/314-0
+00:37:06.436 --> 00:37:06.916
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/316-2
+00:37:07.027 --> 00:37:10.724
+<v Ramanarayanan Balasubramanian>saying continue the validation, correct?
+That is what you are asking,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/316-3
+00:37:10.724 --> 00:37:14.950
+<v Ramanarayanan Balasubramanian>which is not clear, at least for me.
+Maybe I don't have background or anything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/316-4
+00:37:14.950 --> 00:37:15.636
+<v Ramanarayanan Balasubramanian>Second thing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/315-0
+00:37:14.996 --> 00:37:17.476
+<v Prasad GSK>No, this is on the business view, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/320-0
+00:37:17.556 --> 00:37:21.405
+<v Ramanarayanan Balasubramanian>Correct, correct, correct.
+Second advantage what I get is the reason</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/317-0
+00:37:18.676 --> 00:37:19.076
+<v Prasad GSK>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/320-1
+00:37:21.405 --> 00:37:25.813
+<v Ramanarayanan Balasubramanian>why I'm asking this is I'm going to log
+it and tomorrow I can build a feedback</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/318-0
+00:37:24.596 --> 00:37:24.916
+<v Pradeep Wadikar>P.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/320-2
+00:37:25.813 --> 00:37:28.100
+<v Ramanarayanan Balasubramanian>loop.
+I know what are the plans that got</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/320-3
+00:37:28.100 --> 00:37:32.674
+<v Ramanarayanan Balasubramanian>approved directly and what are the plans
+the user modified and there are a lot of</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/320-4
+00:37:32.674 --> 00:37:36.356
+<v Ramanarayanan Balasubramanian>very good libraries available to in
+machine learning to feedback.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/319-0
+00:37:35.956 --> 00:37:36.196
+<v Pradeep Wadikar>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/324-0
+00:37:36.476 --> 00:37:40.297
+<v Ramanarayanan Balasubramanian>And we can build a feedback loop and
+continue to improve on it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/321-0
+00:37:40.276 --> 00:37:40.516
+<v Pradeep Wadikar>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/324-1
+00:37:40.297 --> 00:37:44.357
+<v Ramanarayanan Balasubramanian>And there are automated feedback loops
+also available. So for that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/322-0
+00:37:41.676 --> 00:37:42.036
+<v Pradeep Wadikar>Anand.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/324-2
+00:37:44.357 --> 00:37:49.252
+<v Ramanarayanan Balasubramanian>I need to know whether the user is okay,
+because the plan represents whatever the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/323-0
+00:37:44.436 --> 00:37:44.556
+<v Pradeep Wadikar>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/324-3
+00:37:49.252 --> 00:37:52.058
+<v Ramanarayanan Balasubramanian>user is trying to do.
+I understood the intent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/324-4
+00:37:52.058 --> 00:37:56.356
+<v Ramanarayanan Balasubramanian>I understood what the connectors can do,
+what the connectors cannot do.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-0
+00:37:56.516 --> 00:37:59.305
+<v Ramanarayanan Balasubramanian>what objects available,
+what objects not available.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-1
+00:37:59.305 --> 00:38:01.665
+<v Ramanarayanan Balasubramanian>Everything is summarized.
+I know this is a,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-2
+00:38:01.665 --> 00:38:04.400
+<v Ramanarayanan Balasubramanian>I'm doing some testing so you can see
+some issues,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-3
+00:38:04.400 --> 00:38:07.243
+<v Ramanarayanan Balasubramanian>but this is what it is showing.
+So my part is, look,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-4
+00:38:07.243 --> 00:38:11.212
+<v Ramanarayanan Balasubramanian>whatever synopsis I'm giving it to you is
+coming up with a lot of things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-5
+00:38:11.212 --> 00:38:14.162
+<v Ramanarayanan Balasubramanian>Once I know I approve,
+once let's say if user modifies</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/325-6
+00:38:14.162 --> 00:38:15.556
+<v Ramanarayanan Balasubramanian>specifically if condition.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-0
+00:38:15.716 --> 00:38:18.394
+<v Ramanarayanan Balasubramanian>I know that, oh,
+this is the area I have to improve.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-1
+00:38:18.394 --> 00:38:21.879
+<v Ramanarayanan Balasubramanian>So that is another thing for me.
+So this is a wonderful opportunity,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-2
+00:38:21.879 --> 00:38:25.062
+<v Ramanarayanan Balasubramanian>one to get a feedback,
+one to be very clear about what is that</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-3
+00:38:25.062 --> 00:38:28.092
+<v Ramanarayanan Balasubramanian>I'm trying to do.
+And you said need not worry about account</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-4
+00:38:28.092 --> 00:38:31.629
+<v Ramanarayanan Balasubramanian>validation, et cetera, and other things.
+Those are all preconditions.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/326-5
+00:38:31.629 --> 00:38:35.316
+<v Ramanarayanan Balasubramanian>So everything starts from there only.
+So I don't want to start with the.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/327-0
+00:38:36.316 --> 00:38:39.600
+<v Ramanarayanan Balasubramanian>Nothing. So that is that is a thought.
+I mean, I'm okay to do however it is,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/327-1
+00:38:39.600 --> 00:38:41.476
+<v Ramanarayanan Balasubramanian>but this is a thought I just want to
+share.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/328-0
+00:38:41.156 --> 00:38:46.040
+<v Thamizharasu Soundrapandian>This is very valid, Ramu.
+Nothing is non-valid. It's valid point.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/328-1
+00:38:46.040 --> 00:38:49.888
+<v Thamizharasu Soundrapandian>But I'm thinking slightly different.
+So even today,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/328-2
+00:38:49.888 --> 00:38:53.588
+<v Thamizharasu Soundrapandian>if we represent this action slightly
+differently,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/328-3
+00:38:53.588 --> 00:38:57.436
+<v Thamizharasu Soundrapandian>you can capture those information.
+Say for example,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/328-4
+00:38:57.436 --> 00:39:01.876
+<v Thamizharasu Soundrapandian>you are proposing certain next set of
+actions based on your</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/329-0
+00:39:02.516 --> 00:39:06.196
+<v Thamizharasu Soundrapandian>Score or your decision tree, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/330-0
+00:39:07.156 --> 00:39:13.801
+<v Thamizharasu Soundrapandian>You have proposed something and now you
+are taking some next course of action for</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/330-1
+00:39:13.801 --> 00:39:17.853
+<v Thamizharasu Soundrapandian>the user to take and you are proposing
+something,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/330-2
+00:39:17.853 --> 00:39:22.796
+<v Thamizharasu Soundrapandian>which means these are your highly rated
+next set of actions.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/330-3
+00:39:22.796 --> 00:39:25.956
+<v Thamizharasu Soundrapandian>If I select some action, which means...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/331-0
+00:39:26.196 --> 00:39:31.506
+<v Thamizharasu Soundrapandian>Internally you can understand, okay,
+my proposed plan is accepted and user is</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/331-1
+00:39:31.506 --> 00:39:33.956
+<v Thamizharasu Soundrapandian>taking action on my proposed action.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/332-0
+00:39:32.916 --> 00:39:35.787
+<v Ramanarayanan Balasubramanian>No, human,
+human in the human in the feedback</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/332-1
+00:39:35.787 --> 00:39:40.280
+<v Ramanarayanan Balasubramanian>doesn't work like that, Tam.
+How many times in real world do you think,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/332-2
+00:39:40.280 --> 00:39:43.712
+<v Ramanarayanan Balasubramanian>unless I ask,
+you would have interrupted and you would</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/332-3
+00:39:43.712 --> 00:39:47.769
+<v Ramanarayanan Balasubramanian>have even read about it?
+So this this kind of puts in in in puts</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/332-4
+00:39:47.769 --> 00:39:51.076
+<v Ramanarayanan Balasubramanian>up what do you call a subtle indication
+to the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/333-0
+00:39:51.316 --> 00:39:54.619
+<v Ramanarayanan Balasubramanian>Please read it above, right?
+So this double comes some,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/333-1
+00:39:54.619 --> 00:39:58.688
+<v Ramanarayanan Balasubramanian>so the in the human in the,
+and this is this is how the human in the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/333-2
+00:39:58.688 --> 00:40:01.636
+<v Ramanarayanan Balasubramanian>loop will do that, right?
+We don't assume things.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/334-0
+00:40:00.596 --> 00:40:03.156
+<v Thamizharasu Soundrapandian>So if we can do that, I'm fine.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/336-0
+00:40:04.156 --> 00:40:09.316
+<v Thamizharasu Soundrapandian>Okay, if we can do that intelligence, I'm,
+but we should not, sorry.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/335-0
+00:40:07.196 --> 00:40:08.276
+<v Ramanarayanan Balasubramanian>Which one you are saying?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/337-0
+00:40:10.036 --> 00:40:11.716
+<v Ramanarayanan Balasubramanian>Sorry, which intelligence you are saying?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/338-0
+00:40:12.036 --> 00:40:12.916
+<v Thamizharasu Soundrapandian>So, this...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/339-0
+00:40:14.476 --> 00:40:16.716
+<v Thamizharasu Soundrapandian>What do you, what do you,
+what do you say this?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/340-0
+00:40:18.196 --> 00:40:22.632
+<v Thamizharasu Soundrapandian>So this can also be an action, right?
+The yes, no, something like that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/340-1
+00:40:22.632 --> 00:40:23.556
+<v Thamizharasu Soundrapandian>It's an action.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/341-0
+00:40:24.516 --> 00:40:24.996
+<v Thamizharasu Soundrapandian>Isn't it?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/342-0
+00:40:25.156 --> 00:40:27.464
+<v Ramanarayanan Balasubramanian>However you want it, see,
+we have done it like that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/342-1
+00:40:27.464 --> 00:40:29.511
+<v Ramanarayanan Balasubramanian>but if you want a button,
+we can put a button.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/342-2
+00:40:29.511 --> 00:40:32.167
+<v Ramanarayanan Balasubramanian>We already had a button,
+but we removed it for some purpose.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/342-3
+00:40:32.167 --> 00:40:35.476
+<v Ramanarayanan Balasubramanian>I forgot that. So however you want it,
+we can do it. So I know when we are.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/343-0
+00:40:34.436 --> 00:40:38.681
+<v Thamizharasu Soundrapandian>Yeah, so so so what am I thinking is,
+okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/343-1
+00:40:38.681 --> 00:40:44.276
+<v Thamizharasu Soundrapandian>launchpad expect some representation of
+the conversation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/344-0
+00:40:45.236 --> 00:40:49.862
+<v Thamizharasu Soundrapandian>And they also have a certain pattern for
+the actions. Now,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/344-1
+00:40:49.862 --> 00:40:53.861
+<v Thamizharasu Soundrapandian>we have both actions as well as this
+confirmation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/344-2
+00:40:53.861 --> 00:40:59.977
+<v Thamizharasu Soundrapandian>So this is slightly different pattern,
+but we can get the sign up from Keesa.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/344-3
+00:40:59.977 --> 00:41:04.916
+<v Thamizharasu Soundrapandian>It's not a big deal. Okay,
+I'll have a conversation with that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/345-0
+00:41:04.996 --> 00:41:10.596
+<v Thamizharasu Soundrapandian>with her and get that confirmed.
+But my point is, if we can plug this.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/347-0
+00:41:11.956 --> 00:41:16.784
+<v Thamizharasu Soundrapandian>the confirmation as an action,
+then there is no deviation from what we</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/347-1
+00:41:16.784 --> 00:41:18.756
+<v Thamizharasu Soundrapandian>are already having, isn't it?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/348-0
+00:41:20.996 --> 00:41:24.110
+<v Ramanarayanan Balasubramanian>Sorry, when you say action,
+you are saying like a button,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/348-1
+00:41:24.110 --> 00:41:25.076
+<v Ramanarayanan Balasubramanian>suggested actions.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/349-0
+00:41:24.516 --> 00:41:27.636
+<v Thamizharasu Soundrapandian>So, yeah,
+so the button we are representing that as</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/349-1
+00:41:27.636 --> 00:41:30.456
+<v Thamizharasu Soundrapandian>a button,
+but that's what my proposed actions,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/349-2
+00:41:30.456 --> 00:41:32.436
+<v Thamizharasu Soundrapandian>right? The next course of action.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/352-0
+00:41:31.316 --> 00:41:34.566
+<v Ramanarayanan Balasubramanian>Yeah, that that we already have it.
+I don't know if there is a local.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/352-1
+00:41:34.566 --> 00:41:37.955
+<v Ramanarayanan Balasubramanian>Is there any environment Ashok or Sonal?
+Do you have it with the button?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/351-0
+00:41:35.076 --> 00:41:35.236
+<v Sonal Mehta>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/352-2
+00:41:37.955 --> 00:41:40.276
+<v Ramanarayanan Balasubramanian>We did with we did that and we removed it,
+right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/354-0
+00:41:38.516 --> 00:41:43.223
+<v Sonal Mehta>No, actually, right.
+So suggested actions are the course of</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/354-1
+00:41:43.223 --> 00:41:48.715
+<v Sonal Mehta>action which are suggested.
+Like user can still choose something else</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/354-2
+00:41:48.715 --> 00:41:52.480
+<v Sonal Mehta>and type in and proceed. But over here,
+or Tom,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/354-3
+00:41:52.480 --> 00:41:58.756
+<v Sonal Mehta>we are asking user to either approve and
+deny, or I mean, yes or no, or modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/353-0
+00:41:57.716 --> 00:41:58.356
+<v Ramanarayanan Balasubramanian>Or modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/355-0
+00:41:59.236 --> 00:42:02.553
+<v Sonal Mehta>Like without that,
+we won't be able to proceed to the next</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/355-1
+00:42:02.553 --> 00:42:03.396
+<v Sonal Mehta>course of tool.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/357-0
+00:42:02.596 --> 00:42:07.625
+<v Thamizharasu Soundrapandian>So, so let me ask further dig deeper.
+I have only, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/357-1
+00:42:07.625 --> 00:42:13.007
+<v Thamizharasu Soundrapandian>my time is over already.
+I have to go for the other meeting,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/356-0
+00:42:12.116 --> 00:42:12.916
+<v Ramanarayanan Balasubramanian>Ha ha ha!</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/357-2
+00:42:13.007 --> 00:42:18.036
+<v Thamizharasu Soundrapandian>but I'll quickly close my question.
+My question is, yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/360-0
+00:42:16.076 --> 00:42:19.281
+<v Ramanarayanan Balasubramanian>Yeah, organizer,
+I should sorry to interrupt.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/360-1
+00:42:19.281 --> 00:42:22.417
+<v Ramanarayanan Balasubramanian>Organizer has to tell your time is over,
+so,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/360-2
+00:42:22.417 --> 00:42:26.876
+<v Ramanarayanan Balasubramanian>but you yourself is telling interesting.
+You are under so much.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/358-0
+00:42:26.196 --> 00:42:26.516
+<v Thamizharasu Soundrapandian>No.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/362-0
+00:42:27.796 --> 00:42:29.907
+<v Thamizharasu Soundrapandian>No,
+this meeting is scheduled only for 30</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/359-0
+00:42:28.836 --> 00:42:29.236
+<v Prasad GSK>Singh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/362-1
+00:42:29.907 --> 00:42:31.716
+<v Thamizharasu Soundrapandian>minutes. We are already overrunning.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/361-0
+00:42:30.676 --> 00:42:31.236
+<v Ramanarayanan Balasubramanian>Iyer.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/363-0
+00:42:30.756 --> 00:42:32.516
+<v Prasad GSK>Yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/364-0
+00:42:32.396 --> 00:42:36.003
+<v Ramanarayanan Balasubramanian>No, no, Tom, I'm just pulling your leg.
+I said generally the person who is</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/365-0
+00:42:35.236 --> 00:42:38.676
+<v Thamizharasu Soundrapandian>Everybody is doing that same, no.
+It's not new to me.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/364-1
+00:42:36.003 --> 00:42:36.436
+<v Ramanarayanan Balasubramanian>inviting.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/366-0
+00:42:39.796 --> 00:42:44.196
+<v Thamizharasu Soundrapandian>Everybody is pulling my legs, OK? So,
+Ramu.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/367-0
+00:42:41.996 --> 00:42:44.276
+<v Ramanarayanan Balasubramanian>Uh, alright, I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/369-0
+00:42:42.676 --> 00:42:45.156
+<v Prasad GSK>Okay, okay, let's work.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/371-0
+00:42:43.476 --> 00:42:47.236
+<v Pradeep Wadikar>I never do. See, Sam, I never do that. OK.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/368-0
+00:42:45.396 --> 00:42:45.556
+<v Thamizharasu Soundrapandian>Ah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/370-0
+00:42:46.356 --> 00:42:46.876
+<v Ramanarayanan Balasubramanian>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/372-0
+00:42:49.316 --> 00:42:52.356
+<v Thamizharasu Soundrapandian>OK, so, so, but Pradeep, we are friends.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/373-0
+00:42:53.516 --> 00:42:58.281
+<v Thamizharasu Soundrapandian>and we are on record. Okay,
+let me come back to the conversation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/373-1
+00:42:58.281 --> 00:43:02.756
+<v Thamizharasu Soundrapandian>My question to you, Ramu,
+I'm okay to have this confirmation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/374-0
+00:43:03.796 --> 00:43:11.076
+<v Thamizharasu Soundrapandian>Yes, no and continue or change,
+modify something like that. If I say yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/375-0
+00:43:12.796 --> 00:43:15.956
+<v Thamizharasu Soundrapandian>What it will do, and if I say no.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/376-0
+00:43:17.036 --> 00:43:21.597
+<v Thamizharasu Soundrapandian>what the next set of actions it will
+happen. And if I have to say modify,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/376-1
+00:43:21.597 --> 00:43:26.343
+<v Thamizharasu Soundrapandian>and now I'll continue the conversation
+and make some changes to this current</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/376-2
+00:43:26.343 --> 00:43:26.836
+<v Thamizharasu Soundrapandian>context.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/377-0
+00:43:27.996 --> 00:43:32.603
+<v Thamizharasu Soundrapandian>Right?
+So yes means it will create the flow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/377-1
+00:43:32.603 --> 00:43:34.036
+<v Thamizharasu Soundrapandian>No means what?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/379-0
+00:43:34.996 --> 00:43:38.461
+<v Ramanarayanan Balasubramanian>Correct.
+No one modify are almost the same.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/378-0
+00:43:38.116 --> 00:43:38.516
+<v Thamizharasu Soundrapandian>Ahh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/379-1
+00:43:38.461 --> 00:43:44.996
+<v Ramanarayanan Balasubramanian>It's just a it's just a user experience
+wise we will show you when you say modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-0
+00:43:44.196 --> 00:43:46.963
+<v Thamizharasu Soundrapandian>Yeah,
+we will brainstorm this a little bit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/380-0
+00:43:46.756 --> 00:43:47.156
+<v Ramanarayanan Balasubramanian>Sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-1
+00:43:46.963 --> 00:43:51.867
+<v Thamizharasu Soundrapandian>I'm working to have this because this
+will reiterate what the engine proposed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-2
+00:43:51.867 --> 00:43:55.702
+<v Thamizharasu Soundrapandian>and what the user take the action, right?
+And based on that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-3
+00:43:55.702 --> 00:43:59.789
+<v Thamizharasu Soundrapandian>if you want to build an intelligence
+behind the scene, I'm fine.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-4
+00:43:59.789 --> 00:44:02.618
+<v Thamizharasu Soundrapandian>We can have it.
+But we have to have a proper</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/381-5
+00:44:02.618 --> 00:44:05.636
+<v Thamizharasu Soundrapandian>representation of this,
+the decisions node bit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/382-0
+00:44:06.916 --> 00:44:07.316
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/383-0
+00:44:07.476 --> 00:44:11.781
+<v Ramanarayanan Balasubramanian>Yeah, I'll quickly tell one thing alone.
+What we are doing here is when you say</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/383-1
+00:44:11.781 --> 00:44:15.064
+<v Ramanarayanan Balasubramanian>yes, you're obvious.
+It will go to the next tool and it will</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/383-2
+00:44:15.064 --> 00:44:19.315
+<v Ramanarayanan Balasubramanian>continue with it. When you say modify,
+it will ask you where I have to modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/383-3
+00:44:19.315 --> 00:44:23.512
+<v Ramanarayanan Balasubramanian>Our user can say modify hyphen and then
+write whatever paragraph they want to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/383-4
+00:44:23.512 --> 00:44:26.956
+<v Ramanarayanan Balasubramanian>write. When they say no,
+currently it is going to exit. We are.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/384-0
+00:44:27.156 --> 00:44:29.827
+<v Ramanarayanan Balasubramanian>The thought is like, okay,
+user does not want to continue.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/384-1
+00:44:29.827 --> 00:44:32.453
+<v Ramanarayanan Balasubramanian>So we'll ask, hey,
+I understand you're not happy with it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/384-2
+00:44:32.453 --> 00:44:36.119
+<v Ramanarayanan Balasubramanian>Would you like to go with a different
+prompt or something like that? But we can,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/385-0
+00:44:35.476 --> 00:44:40.916
+<v Thamizharasu Soundrapandian>No, by mistake, by mistake, if I said no,
+but I want to continue.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/384-3
+00:44:36.119 --> 00:44:36.436
+<v Ramanarayanan Balasubramanian>we can.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/386-0
+00:44:42.036 --> 00:44:44.116
+<v Ramanarayanan Balasubramanian>Then you can again say the context is
+still there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/387-0
+00:44:43.556 --> 00:44:46.662
+<v Thamizharasu Soundrapandian>No, that's a problem.
+You should not lose the whole</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/387-1
+00:44:46.662 --> 00:44:48.036
+<v Thamizharasu Soundrapandian>conversation and get...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/392-0
+00:44:46.956 --> 00:44:51.746
+<v Ramanarayanan Balasubramanian>No, no, I won't lose, I won't lose.
+The context is still there, unless,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/388-0
+00:44:49.476 --> 00:44:51.596
+<v Thamizharasu Soundrapandian>Yeah, this is just.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/392-1
+00:44:51.746 --> 00:44:56.602
+<v Ramanarayanan Balasubramanian>unless user says user type a new new
+prompt, it won't, it won't go away,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/392-2
+00:44:56.602 --> 00:45:00.860
+<v Ramanarayanan Balasubramanian>even if user is trying to edit also,
+it won't go away, so edit,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/389-0
+00:44:58.676 --> 00:44:59.156
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/390-0
+00:44:58.836 --> 00:44:59.236
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/392-3
+00:45:00.860 --> 00:45:05.716
+<v Ramanarayanan Balasubramanian>so this will come under the edit intent.
+So, what would happen is, sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/391-0
+00:45:01.396 --> 00:45:01.716
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/394-0
+00:45:03.716 --> 00:45:06.798
+<v Thamizharasu Soundrapandian>Yeah,
+maybe I need to have one discussion with</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/394-1
+00:45:06.798 --> 00:45:10.404
+<v Thamizharasu Soundrapandian>you separately, Ramu,
+to understand this a little bit,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/394-2
+00:45:10.404 --> 00:45:14.928
+<v Thamizharasu Soundrapandian>because we can have it. I mean,
+I'm not very particular about, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/394-3
+00:45:14.928 --> 00:45:18.469
+<v Thamizharasu Soundrapandian>restricted use.
+We should always go with the pattern.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/394-4
+00:45:18.469 --> 00:45:22.796
+<v Thamizharasu Soundrapandian>If something is beneficial for our future
+improvement, we should.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/393-0
+00:45:20.436 --> 00:45:20.996
+<v Prasad GSK>Sumit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/396-0
+00:45:22.876 --> 00:45:27.111
+<v Thamizharasu Soundrapandian>do that. I'm okay with that.
+And I can get the sign up from who needs</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/396-1
+00:45:27.111 --> 00:45:30.438
+<v Thamizharasu Soundrapandian>to be informed.
+I'll talk to them and get the sign up.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/396-2
+00:45:30.438 --> 00:45:35.156
+<v Thamizharasu Soundrapandian>But I need to understand and get the
+buy-in before I take that to them. Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/395-0
+00:45:33.476 --> 00:45:33.796
+<v Ramanarayanan Balasubramanian>Sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/398-0
+00:45:35.316 --> 00:45:37.076
+<v Ramanarayanan Balasubramanian>Yeah, only one thing I am.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/400-0
+00:45:35.836 --> 00:45:38.972
+<v Jyotish Sonowal>Let's align one. Sorry,
+I know we have run out of time,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/397-0
+00:45:37.236 --> 00:45:37.396
+<v Prasad GSK>IT.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/399-0
+00:45:38.676 --> 00:45:39.796
+<v Ramanarayanan Balasubramanian>I am out tomorrow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/400-1
+00:45:38.972 --> 00:45:43.116
+<v Jyotish Sonowal>but let's align ones internally before
+sharing it externally with anyone.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/400-2
+00:45:43.116 --> 00:45:47.540
+<v Jyotish Sonowal>So let's internally align it, capture it,
+and then let's share it with others,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/400-3
+00:45:47.540 --> 00:45:50.676
+<v Jyotish Sonowal>just so that it doesn't look like we are
+not alignable.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/401-0
+00:45:49.636 --> 00:45:53.436
+<v Thamizharasu Soundrapandian>Only for the final confirmation bit,
+nothing else.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/402-0
+00:45:55.396 --> 00:45:57.636
+<v Thamizharasu Soundrapandian>Everything else, we are good, I believe.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/404-0
+00:45:55.556 --> 00:45:58.196
+<v Ramanarayanan Balasubramanian>Sorry, which one?
+Which one you are saying?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/404-1
+00:45:58.196 --> 00:46:02.276
+<v Ramanarayanan Balasubramanian>Which which one you are saying?
+I don't have. Sorry, you're saying?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/403-0
+00:46:01.796 --> 00:46:02.196
+<v Prasad GSK>So.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/407-0
+00:46:03.236 --> 00:46:05.567
+<v Ramanarayanan Balasubramanian>We just showed a demo.
+We didn't share anything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/405-0
+00:46:03.316 --> 00:46:04.596
+<v Thamizharasu Soundrapandian>No, based on your...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/411-0
+00:46:04.956 --> 00:46:08.119
+<v Jyotish Sonowal>No, no, no,
+I'm not because I am telling time, yeah,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/407-1
+00:46:05.567 --> 00:46:06.756
+<v Ramanarayanan Balasubramanian>We didn't share anything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/406-0
+00:46:06.116 --> 00:46:06.436
+<v Thamizharasu Soundrapandian>No.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/408-0
+00:46:06.316 --> 00:46:08.916
+<v Prasad GSK>No, no, no,
+he's talking about user journey, Sharma.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/411-1
+00:46:08.119 --> 00:46:12.356
+<v Jyotish Sonowal>the journey, yeah, yeah, yeah,
+so whatever we have discussed, let's...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/410-0
+00:46:08.916 --> 00:46:11.396
+<v Ramanarayanan Balasubramanian>Oh, okay, okay, okay, okay, okay, okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/412-0
+00:46:10.516 --> 00:46:12.993
+<v Thamizharasu Soundrapandian>No,
+based on your screen sharing and last</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/409-0
+00:46:11.196 --> 00:46:11.556
+<v Sonal Mehta>Thanks.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/412-1
+00:46:12.993 --> 00:46:16.059
+<v Thamizharasu Soundrapandian>time you had a last bit rate,
+the confirmation bit,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/412-2
+00:46:16.059 --> 00:46:20.069
+<v Thamizharasu Soundrapandian>only that we need to have an internal
+meeting. But other than that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/412-3
+00:46:20.069 --> 00:46:23.076
+<v Thamizharasu Soundrapandian>the general flow,
+I don't think we have confusion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-0
+00:46:23.556 --> 00:46:27.957
+<v Jyotish Sonowal>Maybe because Ramu mentioned that he
+wants to ask the validation upfront,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/413-0
+00:46:23.796 --> 00:46:25.716
+<v Ramanarayanan Balasubramanian>No, I I want to see the recording.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-1
+00:46:27.957 --> 00:46:31.823
+<v Jyotish Sonowal>right? And in Launchpad,
+we are asking to create that validation</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-2
+00:46:31.823 --> 00:46:35.630
+<v Jyotish Sonowal>is happening, right? That okay,
+create workflow as a next step.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-3
+00:46:35.630 --> 00:46:38.722
+<v Jyotish Sonowal>Or you are saying, okay,
+are you ready to continue?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/414-0
+00:46:37.356 --> 00:46:37.716
+<v Thamizharasu Soundrapandian>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-4
+00:46:38.722 --> 00:46:42.767
+<v Jyotish Sonowal>It's happening towards the end.
+So there's a big gap asking upfront</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/417-0
+00:46:41.316 --> 00:46:46.557
+<v Thamizharasu Soundrapandian>Okay, let me propose one thing.
+There are two action item.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/415-5
+00:46:42.767 --> 00:46:43.956
+<v Jyotish Sonowal>versus asking later.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/416-0
+00:46:44.636 --> 00:46:48.042
+<v Ramanarayanan Balasubramanian>No, no, another another thing,
+sorry to interrupt, sorry, Tom,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/417-1
+00:46:46.557 --> 00:46:52.953
+<v Thamizharasu Soundrapandian>One minute I have to drop now.
+I'll propose one thing for a next set of</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/416-1
+00:46:48.042 --> 00:46:49.556
+<v Ramanarayanan Balasubramanian>before I forget, sure, sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/417-2
+00:46:52.953 --> 00:46:55.796
+<v Thamizharasu Soundrapandian>action. Sonal action number one.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/418-0
+00:46:56.876 --> 00:47:01.943
+<v Thamizharasu Soundrapandian>You go through this flow proposal and
+compare this proposal with your workflow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/418-1
+00:47:01.943 --> 00:47:07.330
+<v Thamizharasu Soundrapandian>journey. And if you find any deviations,
+we need to cover that in the next meeting.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/418-2
+00:47:07.330 --> 00:47:12.525
+<v Thamizharasu Soundrapandian>Okay, that is action number one. Second,
+whoever needs to implement for the flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/418-3
+00:47:12.525 --> 00:47:15.796
+<v Thamizharasu Soundrapandian>service,
+they have to digest the information flow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/419-0
+00:47:16.356 --> 00:47:20.950
+<v Thamizharasu Soundrapandian>And if there is a challenge technically
+to meet this requirement,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/419-1
+00:47:20.950 --> 00:47:26.797
+<v Thamizharasu Soundrapandian>then they have to come back and tell what
+are all the challenges and why that can't</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/419-2
+00:47:26.797 --> 00:47:29.930
+<v Thamizharasu Soundrapandian>be solved. Okay, two actions.
+Third actions,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/419-3
+00:47:29.930 --> 00:47:35.290
+<v Thamizharasu Soundrapandian>we have to have one more discussion
+internally to brainstorm a little bit on</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/419-4
+00:47:35.290 --> 00:47:35.916
+<v Thamizharasu Soundrapandian>validate.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/420-0
+00:47:36.276 --> 00:47:40.563
+<v Thamizharasu Soundrapandian>as well as this bit, final bit,
+the confirmation bit.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/420-1
+00:47:40.563 --> 00:47:46.516
+<v Thamizharasu Soundrapandian>These 3 actions we'll check and we'll
+conclude this meeting. Is this fine?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/421-0
+00:47:48.276 --> 00:47:50.620
+<v Ramanarayanan Balasubramanian>Yeah,
+just one thing I want to give heads up.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/421-1
+00:47:50.620 --> 00:47:53.779
+<v Ramanarayanan Balasubramanian>I am out Friday, Monday, and Tuesday,
+so we can have it only.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/421-2
+00:47:53.779 --> 00:47:57.396
+<v Ramanarayanan Balasubramanian>I don't know whether it is going to have
+any impact, Prasad. That's...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/422-0
+00:47:56.676 --> 00:47:59.291
+<v Prasad GSK>No,
+we'll continue our discussion tomorrow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/422-1
+00:47:59.291 --> 00:48:02.084
+<v Prasad GSK>That's fine. Based on these items, right?
+One,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/422-2
+00:48:02.084 --> 00:48:06.838
+<v Prasad GSK>we will compare with the flow journey and
+see if there are any discriminancies.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/422-3
+00:48:06.838 --> 00:48:09.987
+<v Prasad GSK>Maybe Jyotish,
+you can also maybe quickly spend some</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/422-4
+00:48:09.987 --> 00:48:13.196
+<v Prasad GSK>time. The other thing, second is what,
+Tam, you said?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/426-0
+00:48:14.676 --> 00:48:18.408
+<v Thamizharasu Soundrapandian>So, second is,
+whoever needs to implement this flow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/426-1
+00:48:18.408 --> 00:48:21.853
+<v Thamizharasu Soundrapandian>agent UI,
+they have to digest this information,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/423-0
+00:48:20.036 --> 00:48:20.436
+<v Prasad GSK>Ohh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/426-2
+00:48:21.853 --> 00:48:26.804
+<v Thamizharasu Soundrapandian>whatever Jyotish has drafted,
+and they have to come back and tell if</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/424-0
+00:48:24.436 --> 00:48:25.076
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/426-3
+00:48:26.804 --> 00:48:29.316
+<v Thamizharasu Soundrapandian>there are any technical challenges.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/425-0
+00:48:30.116 --> 00:48:30.676
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/428-0
+00:48:31.076 --> 00:48:35.697
+<v Thamizharasu Soundrapandian>Okay, and 3rd,
+some internal discussion has to happen</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/427-0
+00:48:31.956 --> 00:48:32.356
+<v Prasad GSK>Oh.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/428-1
+00:48:35.697 --> 00:48:42.285
+<v Thamizharasu Soundrapandian>for dig deeper on the validation aspect
+as well as the confirmation bit Rama</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/428-2
+00:48:42.285 --> 00:48:47.419
+<v Thamizharasu Soundrapandian>wanted to have, right?
+We'll brainstorm it if I believe in,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/428-3
+00:48:47.419 --> 00:48:50.756
+<v Thamizharasu Soundrapandian>I have high believe in Rama's proposal.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/430-0
+00:48:51.316 --> 00:48:56.442
+<v Thamizharasu Soundrapandian>If he proposed something,
+he might be having something in his brain.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/430-1
+00:48:56.442 --> 00:49:01.493
+<v Thamizharasu Soundrapandian>I want to understand a bit better.
+If that benefits, we'll have it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/430-2
+00:49:01.493 --> 00:49:02.756
+<v Thamizharasu Soundrapandian>Otherwise, later.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/429-0
+00:49:01.956 --> 00:49:02.356
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/431-0
+00:49:03.996 --> 00:49:06.756
+<v Thamizharasu Soundrapandian>He's laughing. I am praising him,
+but he's laughing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/433-0
+00:49:07.716 --> 00:49:11.116
+<v Ramanarayanan Balasubramanian>No, no, no, no.
+I was thinking in the past that people</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/432-0
+00:49:09.956 --> 00:49:10.596
+<v Prasad GSK>Okay, so.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/433-1
+00:49:11.116 --> 00:49:14.949
+<v Ramanarayanan Balasubramanian>are typing and so that's right. Nothing,
+nothing. Sorry, Tom.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/433-2
+00:49:14.949 --> 00:49:16.556
+<v Ramanarayanan Balasubramanian>I didn't mean to anything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/435-0
+00:49:15.036 --> 00:49:20.894
+<v Prasad GSK>No, no, I am only typing wMio. So yeah,
+I will put this wMio guys.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/434-0
+00:49:18.756 --> 00:49:18.996
+<v Ramanarayanan Balasubramanian>Haha.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/435-1
+00:49:20.894 --> 00:49:24.916
+<v Prasad GSK>Please go through it.
+Tomorrow we'll discuss.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-0
+00:49:21.956 --> 00:49:25.395
+<v Ramanarayanan Balasubramanian>Sure, one, one,
+one thing I want to clarify, Jyotish,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-1
+00:49:25.395 --> 00:49:29.215
+<v Ramanarayanan Balasubramanian>just, just sorry, Tom,
+I know you are you are late delayed.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/436-0
+00:49:25.796 --> 00:49:26.116
+<v Prasad GSK>Huh?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-2
+00:49:29.215 --> 00:49:32.335
+<v Ramanarayanan Balasubramanian>Jyotish,
+one thing when we say validation right,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-3
+00:49:32.335 --> 00:49:37.301
+<v Ramanarayanan Balasubramanian>we we there are three types of validation
+in this you might have seen, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-4
+00:49:37.301 --> 00:49:40.167
+<v Ramanarayanan Balasubramanian>One is,
+am I doing the job correctly or not,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-5
+00:49:40.167 --> 00:49:43.159
+<v Ramanarayanan Balasubramanian>right?
+When I generate a DSL or when I ask the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/438-6
+00:49:43.159 --> 00:49:43.796
+<v Ramanarayanan Balasubramanian>questions?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/440-0
+00:49:44.716 --> 00:49:47.890
+<v Ramanarayanan Balasubramanian>Is there ambiguity like that?
+So every node has a validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/440-1
+00:49:47.890 --> 00:49:52.036
+<v Ramanarayanan Balasubramanian>That is one type of validation, correct?
+Jyotish, you got the point. The second.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/439-0
+00:49:51.396 --> 00:49:52.036
+<v Jyotish Sonowal>So...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/441-0
+00:49:53.636 --> 00:49:55.636
+<v Jyotish Sonowal>Ha, you finished, and then then I land.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/442-0
+00:49:54.716 --> 00:49:57.944
+<v Ramanarayanan Balasubramanian>Yeah, yeah.
+Then there is a second type of validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/442-1
+00:49:57.944 --> 00:50:02.522
+<v Ramanarayanan Balasubramanian>The second type of validation is IWHA
+specific, right? Do I have the account?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/442-2
+00:50:02.522 --> 00:50:06.396
+<v Ramanarayanan Balasubramanian>Do I have the project?
+Do I have anything related to IWHA, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/442-3
+00:50:06.396 --> 00:50:09.448
+<v Ramanarayanan Balasubramanian>That can be more.
+I'm not an expert on that, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/442-4
+00:50:09.448 --> 00:50:13.556
+<v Ramanarayanan Balasubramanian>Third is the service level validation.
+Basically, oh, mapper is down.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-0
+00:50:13.716 --> 00:50:17.943
+<v Ramanarayanan Balasubramanian>right, those kind of things, right?
+When I start itself, I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-1
+00:50:17.943 --> 00:50:22.875
+<v Ramanarayanan Balasubramanian>So the individual node level validation
+happens independently after each and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-2
+00:50:22.875 --> 00:50:27.358
+<v Ramanarayanan Balasubramanian>every node has been completed. Got it?
+The first level validation is,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-3
+00:50:27.358 --> 00:50:30.816
+<v Ramanarayanan Balasubramanian>is all the services up?
+Am I able to get the account,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-4
+00:50:30.816 --> 00:50:34.467
+<v Ramanarayanan Balasubramanian>get the relevant details,
+so that I can make an informed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/443-5
+00:50:34.467 --> 00:50:36.196
+<v Ramanarayanan Balasubramanian>conversation with the user?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/444-0
+00:50:36.276 --> 00:50:38.439
+<v Ramanarayanan Balasubramanian>Right,
+so I won't show the output or anything to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/444-1
+00:50:38.439 --> 00:50:38.836
+<v Ramanarayanan Balasubramanian>the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/445-0
+00:50:40.116 --> 00:50:40.756
+<v Ramanarayanan Balasubramanian>Clear, sir.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/448-0
+00:50:41.956 --> 00:50:44.539
+<v Jyotish Sonowal>Yes,
+I think that's one difference between</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/447-0
+00:50:42.516 --> 00:50:43.356
+<v Ramanarayanan Balasubramanian>No, okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/446-0
+00:50:42.836 --> 00:50:42.956
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/448-1
+00:50:44.539 --> 00:50:49.285
+<v Jyotish Sonowal>flow service and workflow, right? I mean,
+in the validation that I was talking</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/448-2
+00:50:49.285 --> 00:50:54.030
+<v Jyotish Sonowal>about is when you create a business view,
+before you can see a technical view,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/448-3
+00:50:54.030 --> 00:50:59.076
+<v Jyotish Sonowal>there's a validation whether you have the
+right accounts and everything. If you do.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-0
+00:50:59.636 --> 00:51:04.607
+<v Jyotish Sonowal>You will be then shown a technical view.
+You can continue to make edits and at</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/449-0
+00:51:03.996 --> 00:51:04.356
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-1
+00:51:04.607 --> 00:51:09.074
+<v Jyotish Sonowal>some point when you are ready,
+you will have to say create a workflow.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-2
+00:51:09.074 --> 00:51:13.542
+<v Jyotish Sonowal>Earlier, we used to have a plan.
+If you remember the older integration</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-3
+00:51:13.542 --> 00:51:16.625
+<v Jyotish Sonowal>agent also,
+we had a plan UI on the chat itself,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-4
+00:51:16.625 --> 00:51:20.337
+<v Jyotish Sonowal>right? It will stay. I'm doing step one,
+step two, step 3,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/451-5
+00:51:20.337 --> 00:51:22.036
+<v Jyotish Sonowal>and there has to be loaded.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-0
+00:51:22.276 --> 00:51:26.207
+<v Jyotish Sonowal>That was earlier there,
+so you had to start the flow workflow</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-1
+00:51:26.207 --> 00:51:29.504
+<v Jyotish Sonowal>creation,
+but that has been removed because Bifrost</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-2
+00:51:29.504 --> 00:51:33.752
+<v Jyotish Sonowal>doesn't support that UI.
+So now there's a simple next action which</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-3
+00:51:33.752 --> 00:51:37.746
+<v Jyotish Sonowal>says create workflow.
+That is a second level confirmation that</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-4
+00:51:37.746 --> 00:51:41.677
+<v Jyotish Sonowal>the user is giving to yes, go ahead,
+create something on the,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/452-5
+00:51:41.677 --> 00:51:44.276
+<v Jyotish Sonowal>and that will be visible on your account.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/456-0
+00:51:45.556 --> 00:51:50.263
+<v Prasad GSK>Correct, correct. So, yeah, no,
+same thing will be applicable here also,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/453-0
+00:51:45.796 --> 00:51:48.356
+<v Jyotish Sonowal>So there are two level of validation.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/454-0
+00:51:47.396 --> 00:51:48.116
+<v Sonal Mehta>Jyotish.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/456-1
+00:51:50.263 --> 00:51:54.455
+<v Prasad GSK>Jyotish, because see,
+the account got to be there. Without that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/456-2
+00:51:54.455 --> 00:51:58.259
+<v Prasad GSK>we cannot proceed.
+The same what we are doing in workflow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/455-0
+00:51:57.196 --> 00:51:59.636
+<v Sonal Mehta>No, Prasad.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/456-3
+00:51:58.259 --> 00:52:00.516
+<v Prasad GSK>right? Account is available or not.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/461-0
+00:52:00.996 --> 00:52:04.586
+<v Sonal Mehta>Prasad, give me,
+I share my screen for a moment.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/457-0
+00:52:01.876 --> 00:52:02.356
+<v Prasad GSK>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/461-1
+00:52:04.586 --> 00:52:09.494
+<v Sonal Mehta>What Jyotish is trying to explain is,
+are you guys, can you, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/459-0
+00:52:06.916 --> 00:52:07.476
+<v Prasad GSK>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/460-0
+00:52:08.596 --> 00:52:10.596
+<v Prasad GSK>Yes, we can see. Yes, yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/461-2
+00:52:09.494 --> 00:52:13.963
+<v Sonal Mehta>So when the prompt is given,
+it directly asks project, okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/461-3
+00:52:13.963 --> 00:52:18.505
+<v Sonal Mehta>And after project,
+it is asking certain more questions. Okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/461-4
+00:52:18.505 --> 00:52:20.116
+<v Sonal Mehta>that is a questioning.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/464-0
+00:52:20.756 --> 00:52:25.041
+<v Sonal Mehta>requirement gathering thing.
+And once it is done, it say, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/462-0
+00:52:22.436 --> 00:52:22.916
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/464-1
+00:52:25.041 --> 00:52:28.723
+<v Sonal Mehta>use this project.
+It has only created a business view,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/464-2
+00:52:28.723 --> 00:52:33.075
+<v Sonal Mehta>not a technical view. Okay.
+So only business view gets generated</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/464-3
+00:52:33.075 --> 00:52:33.476
+<v Sonal Mehta>first.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/465-0
+00:52:33.756 --> 00:52:36.756
+<v Ramanarayanan Balasubramanian>Right, this is what we want.
+This is what we are saying.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/463-0
+00:52:34.276 --> 00:52:34.836
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/466-0
+00:52:35.796 --> 00:52:40.730
+<v Sonal Mehta>Yeah, yeah, this is this is there,
+but what what is happening now? See,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/466-1
+00:52:40.730 --> 00:52:46.350
+<v Sonal Mehta>once business view is getting generated,
+it says validate connector operation and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/466-2
+00:52:46.350 --> 00:52:49.844
+<v Sonal Mehta>accounts. Basically,
+in this whole business logic,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/466-3
+00:52:49.844 --> 00:52:53.956
+<v Sonal Mehta>we have also given this is my operation
+data, this is my...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/469-0
+00:52:54.756 --> 00:53:00.794
+<v Sonal Mehta>application data. So this is nothing,
+it's a planner only for us.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/469-1
+00:53:00.794 --> 00:53:05.826
+<v Sonal Mehta>Now once we say continue, okay, continue,
+validate it,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/469-2
+00:53:05.826 --> 00:53:12.596
+<v Sonal Mehta>it immediately asks for account data and
+also creates the technical view.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/467-0
+00:53:08.036 --> 00:53:08.836
+<v Ramanarayanan Balasubramanian>Correct, Sonal.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/468-0
+00:53:09.716 --> 00:53:10.276
+<v Prasad GSK>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/472-0
+00:53:12.996 --> 00:53:16.862
+<v Ramanarayanan Balasubramanian>Got it. No, my only point is,
+sorry to interrupt, please can you say,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/470-0
+00:53:14.356 --> 00:53:14.996
+<v Sonal Mehta>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/472-1
+00:53:16.862 --> 00:53:21.171
+<v Ramanarayanan Balasubramanian>my only point is creation of account,
+validation of account and all internal.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/472-2
+00:53:21.171 --> 00:53:25.147
+<v Ramanarayanan Balasubramanian>I should not ask the user to validate the
+connector operations account.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/472-3
+00:53:25.147 --> 00:53:28.848
+<v Ramanarayanan Balasubramanian>That is my headache. I have to take care.
+What I have to validate,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/472-4
+00:53:28.848 --> 00:53:30.836
+<v Ramanarayanan Balasubramanian>ask him to validate this, can you...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/474-0
+00:53:30.956 --> 00:53:35.318
+<v Ramanarayanan Balasubramanian>Please approve my understanding of this
+plan. That is all I have to validate.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/474-1
+00:53:35.318 --> 00:53:36.996
+<v Ramanarayanan Balasubramanian>Remaining and all, it's given.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/473-0
+00:53:35.716 --> 00:53:36.356
+<v Sonal Mehta>I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/475-0
+00:53:38.996 --> 00:53:41.063
+<v Sonal Mehta>I think wording should be changed,
+Jyotish.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/475-1
+00:53:41.063 --> 00:53:44.116
+<v Sonal Mehta>What do you feel like validate connector
+operation and accounts?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/476-0
+00:53:42.836 --> 00:53:46.006
+<v Jyotish Sonowal>Yeah,
+I think this feedback has been given and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/476-1
+00:53:46.006 --> 00:53:50.996
+<v Jyotish Sonowal>it was updated and now it is gone back.
+So I don't know what's happening.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/477-0
+00:53:51.316 --> 00:53:55.728
+<v Sonal Mehta>Okay, I think Ramu, you are also correct.
+Like this is the same what we are</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/477-1
+00:53:55.728 --> 00:53:57.876
+<v Sonal Mehta>proposing, but instead of suggestion.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/481-0
+00:53:56.996 --> 00:54:00.166
+<v Ramanarayanan Balasubramanian>Well, I'm sorry, I did.
+I again put a emoji of laughing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/478-0
+00:53:59.036 --> 00:53:59.156
+<v Sonal Mehta>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/481-1
+00:54:00.166 --> 00:54:02.668
+<v Ramanarayanan Balasubramanian>Sorry in Jyotish.
+I was just laughing along.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/479-0
+00:54:01.236 --> 00:54:01.396
+<v Jyotish Sonowal>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/481-2
+00:54:02.668 --> 00:54:04.836
+<v Ramanarayanan Balasubramanian>Nothing more than that. Yeah, go ahead.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/483-0
+00:54:05.156 --> 00:54:08.315
+<v Sonal Mehta>If we,
+so basically when we are saying suggested</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/483-1
+00:54:08.315 --> 00:54:11.860
+<v Sonal Mehta>action, okay,
+we are preventing user to go to the next</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/483-2
+00:54:11.860 --> 00:54:15.792
+<v Sonal Mehta>course of action with yes, approval step,
+okay. So, Jyotish,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/482-0
+00:54:13.796 --> 00:54:14.596
+<v Ramanarayanan Balasubramanian>Got it, got it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/483-3
+00:54:15.792 --> 00:54:20.305
+<v Sonal Mehta>the only point we need to bring over here
+is with this flow creation,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/483-4
+00:54:20.305 --> 00:54:21.916
+<v Sonal Mehta>we want an approval step.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/486-0
+00:54:22.436 --> 00:54:27.129
+<v Sonal Mehta>before proceeding to technical view,
+right? We need approval step.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/486-1
+00:54:27.129 --> 00:54:31.401
+<v Sonal Mehta>Once user approves it,
+then only we would be able to proceed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/484-0
+00:54:30.276 --> 00:54:31.156
+<v Jyotish Sonowal>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/486-2
+00:54:31.401 --> 00:54:36.094
+<v Sonal Mehta>with the next course of action,
+and then the flow service will get</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/486-3
+00:54:36.094 --> 00:54:39.876
+<v Sonal Mehta>generated, apparently. But till here,
+we have to see.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/485-0
+00:54:36.436 --> 00:54:37.156
+<v Jyotish Sonowal>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/487-0
+00:54:41.156 --> 00:54:42.756
+<v Sonal Mehta>So, this is I think same, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-0
+00:54:41.596 --> 00:54:43.684
+<v Jyotish Sonowal>Yes,
+I think that is that is something like</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-1
+00:54:43.684 --> 00:54:47.054
+<v Jyotish Sonowal>was earlier remember like during
+launchpad we were discussing that no,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-2
+00:54:47.054 --> 00:54:50.898
+<v Jyotish Sonowal>we will also show the technical view and
+once like you know like without project</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-3
+00:54:50.898 --> 00:54:54.362
+<v Jyotish Sonowal>you can't show technical view,
+but with project we'll show the technical</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-4
+00:54:54.362 --> 00:54:56.830
+<v Jyotish Sonowal>view and we'll do all these validations
+internally,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-5
+00:54:56.830 --> 00:54:59.060
+<v Jyotish Sonowal>like even what Drama is saying,
+like you know,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/490-6
+00:54:59.060 --> 00:55:00.436
+<v Jyotish Sonowal>I will not even ask the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/488-0
+00:54:59.716 --> 00:54:59.876
+<v Sonal Mehta>But.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-0
+00:55:00.756 --> 00:55:03.228
+<v Jyotish Sonowal>But when we,
+when it was actually like created,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/489-0
+00:55:01.156 --> 00:55:01.716
+<v Ramanarayanan Balasubramanian>Yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-1
+00:55:03.228 --> 00:55:06.473
+<v Jyotish Sonowal>then we saw that there's a valuation step
+that has been added,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-2
+00:55:06.473 --> 00:55:09.099
+<v Jyotish Sonowal>because I think we couldn't do it
+internally. Now,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-3
+00:55:09.099 --> 00:55:13.322
+<v Jyotish Sonowal>if Rama is saying that we can do that,
+I mean, I mean, we'll be very happy if we,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/492-0
+00:55:09.156 --> 00:55:09.316
+<v Sonal Mehta>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/493-0
+00:55:11.516 --> 00:55:14.516
+<v Sonal Mehta>No, no, not in, not in Thanmayi.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-4
+00:55:13.322 --> 00:55:16.927
+<v Jyotish Sonowal>if not, I mean, then we can add a step.
+I mean, whatever is possible,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/495-0
+00:55:16.716 --> 00:55:22.346
+<v Sonal Mehta>Rama, yeah, Ramu is saying that, okay,
+accounts are there, operations are there,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/494-5
+00:55:16.927 --> 00:55:17.596
+<v Jyotish Sonowal>we can add a.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/495-1
+00:55:22.346 --> 00:55:27.976
+<v Sonal Mehta>character is there. But accounts also,
+let's assume if there are more than three</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-0
+00:55:27.796 --> 00:55:29.826
+<v Ramanarayanan Balasubramanian>You know, no,
+subsequently you have to ask.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/495-2
+00:55:27.976 --> 00:55:30.756
+<v Sonal Mehta>accounts for the same application. Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-1
+00:55:29.826 --> 00:55:31.856
+<v Ramanarayanan Balasubramanian>That is fine.
+Subsequently you have to ask.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-2
+00:55:31.856 --> 00:55:34.255
+<v Ramanarayanan Balasubramanian>That is there.
+But what I'm trying to say here is I</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/496-0
+00:55:32.516 --> 00:55:33.076
+<v Sonal Mehta>Yes.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-3
+00:55:34.255 --> 00:55:37.576
+<v Ramanarayanan Balasubramanian>don't want to exhibit to the user.
+I am validating connector like that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-4
+00:55:37.576 --> 00:55:41.220
+<v Ramanarayanan Balasubramanian>What I'm going to say is I'm exhibiting
+to the, I want to exhibit to the user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-5
+00:55:41.220 --> 00:55:43.850
+<v Ramanarayanan Balasubramanian>I am validating or understanding your
+problem statement.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/497-6
+00:55:43.850 --> 00:55:46.756
+<v Ramanarayanan Balasubramanian>Please confirm how I understood the
+problem statement clearly.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/498-0
+00:55:46.876 --> 00:55:50.716
+<v Ramanarayanan Balasubramanian>That is the message I'm saying. However,
+Jyotish knows the copy way better.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/500-0
+00:55:48.556 --> 00:55:53.075
+<v Prasad GSK>Correct, correct? No, no,
+I think that should be there. Basically,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/500-1
+00:55:53.075 --> 00:55:57.796
+<v Prasad GSK>the validate plan is there, right? Sonal,
+in workflow, there is some.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/499-0
+00:55:54.836 --> 00:55:55.076
+<v Ramanarayanan Balasubramanian>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/503-0
+00:55:55.316 --> 00:56:00.746
+<v Sonal Mehta>Yes, yes, so this is validate, not plan.
+It is basically, yeah,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/503-1
+00:56:00.746 --> 00:56:07.703
+<v Sonal Mehta>user is OK with the current business view
+and he's clicking on it to proceed with</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/501-0
+00:56:04.276 --> 00:56:04.676
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/503-2
+00:56:07.703 --> 00:56:14.236
+<v Sonal Mehta>the set course of set next tool calling
+data, but but actually it is like...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/502-0
+00:56:09.396 --> 00:56:10.796
+<v Prasad GSK>Haha, correct, correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/504-0
+00:56:14.436 --> 00:56:18.805
+<v Sonal Mehta>The option is coming as a suggested
+action. Instead of that, it should be,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/504-1
+00:56:18.805 --> 00:56:22.882
+<v Sonal Mehta>you know, restricting user, okay,
+you have to say yes, no, or modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/504-2
+00:56:22.882 --> 00:56:26.435
+<v Sonal Mehta>Any other intent apart from it.
+What if user types in, okay,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/504-3
+00:56:26.435 --> 00:56:30.337
+<v Sonal Mehta>there's some more work I need to do
+related to the other workflow,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/504-4
+00:56:30.337 --> 00:56:34.356
+<v Sonal Mehta>other flow service, okay?
+The intent is itself is a different thing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/505-0
+00:56:34.756 --> 00:56:41.279
+<v Sonal Mehta>So how this agent will consider it in the
+current context or the next context or</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/505-1
+00:56:41.279 --> 00:56:45.950
+<v Sonal Mehta>how it should be,
+it should go back saying user that okay</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-0
+00:56:45.316 --> 00:56:49.535
+<v Ramanarayanan Balasubramanian>Sonal, we will, yeah, yeah, we will,
+we will internally discuss that, Sonal,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/505-2
+00:56:45.950 --> 00:56:46.836
+<v Sonal Mehta>if you are.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-1
+00:56:49.535 --> 00:56:52.274
+<v Ramanarayanan Balasubramanian>but our thing, Prasad,
+just to want to make sure,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-2
+00:56:52.274 --> 00:56:55.397
+<v Ramanarayanan Balasubramanian>sorry to cut you off, Sonal,
+since we are there, Prasad,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/506-0
+00:56:55.396 --> 00:56:55.516
+<v Sonal Mehta>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-3
+00:56:55.397 --> 00:56:59.286
+<v Ramanarayanan Balasubramanian>do we got any update on the scrum,
+because on the scrum you might have</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-4
+00:56:59.286 --> 00:57:02.354
+<v Ramanarayanan Balasubramanian>discussed, right?
+Did you get any update from connector</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/507-5
+00:57:02.354 --> 00:57:04.436
+<v Ramanarayanan Balasubramanian>team, all the dependencies, because...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/510-0
+00:57:05.236 --> 00:57:08.120
+<v Ramanarayanan Balasubramanian>Rajat also discussed with me on a program
+plan,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/510-1
+00:57:08.120 --> 00:57:11.245
+<v Ramanarayanan Balasubramanian>so I know he said he's discussing with
+you as well.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/510-2
+00:57:11.245 --> 00:57:15.151
+<v Ramanarayanan Balasubramanian>So did we get that information, Prasad,
+from the connector team,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/508-0
+00:57:14.516 --> 00:57:14.996
+<v Prasad GSK>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/510-3
+00:57:15.151 --> 00:57:18.756
+<v Ramanarayanan Balasubramanian>from the IWHI conversion like DSL to XML,
+all those things?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/509-0
+00:57:15.956 --> 00:57:16.436
+<v Prasad GSK>Mhm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/513-0
+00:57:19.476 --> 00:57:22.505
+<v Prasad GSK>No, no,
+that they say I will set up this call to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/513-1
+00:57:22.505 --> 00:57:26.462
+<v Prasad GSK>discuss all those things,
+so we will discuss. We can see, yeah,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/511-0
+00:57:23.916 --> 00:57:24.436
+<v Ramanarayanan Balasubramanian>Four.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/513-2
+00:57:26.462 --> 00:57:31.593
+<v Prasad GSK>we we cannot have 10 different meetings
+here, so it's very difficult to manage it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/512-0
+00:57:29.636 --> 00:57:30.716
+<v Ramanarayanan Balasubramanian>Totally understood.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/513-3
+00:57:31.593 --> 00:57:35.734
+<v Prasad GSK>OK, so let the people join,
+we will discuss all those dependencies</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/513-4
+00:57:35.734 --> 00:57:38.516
+<v Prasad GSK>one by one. OK,
+we'll try to conclude on UX.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/514-0
+00:57:37.316 --> 00:57:40.688
+<v Jyotish Sonowal>I'll just add, yeah,
+I'll just add one other point.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/514-1
+00:57:40.688 --> 00:57:45.228
+<v Jyotish Sonowal>There was one suggested UX journey for
+Launchpad, and Sonal is there,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/514-2
+00:57:45.228 --> 00:57:48.730
+<v Jyotish Sonowal>so she's aware.
+The version that we are seeing in the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/514-3
+00:57:48.730 --> 00:57:52.491
+<v Jyotish Sonowal>agent is a little different from that,
+right? So, I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/514-4
+00:57:52.491 --> 00:57:56.836
+<v Jyotish Sonowal>what we have to also align on next call
+is, do we align it with...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-0
+00:57:56.996 --> 00:58:00.857
+<v Jyotish Sonowal>with what we had initially proposed or we
+align with what has gone live because I</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-1
+00:58:00.857 --> 00:58:04.529
+<v Jyotish Sonowal>think from launchpad also there might
+there will be some tickets that will be</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-2
+00:58:04.529 --> 00:58:07.824
+<v Jyotish Sonowal>raised saying that it is not the designs
+have been not been followed.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-3
+00:58:07.824 --> 00:58:11.590
+<v Jyotish Sonowal>Now whether that's because of a technical
+constraint right now and can be fixed</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-4
+00:58:11.590 --> 00:58:15.545
+<v Jyotish Sonowal>later on or we are just going to continue
+with this I think that decision has to be</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/515-0
+00:58:12.036 --> 00:58:12.196
+<v Prasad GSK>No.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-5
+00:58:15.545 --> 00:58:19.358
+<v Jyotish Sonowal>taken and then we follow that because we
+want both the experiences to be similar</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/516-6
+00:58:19.358 --> 00:58:20.676
+<v Jyotish Sonowal>but currently there are two.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/519-0
+00:58:20.996 --> 00:58:24.911
+<v Jyotish Sonowal>Different versions, not very different,
+but a little different version of</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/519-1
+00:58:24.911 --> 00:58:28.668
+<v Jyotish Sonowal>experiences which is there,
+what is live versus what is been proposed.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/519-2
+00:58:28.668 --> 00:58:33.006
+<v Jyotish Sonowal>So I just also wanted to call that out
+and we can we can internally discuss that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/517-0
+00:58:31.316 --> 00:58:31.796
+<v Ramanarayanan Balasubramanian>Pradeep.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/519-3
+00:58:33.006 --> 00:58:36.868
+<v Jyotish Sonowal>I think things are still fluid.
+I don't think we have anything is set in</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/520-0
+00:58:35.636 --> 00:58:39.063
+<v Ramanarayanan Balasubramanian>Jyotish, yeah, yeah, one, one thing,
+one thing, Jyotish,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/518-0
+00:58:35.876 --> 00:58:36.356
+<v Prasad GSK>Sure.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/519-4
+00:58:36.868 --> 00:58:37.556
+<v Jyotish Sonowal>stone, but...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/520-1
+00:58:39.063 --> 00:58:43.212
+<v Ramanarayanan Balasubramanian>I would again request you.
+I know I have been again and again saying</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/520-2
+00:58:43.212 --> 00:58:47.782
+<v Ramanarayanan Balasubramanian>the challenge here is the flow guys are
+all pure developer guys, right? So,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/520-3
+00:58:47.782 --> 00:58:52.051
+<v Ramanarayanan Balasubramanian>given given the developer persona,
+we are concentrating on some areas.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/520-4
+00:58:52.051 --> 00:58:54.756
+<v Ramanarayanan Balasubramanian>One thing,
+one thing I'm just thinking loud.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-0
+00:58:54.996 --> 00:58:58.130
+<v Ramanarayanan Balasubramanian>One thing is, once I give the prompt,
+can we ask the user,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-1
+00:58:58.130 --> 00:59:01.529
+<v Ramanarayanan Balasubramanian>do you want a style A, style B?
+I'm just telling as an example,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-2
+00:59:01.529 --> 00:59:05.566
+<v Ramanarayanan Balasubramanian>you can come up with a better copy.
+Example I'm saying, style A or style B,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-3
+00:59:05.566 --> 00:59:09.071
+<v Ramanarayanan Balasubramanian>right? What does style A will do is,
+it'll do a traditional SDLC.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-4
+00:59:09.071 --> 00:59:13.267
+<v Ramanarayanan Balasubramanian>Like I will gather the requirements,
+I'll properly make sure I'll do all those</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/521-5
+00:59:13.267 --> 00:59:14.276
+<v Ramanarayanan Balasubramanian>things and do that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-0
+00:59:14.836 --> 00:59:18.073
+<v Ramanarayanan Balasubramanian>But how developers think is,
+they also think in a different way.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-1
+00:59:18.073 --> 00:59:21.857
+<v Ramanarayanan Balasubramanian>They immediately start writing code,
+right? I mean, most of the developers,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-2
+00:59:21.857 --> 00:59:25.243
+<v Ramanarayanan Balasubramanian>right? How they think, right?
+And then they want to modify, modify,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-3
+00:59:25.243 --> 00:59:27.682
+<v Ramanarayanan Balasubramanian>or they feel, hey,
+what is these questions, man?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-4
+00:59:27.682 --> 00:59:30.321
+<v Ramanarayanan Balasubramanian>Why are you asking me these questions?
+I don't know.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/522-5
+00:59:30.321 --> 00:59:33.956
+<v Ramanarayanan Balasubramanian>You have to talk to a business analyst.
+Like that they may think, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/523-0
+00:59:34.156 --> 00:59:38.679
+<v Ramanarayanan Balasubramanian>So can we show them upfront some DSL? Oh,
+this is what I tried as a first shot,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/523-1
+00:59:38.679 --> 00:59:43.314
+<v Ramanarayanan Balasubramanian>but please tell me what is that you want
+to modify so that they feel comfortable.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/523-2
+00:59:43.314 --> 00:59:47.667
+<v Ramanarayanan Balasubramanian>Because when you ask some business
+questions, they may not feel comfortable.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/523-3
+00:59:47.667 --> 00:59:51.455
+<v Ramanarayanan Balasubramanian>I'm just thinking loud, please.
+I'm not saying we have to do that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/523-4
+00:59:51.455 --> 00:59:53.716
+<v Ramanarayanan Balasubramanian>So we will ask the user, do you want to?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-0
+00:59:53.836 --> 00:59:57.612
+<v Ramanarayanan Balasubramanian>Core developer example I'm saying,
+style A or style B. Style A would be,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-1
+00:59:57.612 --> 01:00:00.715
+<v Ramanarayanan Balasubramanian>I'll be asking him technical questions,
+business questions,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-2
+01:00:00.715 --> 01:00:03.094
+<v Ramanarayanan Balasubramanian>and maybe irritate him.
+Or I go with style B,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-3
+01:00:03.094 --> 01:00:07.284
+<v Ramanarayanan Balasubramanian>where I'll first do whatever that comes
+into my mind and ask the user to modify.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-4
+01:00:07.284 --> 01:00:10.800
+<v Ramanarayanan Balasubramanian>And I will tell them upfront, hey,
+from what you gave, it is there.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/524-5
+01:00:10.800 --> 01:00:13.076
+<v Ramanarayanan Balasubramanian>But there are some clarifications
+required.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/526-0
+01:00:13.156 --> 01:00:16.733
+<v Ramanarayanan Balasubramanian>Either you look into it and modify that
+or I can ask you some clarification</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/526-1
+01:00:16.733 --> 01:00:20.591
+<v Ramanarayanan Balasubramanian>questions and we can we can work to it.
+So this is some thought process I want to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/525-0
+01:00:19.716 --> 01:00:19.956
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/526-2
+01:00:20.591 --> 01:00:22.756
+<v Ramanarayanan Balasubramanian>bring it up.
+Please think about that as well.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-0
+01:00:22.676 --> 01:00:25.800
+<v Jyotish Sonowal>Yeah. No, thanks.
+That's a good input because see,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-1
+01:00:25.800 --> 01:00:29.291
+<v Jyotish Sonowal>Launchpad was designed mostly for
+business users, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-2
+01:00:29.291 --> 01:00:33.394
+<v Jyotish Sonowal>And it was not supposed to support
+technical users, but now, like,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-3
+01:00:33.394 --> 01:00:36.457
+<v Jyotish Sonowal>we have to cater to both.
+So that's a good point.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-4
+01:00:36.457 --> 01:00:40.193
+<v Jyotish Sonowal>We'll definitely think about it.
+But having said that, also,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/527-0
+01:00:38.196 --> 01:00:38.596
+<v Prasad GSK>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/528-5
+01:00:40.193 --> 01:00:43.316
+<v Jyotish Sonowal>that's why I asked the question,
+who is a persona?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/530-0
+01:00:43.636 --> 01:00:47.585
+<v Jyotish Sonowal>Times at 100% technical users,
+but like it could also be a mixed user,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/530-1
+01:00:47.585 --> 01:00:49.976
+<v Jyotish Sonowal>right?
+Because we user will have access to</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/530-2
+01:00:49.976 --> 01:00:52.813
+<v Jyotish Sonowal>Launchpad,
+could be a business user who might just</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/530-3
+01:00:52.813 --> 01:00:56.984
+<v Jyotish Sonowal>end up landing on a on this flow,
+like where they building a flow service,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/529-0
+01:00:55.636 --> 01:00:58.276
+<v Ramanarayanan Balasubramanian>Right, right, right, right, right.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/530-4
+01:00:56.984 --> 01:00:59.876
+<v Jyotish Sonowal>so I mean we'll have to somehow bring
+some balance.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/531-0
+01:00:57.556 --> 01:01:03.420
+<v Prasad GSK>No, what what I would what? Yeah, no,
+what what I would suggest for Q3, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/531-1
+01:01:03.420 --> 01:01:07.131
+<v Prasad GSK>We will go ahead,
+have a one fixed personnel. OK,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/531-2
+01:01:07.131 --> 01:01:10.768
+<v Prasad GSK>we can introduce tiles and all definitely
+later,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/531-3
+01:01:10.768 --> 01:01:14.999
+<v Prasad GSK>but we will have see the the way we have
+decided, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/531-4
+01:01:14.999 --> 01:01:18.116
+<v Prasad GSK>One static way to get into the flow agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/532-0
+01:01:18.436 --> 01:01:23.296
+<v Prasad GSK>Similarly,
+we'll have predefined flow decided for Q3</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/532-1
+01:01:23.296 --> 01:01:28.797
+<v Prasad GSK>and we'll move ahead.
+We can introduce the variation styles</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/532-2
+01:01:28.797 --> 01:01:30.356
+<v Prasad GSK>definitely. Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/533-0
+01:01:30.396 --> 01:01:33.660
+<v Ramanarayanan Balasubramanian>Prasad, that is not a big,
+big change from a coding perspective,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/533-1
+01:01:33.660 --> 01:01:36.974
+<v Ramanarayanan Balasubramanian>but think about the impact,
+think about the impact will bring in,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/534-0
+01:01:33.676 --> 01:01:38.869
+<v Prasad GSK>No, no, no, no, no, no, no, no, Ramu,
+from no, no, no, Ramu,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/533-2
+01:01:36.974 --> 01:01:37.476
+<v Ramanarayanan Balasubramanian>because...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/534-1
+01:01:38.869 --> 01:01:43.040
+<v Prasad GSK>the problem from coding it may be very
+easy. OK,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/534-2
+01:01:43.040 --> 01:01:49.255
+<v Prasad GSK>see converging into all these user
+journeys and all will become a lot of</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/534-3
+01:01:49.255 --> 01:01:53.596
+<v Prasad GSK>time if you start different variations.
+That's my.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-0
+01:01:53.156 --> 01:01:56.787
+<v Sonal Mehta>This is not for you.
+I think it will be applicable for entire</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-1
+01:01:56.787 --> 01:02:00.067
+<v Sonal Mehta>Launchpad experience. Like as a user,
+if I am enrolled,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-2
+01:02:00.067 --> 01:02:04.518
+<v Sonal Mehta>my persona should also be get registered
+with Launchpad experience. I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/535-0
+01:02:03.636 --> 01:02:05.156
+<v Prasad GSK>Yeah, correct.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-3
+01:02:04.518 --> 01:02:07.856
+<v Sonal Mehta>it's for all the agents,
+not only for integration agent.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-4
+01:02:07.856 --> 01:02:11.194
+<v Sonal Mehta>This problem is there,
+but there was a focus always that</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/536-0
+01:02:09.356 --> 01:02:10.476
+<v Jyotish Sonowal>Yeah, yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/537-5
+01:02:11.194 --> 01:02:15.996
+<v Sonal Mehta>business user will be using the Launchpad
+experience and for business users only.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/538-0
+01:02:16.076 --> 01:02:18.596
+<v Sonal Mehta>We are making this, so I think...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/539-0
+01:02:17.636 --> 01:02:20.144
+<v Prasad GSK>No, no,
+I'm just trying to narrow the scope.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/539-1
+01:02:20.144 --> 01:02:22.596
+<v Prasad GSK>That's it.
+I am not denying all your ideas.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/540-0
+01:02:20.956 --> 01:02:24.740
+<v Ramanarayanan Balasubramanian>No, no, totally understood, Prasad.
+My only concern is, you know,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/540-1
+01:02:24.740 --> 01:02:29.040
+<v Ramanarayanan Balasubramanian>think of it right. If I give this to,
+let's say, Jayesh or Ramu or anyone,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/540-2
+01:02:29.040 --> 01:02:33.226
+<v Ramanarayanan Balasubramanian>right, what they would want is,
+and if you ask Ramu or Jayesh a question</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/540-3
+01:02:33.226 --> 01:02:37.640
+<v Ramanarayanan Balasubramanian>like, oh, tell me a business question,
+I don't know whether they'll be super</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/540-4
+01:02:37.640 --> 01:02:39.876
+<v Ramanarayanan Balasubramanian>happy to answer that business question.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/542-0
+01:02:40.036 --> 01:02:44.436
+<v Ramanarayanan Balasubramanian>Right, but when you show the final output,
+the code, they are super expert in that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/542-1
+01:02:44.436 --> 01:02:47.054
+<v Ramanarayanan Balasubramanian>They'll say, "Ah,
+there is a if condition missed,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/542-2
+01:02:47.054 --> 01:02:49.830
+<v Ramanarayanan Balasubramanian>there is no else part. OK,
+then they will say, 'Hey,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/542-3
+01:02:49.830 --> 01:02:53.287
+<v Ramanarayanan Balasubramanian>can you add an else part?
+That is what I I'm more concerned on on</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/542-4
+01:02:53.287 --> 01:02:54.596
+<v Ramanarayanan Balasubramanian>on this, because I was...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/543-0
+01:02:53.636 --> 01:02:58.472
+<v Prasad GSK>No, but the no, no, no.
+The question here is that is that the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/543-1
+01:02:58.472 --> 01:03:02.996
+<v Prasad GSK>path by default you want to implement for
+Flow Agent? OK.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-0
+01:03:03.076 --> 01:03:06.471
+<v Ramanarayanan Balasubramanian>No, we will ask the user,
+we'll ask the user as a first to one</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-1
+01:03:06.471 --> 01:03:08.895
+<v Ramanarayanan Balasubramanian>question,
+so that it is a technical persona,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-2
+01:03:08.895 --> 01:03:11.428
+<v Ramanarayanan Balasubramanian>but you have two paths.
+One path is like this,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-3
+01:03:11.428 --> 01:03:15.577
+<v Ramanarayanan Balasubramanian>another path is like this, right?
+And once the user chooses the second path,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-4
+01:03:15.577 --> 01:03:18.702
+<v Ramanarayanan Balasubramanian>I will always, I mean,
+Ashok knows or Sonal knows better.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-5
+01:03:18.702 --> 01:03:23.228
+<v Ramanarayanan Balasubramanian>They store it in cookie or whatever it is,
+and subsequently we will continue to use</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/544-6
+01:03:23.228 --> 01:03:24.036
+<v Ramanarayanan Balasubramanian>the same thing.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/545-0
+01:03:24.596 --> 01:03:26.116
+<v Ramanarayanan Balasubramanian>So it's just a one-time.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/546-0
+01:03:26.916 --> 01:03:30.116
+<v Prasad GSK>You are talking about two different
+journeys, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/548-0
+01:03:33.876 --> 01:03:37.236
+<v Prasad GSK>So what? I'm definitely with you, Ramu.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/549-0
+01:03:34.596 --> 01:03:38.196
+<v Ramanarayanan Balasubramanian>Like, yes, yes, but for the same persona,
+I'm not changing the persona.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/551-0
+01:03:39.156 --> 01:03:44.111
+<v Prasad GSK>A different styles, OK, different styles,
+but is it to two different paths within</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/551-1
+01:03:44.111 --> 01:03:44.836
+<v Prasad GSK>the journey?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/550-0
+01:03:45.556 --> 01:03:45.956
+<v Ramanarayanan Balasubramanian>Got it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/553-0
+01:03:46.596 --> 01:03:52.540
+<v Prasad GSK>Correct. So what I'm saying,
+limit the scope for now to one path.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/552-0
+01:03:47.636 --> 01:03:48.196
+<v Ramanarayanan Balasubramanian>Got it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/553-1
+01:03:52.540 --> 01:03:57.313
+<v Prasad GSK>Whatever the path you want,
+let's limit to one path.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/553-2
+01:03:57.313 --> 01:04:03.076
+<v Prasad GSK>Means in terms of a scope,
+I am trying to constrain you people.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/555-0
+01:04:01.556 --> 01:04:05.044
+<v Ramanarayanan Balasubramanian>No, totally understood, Prasad.
+End of the day, it's a products call,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/555-1
+01:04:05.044 --> 01:04:07.934
+<v Ramanarayanan Balasubramanian>product and the UX Jyotish call.
+If they say, yeah, yeah,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/555-2
+01:04:07.934 --> 01:04:11.572
+<v Ramanarayanan Balasubramanian>it's going to be one path and follow this
+path, we are going to do that.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/555-3
+01:04:11.572 --> 01:04:13.316
+<v Ramanarayanan Balasubramanian>But I just want to throw it around.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/554-0
+01:04:13.236 --> 01:04:14.516
+<v Prasad GSK>Sure, sure, okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/556-0
+01:04:15.796 --> 01:04:17.636
+<v Prasad GSK>Okay, fine, I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/557-0
+01:04:16.436 --> 01:04:20.655
+<v Jyotish Sonowal>One thing, sorry, Ramu, I mean,
+if it is it possible for you, and I mean,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/557-1
+01:04:20.655 --> 01:04:25.443
+<v Jyotish Sonowal>if you know some ******** technical users,
+can you ask them to use the close of the</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-0
+01:04:24.436 --> 01:04:27.391
+<v Ramanarayanan Balasubramanian>That is the intention.
+That is the intention, Jyotish.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/557-2
+01:04:25.443 --> 01:04:25.956
+<v Jyotish Sonowal>workflow?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-1
+01:04:27.391 --> 01:04:30.614
+<v Ramanarayanan Balasubramanian>I requested Sonal.
+Sonal is working on to put it in Dev Ops</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-2
+01:04:30.614 --> 01:04:34.858
+<v Ramanarayanan Balasubramanian>and I have identified some persons and I
+also spoke to them and spoke to Rinku</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-3
+01:04:34.858 --> 01:04:38.189
+<v Ramanarayanan Balasubramanian>team and other things.
+So we have identified some core people</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-4
+01:04:38.189 --> 01:04:42.433
+<v Ramanarayanan Balasubramanian>and those people I want to play for two
+weeks, like give it to them, let them,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/558-5
+01:04:42.433 --> 01:04:42.916
+<v Ramanarayanan Balasubramanian>let them.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/559-0
+01:04:43.396 --> 01:04:46.756
+<v Ramanarayanan Balasubramanian>play with it and give us the feedback.
+Totally aligned with you.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/560-0
+01:04:47.276 --> 01:04:48.036
+<v Jyotish Sonowal>Workflow, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/561-0
+01:04:48.596 --> 01:04:49.636
+<v Ramanarayanan Balasubramanian>What? No, no, floor.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/563-0
+01:04:50.356 --> 01:04:53.944
+<v Jyotish Sonowal>Can you also tell them to use workflow?
+I just want to see like,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/563-1
+01:04:53.944 --> 01:04:57.476
+<v Jyotish Sonowal>because like the entire launchpad was
+built for business users.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/563-2
+01:04:57.476 --> 01:05:00.733
+<v Jyotish Sonowal>I want to see like,
+because if they face issue using that,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/563-3
+01:05:00.733 --> 01:05:04.596
+<v Jyotish Sonowal>right, they will also face,
+probably face issue when we are building.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/564-0
+01:05:03.076 --> 01:05:05.986
+<v Ramanarayanan Balasubramanian>I can give you,
+I can give you the persons because I</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/564-1
+01:05:05.986 --> 01:05:08.676
+<v Ramanarayanan Balasubramanian>cannot go and ask another favor,
+so you can ask.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/565-0
+01:05:09.076 --> 01:05:11.621
+<v Jyotish Sonowal>Sure, sure, sure. I mean,
+we can reach out.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/565-1
+01:05:11.621 --> 01:05:15.669
+<v Jyotish Sonowal>It'll be really interesting to see
+because we're also doing some user</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/565-2
+01:05:15.669 --> 01:05:19.718
+<v Jyotish Sonowal>testing later this month. And we,
+but maybe those are business users,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/565-3
+01:05:19.718 --> 01:05:22.436
+<v Jyotish Sonowal>but let's see if we find some technical
+users.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/567-0
+01:05:21.156 --> 01:05:25.289
+<v Sonal Mehta>But Jyotish,
+there are certain criteria like from when</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/567-1
+01:05:25.289 --> 01:05:28.971
+<v Sonal Mehta>we onboard right user to this particular
+tenant.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/567-2
+01:05:28.971 --> 01:05:35.057
+<v Sonal Mehta>So we have certain roles already given
+like and there was a discussion happening</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/567-3
+01:05:35.057 --> 01:05:39.716
+<v Sonal Mehta>around with Jay Gauthier and team about
+adding persona. Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/570-0
+01:05:40.276 --> 01:05:45.558
+<v Sonal Mehta>that whether it's an integration
+specialist or is it a business user or it</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/566-0
+01:05:40.596 --> 01:05:40.756
+<v Jyotish Sonowal>Mm.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/570-1
+01:05:45.558 --> 01:05:50.769
+<v Sonal Mehta>is non-technical user or something.
+So you can have this discussion again</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/569-0
+01:05:47.076 --> 01:05:47.556
+<v Jyotish Sonowal>Okay.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/570-2
+01:05:50.769 --> 01:05:56.473
+<v Sonal Mehta>with Gabe and everyone because when this
+launchpad or BSoft was started, it was,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/570-3
+01:05:56.473 --> 01:05:59.924
+<v Sonal Mehta>I mean,
+from that time we were discussing it and</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/570-4
+01:05:59.924 --> 01:06:00.276
+<v Sonal Mehta>then.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/571-0
+01:06:00.356 --> 01:06:03.156
+<v Sonal Mehta>Suddenly,
+the focus went to only business user.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/572-0
+01:06:04.996 --> 01:06:07.692
+<v Jyotish Sonowal>Yeah,
+but but now the now the we we are not</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/572-1
+01:06:07.692 --> 01:06:12.716
+<v Jyotish Sonowal>focusing on business users only, right?
+Because we are saying that it will be for</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/572-2
+01:06:12.716 --> 01:06:14.676
+<v Jyotish Sonowal>technical business users, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/574-0
+01:06:13.236 --> 01:06:17.771
+<v Sonal Mehta>Yes, technical integration specialist,
+basically they know everything.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/573-0
+01:06:17.556 --> 01:06:18.116
+<v Jyotish Sonowal>Yeah.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/574-1
+01:06:17.771 --> 01:06:21.028
+<v Sonal Mehta>So for simple,
+they will never come to our system.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/574-2
+01:06:21.028 --> 01:06:25.052
+<v Sonal Mehta>And flow, what I've heard,
+only technical people are using it,</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/574-3
+01:06:25.052 --> 01:06:30.097
+<v Sonal Mehta>like integration specialist and more.
+So if we have to keep that persona thing</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/574-4
+01:06:30.097 --> 01:06:32.396
+<v Sonal Mehta>in mind, then we have to discuss it.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/575-0
+01:06:32.516 --> 01:06:34.196
+<v Sonal Mehta>In broader group, like...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/577-0
+01:06:35.196 --> 01:06:38.676
+<v Sonal Mehta>For because it is binded to the user,
+right user data.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/576-0
+01:06:35.956 --> 01:06:36.276
+<v Jyotish Sonowal>The.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/579-0
+01:06:39.876 --> 01:06:42.436
+<v Sonal Mehta>So, user profile data, so...</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/578-0
+01:06:40.356 --> 01:06:40.516
+<v Jyotish Sonowal>M.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/581-0
+01:06:41.716 --> 01:06:44.714
+<v Jyotish Sonowal>But now we don't have any concept of
+persona right now.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/581-1
+01:06:44.714 --> 01:06:48.996
+<v Jyotish Sonowal>And we were planning to set personas,
+but we are not doing that anymore, right?</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/580-0
+01:06:47.476 --> 01:06:48.316
+<v Prasad GSK>Yeah, I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/582-0
+01:06:49.396 --> 01:06:51.076
+<v Prasad GSK>Yeah, I'll stop recording, I think.</v>
+
+2f513516-d546-4003-8d1f-67fbab9cfaa8/583-0
+01:06:51.156 --> 01:06:51.516
+<v Jyotish Sonowal>Yeah.</v>

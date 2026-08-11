@@ -1,0 +1,119 @@
+/* ── Workspace panel ── */
+.workspace-panel {
+  width: 100%; height: 100%;
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+
+.workspace-header {
+  padding: 12px 14px 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+.workspace-title-row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.workspace-title { font-size: 13px; font-weight: 600; flex: 1; }
+.workspace-controls { display: flex; gap: 4px; align-items: center; padding-bottom: 8px; }
+.icon-btn {
+  background: none; border: 1px solid transparent; border-radius: 4px;
+  padding: 3px 6px; font-size: 12px; color: var(--color-muted);
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--color-border); background: var(--color-surface); }
+
+/* ── Tabs ── */
+.workspace-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 14px;
+}
+.tab-btn {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  padding: 8px 14px; font-size: 13px; color: var(--color-muted);
+  cursor: pointer; margin-bottom: -1px;
+}
+.tab-btn.active { color: var(--color-text); border-bottom-color: var(--color-text); font-weight: 600; }
+
+/* ── Tab content ── */
+.tab-content { flex: 1; overflow-y: auto; padding: 14px; }
+
+/* ── Business view steps ── */
+.business-steps { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+.business-steps li { font-size: 13px; line-height: 1.5; }
+.business-steps li .step-subtitle { font-size: 12px; color: var(--color-muted); }
+
+/* ── Accordion ── */
+.accordion { display: flex; flex-direction: column; }
+.accordion-item { border-bottom: 1px solid var(--color-border); }
+.accordion-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; cursor: pointer;
+  font-size: 13px; background: var(--color-bg);
+  user-select: none;
+}
+.accordion-header:hover { background: var(--color-surface); }
+.accordion-num { font-size: 12px; color: var(--color-muted); min-width: 16px; }
+.accordion-icon { font-size: 13px; }
+.accordion-title { flex: 1; }
+.accordion-title .step-keyword { font-weight: 600; }
+.accordion-toggle { font-size: 12px; color: var(--color-muted); margin-left: auto; }
+.accordion-body { padding: 10px 14px 14px; display: none; }
+.accordion-item.open .accordion-body { display: block; }
+.accordion-item.open .accordion-toggle { transform: rotate(180deg); }
+
+/* indent for sub-items */
+.accordion-item.indented .accordion-header { padding-left: 36px; }
+
+/* ── Mapped data table ── */
+.mapped-data-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; font-weight: 600; margin-bottom: 8px;
+}
+.view-full-mapping {
+  font-size: 12px; color: var(--color-accent); background: none; border: none;
+  cursor: pointer; text-decoration: underline;
+}
+.mapping-table-wrap { overflow-x: auto; }
+.mapping-table {
+  width: 100%; border-collapse: collapse; font-size: 11px;
+  min-width: 480px;
+}
+.mapping-table th {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  padding: 5px 8px; text-align: left; font-size: 11px; white-space: nowrap;
+}
+.mapping-table td { border: 1px solid var(--color-border); padding: 5px 8px; vertical-align: top; }
+.mapping-table .collapse-row { font-size: 11px; color: var(--color-muted); }
+.tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 1px 5px; border-radius: 3px; margin-right: 4px;
+}
+.tag-obj { background: var(--color-tag-obj); color: #9d174d; }
+.tag-str { background: var(--color-tag-str); color: #92400e; }
+.tag-doc { background: var(--color-tag-doc); color: #065f46; }
+.required-star { color: #da1e28; font-size: 10px; }
+
+/* ── Full mapping view ── */
+.full-mapping-view { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+.mapping-nav { display: flex; justify-content: space-between; align-items: center; }
+.back-link { background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 13px; text-decoration: underline; }
+.toggle-label { font-size: 12px; color: var(--color-muted); display: flex; align-items: center; gap: 4px; cursor: pointer; }
+
+/* ── Test report view ── */
+.test-report-view { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+.test-report-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+}
+.test-run-status { font-size: 14px; font-weight: 600; color: var(--color-active); margin-bottom: 4px; }
+.test-run-time { font-size: 12px; color: var(--color-muted); }
+.test-details-label { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: var(--color-muted); margin-top: 10px; margin-bottom: 6px; }
+.test-tree { font-size: 12px; display: flex; flex-direction: column; gap: 4px; }
+.test-tree-node { display: flex; align-items: baseline; gap: 6px; }
+.test-tree-children { margin-left: 16px; display: flex; flex-direction: column; gap: 3px; }
+.test-tree-field { color: var(--color-muted); }
+.test-tree-value { color: var(--color-text); font-style: italic; }

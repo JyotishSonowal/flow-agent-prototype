@@ -1,0 +1,1899 @@
+WEBVTT
+
+<v Jyotish Sonowal>Okay, recording has started.
+So I'll ask the question again.</v>
+
+<v Jyotish Sonowal>I wanted to understand the difference
+between these fields,</v>
+
+<v Jyotish Sonowal>like where there's an asterisk,
+which I assume that these are fields that</v>
+
+<v Jyotish Sonowal>user needs to fill.
+And the second part of the question is,</v>
+
+<v Jyotish Sonowal>if I say show only map,
+I can just see this.</v>
+
+<v Jyotish Sonowal>There is no connexion between like input
+and output.</v>
+
+<v Jyotish Sonowal>So yeah, I just wanted to understand this.</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Aleemullah Samiullah>Yeah, so basically when we say map,
+there are two things. Okay,</v>
+
+<v Aleemullah Samiullah>basically map means you are providing
+value to it.</v>
+
+<v Aleemullah Samiullah>So pipeline is nothing but you pass the
+values and values are being passed on</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>from one step to another and eventually
+at the end, whatever is collected,</v>
+
+<v Aleemullah Samiullah>it is pipeline output.
+And that's the output of this whole</v>
+
+<v Aleemullah Samiullah>service itself.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>That's how the whole pipeline concept it
+works. And now coming to the map,</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>like I said, it is passing values.
+So you can pass values either through map</v>
+
+<v Jyotish Sonowal>And.</v>
+
+<v Aleemullah Samiullah>set or map copy.
+Map set is like you're setting a value to</v>
+
+<v Aleemullah Samiullah>that particular field.
+Map copy is you are passing the value</v>
+
+<v Aleemullah Samiullah>from one field to the other.</v>
+
+<v Jyotish Sonowal>Hmm.</v>
+
+<v Aleemullah Samiullah>That is the line what you see.
+So map is not only the lines what we draw</v>
+
+<v Jyotish Sonowal>Hello.</v>
+
+<v Aleemullah Samiullah>between one field to another.
+It can also mean I'm setting some value</v>
+
+<v Aleemullah Samiullah>to that field. That is also a map.</v>
+
+<v Jyotish Sonowal>Got it. So map field and map copy.</v>
+
+<v Aleemullah Samiullah>OK.</v>
+
+<v Aleemullah Samiullah>Map copy is the terminology,
+what they say then designer or on-premise,</v>
+
+<v Jyotish Sonowal>It.</v>
+
+<v Aleemullah Samiullah>but here it is.
+You consider that as markup as the lines,</v>
+
+<v Aleemullah Samiullah>what you draw between fields.
+And set value, you can do it on this one.</v>
+
+<v Jyotish Sonowal>Got it.</v>
+
+<v Aleemullah Samiullah>So what do you see in the message?
+It is a set value.</v>
+
+<v Aleemullah Samiullah>You have set a value to that field.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>you can double click and you can see this
+is the value, what is set to that field.</v>
+
+<v Jyotish Sonowal>Got it. Got it.</v>
+
+<v Aleemullah Samiullah>So this, we call it set value.</v>
+
+<v Jyotish Sonowal>Okay, so one question, Aleemullah,
+is this set value similar to the static</v>
+
+<v Jyotish Sonowal>data that we are talking about on
+workflow,</v>
+
+<v Jyotish Sonowal>which is not there right now and we've
+been having those discussions.</v>
+
+<v Aleemullah Samiullah>Yeah, I can consider that, yes.</v>
+
+<v Jyotish Sonowal>Okay,
+so this is static value that you put.</v>
+
+<v Jyotish Sonowal>Now in this case, there is a pipeline.</v>
+
+<v Aleemullah Samiullah>And it can also not only static, I mean,
+it is not always text.</v>
+
+<v Jyotish Sonowal>Oops.</v>
+
+<v Aleemullah Samiullah>It can also be a variable.</v>
+
+<v Jyotish Sonowal>Open.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>It can also be a field.</v>
+
+<v Jyotish Sonowal>Got it, got it. Now,
+if I see there is no line,</v>
+
+<v Jyotish Sonowal>that means this, this,
+there is like this is pipeline input,</v>
+
+<v Jyotish Sonowal>right? And there is pipeline output,
+and they're most likely the same.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>The only difference I get is this string,
+which is a message. Like,</v>
+
+<v Jyotish Sonowal>what does it tell me? Like,
+when you look at it,</v>
+
+<v Jyotish Sonowal>what does it tell you?</v>
+
+<v Jyotish Sonowal>Like, just trying to understand that.</v>
+
+<v Aleemullah Samiullah>Idiot.</v>
+
+<v Aleemullah Samiullah>Whatever service we have selected here,
+the service is log custom message. Okay,</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>so log custom message, it works,
+it will accept an input,</v>
+
+<v Aleemullah Samiullah>and it will just log that. Log in,
+consider that as print.</v>
+
+<v Aleemullah Samiullah>It will just print.
+So you have set a message,</v>
+
+<v Jyotish Sonowal>Ohh.</v>
+
+<v Aleemullah Samiullah>and can you double click?</v>
+
+<v Aleemullah Samiullah>Open that.</v>
+
+<v Aleemullah Samiullah>It is a static string value,
+like it says uploaded to ES3 successfully.</v>
+
+<v Aleemullah Samiullah>They just want to print this one.
+Imagine along with this,</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>I want to print a value from the field.
+Let's say if you expand any of the</v>
+
+<v Aleemullah Samiullah>document, there will be some ideas,
+anything. You just need to know that ID.</v>
+
+<v Aleemullah Samiullah>Okay,
+that also is possible through the log</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>custom message.
+But in this particular step,</v>
+
+<v Aleemullah Samiullah>they don't want this information.
+They just want to print a static plain</v>
+
+<v Aleemullah Samiullah>string.
+That is what it is being done here.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>So this,
+I can't edit any of this because this is</v>
+
+<v Jyotish Sonowal>something which like is an input that is
+coming from the previous step, right?</v>
+
+<v Aleemullah Samiullah>Step, got it.</v>
+
+<v Jyotish Sonowal>So can I edit this? Oh,
+I can edit the output. Okay.</v>
+
+<v Aleemullah Samiullah>Yes, you can set value on the output.
+You can say what the value is,</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>or you can pass the value.
+Pass the value is like you draw the lines</v>
+
+<v Aleemullah Samiullah>from one service to another.</v>
+
+<v Jyotish Sonowal>Got it, got it.
+So I can set an input within pipeline.</v>
+
+<v Jyotish Sonowal>Basically, I'm just saying, okay,
+these are the things that are coming from</v>
+
+<v Jyotish Sonowal>the previous step. Okay,
+now from the things that are incoming,</v>
+
+<v Aleemullah Samiullah>Yes.</v>
+
+<v Jyotish Sonowal>you can set a, you can set a data value,
+right? And from the things.</v>
+
+<v Aleemullah Samiullah>There is one more thing.
+There is one more thing called map drop.</v>
+
+<v Aleemullah Samiullah>Map drop is like you delete or you don't
+want a particular field to be carried</v>
+
+<v Aleemullah Samiullah>over to the next step.</v>
+
+<v Jyotish Sonowal>OK.</v>
+
+<v Jyotish Sonowal>Oh, okay. So in which case?</v>
+
+<v Aleemullah Samiullah>Can you right click on one of the message,
+I mean the last message? Right click, no,</v>
+
+<v Jyotish Sonowal>This one?</v>
+
+<v Aleemullah Samiullah>no, on the pipeline output.</v>
+
+<v Jyotish Sonowal>Ohh, OK.</v>
+
+<v Aleemullah Samiullah>select or drop field.
+You have this option, right?</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>So drop field, what we'll do,
+it will not get carried forward to the</v>
+
+<v Aleemullah Samiullah>next step.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>And what is the difference between this
+set value? Sorry,</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>if I double click set value,
+it says enter value here.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>Like what is the difference because this
+is a set value. See,</v>
+
+<v Jyotish Sonowal>I thought the same message is the output
+over here.</v>
+
+<v Aleemullah Samiullah>No, here it is a field,
+pipeline output is a field.</v>
+
+<v Aleemullah Samiullah>Okay,
+so either you pass it to the service and</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>then it will be available when you run
+here.</v>
+
+<v Aleemullah Samiullah>Okay, and both the set values are same.
+I mean the functionality is same.</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>What do you do here?
+Let's say here also you can set a value</v>
+
+<v Aleemullah Samiullah>and it can be some of something different.</v>
+
+<v Aleemullah Samiullah>And whatever is whatever you set on the
+output will be carried to the next step.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Jyotish Sonowal>Got it. Okay, then basically these are,
+okay, basic fundamental understood.</v>
+
+<v Jyotish Sonowal>These are left side,
+these are things that are coming from the</v>
+
+<v Jyotish Sonowal>previous step,
+right side things are going to the next</v>
+
+<v Jyotish Sonowal>step. And between input, log, custom,
+whatever, like input and...</v>
+
+<v Aleemullah Samiullah>So in between what you have is the
+service signature or service input output,</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>what you have selected.
+In this case it is custom message.</v>
+
+<v Aleemullah Samiullah>Whereas if you scroll on the canvas,
+can you just scroll down?</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>Do you see any transform step?</v>
+
+<v Jyotish Sonowal>Yes, I think there is somewhere.</v>
+
+<v Aleemullah Samiullah>There is a transform, no, no,
+or not this one, add a at the end,</v>
+
+<v Jyotish Sonowal>This one?</v>
+
+<v Aleemullah Samiullah>add a new step.</v>
+
+<v Aleemullah Samiullah>Type transform.</v>
+
+<v Aleemullah Samiullah>Transform pipeline. Okay,
+so here in this transform pipeline,</v>
+
+<v Aleemullah Samiullah>you can have multiple services. Earlier,
+you just saw one service, right?</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>So in the transformer step,
+if you click on plus,</v>
+
+<v Aleemullah Samiullah>I can add multiple steps. Like, let's say,
+for example,</v>
+
+<v Aleemullah Samiullah>I can say a log custom message.
+Just type log custom message log.</v>
+
+<v Aleemullah Samiullah>Huh, first one.</v>
+
+<v Aleemullah Samiullah>OK, and when you expand,
+you will see the same message,</v>
+
+<v Aleemullah Samiullah>the signature, what you see,
+you just click on the expand icon.</v>
+
+<v Jyotish Sonowal>This one?</v>
+
+<v Aleemullah Samiullah>No, not that expense. In that same step,
+log custom message, after delete,</v>
+
+<v Jyotish Sonowal>Hello.</v>
+
+<v Aleemullah Samiullah>there is an expense. See here,
+we have this message.</v>
+
+<v Aleemullah Samiullah>So this also you can map.
+And along with log custom message,</v>
+
+<v Aleemullah Samiullah>you can have some direct mappings as well,
+directly from pipeline input to pipeline</v>
+
+<v Aleemullah Samiullah>output.
+And you can add multiple transform steps.</v>
+
+<v Aleemullah Samiullah>For example, let's say, yeah, yeah,
+let's say, for example, I have two fields.</v>
+
+<v Jyotish Sonowal>I'll have to cheque a transform step then.</v>
+
+<v Aleemullah Samiullah>Let's say first name, last name,
+and in output I just have name.</v>
+
+<v Jyotish Sonowal>Mm-hmm.</v>
+
+<v Aleemullah Samiullah>I want to concatenate both the fields,
+so I'll use concat service here,</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>so can you or click plus again?</v>
+
+<v Aleemullah Samiullah>Plus, yeah, yeah, that plus,
+so here type concat.</v>
+
+<v Jyotish Sonowal>And.</v>
+
+<v Aleemullah Samiullah>A string can get the 4th option.</v>
+
+<v Jyotish Sonowal>Okay, what does it do?</v>
+
+<v Aleemullah Samiullah>So it will concat 2 strings,
+true concat in the same,</v>
+
+<v Aleemullah Samiullah>it will join 2 strings. I gave an example,
+right? First name, last name.</v>
+
+<v Aleemullah Samiullah>Whereas in my pipeline output,
+it can accept only one value.</v>
+
+<v Aleemullah Samiullah>So what I will do,
+I will map the first name and last name</v>
+
+<v Jyotish Sonowal>Ohh.</v>
+
+<v Aleemullah Samiullah>from pipeline input.
+This service will combine both of them.</v>
+
+<v Aleemullah Samiullah>And that value again,
+I will map it to something else.</v>
+
+<v Jyotish Sonowal>Okay, so this is string one.</v>
+
+<v Aleemullah Samiullah>This.</v>
+
+<v Jyotish Sonowal>So this I'll say first name for example,
+does it will it work?</v>
+
+<v Aleemullah Samiullah>No, no, it is a value, right?
+It can't be first.</v>
+
+<v Aleemullah Samiullah>First name is the field.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>Let's say, or take John Carter.
+John Carter is the John is the first name</v>
+
+<v Aleemullah Samiullah>and Carter is the second name, correct?
+Are the last name that is the value what</v>
+
+<v Jyotish Sonowal>Ohh.</v>
+
+<v Aleemullah Samiullah>we might get from pipeline input,
+whereas in the pipeline output we want to</v>
+
+<v Aleemullah Samiullah>just pass the number.
+We can just give a name,</v>
+
+<v Aleemullah Samiullah>which is John Carter.</v>
+
+<v Aleemullah Samiullah>as a one name. Okay, so that's a use case.
+So far to get that done,</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>you can add transformer step.</v>
+
+<v Jyotish Sonowal>Okay, so this will be auto fetch.
+This will be auto fetch basically, right?</v>
+
+<v Aleemullah Samiullah>You don't need a...</v>
+
+<v Jyotish Sonowal>I don't like even though it has this
+asterisk,</v>
+
+<v Jyotish Sonowal>I don't have to like really put a value
+here, right?</v>
+
+<v Aleemullah Samiullah>You need to either you have to either you
+have to do a map copy,</v>
+
+<v Aleemullah Samiullah>which is drawing a line between 2 fields,
+or you have to set the value directly</v>
+
+<v Aleemullah Samiullah>here. It can be variable as well.</v>
+
+<v Jyotish Sonowal>But in this case,
+the name could be anything, right?</v>
+
+<v Jyotish Sonowal>So in this case,
+I don't have to put a name, right?</v>
+
+<v Jyotish Sonowal>Because it'll have to fetch.</v>
+
+<v Aleemullah Samiullah>Yeah, that's what I'm saying.
+That's what it can be a variable,</v>
+
+<v Aleemullah Samiullah>variable in the sense that the dynamic
+value. Similarly, even the mapping,</v>
+
+<v Aleemullah Samiullah>it's a dynamic value.</v>
+
+<v Jyotish Sonowal>All this transform is complicated,
+I understand.</v>
+
+<v Aleemullah Samiullah>So I'm just giving one example of concat.
+Now, this is for name and this one.</v>
+
+<v Aleemullah Samiullah>I want to concatenate.
+And imagine there is one other use case</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Aleemullah Samiullah>where the city is expected to be in all
+capital.</v>
+
+<v Aleemullah Samiullah>Then I'll add one more transformer here
+itself,</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>which will let me change from lowercase
+to uppercase.</v>
+
+<v Aleemullah Samiullah>Okay, and so on and so forth.
+Whatever I want to do in one step,</v>
+
+<v Aleemullah Samiullah>I'd be able to achieve that using
+transformer.</v>
+
+<v Jyotish Sonowal>So if we have transformers like it looks
+like this only, it has a different design,</v>
+
+<v Jyotish Sonowal>right? I think that's seen one.</v>
+
+<v Aleemullah Samiullah>It looks like this,
+and in addition to this,</v>
+
+<v Aleemullah Samiullah>I can also do a direct mapping.</v>
+
+<v Jyotish Sonowal>OK, I think I've seen one design for.</v>
+
+<v Jyotish Sonowal>Somewhere and put it in.</v>
+
+<v Jyotish Sonowal>That is IB.</v>
+
+<v Aleemullah Samiullah>Very good.</v>
+
+<v Jyotish Sonowal>Okay,
+so this the agent is going to do it</v>
+
+<v Jyotish Sonowal>anyways, right? I mean, for me,
+I just need to...</v>
+
+<v Aleemullah Samiullah>I don't know if transformer is in scope
+or not.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>I'm just saying this is also an option in
+pipeline.</v>
+
+<v Aleemullah Samiullah>It is not always one single service.
+There are multiple services in between.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>There's one other variant of pipeline.</v>
+
+<v Aleemullah Samiullah>What we have?</v>
+
+<v Jyotish Sonowal>Okay, got it.
+Now tell me about these functionalities,</v>
+
+<v Jyotish Sonowal>these.</v>
+
+<v Jyotish Sonowal>Clear actions, all of this is not needed,
+right?</v>
+
+<v Jyotish Sonowal>If I have to just make make the entire
+mapping read only.</v>
+
+<v Aleemullah Samiullah>Yeah, if it is read-only,
+you don't need all this, yes.</v>
+
+<v Jyotish Sonowal>OK, let me close it now.</v>
+
+<v Jyotish Sonowal>I'll delete this. I don't, I mean,
+I've not saved it,</v>
+
+<v Jyotish Sonowal>but let me just delete it.</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Jyotish Sonowal>There's one step which is pretty big.</v>
+
+<v Jyotish Sonowal>Okay, now say for something like this.</v>
+
+<v Jyotish Sonowal>This copy mapping,
+it's I think AI is recommending,</v>
+
+<v Jyotish Sonowal>so the product is recommending this.</v>
+
+<v Aleemullah Samiullah>No, no.</v>
+
+<v Aleemullah Samiullah>It's called implicit mapping.
+Like if the same number, same field,</v>
+
+<v Jyotish Sonowal>Good.</v>
+
+<v Aleemullah Samiullah>same field and type is available in the
+output of the service and the output of</v>
+
+<v Aleemullah Samiullah>the pipeline, then it gets it gets mapped.
+Like I say, it is implicit mapping. It's.</v>
+
+<v Jyotish Sonowal>And.</v>
+
+<v Aleemullah Samiullah>more like a indirect mapping or it just
+gets mapped. It is the same value,</v>
+
+<v Aleemullah Samiullah>so it gets copied.</v>
+
+<v Jyotish Sonowal>Got it.</v>
+
+<v Aleemullah Samiullah>So, if you expand, just expand,
+get audit rate.</v>
+
+<v Aleemullah Samiullah>OK, expand here. It has it,
+it will have the same field,</v>
+
+<v Aleemullah Samiullah>same type on the pipeline output. Also,
+you can expand.</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Jyotish Sonowal>Got it. So this is mapped by default.
+And so if a user decides to change this,</v>
+
+<v Aleemullah Samiullah>K.</v>
+
+<v Aleemullah Samiullah>By default, correct, yeah.</v>
+
+<v Jyotish Sonowal>I saw there is a filled,
+a regular non-dotted line. Now,</v>
+
+<v Jyotish Sonowal>with the agent, there's,
+because I can't do any mapping changes on</v>
+
+<v Aleemullah Samiullah>Yes, yes, yeah, yeah, that's right.</v>
+
+<v Jyotish Sonowal>my own, convolution mapping is not there.
+It can just be a straight line.</v>
+
+<v Jyotish Sonowal>in that case.</v>
+
+<v Aleemullah Samiullah>But we might still need the implicit
+mapping, right?</v>
+
+<v Jyotish Sonowal>Implicit mapping,
+so that's what I'm saying. Like,</v>
+
+<v Aleemullah Samiullah>That's a default.</v>
+
+<v Jyotish Sonowal>can do I need to put two different types
+of lines? No, right? I mean,</v>
+
+<v Jyotish Sonowal>I can put just one because until till
+convolution mapping is there.</v>
+
+<v Aleemullah Samiullah>No, because the product,
+the product has that, what do you say,</v>
+
+<v Aleemullah Samiullah>the difference,
+then we need to carry over the same</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>impression, right?</v>
+
+<v Jyotish Sonowal>Okay, so it'd be dotted by default.</v>
+
+<v Jyotish Sonowal>But here, the user can change the mapping.
+That's why it'll become this regular line.</v>
+
+<v Aleemullah Samiullah>Hmm.</v>
+
+<v Jyotish Sonowal>But agent doesn't give you the option to
+edit at this point.</v>
+
+<v Aleemullah Samiullah>Yes.</v>
+
+<v Jyotish Sonowal>Completion mapping is not there.
+So I just need to show dot it then. OK.</v>
+
+<v Jyotish Sonowal>OK, understood.</v>
+
+<v Aleemullah Samiullah>default mapping,
+it will still be the same,</v>
+
+<v Aleemullah Samiullah>just like how we see here.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Jyotish Sonowal>Got it. I wanted to show you something.
+Okay,</v>
+
+<v Jyotish Sonowal>this more or less like answers my
+question.</v>
+
+<v Jyotish Sonowal>So I thought these has to be filled in,
+but it's not. And when I show mapping,</v>
+
+<v Jyotish Sonowal>these are things that I need to show.</v>
+
+<v Jyotish Sonowal>If I have to show only mapped, OK?</v>
+
+<v Jyotish Sonowal>This will include static mapping as well,
+right?</v>
+
+<v Aleemullah Samiullah>But...</v>
+
+<v Aleemullah Samiullah>Um...</v>
+
+<v Aleemullah Samiullah>Starting.</v>
+
+<v Jyotish Sonowal>Or that concept doesn't exist for flow
+service.</v>
+
+<v Aleemullah Samiullah>Uh, no, what do we mean by the static map?</v>
+
+<v Jyotish Sonowal>So in workflow,
+there is an example of say,</v>
+
+<v Jyotish Sonowal>send this message to Slack if this
+happens.</v>
+
+<v Jyotish Sonowal>So that message that you write on Slack
+or the name of the channel,</v>
+
+<v Jyotish Sonowal>whether it's private or public,
+all of those are like,</v>
+
+<v Jyotish Sonowal>that's called static mapping.
+It's basically.</v>
+
+<v Jyotish Sonowal>Not flowing from one to one.</v>
+
+<v Jyotish Sonowal>step to the other or one known to the
+other in case of workflow,</v>
+
+<v Jyotish Sonowal>but those are static fields which are
+there.</v>
+
+<v Aleemullah Samiullah>Such cool.</v>
+
+<v Aleemullah Samiullah>Yeah,
+here it is equivalent to that set value,</v>
+
+<v Jyotish Sonowal>This one.</v>
+
+<v Aleemullah Samiullah>but it is correct when you double click
+if you open.</v>
+
+<v Jyotish Sonowal>Okay, this one,
+it still needs to be shown somewhere then.</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Jyotish Sonowal>It doesn't show up up front. Okay, got it.
+Because even that message that I saw</v>
+
+<v Jyotish Sonowal>earlier, I think, in one of these.</v>
+
+<v Aleemullah Samiullah>Step 5.</v>
+
+<v Jyotish Sonowal>If I...</v>
+
+<v Jyotish Sonowal>Yeah, it just shows this message,
+but this message only shows if I double</v>
+
+<v Jyotish Sonowal>click it. OK, got it.</v>
+
+<v Jyotish Sonowal>Or did I have to?</v>
+
+<v Aleemullah Samiullah>But when you hover on that,
+if it is already set,</v>
+
+<v Aleemullah Samiullah>it shows that what is set.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>We do have variables as well, right?
+Like I said, project variable,</v>
+
+<v Aleemullah Samiullah>package variable.
+It need not be always a static text.</v>
+
+<v Aleemullah Samiullah>We can be a field.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>Got it.</v>
+
+<v Jyotish Sonowal>I just wanted to show you something.
+I know we have like just few minutes.</v>
+
+<v Jyotish Sonowal>I'll just quickly share my screen.</v>
+
+<v Aleemullah Samiullah>See, afternoon I let you know,
+so they know I need some time to try</v>
+
+<v Jyotish Sonowal>Can you see my screen? I'm sharing again.</v>
+
+<v Aleemullah Samiullah>again.</v>
+
+<v Aleemullah Samiullah>Yes, yes, yeah.</v>
+
+<v Jyotish Sonowal>Yeah,
+this is like a quick prototype that I was</v>
+
+<v Jyotish Sonowal>thinking of.</v>
+
+<v Jyotish Sonowal>And so if you see what I've done,
+I've tried to make keep some consistency</v>
+
+<v Jyotish Sonowal>between your.</v>
+
+<v Jyotish Sonowal>A flow service workflow between both of
+them, so, for example.</v>
+
+<v Jyotish Sonowal>Seal.</v>
+
+<v Aleemullah Samiullah>Just.</v>
+
+<v Jyotish Sonowal>Excellent.</v>
+
+<v Jyotish Sonowal>Many windows, sorry.</v>
+
+<v Jyotish Sonowal>Can you see this?</v>
+
+<v Aleemullah Samiullah>Yeah, I can see, yes.</v>
+
+<v Jyotish Sonowal>Yeah,
+so basically what I was thinking is just,</v>
+
+<v Jyotish Sonowal>I'll give you at a glance. So the,
+I have a constant panel.</v>
+
+<v Jyotish Sonowal>So basically one of the first step can be
+always open.</v>
+
+<v Jyotish Sonowal>And I have a left on the right side,
+I will always have this view.</v>
+
+<v Jyotish Sonowal>It'll just show me the input.
+So basically, first one, obviously,</v>
+
+<v Jyotish Sonowal>it will, let's take, say, this one,
+for example. These, like, you know,</v>
+
+<v Jyotish Sonowal>so it's showing you only the map fields.
+If there's an input,</v>
+
+<v Jyotish Sonowal>it's showing you that.
+I was going to show a different one for</v>
+
+<v Jyotish Sonowal>static.</v>
+
+<v Jyotish Sonowal>But I believe I don't need to right now.
+What I'm going to do is I'll merge both</v>
+
+<v Jyotish Sonowal>of them. So my input,
+and I'll show you output in case there is</v>
+
+<v Jyotish Sonowal>an output.</v>
+
+<v Jyotish Sonowal>This is just an example,
+so all of them might not have an output</v>
+
+<v Jyotish Sonowal>data,
+but like say there is an output over here.</v>
+
+<v Aleemullah Samiullah>Yeah, no sir, that's what I think;
+this is not a functional issue, yeah.</v>
+
+<v Jyotish Sonowal>So it's just a visual way of giving you a
+high level input and output with the data</v>
+
+<v Jyotish Sonowal>that is getting mapped.
+And if you want to see the entire thing,</v>
+
+<v Jyotish Sonowal>I just want to do something like this.
+So within the workspace view.</v>
+
+<v Aleemullah Samiullah>No, I can just help,
+but we are not a person who is going to</v>
+
+<v Jyotish Sonowal>You will see a high,
+you just a high level this thing mapping,</v>
+
+<v Jyotish Sonowal>the more detailed mapping with all the
+fields.</v>
+
+<v Aleemullah Samiullah>handle this thing.
+The API is not handled by us.</v>
+
+<v Aleemullah Samiullah>The IS packet is not loading.
+That's the issue over here. See,</v>
+
+<v Jyotish Sonowal>So, that's a problem.</v>
+
+<v Aleemullah Samiullah>this is what I go to input,
+why is slow having submit?</v>
+
+<v Aleemullah Samiullah>I can only cheque one, so the condition.</v>
+
+<v Aleemullah Samiullah>Is basically the service input, is it?</v>
+
+<v Jyotish Sonowal>The condition.</v>
+
+<v Aleemullah Samiullah>Oh, in the inputs within that,
+you have get object output, correct?</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>That's a pipeline input,
+and what is condition?</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Jyotish Sonowal>So I think some of the content,
+I think Bob didn't get it right,</v>
+
+<v Jyotish Sonowal>but basically the mapping that you see on
+the scroll.</v>
+
+<v Aleemullah Samiullah>So it's a service input.</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Jyotish Sonowal>Just scroll to the...</v>
+
+<v Jyotish Sonowal>Sorry.</v>
+
+<v Jyotish Sonowal>So basically it'll be something like this.
+So if in the right, the panel,</v>
+
+<v Jyotish Sonowal>you will only see this,
+whatever is mapped,</v>
+
+<v Jyotish Sonowal>whether it's static or this thing.
+But what I thought was key,</v>
+
+<v Aleemullah Samiullah>Mhm.</v>
+
+<v Jyotish Sonowal>I'll divide it into input and output so
+that in some cases I'd seen that it was</v>
+
+<v Jyotish Sonowal>getting very complex. I think it was step.</v>
+
+<v Jyotish Sonowal>This.</v>
+
+<v Aleemullah Samiullah>C.</v>
+
+<v Jyotish Sonowal>Even here, I think there's not much,
+but if it is something like this,</v>
+
+<v Aleemullah Samiullah>I'm sorry, can you?</v>
+
+<v Jyotish Sonowal>so it'll be input pipeline is this,
+and it'll move to this one.</v>
+
+<v Aleemullah Samiullah>That is what has already confirmed.
+This input pipeline input and input of</v>
+
+<v Aleemullah Samiullah>the service,
+both of them we are combining into inputs,</v>
+
+<v Aleemullah Samiullah>is it?</v>
+
+<v Jyotish Sonowal>Yes, yes. And output will have output,
+basically the copy changes that you can</v>
+
+<v Aleemullah Samiullah>Okay.</v>
+
+<v Jyotish Sonowal>make.</v>
+
+<v Jyotish Sonowal>and your output the things that are going
+out.</v>
+
+<v Jyotish Sonowal>But it will only show you if there's
+anything mapped. If it's not mapped,</v>
+
+<v Jyotish Sonowal>then I'm thinking that it can only be
+shown in the full view, expanded view.</v>
+
+<v Jyotish Sonowal>Otherwise, we'll just limit it to this.</v>
+
+<v Aleemullah Samiullah>And most of the time it is nested because
+we have records.</v>
+
+<v Jyotish Sonowal>Thank you.</v>
+
+<v Aleemullah Samiullah>Records means the document.
+What do you see?</v>
+
+<v Aleemullah Samiullah>So it is not always with it.</v>
+
+<v Aleemullah Samiullah>Up level.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>Ohh, is there an example for that?
+See in one.</v>
+
+<v Aleemullah Samiullah>Yeah, you can open any of the steps.</v>
+
+<v Jyotish Sonowal>So, in case it's...</v>
+
+<v Aleemullah Samiullah>No, no, no, wait, go back there,
+open the previous step.</v>
+
+<v Aleemullah Samiullah>Even here it is same. Yeah, on the input,
+you see get form data output.</v>
+
+<v Jyotish Sonowal>Previous step.</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Aleemullah Samiullah>Expand, scroll down, expand.</v>
+
+<v Aleemullah Samiullah>Expand.
+So here it is nested at the third level,</v>
+
+<v Aleemullah Samiullah>right?
+Get form data and within that we have</v>
+
+<v Jyotish Sonowal>The.</v>
+
+<v Aleemullah Samiullah>another response and then we have the
+stream.</v>
+
+<v Aleemullah Samiullah>So most of the cases it will be nested.</v>
+
+<v Aleemullah Samiullah>Like this.</v>
+
+<v Jyotish Sonowal>Like this.</v>
+
+<v Aleemullah Samiullah>Correct, yeah.</v>
+
+<v Jyotish Sonowal>Got it. And there's an option to like,
+if you want, you can expand it basically.</v>
+
+<v Aleemullah Samiullah>Oh yeah, of course,
+that's a current capability,</v>
+
+<v Aleemullah Samiullah>but if you want to flatten it out,
+we have to think how we'll represent the</v>
+
+<v Jyotish Sonowal>Think of it.</v>
+
+<v Aleemullah Samiullah>nested.</v>
+
+<v Jyotish Sonowal>So, yeah,
+but I was just thinking this way we can</v>
+
+<v Jyotish Sonowal>divide it because I felt that just
+showing it like the earlier designs,</v>
+
+<v Jyotish Sonowal>if you remember the earlier Figma designs,
+I had put it underneath. It was under the,</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>let me go to Figma.</v>
+
+<v Jyotish Sonowal>So I had earlier done this,
+but I feel that maybe this is not going</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>to be very easy to use.
+And because this is pretty long, right?</v>
+
+<v Aleemullah Samiullah>Cup.</v>
+
+<v Jyotish Sonowal>I've seen some examples.
+I had till then I had only seen simple</v>
+
+<v Jyotish Sonowal>ones.
+I think now that's why I was looking for</v>
+
+<v Jyotish Sonowal>a more complex one.
+So if there is a lot of nesting and it</v>
+
+<v Aleemullah Samiullah>Okay.</v>
+
+<v Jyotish Sonowal>ends up becoming very long, the.</v>
+
+<v Aleemullah Samiullah>Underboard, OK.</v>
+
+<v Jyotish Sonowal>the showing this view might not be very
+helpful. I also note.</v>
+
+<v Aleemullah Samiullah>And one more thing, the constant feedback,
+what we get is with respect to the space,</v>
+
+<v Aleemullah Samiullah>even having a complete page for the flow
+data, right? We are just showing 10 steps.</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>But the other day RAM was appointed,
+right? There are users who have 800 steps.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>We generally recommend people to keep it
+modular. By modular, we also mean...</v>
+
+<v Aleemullah Samiullah>under 100.
+So imagine if the typical size is 100</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Aleemullah Samiullah>steps, having just 10 steps,
+and if you see here, right,</v>
+
+<v Aleemullah Samiullah>it is just five steps, right?
+It will be annoying experience to keep</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>scrolling and then you forget the context.
+So I suggest that we have to.</v>
+
+<v Aleemullah Samiullah>show maximum number of steps,
+not too many spacing in between them.</v>
+
+<v Aleemullah Samiullah>So we have to consider that.</v>
+
+<v Jyotish Sonowal>Yeah, yeah,
+that I will that I will definitely look</v>
+
+<v Jyotish Sonowal>at. I mean,
+right now I'm just trying to like figure</v>
+
+<v Aleemullah Samiullah>Ms.</v>
+
+<v Jyotish Sonowal>out the interaction and then I will look
+into the UI.</v>
+
+<v Jyotish Sonowal>I think the other concern again is
+accessibility.</v>
+
+<v Jyotish Sonowal>So if I make the fonts and everything
+also very small,</v>
+
+<v Aleemullah Samiullah>Oh.</v>
+
+<v Jyotish Sonowal>it might not be accessible to some users.
+So.</v>
+
+<v Jyotish Sonowal>There is always that fight between making
+it legible for people and yet also making</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>sure that, you know,
+it's not very annoying and you can read A</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Jyotish Sonowal>lot.
+I think we can keep it dense and we can</v>
+
+<v Jyotish Sonowal>try with it.
+But I also was wondering if I should make</v>
+
+<v Jyotish Sonowal>it very different from what we already
+have.</v>
+
+<v Jyotish Sonowal>So I will have to like make some designs
+and then iterate and then share with this</v>
+
+<v Jyotish Sonowal>group.
+But I will try to make like simplify it</v>
+
+<v Jyotish Sonowal>so that we can see more steps. Definitely.
+Again, this is just an example,</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>but that's something that I want to do.
+So that's why I wanted to just like show</v>
+
+<v Jyotish Sonowal>you this, but I think.</v>
+
+<v Jyotish Sonowal>basis your conversation with you I think
+I have to make some notes in this.</v>
+
+<v Aleemullah Samiullah>Yeah,
+you can come up with multiple proposals</v>
+
+<v Jyotish Sonowal>And.</v>
+
+<v Aleemullah Samiullah>and see, that's the idea. Like, if he,
+if the user is having 100 steps,</v>
+
+<v Aleemullah Samiullah>how well do we represent that?</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>Wait.</v>
+
+<v Jyotish Sonowal>Yeah, that is what I wanted to show you.
+And one more point I have,</v>
+
+<v Jyotish Sonowal>and I'll probably come back to it later,
+is I am thinking of like removing this</v>
+
+<v Jyotish Sonowal>paragraph.</v>
+
+<v Jyotish Sonowal>so that we can utilise the space better.
+I think I'll have that conversation with</v>
+
+<v Jyotish Sonowal>Launchpad team as well.
+But maybe this paragraph is not adding a</v>
+
+<v Aleemullah Samiullah>Mmh.</v>
+
+<v Jyotish Sonowal>lot of value.
+It's just taking a lot of my space.</v>
+
+<v Jyotish Sonowal>You see,
+I am left with just this much space.</v>
+
+<v Aleemullah Samiullah>Okay.</v>
+
+<v Aleemullah Samiullah>One more thing, like yesterday it came up,
+right? The audience, the users,</v>
+
+<v Jyotish Sonowal>Yeah.</v>
+
+<v Aleemullah Samiullah>the kind of users what they're testing
+are someone who is not exposed to</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>integration or who is not aware of
+integration,</v>
+
+<v Aleemullah Samiullah>like the kind of persona what they are
+targeting, right?</v>
+
+<v Aleemullah Samiullah>That also you have to validate what kind
+of persona.</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>They want to target this.
+And there was a comment as well, right?</v>
+
+<v Aleemullah Samiullah>If someone knows everything,
+why would they, when use this,</v>
+
+<v Aleemullah Samiullah>they can directly go to the product and
+then get that thing done.</v>
+
+<v Aleemullah Samiullah>It is for someone who is pretty new and
+outcome focused.</v>
+
+<v Aleemullah Samiullah>Like I just want to get this done.
+I don't want to get into too many details</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>like.</v>
+
+<v Aleemullah Samiullah>What is mapping all those things, right?
+So,</v>
+
+<v Jyotish Sonowal>Yeah.</v>
+
+<v Aleemullah Samiullah>you need to validate those kind of
+persona also with um,</v>
+
+<v Aleemullah Samiullah>Harshini and the team,
+the UX research team,</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>so that we save some effort at the end,
+rather than...</v>
+
+<v Jyotish Sonowal>I will do that. Yeah,
+I'll definitely do that right now. Tom,</v>
+
+<v Jyotish Sonowal>we have asked,
+like you were there on the calls, right?</v>
+
+<v Jyotish Sonowal>We've asked him multiple times, right,
+on the first one a bit, and this.</v>
+
+<v Aleemullah Samiullah>OK,
+but time is not time was not there</v>
+
+<v Aleemullah Samiullah>yesterday, right?
+If we have to present it at the...</v>
+
+<v Jyotish Sonowal>He was not there, yeah,
+I will have to ask him to watch that</v>
+
+<v Jyotish Sonowal>recording and...</v>
+
+<v Aleemullah Samiullah>He will have certain assumptions as a PM,
+but again, if it comes to the launch pad,</v>
+
+<v Aleemullah Samiullah>is it aligning to the launch pad mission?</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>That is more important.
+That's the right valid argument as well,</v>
+
+<v Aleemullah Samiullah>right?
+If someone is able to get this done</v>
+
+<v Aleemullah Samiullah>directly, if they know everything,
+why should they take the pain to go</v>
+
+<v Jyotish Sonowal>I.</v>
+
+<v Aleemullah Samiullah>through the conversation and get it done
+in 20, 30 minutes?</v>
+
+<v Jyotish Sonowal>Yeah, and then that's valid, that's valid.</v>
+
+<v Aleemullah Samiullah>Correct. I agree. I mean,
+if we are looking at a different kind of</v>
+
+<v Aleemullah Samiullah>users, totally different market itself,
+which is totally on outcome driven.</v>
+
+<v Aleemullah Samiullah>I just want to get this done.
+Just give me a workflow or just</v>
+
+<v Aleemullah Samiullah>integration.
+I don't even need to know what is</v>
+
+<v Aleemullah Samiullah>workflow flow.
+That's kind of interesting thing as well.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>We don't have to recreate the whole thing
+again.</v>
+
+<v Aleemullah Samiullah>just through a different medium or
+different pattern.</v>
+
+<v Jyotish Sonowal>Ohh.</v>
+
+<v Jyotish Sonowal>Yeah.</v>
+
+<v Aleemullah Samiullah>Oh, we need to get that validated as well.
+Like,</v>
+
+<v Aleemullah Samiullah>does it align with whatever they are
+targeting?</v>
+
+<v Jyotish Sonowal>No, I agree. See,
+there will be some back and forth,</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Jyotish Sonowal>at least on some bits.
+So I've also been given some tight</v>
+
+<v Jyotish Sonowal>timelines.
+I need to share one version by Friday and</v>
+
+<v Jyotish Sonowal>then close out one version by next Friday
+following by end of month.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>So let me create something.
+I will definitely have a chat with</v>
+
+<v Jyotish Sonowal>Harshini.
+We can definitely reach out and validate</v>
+
+<v Jyotish Sonowal>this with users,
+which will again happen in parallel,</v>
+
+<v Jyotish Sonowal>like I said,
+because I think that time is absolutely</v>
+
+<v Jyotish Sonowal>like this thing about timeline.
+So he doesn't want any user research to</v>
+
+<v Jyotish Sonowal>be a blocker.</v>
+
+<v Aleemullah Samiullah>No, no, not a kind of blocker,
+but we can get that idea, right?</v>
+
+<v Jyotish Sonowal>So, he wants.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>Like whatever we are going ahead with our
+assumptions and the kind of users,</v>
+
+<v Jyotish Sonowal>Yes, yes, definitely.</v>
+
+<v Aleemullah Samiullah>are they planning to do the same because
+they are driving the overall launchpad</v>
+
+<v Aleemullah Samiullah>experience itself.
+So is that aligning with whatever this</v>
+
+<v Aleemullah Samiullah>agent does?</v>
+
+<v Aleemullah Samiullah>Otherwise,
+it will lead up to the similar feedback,</v>
+
+<v Aleemullah Samiullah>right?
+If you are giving it to someone who is</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>not even familiar with this technical
+details,</v>
+
+<v Aleemullah Samiullah>obviously it is not useful for them.</v>
+
+<v Jyotish Sonowal>Yeah, then, but Aleemullah,
+if they are not even used, like,</v>
+
+<v Aleemullah Samiullah>No.</v>
+
+<v Jyotish Sonowal>if they don't even understand anything
+about flow service,</v>
+
+<v Jyotish Sonowal>then we'll even build a flow service.</v>
+
+<v Aleemullah Samiullah>Yes.</v>
+
+<v Aleemullah Samiullah>They should be able to.
+That's the intent of this. See,</v>
+
+<v Jyotish Sonowal>P.</v>
+
+<v Aleemullah Samiullah>they're targeting a totally new market
+segment.</v>
+
+<v Aleemullah Samiullah>Let's say it's a select territory,
+select T, and this one. It's a total,</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>what do you say,
+different kind of persona,</v>
+
+<v Aleemullah Samiullah>I would say persona repeating the same
+thing, but it's a different kind of.</v>
+
+<v Aleemullah Samiullah>users right who would be pay driven,
+outcome driven.</v>
+
+<v Jyotish Sonowal>Then I should not even show them mapping.</v>
+
+<v Aleemullah Samiullah>No, no, those are again,
+we are getting into details like, yeah,</v>
+
+<v Jyotish Sonowal>You, you get, you get.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>so in yesterday's this one,
+it came up right, the workflow,</v>
+
+<v Aleemullah Samiullah>they're not able to understand what is
+workflow and some terminologies itself.</v>
+
+<v Aleemullah Samiullah>It is at that level itself if they're not
+able to.</v>
+
+<v Aleemullah Samiullah>And one other thing was map to value
+something, right?</v>
+
+<v Aleemullah Samiullah>which also was pointed out.
+The user is not able to understand what</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>is map to value or something like that.
+So yeah,</v>
+
+<v Aleemullah Samiullah>it would be better just to have a chat
+with them.</v>
+
+<v Jyotish Sonowal>I will have that. I understand your point.
+Yeah, I have understand point.</v>
+
+<v Jyotish Sonowal>I'll block some time with Harshini.
+She's available this week itself.</v>
+
+<v Jyotish Sonowal>Let me have that call, but again,
+I need to also get time's time. You know,</v>
+
+<v Aleemullah Samiullah>So it is more of a, you use,
+you seek some opinion like this is what</v>
+
+<v Jyotish Sonowal>let me align with him.</v>
+
+<v Aleemullah Samiullah>I'm planning to and this is how the user
+journey, user flow, complete user flow,</v>
+
+<v Aleemullah Samiullah>how they will converse through and then
+what they will see.</v>
+
+<v Aleemullah Samiullah>Does it resonate with the launchpad we
+shared what they have for a business user</v>
+
+<v Aleemullah Samiullah>or?</v>
+
+<v Aleemullah Samiullah>Someone who was doing that.</v>
+
+<v Jyotish Sonowal>I've shared this with Sijan Keesa, okay.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>Um, and uh, Keesa.</v>
+
+<v Aleemullah Samiullah>I would say it involved Harshini as well,
+because right now they are doing user</v>
+
+<v Jyotish Sonowal>Yeah.</v>
+
+<v Aleemullah Samiullah>research and this one,
+so they will be able to provide some</v>
+
+<v Aleemullah Samiullah>input.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>Whether we act on it or not,
+that's a different thing,</v>
+
+<v Aleemullah Samiullah>but at least let's get it,
+get feedback from them.</v>
+
+<v Jyotish Sonowal>Yeah, yeah, that's a that's a good.</v>
+
+<v Aleemullah Samiullah>I'm primarily concerned on the usability
+itself, the user itself, right?</v>
+
+<v Aleemullah Samiullah>The kind of users, if you are seeing.</v>
+
+<v Jyotish Sonowal>Yeah, because in our calls till yesterday,
+till yesterday evening,</v>
+
+<v Jyotish Sonowal>we all been focusing on technical users,
+right? And for business, we also,</v>
+
+<v Aleemullah Samiullah>Correct, yes.</v>
+
+<v Jyotish Sonowal>I was asking that question yesterday that,
+you know,</v>
+
+<v Jyotish Sonowal>should we make the language more
+business-like, like,</v>
+
+<v Jyotish Sonowal>let's not make it too technical,
+but a lot of feedback is also coming on</v>
+
+<v Aleemullah Samiullah>Oh.</v>
+
+<v Jyotish Sonowal>content, like, you know, that.</v>
+
+<v Jyotish Sonowal>It's not explaining exactly what you're
+doing. Now, that is just a start, right?</v>
+
+<v Aleemullah Samiullah>Yes.</v>
+
+<v Jyotish Sonowal>Even if I have to look at mapping or
+these things,</v>
+
+<v Jyotish Sonowal>do they need to really look at the
+detailed mapping?</v>
+
+<v Jyotish Sonowal>Like if you don't understand that very
+well, maybe high level listing.</v>
+
+<v Aleemullah Samiullah>Correct. So even Mike pointed out that,
+right?</v>
+
+<v Aleemullah Samiullah>We have built something based on the UI
+mental model,</v>
+
+<v Aleemullah Samiullah>like how the user will do it on UI.
+You are trying to do the same thing</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>through conversation.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>That's how it is like selecting a project,
+creating an account, selecting an account,</v>
+
+<v Aleemullah Samiullah>and then selecting these, these, these,
+the same sort of things what you do on</v>
+
+<v Aleemullah Samiullah>the UI.</v>
+
+<v Aleemullah Samiullah>Right,
+but but he said that's that might not be</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>the right way to approach that.
+We are trying to map that UI model with</v>
+
+<v Aleemullah Samiullah>this agent model.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>Yeah.</v>
+
+<v Aleemullah Samiullah>So again, it's the same thing, right?
+What if I can do it? If I know everything,</v>
+
+<v Aleemullah Samiullah>then obviously I can go and do it.</v>
+
+<v Jyotish Sonowal>Yeah.</v>
+
+<v Jyotish Sonowal>No, then I think we should really, I mean,
+I can create another version.</v>
+
+<v Jyotish Sonowal>I will definitely create one version,
+but again,</v>
+
+<v Jyotish Sonowal>the thing is that this feels similar to...</v>
+
+<v Aleemullah Samiullah>But at least you should have this so that
+you can just show and you can talk about</v>
+
+<v Jyotish Sonowal>Yes.</v>
+
+<v Aleemullah Samiullah>it, right?
+Like this is what we plan to do and this</v>
+
+<v Aleemullah Samiullah>is how the user will user journey is.
+Because otherwise it is hard for them to</v>
+
+<v Aleemullah Samiullah>understand as well what we are trying.
+And they'll assume it based on the</v>
+
+<v Aleemullah Samiullah>existing workflow.</v>
+
+<v Aleemullah Samiullah>Which is completely different from this
+flow service.</v>
+
+<v Jyotish Sonowal>Mmh.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>because you need to highlight the
+complexity. It can't be simplified.</v>
+
+<v Jyotish Sonowal>Yeah, yeah,
+and then if it's it can't be simplified,</v>
+
+<v Aleemullah Samiullah>But.</v>
+
+<v Jyotish Sonowal>then is it worth showing? I mean,
+then we just like, for example, mapping,</v>
+
+<v Jyotish Sonowal>like if I have to,
+should I just show all the mapping in</v>
+
+<v Jyotish Sonowal>such detail or I just like,
+just highlight, okay,</v>
+
+<v Jyotish Sonowal>these are the things that we have
+captured, you know,</v>
+
+<v Jyotish Sonowal>these are the things that we are mapping.
+So from that step,</v>
+
+<v Jyotish Sonowal>these are the things that's coming to
+this step.</v>
+
+<v Jyotish Sonowal>I don't know, even even that is required,
+but considering if we dumb it down too</v>
+
+<v Jyotish Sonowal>much for a business user, what if like,
+you know,</v>
+
+<v Jyotish Sonowal>there's also someone who knows flow
+service and they try to use it?</v>
+
+<v Jyotish Sonowal>Will it be like, what is this?
+It's not making sense. So that balance.</v>
+
+<v Aleemullah Samiullah>No, at least it should.
+I would say there should be a balance,</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>of course,
+but the kind of language what we use</v>
+
+<v Aleemullah Samiullah>should be plain, simple language.
+So that it is, it satisfies the features.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>It is not like I have just 10% of what I
+can do here.</v>
+
+<v Aleemullah Samiullah>It shouldn't be that way as well,
+like only 10 or 20% can be possible</v>
+
+<v Aleemullah Samiullah>through this one. If you have to do more,
+you need to go to product,</v>
+
+<v Aleemullah Samiullah>then also it fails for the advanced user,
+other technical users.</v>
+
+<v Jyotish Sonowal>Yeah, yeah.</v>
+
+<v Jyotish Sonowal>Makes sense.</v>
+
+<v Aleemullah Samiullah>We should be able to achieve that,
+but it need not be through the same</v>
+
+<v Aleemullah Samiullah>journey, is what I feel. I mean,
+something we have to think through.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Aleemullah Samiullah>We should be able to achieve the same
+goal, but in a different manner,</v>
+
+<v Aleemullah Samiullah>not following the same UI way of doing
+things.</v>
+
+<v Jyotish Sonowal>Yeah, yeah. I just wanted to know,
+is there a way that I can like plug in</v>
+
+<v Jyotish Sonowal>the UI?
+I'm also going to talk to Ram if I can</v>
+
+<v Jyotish Sonowal>like,
+is there a way to plug in that with Bob</v>
+
+<v Jyotish Sonowal>so I can get the kind of responses that
+we are getting on the agent and also like</v>
+
+<v Jyotish Sonowal>the UI?</v>
+
+<v Jyotish Sonowal>Because a lot of content that is
+generated is coming from Aria and the</v>
+
+<v Aleemullah Samiullah>No, I mean not.</v>
+
+<v Aleemullah Samiullah>Mm.</v>
+
+<v Jyotish Sonowal>integration agent, not.</v>
+
+<v Jyotish Sonowal>Like A prototype team, then be more rich.
+Like if we can build,</v>
+
+<v Aleemullah Samiullah>Correct, correct.</v>
+
+<v Jyotish Sonowal>I can try to build that on Bob itself.
+So you get the actual response,</v>
+
+<v Jyotish Sonowal>which is going to mimic what is there on
+the agent versus, you know,</v>
+
+<v Jyotish Sonowal>something which I have written.</v>
+
+<v Aleemullah Samiullah>I can talk to Ram,
+see if there is a headless way of doing</v>
+
+<v Aleemullah Samiullah>it. I mean, directly by Bob,
+but you can talk to Ram, Ram Kumar.</v>
+
+<v Jyotish Sonowal>Mm.</v>
+
+<v Jyotish Sonowal>And can we like also like plug in the UI?</v>
+
+<v Aleemullah Samiullah>No, not the UI. UI surfacing that in Bob.</v>
+
+<v Aleemullah Samiullah>Or how we are, no, that, no,
+that can be done, yeah.</v>
+
+<v Jyotish Sonowal>Yeah, yeah, yeah.</v>
+
+<v Jyotish Sonowal>Can't be done.</v>
+
+<v Aleemullah Samiullah>No.</v>
+
+<v Jyotish Sonowal>Oh, like how we have a carbon components,
+right?</v>
+
+<v Jyotish Sonowal>I think some of the carbon components we
+can just pull in and it builds it that</v>
+
+<v Jyotish Sonowal>way,
+but these other things are not can't be</v>
+
+<v Jyotish Sonowal>defined that way, like it.</v>
+
+<v Aleemullah Samiullah>No, not this one. Yeah.
+It's a different application.</v>
+
+<v Aleemullah Samiullah>It's a separate application.
+You can have a standalone setup,</v>
+
+<v Aleemullah Samiullah>but you can't have it with the Bob.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Aleemullah Samiullah>Standalone, I mean,
+not through integration or not through</v>
+
+<v Jyotish Sonowal>Got it.</v>
+
+<v Aleemullah Samiullah>MCSP, not going through that.
+I can just have my Launchpad experience</v>
+
+<v Aleemullah Samiullah>pointing to some Bifrost agent.</v>
+
+<v Jyotish Sonowal>Mhm.</v>
+
+<v Aleemullah Samiullah>That setup can be done, but not this.</v>
+
+<v Aleemullah Samiullah>Surfacing in the IBMIPaaSFLOW itself, no.</v>
+
+<v Jyotish Sonowal>Okay, okay, got it.</v>
+
+<v Jyotish Sonowal>All right, Aleemullah, thank you so much.
+This is really helpful.</v>
+
+<v Jyotish Sonowal>Let me also put some thought around it
+and I will also have a chat with Harshini.</v>
+
+<v Aleemullah Samiullah>Yeah, yeah, sure. Get it,
+get it validated.</v>
+
+<v Aleemullah Samiullah>That's what I want to see, yeah.</v>
+
+<v Jyotish Sonowal>Okay.</v>
+
+<v Jyotish Sonowal>Awesome. All right.</v>
+
+<v Jyotish Sonowal>Thank you so much.</v>
+
+<v Aleemullah Samiullah>Yep.</v>
+
+<v Aleemullah Samiullah>All right, yeah, bye.</v>
+
+<v Jyotish Sonowal>Right.</v>
+
+<v Aleemullah Samiullah>It's an idea.</v>

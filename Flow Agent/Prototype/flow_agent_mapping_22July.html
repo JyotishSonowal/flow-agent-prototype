@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Agent · AdobeSign_Stream_Ops · 22 July</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1c21; --ink-2:#5c5c66; --ink-3:#8f8f9a;
+  --paper:#f6f6f4; --panel:#ffffff; --line:#e4e4e0; --line-2:#d2d2cc;
+  --violet:#5753d6; --violet-bg:#eeeefb; --violet-bd:#c8c7f0; --violet-tx:#3d3aa3;
+  --teal:#0f766e; --teal-bg:#e4f4f1; --teal-bd:#a9dcd4; --teal-tx:#0b544f;
+  --amber:#b45309; --amber-bg:#fdf3e4; --amber-bd:#f0d5a8;
+  --green:#3f7d20; --green-bg:#edf6e6; --green-bd:#c3e0ad;
+  --r:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;font-size:13px;color:var(--ink);background:var(--paper)}
+button{font:inherit;cursor:pointer;background:none;border:none;color:inherit}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11.5px}
+
+#app{display:grid;height:100vh;min-height:560px;
+  grid-template-columns:minmax(300px,1fr) 2fr;
+  grid-template-rows:48px 1fr;position:relative;overflow:hidden}
+#app.chat-full{grid-template-columns:1fr 0fr}
+#app.chat-full #content{display:none}
+
+/* ── Top bar ── */
+header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:0 16px;
+  background:var(--panel);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;letter-spacing:-.01em}
+.logo-mark{width:22px;height:22px;border-radius:6px;background:var(--violet);position:relative;flex:none}
+.logo-mark::after{content:"";position:absolute;inset:6px 5px;border-left:2px solid #fff;border-bottom:2px solid #fff;border-radius:0 0 0 3px}
+.crumb{color:var(--ink-3)}
+.autoname{font-weight:500}
+.pill{font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px}
+.pill.draft{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd)}
+.pill.ready{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+header .spacer{flex:1}
+.topbtn{font-size:12px;font-weight:500;padding:6px 12px;border-radius:var(--r);border:1px solid var(--line-2)}
+.topbtn:hover{background:var(--paper)}
+.topbtn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ── Chat rail ── */
+#chat{display:flex;flex-direction:column;background:var(--panel);border-right:1px solid var(--line);min-height:0}
+#app.chat-full #chat{border-right:none}
+.chat-head{padding:12px 14px 10px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.agent-dot{width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 3px var(--violet-bg);flex:none}
+.chat-head b{font-size:12.5px;font-weight:600}
+.chat-head span{font-size:11px;color:var(--ink-3)}
+.chat-expand{margin-left:auto;flex:none;width:30px;height:30px;border-radius:8px;border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:15px}
+.chat-expand:hover{background:var(--paper)}
+#msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:0}
+#app.chat-full #msgs{max-width:760px;width:100%;margin:0 auto;padding:20px 16px}
+.msg{max-width:92%;line-height:1.5;font-size:12.5px}
+.msg.user{align-self:flex-end;background:var(--ink);color:#fff;padding:8px 11px;border-radius:12px 12px 3px 12px}
+.msg.agent{align-self:flex-start;color:var(--ink);padding:2px 2px 0}
+.msg.agent .who{font-size:10.5px;font-weight:600;color:var(--violet);letter-spacing:.03em;margin-bottom:3px}
+.typing{display:inline-flex;gap:4px;padding:8px 2px}
+.typing i{width:5px;height:5px;border-radius:50%;background:var(--ink-3);animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.proposal{margin-top:8px;border:1px solid var(--violet-bd);border-radius:10px;overflow:hidden;background:var(--panel)}
+.proposal .p-head{font-size:11px;font-weight:600;color:var(--violet-tx);background:var(--violet-bg);padding:6px 10px}
+.proposal .p-body{padding:9px 10px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.proposal .p-actions{display:flex;gap:8px;padding:0 10px 10px}
+.proposal .p-actions button{font-size:11.5px;font-weight:500;padding:5px 12px;border-radius:7px;border:1px solid var(--line-2)}
+.proposal .p-actions .ok{background:var(--violet);border-color:var(--violet);color:#fff}
+.proposal .p-actions .ok:hover{background:#4a46c6}
+.proposal .p-actions button:disabled{opacity:.45;cursor:default}
+.proposal.applied .p-head{background:var(--green-bg);color:var(--green)}
+.proposal.applied{border-color:var(--green-bd)}
+.chips-row{padding:10px 14px 6px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--line)}
+.qchip{font-size:11.5px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:99px;padding:4px 11px}
+.qchip:hover{background:var(--paper);color:var(--ink)}
+.chat-input{display:flex;gap:8px;padding:8px 14px 14px}
+#app.chat-full .chat-input,#app.chat-full .chips-row{max-width:760px;width:100%;margin:0 auto}
+.chat-input input{flex:1;font:inherit;font-size:12.5px;padding:9px 12px;border:1px solid var(--line-2);border-radius:10px;outline:none;background:var(--paper)}
+.chat-input input:focus{border-color:var(--violet);background:#fff;box-shadow:0 0 0 3px var(--violet-bg)}
+.send{width:34px;height:34px;border-radius:10px;background:var(--violet);color:#fff;flex:none;display:flex;align-items:center;justify-content:center}
+.send:hover{background:#4a46c6}
+
+/* ── Content zone ── */
+#content{display:grid;grid-template-columns:minmax(340px,1fr) 400px;min-height:0;overflow:hidden}
+#content.full-map{grid-template-columns:1fr}
+#content.full-map #steps,#content.full-map #config{display:none}
+
+/* ── Step list ── */
+#steps{overflow-y:auto;padding:22px 26px;min-height:0}
+.flow-title{font-size:15px;font-weight:600;letter-spacing:-.01em;margin-bottom:2px}
+.flow-sub{font-size:12px;color:var(--ink-2);margin-bottom:18px}
+.step{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .12s}
+.step+.connector{width:2px;height:16px;background:var(--line-2);margin:0 0 0 34px}
+.step:hover{border-color:var(--line-2)}
+.step.sel{border-color:var(--violet);box-shadow:0 0 0 3px var(--violet-bg)}
+.step-num{width:22px;height:22px;border-radius:50%;background:var(--paper);border:1px solid var(--line-2);
+  font-size:11px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px}
+.step.sel .step-num{background:var(--violet);border-color:var(--violet);color:#fff}
+.step-body{min-width:0;flex:1}
+.step-title{font-size:13px;font-weight:500;line-height:1.45}
+.step-title b{color:var(--violet)}
+.step-meta{display:flex;gap:6px;align-items:center;margin-top:6px;flex-wrap:wrap}
+.appchip{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-2);
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.appdot{width:7px;height:7px;border-radius:2px}
+.warnchip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--amber);
+  background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:6px;padding:2px 7px}
+.okchip{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--green);
+  background:var(--green-bg);border:1px solid var(--green-bd);border-radius:6px;padding:2px 7px}
+
+/* ── Agent summary block ── */
+.agent-summary{display:flex;gap:9px;align-items:flex-start;background:var(--violet-bg);border-left:3px solid var(--violet);
+  border-radius:0 8px 8px 0;padding:9px 11px;margin:12px 16px 0;font-size:12px;line-height:1.55;color:var(--ink)}
+.agent-summary .as-icon{font-size:14px;flex:none;margin-top:1px}
+.agent-summary .as-text{flex:1}
+
+/* ── Inline pair expansion ── */
+.pair{cursor:pointer}
+.pair .expand-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);
+  display:none;flex-direction:column;gap:6px}
+.pair.open .expand-detail{display:flex}
+.pair.open{background:var(--violet-bg);border-color:var(--violet-bd)}
+.detail-row{display:flex;flex-direction:column;gap:2px}
+.detail-label{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+.detail-val{font-size:12px;color:var(--ink);line-height:1.5}
+.detail-sample{font-size:11.5px;color:var(--ink-2);font-style:italic;border-left:2px solid var(--line-2);padding-left:8px;margin-top:2px}
+.detail-why{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:2px}
+.pair-close{align-self:flex-end;font-size:11px;color:var(--ink-3);margin-top:4px}
+.pair-close:hover{color:var(--ink)}
+
+/* ── Provenance list (replaces wire grid as default expanded view) ── */
+#provlist{display:none;flex-direction:column;min-height:0;background:var(--paper)}
+#content.full-map #provlist{display:flex}
+#content.full-map #mapview{display:none}
+.provlist-head{display:flex;align-items:center;gap:10px;padding:12px 24px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.provlist-head b{font-size:13.5px;font-weight:600}
+.provlist-head .sub{font-size:11.5px;color:var(--ink-3)}
+.provlist-head .back{font-size:12px;font-weight:500;color:var(--ink-2);border:1px solid var(--line-2);border-radius:7px;padding:5px 12px;background:var(--panel);display:flex;align-items:center;gap:6px}
+.provlist-head .back:hover{background:var(--paper)}
+.devtoggle{margin-left:auto;font-size:11.5px;font-weight:500;color:var(--violet);border:1px solid var(--violet-bd);
+  background:var(--violet-bg);border-radius:7px;padding:5px 12px}
+.devtoggle:hover{background:#e0e0f8}
+#provbody{flex:1;overflow-y:auto;padding:24px 30px;min-height:0}
+.prov-section{max-width:640px;margin:0 auto 28px}
+.prov-section-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.prov-row{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;margin-bottom:7px}
+.prov-row.gap{background:var(--amber-bg);border-color:var(--amber-bd)}
+.prov-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex:none;background:var(--violet-bg);border:1px solid var(--violet-bd)}
+.prov-icon.warn{background:var(--amber-bg);border-color:var(--amber-bd)}
+.prov-icon.out{background:var(--teal-bg);border-color:var(--teal-bd)}
+.prov-content{flex:1;min-width:0}
+.prov-field{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--ink)}
+.prov-desc{font-size:12px;color:var(--ink-2);margin-top:3px;line-height:1.5}
+.prov-desc strong{color:var(--ink)}
+.prov-badge{font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:99px;flex:none;margin-top:2px}
+.prov-badge.ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.prov-badge.warn{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd)}
+.prov-badge.proposed{background:var(--violet-bg);color:var(--violet-tx);border:1px dashed var(--violet-bd)}
+.prov-summary{max-width:640px;margin:0 auto 20px;background:var(--violet-bg);border:1px solid var(--violet-bd);
+  border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink);display:flex;gap:10px}
+.prov-summary .si{font-size:16px;flex:none}
+.step-kind{font-size:10.5px;font-weight:600;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase;flex:none;margin-top:3px}
+.skipped{padding:7px 14px 7px 36px;font-size:11.5px;color:var(--ink-3);font-style:italic}
+
+/* ── Config panel ── */
+#config{background:var(--panel);border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.cfg-head{padding:14px 16px 0}
+.cfg-eyebrow{font-size:10.5px;font-weight:600;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase}
+.cfg-title{font-size:14px;font-weight:600;margin-top:3px;letter-spacing:-.01em}
+.tabs{display:flex;gap:0;margin-top:12px;border-bottom:1px solid var(--line)}
+.tab{font-size:12px;font-weight:500;color:var(--ink-3);padding:7px 13px;border-bottom:2px solid transparent;cursor:pointer;user-select:none}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom-color:var(--ink)}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+#cfg-body{flex:1;overflow-y:auto;padding:14px 16px 18px;min-height:0}
+.sec-label{display:flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--ink-3);margin:14px 0 8px}
+.sec-label:first-child{margin-top:0}
+.sec-label .count{margin-left:auto;font-weight:500}
+/* pair = read-only mapping row, same as prototype_1 */
+.pair{border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:7px;transition:background .5s,border-color .5s}
+.pair .line1{display:flex;align-items:center;gap:7px;min-width:0}
+.pair .prov{font-size:10.5px;color:var(--ink-3);margin-top:5px;padding-left:2px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 8px;border-radius:6px;
+  background:var(--paper);border:1px solid var(--line-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
+.chip.tgt{background:var(--violet-bg);border-color:var(--violet-bd);color:var(--violet-tx)}
+.chip.out{background:var(--teal-bg);border-color:var(--teal-bd);color:var(--teal-tx)}
+.arrow{color:var(--ink-3);flex:none;font-size:12px}
+.pair.warn{background:var(--amber-bg);border-color:var(--amber-bd)}
+.pair.warn .wtext{font-size:12px;color:var(--amber);min-width:0}
+.pair.warn button{margin-left:auto;flex:none;font-size:11px;font-weight:500;color:var(--amber);
+  border:1px solid var(--amber-bd);background:#fff;border-radius:7px;padding:4px 10px}
+.pair.proposed{background:var(--green-bg);border-color:var(--green-bd);border-style:dashed}
+.pair.proposed .badge{margin-left:auto;font-size:10px;font-weight:600;color:var(--green);letter-spacing:.04em}
+.pair.flash{background:var(--green-bg);border-color:var(--green-bd)}
+.dest{font-size:11.5px;color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.unused-toggle{width:100%;text-align:left;font-size:11.5px;color:var(--ink-2);border:1px dashed var(--line-2);
+  border-radius:10px;padding:8px 10px;margin-top:4px}
+.unused-toggle:hover{background:var(--paper)}
+.unused-list{padding:6px 2px 0}
+.unused-list .u{display:flex;align-items:center;gap:8px;padding:4px 8px;color:var(--ink-2)}
+.cfg-foot{border-top:1px solid var(--line);padding:10px 16px}
+.expand-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;font-weight:500;
+  border:1px solid var(--line-2);border-radius:var(--r);padding:8px}
+.expand-btn:hover{background:var(--paper)}
+.empty-cfg{padding:30px 16px;color:var(--ink-3);font-size:12.5px;text-align:center;line-height:1.6}
+.step.flash-src{border-color:var(--violet);box-shadow:0 0 0 3px var(--violet-bg)}
+
+/* ── Rich mapping row variants (from screenshot) ── */
+/* value tag on right of .line1 */
+.vtag{font-size:10px;font-weight:600;letter-spacing:.03em;padding:2px 8px;border-radius:99px;margin-left:auto;flex:none;white-space:nowrap}
+.vtag.static{background:var(--paper);border:1px solid var(--line-2);color:var(--ink-2)}
+.vtag.tmpl{background:var(--violet-bg);color:var(--violet-tx);border:1px solid var(--violet-bd)}
+.vtag.gen{background:var(--violet-bg);color:var(--violet-tx);border:1px dashed var(--violet-bd)}
+/* template string box */
+.tmplbox{margin-top:8px;font-size:12px;line-height:2;background:var(--paper);border:1px solid var(--line);
+  border-radius:8px;padding:8px 10px;color:var(--ink)}
+/* inline source pill inside template text */
+.srcpill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:1px 7px;border-radius:5px;
+  background:var(--violet-bg);border:1px solid var(--violet-bd);color:var(--violet-tx);white-space:nowrap}
+/* last-run sample */
+.sample{margin-top:6px;font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line-2);padding-left:8px;font-style:italic}
+/* "tap a field to trace" hint */
+.trace-hint{margin-top:5px;font-size:10.5px;color:var(--ink-3)}
+
+/* ── Full mapping view — fills content zone, chat stays in left third ── */
+#mapview{display:none;flex-direction:column;min-height:0;background:var(--paper)}
+#content.full-map #mapview{display:flex}
+.mapview-head{display:flex;align-items:center;gap:10px;padding:12px 24px;border-bottom:1px solid var(--line);background:var(--panel)}
+.mapview-head b{font-size:13.5px;font-weight:600}
+.mapview-head .sub{font-size:11.5px;color:var(--ink-3)}
+.mapview-head .back{font-size:12px;font-weight:500;color:var(--ink-2);border:1px solid var(--line-2);border-radius:7px;padding:5px 12px;background:var(--panel);display:flex;align-items:center;gap:6px}
+.mapview-head .back:hover{background:var(--paper)}
+#wirewrap{position:relative;flex:1;overflow:auto;padding:26px 30px}
+#wiregrid{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:32px;position:relative;min-width:720px;max-width:1180px;margin:0 auto}
+#wiresvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.wcol{position:relative;z-index:2}
+.wcol h4{font-size:10.5px;font-weight:600;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase;
+  padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.wgrp{font-size:10.5px;color:var(--ink-3);padding:6px 2px 2px}
+.wf{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;background:var(--paper)}
+.wf:hover{background:var(--panel)}
+.wf.hl{background:var(--violet-bg);outline:1px solid var(--violet-bd);animation:hlp 1.2s ease-out 2}
+@keyframes hlp{0%{outline-color:var(--violet)}100%{outline-color:var(--violet-bd)}}
+.wf .nm{font-family:'JetBrains Mono',monospace;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.wf .ty{font-size:10px;color:var(--ink-3);margin-left:auto;flex:none}
+.wf .req{color:#c00;font-size:10px;flex:none}
+.wf .d{width:7px;height:7px;border-radius:50%;flex:none}
+/* dot colours matching Workspace */
+.d.v{background:var(--violet)}
+.d.t{background:var(--teal)}
+.d.n{background:none;border:1px solid var(--line-2)}
+.d.w{background:var(--amber)}
+.d.s{background:var(--ink-3);border-radius:2px}
+.wf.dim .nm{color:var(--ink-3)}
+/* type pills — same colours as before */
+.tt{display:inline-flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;
+  padding:1px 4px;border-radius:3px;font-family:'Inter',sans-serif;min-width:24px;flex:none}
+.tt-str{background:#fff7d6;color:#7c5800;border:1px solid #f0d878}
+.tt-obj{background:#fce8ff;color:#7a00a8;border:1px solid #e0aaff}
+.tt-doc{background:#d6f5ea;color:#005c30;border:1px solid #74d4a0}
+/* legend */
+.legend{display:flex;gap:16px;padding:10px 24px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-2);flex-wrap:wrap;background:var(--panel)}
+.legend .k{display:flex;align-items:center;gap:6px}
+.lw{width:16px;height:2px;border-radius:2px}
+
+.deeplink{display:inline;color:var(--violet);font-weight:500;font-size:12.5px;padding:0}
+.deeplink:hover{text-decoration:underline}
+
+/* ── Toast ── */
+#toast{position:absolute;bottom:18px;left:50%;transform:translate(-50%,10px);opacity:0;pointer-events:none;
+  background:var(--ink);color:#fff;font-size:12px;padding:8px 14px;border-radius:99px;transition:all .25s;z-index:60}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1120px){#content{grid-template-columns:minmax(300px,1fr) 340px}}
+@media (max-width:940px){
+  #app{grid-template-columns:1fr}
+  #content{grid-template-columns:1fr;grid-template-rows:1fr auto}
+  #config{border-left:none;border-top:1px solid var(--line);max-height:46vh}
+  #wirewrap{padding:16px}
+}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<h1 class="sr-only">Flow Agent prototype: AdobeSign_Stream_Ops step list with read-only mapping panel and agent chat.</h1>
+<div id="app">
+
+  <header>
+    <div class="logo"><div class="logo-mark"></div>Flow Agent</div>
+    <span class="crumb">/</span>
+    <span class="autoname">AdobeSign_Stream_Ops</span>
+    <span class="pill draft" id="statuspill">3 unmapped</span>
+    <div class="spacer"></div>
+    <button class="topbtn">Run test</button>
+    <button class="topbtn primary" id="publishbtn" disabled style="opacity:.5;cursor:default">Publish</button>
+  </header>
+
+  <aside id="chat" aria-label="Agent chat">
+    <div class="chat-head">
+      <span class="agent-dot"></span>
+      <div><b>Flow agent</b><br><span>Proposes changes · you approve</span></div>
+      <button class="chat-expand" id="chatexpand" aria-label="Expand chat" title="Expand chat">⤢</button>
+    </div>
+    <div id="msgs"></div>
+    <div class="chips-row" id="chips"></div>
+    <div class="chat-input">
+      <input id="chatbox" type="text" placeholder="Ask the agent to fix a mapping…" aria-label="Message the agent">
+      <button class="send" id="sendbtn" aria-label="Send">→</button>
+    </div>
+  </aside>
+
+  <div id="content">
+    <main id="steps" aria-label="Flow steps">
+      <div class="flow-title">AdobeSign_Stream_Ops</div>
+      <div class="flow-sub">CCH-7492 · Technical view · Last reviewed by the agent just now</div>
+      <div id="steplist"></div>
+    </main>
+
+    <aside id="config" aria-label="Step mapping">
+      <div id="cfg-inner"><div class="empty-cfg">← Select a step to see its mapping</div></div>
+    </aside>
+
+    <section id="provlist" aria-label="Data connections overview">
+      <div class="provlist-head">
+        <button class="back" id="closeprov">← Back to steps</button>
+        <b id="provtitle">Data connections</b>
+        <span class="sub">Review only · Esc goes back</span>
+        <button class="devtoggle" id="devtoggle">Show developer view</button>
+      </div>
+      <div id="provbody"></div>
+    </section>
+
+    <section id="mapview" aria-label="Full mapping view">
+      <div class="mapview-head">
+        <button class="back" id="closedrawer">← Back to steps</button>
+        <b id="drawertitle">Full mapping</b>
+        <span class="sub">Developer view · Esc goes back</span>
+      </div>
+      <div id="wirewrap">
+        <div id="wiregrid">
+          <svg id="wiresvg" aria-hidden="true"></svg>
+          <div class="wcol" id="colA"><h4>Pipeline input</h4></div>
+          <div class="wcol" id="colB"><h4 id="colB-title">Step input</h4></div>
+          <div class="wcol" id="colC"><h4 id="colC-title">Step output</h4></div>
+          <div class="wcol" id="colD"><h4>Pipeline output</h4></div>
+        </div>
+      </div>
+      <div class="legend">
+        <span class="k"><span class="lw" style="background:var(--violet)"></span>Input mapping</span>
+        <span class="k"><span class="lw" style="background:var(--teal)"></span>Output feed</span>
+        <span class="k"><span class="d w" style="display:inline-block"></span>Required, unmapped</span>
+        <span class="k"><span class="d n" style="display:inline-block"></span>Available, unused</span>
+        <span class="k"><span class="tt tt-str">str</span>string</span>
+        <span class="k"><span class="tt tt-obj">obj</span>object</span>
+        <span class="k"><span class="tt tt-doc">doc</span>document</span>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" role="status"></div>
+</div>
+
+<script>
+/* ─────────── State ─────────── */
+const state = {
+  sel: 1,
+  encodingMapped: false,
+  encodingProposed: false,
+  putObjectMapped: false,
+  putObjectProposed: false,
+  combinedDocMapped: false,
+  combinedDocProposed: false,
+  drawerOpen: false,
+  provOpen: false,
+  devView: false,
+  unusedOpen: false,
+  highlight: null,
+  chatFull: false
+};
+
+/* ─────────── Step data (real fields from screenshots) ─────────── */
+const STEPS = [
+  { n:1,  kind:"Connector", title:"Get Document By ID",               app:"Adobe Sign",  appColor:"#e84b37",
+    warnChip: null,
+    inputs:[
+      {src:"GetDocumentByIDInput/id",       tgt:"id",         prov:"from pipeline input · GetDocumentByIDInput"},
+      {src:"GetDocumentByIDInput/object",   tgt:"object",     prov:"from pipeline input · GetDocumentByIDInput"},
+      {src:"GetDocumentByIDInput/documentId", tgt:"documentId", prov:"from pipeline input · GetDocumentByIDInput"},
+    ],
+    warnInputs: [],
+    optionalInputs:[{tgt:"x-api-user"},{tgt:"x-on-behalf-of"},{tgt:"If-None-Match"}],
+    outputs:[
+      {src:"GetDocumentByIDOutput", dest:"steps 2, 8, 9, 10 — downstream steps"},
+      {src:"stream",                dest:"step 8 — Get Agreement Combined Document"},
+    ]
+  },
+  { n:2,  kind:"Connector", title:"Put Object",                        app:"Amazon S3",   appColor:"#f90",
+    inputs:[],
+    warnInputs:[{tgt:"putObjectInput", stateKey:"putObjectMapped"}],
+    optionalInputs:[],
+    outputs:[
+      {src:"putObjectOutput", dest:"step 3 — Get Object"},
+    ]
+  },
+  { n:3,  kind:"Connector", title:"Get Object",                        app:"Amazon S3",   appColor:"#f90",
+    inputs:[],
+    warnInputs:[{tgt:"getObjectInput"},{tgt:"message"},{tgt:"id"}],
+    optionalInputs:[],
+    outputs:[
+      {src:"getObjectOutput",                                dest:"step 8, 9 — downstream"},
+      {src:"responseHeaders/Content-Length",                 dest:"step 4 — If condition"},
+    ]
+  },
+  { n:4,  kind:"Branch",    title:"If  ( /getObjectOutput/responseHeaders/Content-Length  ≥  502000 )", app:null, appColor:null,
+    inputs:[
+      {src:"getObjectOutput/responseHeaders/Content-Length", tgt:"condition", prov:"reads from step 3 output directly — no explicit mapping needed"},
+    ],
+    warnInputs:[],
+    optionalInputs:[],
+    outputs:[]
+  },
+  { n:5,  kind:"Function",  title:"Flow logCustomMessage",             app:null, appColor:null,
+    inputs:[
+      {src:"getObjectOutput/message", tgt:"message", prov:"from step 3 · Get Object"},
+    ],
+    warnInputs:[],
+    optionalInputs:[],
+    outputs:[]
+  },
+  { n:8,  kind:"Connector", title:"Get Agreement Combined Document",   app:"Adobe Sign",  appColor:"#e84b37",
+    inputs:[
+      {src:"getObjectOutput/stream", tgt:"inputStream", prov:"from step 3 · Get Object"},
+    ],
+    warnInputs:[{tgt:"combineddocumentid", stateKey:"combinedDocMapped"}],
+    optionalInputs:[],
+    outputs:[
+      {src:"getAgreementCombinedDocumentOutput", dest:"step 9 — IO streamToString"},
+      {src:"stream",                             dest:"step 9 — IO streamToString"},
+    ]
+  },
+  { n:9,  kind:"Function",  title:"IO streamToString",                 app:null, appColor:null,
+    inputs:[
+      {src:"getAgreementCombinedDocumentOutput/stream", tgt:"inputStream", prov:"from step 8 · Get Agreement Combined Document"},
+    ],
+    warnInputs:[],
+    optionalInputs:[{tgt:"encoding", stateKey:"encodingMapped"}],
+    outputs:[
+      {src:"string", dest:"step 10 — Get Form Data"},
+    ]
+  },
+  { n:10, kind:"Connector", title:"Get Form Data",                     app:"Adobe Sign",  appColor:"#e84b37",
+    inputs:[],
+    warnInputs:[{tgt:"GetFormDataInput"}],
+    optionalInputs:[],
+    outputs:[
+      {src:"GetFormDataOutput",  dest:"not used downstream", unused:true},
+      {src:"FormDataResponse",   dest:"not used downstream", unused:true},
+    ]
+  },
+];
+
+function getStep(n){ return STEPS.find(s=>s.n===n); }
+
+/* ─────────── Mapping status per step ─────────── */
+function stepMappingStatus(s){
+  const hasWarn = s.warnInputs.some(w=>{
+    if(w.stateKey) return !state[w.stateKey];
+    return true; // always warn (no stateKey = not patchable in prototype)
+  });
+  if(hasWarn) return "warn";
+  return "ok";
+}
+
+/* ─────────── Step list ─────────── */
+function renderSteps(){
+  const el = document.getElementById("steplist");
+  el.innerHTML = "";
+  STEPS.forEach((s,i)=>{
+    // "in between" gap before step 8
+    if(s.n===8){
+      const gap = document.createElement("div");
+      gap.className = "skipped";
+      gap.textContent = "Steps 6–7: Else branch · collapsed";
+      el.appendChild(gap);
+      const con = document.createElement("div"); con.className="connector"; el.appendChild(con);
+    }
+    const d = document.createElement("div");
+    d.id = "step-"+s.n;
+    d.className = "step"+(state.sel===s.n?" sel":"");
+    d.setAttribute("role","button"); d.tabIndex=0;
+
+    const status = stepMappingStatus(s);
+    let statusChip = "";
+    if(status==="warn") statusChip = `<span class="warnchip">⚠ unmapped</span>`;
+    else if(s.inputs.length>0||s.warnInputs.length>0) statusChip = `<span class="okchip">✓ mapped</span>`;
+
+    d.innerHTML = `
+      <div class="step-num">${s.n}</div>
+      <div class="step-body">
+        <div class="step-title">${formatTitle(s)}</div>
+        <div class="step-meta">
+          ${s.app?`<span class="appchip"><span class="appdot" style="background:${s.appColor}"></span>${s.app}</span>`:""}
+          ${statusChip}
+        </div>
+      </div>
+      <div class="step-kind">${s.kind}</div>`;
+
+    d.addEventListener("click",()=>{ state.sel=s.n; renderSteps(); renderConfig(); if(state.drawerOpen) renderWireView(); });
+    d.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); d.click(); }});
+    el.appendChild(d);
+    if(i<STEPS.length-1){ const c=document.createElement("div"); c.className="connector"; el.appendChild(c); }
+  });
+}
+
+function formatTitle(s){
+  if(s.title.includes(" from ") && s.app){
+    const idx = s.title.indexOf(" from ");
+    return `<b>${s.title.slice(0,idx)}</b>${s.title.slice(idx)}`;
+  }
+  return `<b>${s.title}</b>`;
+}
+
+/* ─────────── Tab switching helper ─────────── */
+function activateTabs(scope){
+  scope.querySelectorAll(".tab").forEach(tab=>{
+    tab.addEventListener("click", ()=>{
+      const name = tab.dataset.tab;
+      scope.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.tab===name));
+      scope.querySelectorAll(".tab-panel").forEach(p => p.classList.toggle("on", p.id==="tp-"+name));
+    });
+  });
+}
+
+/* ─────────── Config panel — READ ONLY, same pattern as prototype_1 ─────────── */
+
+/*
+ * Rich row helpers — replicating the three row types from the screenshot:
+ *   1. Static value  — field chip + static value badge + "set by you" tag + note
+ *   2. Template      — field chip + template · N fields tag + inline tmplbox with srcpills
+ *   3. Agent-written — field chip + "+ written by agent" tag + instruction + last-run sample
+ */
+function richRowStatic(tgt, value, note){
+  return `
+    <div class="pair">
+      <div class="line1">
+        <span class="chip tgt">${tgt}</span>
+        <span class="chip" style="max-width:none">${value}</span>
+        <span class="vtag static">set by you</span>
+      </div>
+      <div class="prov">${note}</div>
+    </div>`;
+}
+function richRowTemplate(tgt, tag, tmplHtml, hint){
+  return `
+    <div class="pair">
+      <div class="line1">
+        <span class="chip tgt">${tgt}</span>
+        <span class="vtag tmpl">${tag}</span>
+      </div>
+      <div class="tmplbox">${tmplHtml}</div>
+      <div class="trace-hint">${hint}</div>
+    </div>`;
+}
+function richRowAgent(tgt, instruction, lastRun){
+  return `
+    <div class="pair">
+      <div class="line1">
+        <span class="chip tgt">${tgt}</span>
+        <span class="vtag gen">+ written by agent each run</span>
+      </div>
+      <div class="prov" style="margin-top:6px">${instruction}</div>
+      <div class="sample">${lastRun}</div>
+    </div>`;
+}
+
+/* ─────────── Agent summaries per step ─────────── */
+const AGENT_SUMMARIES = {
+  1: "This step fetches a document from Adobe Sign using the document ID that came in with the request. The result — the document stream and its metadata — is passed to almost every other step.",
+  2: "This step saves the document to Amazon S3 for safe storage. It needs the document from step 1 to do this — that connection is currently missing.",
+  3: "This step reads the document back from S3 and checks its size. The file size is used in the next step to decide which processing path to take.",
+  4: "This is a decision point. If the document is larger than 500 KB, the flow takes the large-file path. No data needs to be connected here — the size check happens automatically.",
+  5: "This step logs a message when the large-file path is taken. It reuses the message from the S3 read in step 3.",
+  8: "This step asks Adobe Sign for the complete merged document. It needs the document stream from S3 and the original agreement ID — the agreement ID connection is currently missing.",
+  9: "This step converts the document's binary stream into readable text, ready for the form data extraction in step 10. The stream connection is already in place.",
+  10:"This step retrieves the form field data from the Adobe Sign agreement. It's still missing the connection that tells it which agreement to look at.",
+};
+
+/* ─────────── Click-to-expand details per field ─────────── */
+const FIELD_DETAILS = {
+  // step 1
+  "id":         { src:"Comes from the flow's starting data",        sample:'"ABCDEFabcdef-1234-5678"',  why:"This is the unique ID Adobe Sign uses to locate the document." },
+  "object":     { src:"Comes from the flow's starting data",        sample:'"agreement"',              why:"Tells Adobe Sign what kind of item to retrieve — in this case, an agreement." },
+  "documentId": { src:"Comes from the flow's starting data",        sample:'"DOC-001"',               why:"The specific document within the agreement to fetch." },
+  // step 2
+  "putObjectInput": { src:"Comes from step 1 — Get Document By ID", sample:"(document stream + metadata)", why:"S3 needs the full document to store it. The output of step 1 contains everything needed." },
+  // step 3
+  "getObjectInput": { src:"Not yet connected",                       sample:"—",                        why:"This field needs a source before the step can run." },
+  // step 4
+  "condition":  { src:"Comes from step 3 — Get Object (response headers)", sample:'"487200"',          why:"The file size in bytes. The flow uses this to decide whether to take the large-file path." },
+  // step 5
+  "message":    { src:"Comes from step 3 — Get Object",             sample:'"File exceeds 500 KB threshold"', why:"A descriptive message logged when the large-file path is taken." },
+  // step 8
+  "inputStream":{ src:"Comes from step 3 — Get Object (stream)",    sample:"(binary stream)",          why:"The raw document data that Adobe Sign will use to build the combined PDF." },
+  "combineddocumentid":{ src:"Not yet connected",                   sample:"—",                        why:"Adobe Sign needs the agreement ID to know which document to combine. This must come from the flow's starting data." },
+  // step 9
+  "inputStream9":{ src:"Comes from step 8 — Get Agreement Combined Document", sample:"(binary stream)", why:"The merged document stream that gets converted to text in this step." },
+  "encoding":   { src:"Left at default (UTF-8)",                    sample:'"UTF-8"',                  why:"Adobe Sign documents are always UTF-8. This field can be left empty safely." },
+  "logTag":     { src:"Built from two starting data fields",        sample:'"Document DOC-001 converted from agreement"', why:"A label used in logs to identify this conversion run." },
+  "processingNote": { src:"Written by the agent during each run",   sample:'"Converted 142,840 bytes · encoding: UTF-8 · duration: 38 ms"', why:"A summary the agent generates to make the run traceable without reading raw logs." },
+  // step 10
+  "GetFormDataInput": { src:"Not yet connected",                    sample:"—",                        why:"The step needs the agreement ID to know whose form data to retrieve." },
+};
+
+function makeExpandDetail(fieldKey, extraHtml){
+  const d = FIELD_DETAILS[fieldKey] || {};
+  const src  = d.src  || "—";
+  const samp = d.sample || "—";
+  const why  = d.why  || "";
+  return `
+    <div class="expand-detail">
+      <div class="detail-row"><span class="detail-label">Where it comes from</span><span class="detail-val">${src}</span></div>
+      ${samp !== "—" ? `<div class="detail-sample">e.g. ${samp}</div>` : ""}
+      ${why ? `<div class="detail-why">${why}</div>` : ""}
+      ${extraHtml||""}
+      <button class="pair-close">Tap to close ↑</button>
+    </div>`;
+}
+
+function wireExpand(container){
+  container.querySelectorAll(".pair[data-key]").forEach(p=>{
+    p.addEventListener("click", e=>{
+      if(e.target.closest("button.askbtn")||e.target.closest("button.pair-close")) return;
+      const wasOpen = p.classList.contains("open");
+      container.querySelectorAll(".pair.open").forEach(op=>op.classList.remove("open"));
+      if(!wasOpen) p.classList.add("open");
+    });
+    const closeBtn = p.querySelector(".pair-close");
+    if(closeBtn) closeBtn.addEventListener("click", e=>{ e.stopPropagation(); p.classList.remove("open"); });
+  });
+}
+
+function renderConfig(){
+  const el = document.getElementById("cfg-inner");
+  renderChips();
+  const s = getStep(state.sel);
+  if(!s){ el.innerHTML=`<div class="empty-cfg">← Select a step to see its data connections</div>`; return; }
+
+  const summary = AGENT_SUMMARIES[s.n] || "";
+  const summaryHtml = summary
+    ? `<div class="agent-summary"><span class="as-icon">💬</span><span class="as-text">${summary}</span></div>`
+    : "";
+
+  /* ── Step 9 rich display ── */
+  if(s.n === 9){
+    const encodingRow = state.encodingMapped
+      ? `<div class="pair" data-key="encoding">
+           <div class="line1">
+             <span class="chip tgt">encoding</span>
+             <span class="chip" style="max-width:none">UTF-8</span>
+             <span class="vtag static">fixed value</span>
+           </div>
+           <div class="prov">Set explicitly — stays the same every run</div>
+           ${makeExpandDetail("encoding","")}
+         </div>`
+      : state.encodingProposed
+        ? `<div class="pair proposed" id="pair-encoding" data-key="encoding">
+            <div class="line1"><span class="chip tgt">encoding</span><span class="chip">UTF-8 (default)</span><span class="badge">PENDING APPROVAL</span></div>
+            <div class="prov">Waiting for your approval in the chat</div>
+            ${makeExpandDetail("encoding","")}
+           </div>`
+        : `<div class="pair" style="border-style:dashed" data-key="encoding">
+            <div class="line1">
+              <span class="chip tgt">encoding</span>
+              <span style="margin-left:auto;font-size:10.5px;color:var(--ink-3)">Not set — defaults to UTF-8 (safe to leave)</span>
+            </div>
+            ${makeExpandDetail("encoding","")}
+           </div>`;
+
+    el.innerHTML = `
+      <div class="cfg-head">
+        <div class="cfg-eyebrow">Step ${s.n} · ${s.kind} · Review only</div>
+        <div class="cfg-title">${s.title}</div>
+        <div class="tabs">
+          <span class="tab on" data-tab="inputs">Data connections</span>
+          <span class="tab" data-tab="static">Fixed values</span>
+          <span class="tab" data-tab="outputs">Outputs</span>
+        </div>
+      </div>
+      ${summaryHtml}
+      <div id="cfg-body">
+
+        <div class="tab-panel on" id="tp-inputs">
+          <div class="sec-label">Data connections <span class="count">1 connected</span></div>
+          <div class="pair" data-key="inputStream9">
+            <div class="line1">
+              <span class="chip tgt">inputStream</span>
+              <span class="arrow">←</span>
+              <span class="chip">step 8 · stream</span>
+            </div>
+            <div class="prov">Receives the document stream from Get Agreement Combined Document</div>
+            ${makeExpandDetail("inputStream9","")}
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tp-static">
+          <div class="sec-label">Fixed values <span class="count">3 fields</span></div>
+          <div class="pair" data-key="logTag">
+            <div class="line1">
+              <span class="chip tgt">logTag</span>
+              <span class="vtag tmpl">built from 2 fields</span>
+            </div>
+            <div class="tmplbox">Document <span class="srcpill">id</span> converted from <span class="srcpill">object</span></div>
+            <div class="trace-hint">Tap to see where each value comes from</div>
+            ${makeExpandDetail("logTag","")}
+          </div>
+          ${encodingRow}
+          <div class="pair" data-key="processingNote">
+            <div class="line1">
+              <span class="chip tgt">processingNote</span>
+              <span class="vtag gen">written by agent each run</span>
+            </div>
+            <div class="prov" style="margin-top:6px">Instruction: "Summarise the stream conversion — include byte count and encoding."</div>
+            <div class="sample">Last run: "Converted 142,840 bytes · encoding: UTF-8 · duration: 38 ms"</div>
+            ${makeExpandDetail("processingNote","")}
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tp-outputs">
+          <div class="sec-label">Outputs <span class="count">1 used downstream</span></div>
+          <div class="pair" data-key="string">
+            <div class="line1">
+              <span class="chip out">string</span>
+              <span class="arrow">→</span>
+              <span class="dest">step 10 · Get Form Data</span>
+            </div>
+            <div class="prov">The converted text is picked up by the next step</div>
+            ${makeExpandDetail("id","")}
+          </div>
+        </div>
+
+      </div>
+      <div class="cfg-foot">
+        <button class="expand-btn" id="expandbtn">⤢&nbsp; See all data connections</button>
+      </div>`;
+
+    activateTabs(el);
+    wireExpand(el);
+    document.getElementById("expandbtn").addEventListener("click", openProv);
+    return;
+  }
+
+  /* ── Generic display for all other steps ── */
+
+  const totalRequired = s.inputs.length + s.warnInputs.length;
+  const mappedRequired = s.inputs.length + s.warnInputs.filter(w=>w.stateKey?state[w.stateKey]:false).length;
+  const headline = totalRequired===0
+    ? "No connections needed"
+    : mappedRequired===totalRequired
+      ? `All ${totalRequired} required connection${totalRequired>1?"s":""} in place`
+      : `${mappedRequired} of ${totalRequired} required connection${totalRequired>1?"s":""} in place`;
+
+  /* build input rows — plain language */
+  let inputRowsHtml = s.inputs.map(p=>`
+    <div class="pair" data-key="${p.tgt}">
+      <div class="line1">
+        <span class="chip tgt">${p.tgt}</span>
+        <span class="arrow">←</span>
+        <span class="chip">${p.src.replace(/\//g," › ")}</span>
+      </div>
+      <div class="prov">${p.prov.replace("from pipeline input · ","from the flow's starting data — ").replace("from step","Receives data from step")}</div>
+      ${makeExpandDetail(p.tgt,"")}
+    </div>`).join("");
+
+  /* warn rows */
+  inputRowsHtml += s.warnInputs.map(w=>{
+    const isMapped = w.stateKey ? state[w.stateKey] : false;
+    if(isMapped){
+      const src = w.stateKey==="putObjectMapped"    ? "step 1 · Get Document By ID"
+                : w.stateKey==="combinedDocMapped"  ? "flow's starting data — id"
+                : "—";
+      return `
+        <div class="pair" id="pair-${w.tgt}" data-key="${w.tgt}">
+          <div class="line1">
+            <span class="chip tgt">${w.tgt}</span>
+            <span class="arrow">←</span>
+            <span class="chip">${src}</span>
+          </div>
+          <div class="prov">Connected by the agent ✓</div>
+          ${makeExpandDetail(w.tgt,"")}
+        </div>`;
+    }
+    if(w.stateKey){
+      const proposedKey = w.stateKey.replace("Mapped","Proposed");
+      if(state[proposedKey]){
+        const src = w.stateKey==="putObjectMapped"   ? "step 1 · Get Document By ID"
+                  : w.stateKey==="combinedDocMapped" ? "flow's starting data — id"
+                  : "flow's starting data — encoding";
+        return `
+          <div class="pair proposed" id="pair-${w.tgt}" data-key="${w.tgt}">
+            <div class="line1">
+              <span class="chip tgt">${w.tgt}</span>
+              <span class="arrow">←</span>
+              <span class="chip">${src}</span>
+              <span class="badge">PENDING APPROVAL</span>
+            </div>
+            <div class="prov">Waiting for your approval in the chat</div>
+            ${makeExpandDetail(w.tgt,"")}
+          </div>`;
+      }
+    }
+    return `
+      <div class="pair warn" id="pair-${w.tgt}">
+        <div class="line1">
+          <span class="wtext">⚠ <b>${w.tgt}</b> has no source yet</span>
+          ${w.stateKey?`<button class="askbtn" data-field="${w.tgt}" data-key="${w.stateKey}">Ask agent →</button>`:""}
+        </div>
+        <div class="prov" style="color:var(--amber);font-size:11px;margin-top:4px">${FIELD_DETAILS[w.tgt]?.why||"This field must be connected before the flow can run."}</div>
+      </div>`;
+  }).join("");
+
+  /* optional rows */
+  const optHtml = s.optionalInputs.length ? s.optionalInputs.map(o=>{
+    const isMapped = o.stateKey ? state[o.stateKey] : false;
+    if(isMapped){
+      return `
+        <div class="pair" data-key="${o.tgt}">
+          <div class="line1">
+            <span class="chip tgt">${o.tgt}</span>
+            <span class="arrow">←</span>
+            <span class="chip">flow's starting data — encoding</span>
+          </div>
+          <div class="prov">Optional — connected by the agent</div>
+          ${makeExpandDetail(o.tgt,"")}
+        </div>`;
+    }
+    return `
+      <div class="pair" style="border-style:dashed" data-key="${o.tgt}">
+        <div class="line1">
+          <span class="chip tgt">${o.tgt}</span>
+          <span style="margin-left:auto;font-size:10.5px;color:var(--ink-3)">Optional — not set</span>
+        </div>
+        ${makeExpandDetail(o.tgt,"")}
+      </div>`;
+  }).join("") : "";
+
+  /* outputs */
+  const outputsHtml = s.outputs.length ? `
+    <div class="sec-label">Outputs <span class="count">${s.outputs.filter(o=>!o.unused).length} passed on</span></div>
+    ${s.outputs.map(o=>`
+      <div class="pair" data-key="${o.src}">
+        <div class="line1">
+          <span class="chip out">${o.src}</span>
+          <span class="arrow">→</span>
+          <span class="dest"${o.unused?' style="color:var(--ink-3)"':''}>${o.unused ? "Not used downstream" : o.dest}</span>
+        </div>
+        ${o.unused ? '<div class="prov" style="color:var(--ink-3)">This result isn\'t needed by any later step</div>' : ''}
+        ${makeExpandDetail(o.src,"")}
+      </div>`).join("")}` : "";
+
+  /* unused fields toggle — step 1 only */
+  const unusedHtml = s.n===1 ? `
+    <button class="unused-toggle" id="unusedbtn">${state.unusedOpen?"Hide":"Show"} optional unused fields</button>
+    <div class="unused-list" style="display:${state.unusedOpen?"block":"none"}" id="unused-list">
+      ${["x-api-user","x-on-behalf-of","If-None-Match"].map(f=>`
+        <div class="u"><span class="d n" style="width:6px;height:6px;border-radius:50%;display:inline-block"></span><span class="mono" style="color:var(--ink-3)">${f}</span><span style="font-size:11px;color:var(--ink-3);margin-left:6px">— not needed</span></div>`).join("")}
+    </div>` : "";
+
+  el.innerHTML = `
+    <div class="cfg-head">
+      <div class="cfg-eyebrow">Step ${s.n} · ${s.kind} · Review only</div>
+      <div class="cfg-title">${s.title}</div>
+      <div class="tabs">
+        <span class="tab on" data-tab="inputs">Data connections</span>
+        <span class="tab" data-tab="static">Fixed values</span>
+        <span class="tab" data-tab="outputs">Outputs</span>
+      </div>
+    </div>
+    ${summaryHtml}
+    <div id="cfg-body">
+      <div class="tab-panel on" id="tp-inputs">
+        <div class="sec-label">Data connections <span class="count">${headline}</span></div>
+        ${inputRowsHtml}
+        ${optHtml}
+        ${unusedHtml}
+      </div>
+      <div class="tab-panel" id="tp-static">
+        <div class="empty-cfg" style="padding:24px 0;font-size:12px;color:var(--ink-3)">No fixed values set for this step</div>
+      </div>
+      <div class="tab-panel" id="tp-outputs">
+        ${outputsHtml || `<div class="empty-cfg" style="padding:24px 0;font-size:12px;color:var(--ink-3)">No outputs for this step</div>`}
+      </div>
+    </div>
+    <div class="cfg-foot">
+      <button class="expand-btn" id="expandbtn">⤢&nbsp; See all data connections</button>
+    </div>`;
+
+  activateTabs(el);
+  wireExpand(el);
+  el.querySelectorAll(".askbtn").forEach(btn=>{
+    btn.addEventListener("click", e=>{ e.stopPropagation(); runIntent("fix-"+btn.dataset.key); });
+  });
+  const ub = document.getElementById("unusedbtn");
+  if(ub) ub.addEventListener("click",()=>{ state.unusedOpen=!state.unusedOpen; renderConfig(); });
+  document.getElementById("expandbtn").addEventListener("click", openProv);
+}
+
+/* ─────────── Chips ─────────── */
+function renderChips(){
+  const c = document.getElementById("chips");
+  let set;
+  if(state.sel===9)  set=[["fix-encodingMapped","Map the encoding field"],["why-optional","Why is encoding optional?"],["explain","Explain this step"]];
+  else if(state.sel===2) set=[["fix-putObjectMapped","Fix putObjectInput"],["explain","Explain this step"],["show-gaps","Which steps have gaps?"]];
+  else if(state.sel===8) set=[["fix-combinedDocMapped","Fix combineddocumentid"],["explain","Explain this step"],["show-gaps","Which steps have gaps?"]];
+  else set=[["show-gaps","Which steps have gaps?"],["explain","Explain this step"],["fix-putObjectMapped","Fix step 2 first"]];
+  c.innerHTML = set.map(([q,l])=>`<button class="qchip" data-q="${q}">${l}</button>`).join("");
+  c.onclick=e=>{ const b=e.target.closest(".qchip"); if(b) runIntent(b.dataset.q, b.textContent); };
+}
+
+/* ─────────── Chat ─────────── */
+const msgs = document.getElementById("msgs");
+function addUser(t){ const d=document.createElement("div"); d.className="msg user"; d.textContent=t; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; }
+function addAgent(html, instant){
+  const d=document.createElement("div"); d.className="msg agent";
+  d.innerHTML=`<div class="who">AGENT</div><div class="body"></div>`;
+  msgs.appendChild(d);
+  const body=d.querySelector(".body");
+  if(instant){ body.innerHTML=html; msgs.scrollTop=msgs.scrollHeight; return d; }
+  body.innerHTML=`<span class="typing"><i></i><i></i><i></i></span>`;
+  msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{ body.innerHTML=html; msgs.scrollTop=msgs.scrollHeight; wireProposal(d); }, 950);
+  return d;
+}
+function wireProposal(scope){
+  const card=scope.querySelector(".proposal"); const ok=scope.querySelector(".ok"), no=scope.querySelector(".no");
+  if(!card||!ok) return;
+  ok.addEventListener("click",()=>applyProposal(card.dataset.kind, scope));
+  no.addEventListener("click",()=>dismissProposal(card.dataset.kind, scope));
+}
+
+/* ─────────── Proposal templates ─────────── */
+function proposalCard(kind, stepN, src, tgt, bodyText){
+  return `${bodyText}
+  <div class="proposal" data-kind="${kind}">
+    <div class="p-head">Proposed change · step ${stepN}</div>
+    <div class="p-body"><span class="chip">${src}</span><span class="arrow">→</span><span class="chip tgt">${tgt}</span></div>
+    <div class="p-actions"><button class="ok">Approve</button><button class="no">Dismiss</button></div>
+  </div>`;
+}
+
+function runIntent(intent, userText){
+  if(intent==="fix-putObjectMapped"){
+    addUser(userText||"Fix putObjectInput");
+    if(state.putObjectMapped){ addAgent(`<span class="mono">putObjectInput</span> is already mapped — step 2 is good.`); return; }
+    if(state.putObjectProposed){ addAgent(`There's already a proposal waiting above — approve or dismiss it first.`); return; }
+    state.putObjectProposed=true; renderSteps(); renderConfig();
+    addAgent(proposalCard("putObjectMapped",2,"GetDocumentByIDOutput","putObjectInput",
+      `Step 2 uploads the document to S3. <span class="mono">putObjectInput</span> needs the document stream — <span class="mono">GetDocumentByIDOutput</span> from step 1 is the right source.`));
+
+  } else if(intent==="fix-combinedDocMapped"){
+    addUser(userText||"Fix combineddocumentid");
+    if(state.combinedDocMapped){ addAgent(`<span class="mono">combineddocumentid</span> is already mapped.`); return; }
+    if(state.combinedDocProposed){ addAgent(`There's already a proposal waiting — approve or dismiss it first.`); return; }
+    state.combinedDocProposed=true; renderSteps(); renderConfig();
+    addAgent(proposalCard("combinedDocMapped",8,"GetDocumentByIDInput/id","combineddocumentid",
+      `Step 8 needs the agreement ID to fetch the combined document. <span class="mono">GetDocumentByIDInput/id</span> from the pipeline input is the right source.`));
+
+  } else if(intent==="fix-encodingMapped"){
+    addUser(userText||"Map the encoding field");
+    if(state.encodingMapped){ addAgent(`<span class="mono">encoding</span> is already set on step 9.`); return; }
+    if(state.encodingProposed){ addAgent(`There's already a proposal waiting — approve or dismiss it first.`); return; }
+    state.encodingProposed=true; renderSteps(); renderConfig();
+    addAgent(proposalCard("encodingMapped",9,"GetDocumentByIDInput/encoding","encoding",
+      `<span class="mono">encoding</span> is optional on step 9. Adobe Sign documents are UTF-8 by default, so this is safe to leave empty — but if you want to be explicit, I can map it from the pipeline input.`));
+
+  } else if(intent==="show-gaps"){
+    addUser(userText||"Which steps have gaps?");
+    const gaps = STEPS.filter(s=>s.warnInputs.some(w=>w.stateKey?!state[w.stateKey]:true));
+    if(!gaps.length){ addAgent("All required inputs are mapped — the flow is ready to publish."); return; }
+    const list = gaps.map(s=>{
+      const fields = s.warnInputs.filter(w=>w.stateKey?!state[w.stateKey]:true).map(w=>`<span class="mono">${w.tgt}</span>`).join(", ");
+      return `<b>Step ${s.n} · ${s.title}:</b> ${fields}`;
+    }).join("<br>");
+    addAgent(`${gaps.length} step${gaps.length>1?"s":""} still have unmapped required fields:<br><br>${list}<br><br>Click a step and use the <i>Ask agent</i> button, or tap the quick action below.`);
+
+  } else if(intent==="why-optional"){
+    addUser(userText||"Why is encoding optional?");
+    addAgent(`<span class="mono">encoding</span> on <span class="mono">IO streamToString</span> defaults to UTF-8 when left empty. You'd only set it if the source document uses a non-UTF-8 encoding — e.g. ISO-8859-1 for older PDFs. Adobe Sign streams are always UTF-8, so leaving this empty is safe.`);
+
+  } else if(intent==="explain"){
+    addUser(userText||"Explain this step");
+    const s = getStep(state.sel);
+    const explanations = {
+      1: `Step 1 calls Adobe Sign to retrieve a document by ID. The pipeline input carries the document ID, object reference, and optionally headers. The output — <span class="mono">GetDocumentByIDOutput</span> — is a document object (stream + metadata) used by almost every downstream step.`,
+      2: `Step 2 uploads the retrieved document to Amazon S3 via <span class="mono">Put Object</span>. It needs <span class="mono">putObjectInput</span> — a doc wrapping bucket, key and stream — which should come from step 1's output. Once uploaded, S3 returns <span class="mono">putObjectOutput</span> for step 3 to read back.`,
+      3: `Step 3 reads the document back from S3. It needs the bucket/key from step 2's output, plus the document ID. Its output carries the raw byte stream and the response headers — including <span class="mono">Content-Length</span>, which step 4 checks to branch on file size.`,
+      4: `Step 4 is a branch — it reads <span class="mono">Content-Length</span> from step 3's response headers and routes to the YES path if the file is over 500 KB. No explicit mapping is needed; the value travels through the pipeline automatically.`,
+      5: `Step 5 logs a message when the YES branch fires (large file). It pulls <span class="mono">message</span> from step 3's output — no other mapping needed.`,
+      8: `Step 8 asks Adobe Sign for the combined (merged) document. It needs the stream from S3 (<span class="mono">inputStream</span>) and the original document ID (<span class="mono">combineddocumentid</span>). Its output stream feeds directly into step 9.`,
+      9: `Step 9 converts the binary stream from step 8 into a UTF-8 string. <span class="mono">inputStream</span> is already mapped. <span class="mono">encoding</span> is optional — defaults to UTF-8. The resulting <span class="mono">string</span> is consumed by step 10.`,
+      10: `Step 10 retrieves the form field data from the Adobe Sign agreement. It needs <span class="mono">GetFormDataInput</span> — a doc wrapping the agreement ID — which hasn't been mapped yet. Its outputs are not used downstream in this flow.`,
+    };
+    addAgent(explanations[state.sel]||`Step ${state.sel} — no detailed explanation scripted for this step yet.`);
+
+  } else {
+    addUser(userText);
+    addAgent(`I can fix mappings and explain steps. Try <b>Which steps have gaps?</b> or click <i>Ask agent</i> on any unmapped field. Most paths are scripted in this prototype.`);
+  }
+}
+
+function applyProposal(kind, scope){
+  const card=scope.querySelector(".proposal");
+  card.classList.add("applied");
+  card.querySelector(".p-head").textContent="Applied ✓";
+  card.querySelectorAll("button").forEach(b=>b.disabled=true);
+
+  const msgs2 = {
+    putObjectMapped:  `Done — <span class="mono">putObjectInput</span> on step 2 now maps from <span class="mono">GetDocumentByIDOutput</span>. <button class="deeplink" onclick="jumpAndHL(2,'pair-putObjectInput')">See step 2 →</button>`,
+    combinedDocMapped:`Done — <span class="mono">combineddocumentid</span> on step 8 maps from <span class="mono">GetDocumentByIDInput/id</span>. <button class="deeplink" onclick="jumpAndHL(8,'pair-combineddocumentid')">See step 8 →</button>`,
+    encodingMapped:   `Done — <span class="mono">encoding</span> on step 9 now maps from <span class="mono">GetDocumentByIDInput/encoding</span>. <button class="deeplink" onclick="jumpAndHL(9,'pair-encoding')">See step 9 →</button>`,
+  };
+  const toasts = {
+    putObjectMapped:  "Mapped: putObjectInput ← GetDocumentByIDOutput",
+    combinedDocMapped:"Mapped: combineddocumentid ← GetDocumentByIDInput/id",
+    encodingMapped:   "Mapped: encoding ← GetDocumentByIDInput/encoding",
+  };
+
+  state[kind] = true;
+  const proposedKey = kind.replace("Mapped","Proposed");
+  state[proposedKey] = false;
+
+  // check if all required are now mapped
+  const stillGaps = STEPS.some(s=>s.warnInputs.some(w=>w.stateKey?!state[w.stateKey]:true));
+  if(!stillGaps){
+    document.getElementById("statuspill").className="pill ready";
+    document.getElementById("statuspill").textContent="Ready to publish";
+    const pub=document.getElementById("publishbtn");
+    pub.disabled=false; pub.style.opacity=1; pub.style.cursor="pointer";
+  } else {
+    const n = STEPS.filter(s=>s.warnInputs.some(w=>w.stateKey?!state[w.stateKey]:true)).length;
+    document.getElementById("statuspill").textContent=n+" unmapped";
+  }
+
+  renderSteps(); renderConfig(); if(state.drawerOpen) renderWireView();
+  addAgent(msgs2[kind]||"Done.");
+  toast(toasts[kind]||"Mapping applied");
+
+  // flash the pair card
+  setTimeout(()=>{
+    const el=document.getElementById("pair-"+{putObjectMapped:"putObjectInput",combinedDocMapped:"combineddocumentid",encodingMapped:"encoding"}[kind]);
+    if(el){ el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"),1600); }
+  }, 80);
+}
+
+function dismissProposal(kind, scope){
+  const card=scope.querySelector(".proposal");
+  card.querySelector(".p-head").textContent="Dismissed";
+  card.querySelectorAll("button").forEach(b=>b.disabled=true);
+  const proposedKey = kind.replace("Mapped","Proposed");
+  state[proposedKey]=false;
+  renderConfig();
+  addAgent(`No problem — I've dropped that suggestion. Tell me if you'd prefer a different source.`);
+}
+
+function jumpAndHL(n, pairId){
+  state.sel=n; renderSteps(); renderConfig();
+  const el=document.getElementById("step-"+n);
+  if(el) el.scrollIntoView({behavior:"smooth",block:"center"});
+  setTimeout(()=>{
+    const p=document.getElementById(pairId);
+    if(p){ p.classList.add("flash"); setTimeout(()=>p.classList.remove("flash"),1600); }
+  }, 80);
+}
+window.jumpAndHL=jumpAndHL;
+
+document.getElementById("sendbtn").addEventListener("click", sendFree);
+document.getElementById("chatbox").addEventListener("keydown",e=>{ if(e.key==="Enter") sendFree(); });
+function sendFree(){
+  const box=document.getElementById("chatbox");
+  const t=box.value.trim(); if(!t) return; box.value="";
+  const low=t.toLowerCase();
+  if(low.includes("putobject")||low.includes("step 2")||low.includes("s3")) runIntent("fix-putObjectMapped",t);
+  else if(low.includes("combined")||low.includes("step 8")) runIntent("fix-combinedDocMapped",t);
+  else if(low.includes("encod")||low.includes("step 9")) runIntent("fix-encodingMapped",t);
+  else if(low.includes("gap")||low.includes("unmap")||low.includes("which")||low.includes("fix")) runIntent("show-gaps",t);
+  else if(low.includes("explain")||low.includes("what does")||low.includes("what is")) runIntent("explain",t);
+  else if(low.includes("optional")) runIntent("why-optional",t);
+  else runIntent("other",t);
+}
+
+/* ─────────── Wire drawer — full 4-column implementation ─────────── */
+
+/*
+ * PIPELINE_ALL: the master list shown in columns A and D.
+ * Represents every named variable visible in the pipeline at any step.
+ * Each entry: { id, name, type, req, group, indent }
+ */
+const PIPELINE_ALL = [
+  // ── GetDocumentByID (step 1 inputs / pipeline entry points) ──
+  { id:"pa-gdbi",      name:"GetDocumentByIDInput",    type:"obj", req:true,  group:"Pipeline entry · Step 1" },
+  { id:"pa-gdbi-id",   name:"id",                       type:"str", req:true,  indent:true },
+  { id:"pa-gdbi-obj",  name:"object",                   type:"str", req:false, indent:true },
+  { id:"pa-gdbi-did",  name:"documentId",               type:"str", req:true,  indent:true },
+  { id:"pa-gdbi-enc",  name:"encoding",                 type:"str", req:false, indent:true },
+  // ── Step 1 outputs ──
+  { id:"pa-gdbo",      name:"GetDocumentByIDOutput",    type:"doc", req:false, group:"Step 1 outputs" },
+  { id:"pa-stream1",   name:"stream",                   type:"obj", req:false, indent:true },
+  // ── Step 2 outputs ──
+  { id:"pa-poo",       name:"putObjectOutput",          type:"doc", req:false, group:"Step 2 outputs" },
+  // ── Step 3 outputs ──
+  { id:"pa-goo",       name:"getObjectOutput",          type:"obj", req:false, group:"Step 3 outputs" },
+  { id:"pa-goo-st",    name:"stream",                   type:"obj", req:false, indent:true },
+  { id:"pa-goo-msg",   name:"message",                  type:"str", req:false, indent:true },
+  { id:"pa-goo-hdrs",  name:"responseHeaders",          type:"obj", req:false, indent:true },
+  { id:"pa-goo-cl",    name:"Content-Length",           type:"str", req:false, indent:true },
+  // ── Step 8 outputs ──
+  { id:"pa-gacdo",     name:"getAgreementCombinedDocumentOutput", type:"doc", req:false, group:"Step 8 outputs" },
+  { id:"pa-stream8",   name:"stream",                   type:"obj", req:false, indent:true },
+  // ── Step 9 outputs ──
+  { id:"pa-string",    name:"string",                   type:"str", req:false, group:"Step 9 outputs" },
+  // ── Step 10 outputs ──
+  { id:"pa-gfdo",      name:"GetFormDataOutput",        type:"doc", req:false, group:"Step 10 outputs", dim:true },
+  { id:"pa-fdr",       name:"FormDataResponse",         type:"obj", req:false, indent:true, dim:true },
+];
+
+/*
+ * STEP_DEFS: per-step column B/C content and wires.
+ * inputs:  [{ id, name, type, req, mappedFrom (pipeline-A id) | null }]
+ * outputs: [{ id, name, type, req, mappedTo (pipeline-D id) }]
+ * icon: "fn" | "conn"
+ */
+const STEP_DEFS = {
+  1: {
+    icon:"conn", title:"Get Document By ID",
+    inputs:[
+      { id:"wb1-id",   name:"id",         type:"str", req:true,  mappedFrom:"pa-gdbi-id"  },
+      { id:"wb1-obj",  name:"object",     type:"str", req:false, mappedFrom:"pa-gdbi-obj" },
+      { id:"wb1-did",  name:"documentId", type:"str", req:true,  mappedFrom:"pa-gdbi-did" },
+      { id:"wb1-usr",  name:"x-api-user", type:"str", req:false, mappedFrom:null },
+      { id:"wb1-nim",  name:"If-None-Match", type:"str", req:false, mappedFrom:null },
+    ],
+    outputs:[
+      { id:"wc1-gdbo",  name:"GetDocumentByIDOutput", type:"doc", req:true,  mappedTo:"pa-gdbo"   },
+      { id:"wc1-st",    name:"stream",                 type:"obj", req:false, mappedTo:"pa-stream1" },
+    ],
+  },
+  2: {
+    icon:"conn", title:"Put Object",
+    inputs:[
+      { id:"wb2-poi",  name:"putObjectInput", type:"doc", req:true,
+        get mappedFrom(){ return state.putObjectMapped ? "pa-gdbo" : null; } },
+    ],
+    outputs:[
+      { id:"wc2-poo", name:"putObjectOutput", type:"doc", req:true, mappedTo:"pa-poo" },
+    ],
+  },
+  3: {
+    icon:"conn", title:"Get Object",
+    inputs:[
+      { id:"wb3-goi",  name:"getObjectInput", type:"obj", req:true,  mappedFrom:null },
+      { id:"wb3-msg",  name:"message",         type:"str", req:false, mappedFrom:null },
+      { id:"wb3-id",   name:"id",              type:"str", req:false, mappedFrom:null },
+    ],
+    outputs:[
+      { id:"wc3-goo",  name:"getObjectOutput",              type:"obj", req:true,  mappedTo:"pa-goo"    },
+      { id:"wc3-cl",   name:"responseHeaders/Content-Length",type:"str", req:false, mappedTo:"pa-goo-cl" },
+    ],
+  },
+  4: {
+    icon:"fn", title:"If ≥ 502000",
+    inputs:[
+      { id:"wb4-cond", name:"condition", type:"str", req:true, mappedFrom:"pa-goo-cl" },
+    ],
+    outputs:[],
+  },
+  5: {
+    icon:"fn", title:"Flow logCustomMessage",
+    inputs:[
+      { id:"wb5-msg", name:"message", type:"str", req:true, mappedFrom:"pa-goo-msg" },
+    ],
+    outputs:[],
+  },
+  8: {
+    icon:"conn", title:"Get Agreement Combined Document",
+    inputs:[
+      { id:"wb8-is",   name:"inputStream",       type:"obj", req:true,  mappedFrom:"pa-goo-st" },
+      { id:"wb8-cdi",  name:"combineddocumentid", type:"str", req:true,
+        get mappedFrom(){ return state.combinedDocMapped ? "pa-gdbi-id" : null; } },
+    ],
+    outputs:[
+      { id:"wc8-gacdo", name:"getAgreementCombinedDocumentOutput", type:"doc", req:true,  mappedTo:"pa-gacdo"  },
+      { id:"wc8-st",    name:"stream",                              type:"obj", req:false, mappedTo:"pa-stream8" },
+    ],
+  },
+  9: {
+    icon:"fn", title:"IO streamToString",
+    inputs:[
+      { id:"wb9-is",  name:"inputStream", type:"obj", req:true,  mappedFrom:"pa-stream8" },
+      { id:"wb9-enc", name:"encoding",    type:"str", req:false,
+        get mappedFrom(){ return state.encodingMapped ? "pa-gdbi-enc" : null; } },
+    ],
+    outputs:[
+      { id:"wc9-str", name:"string", type:"str", req:true, mappedTo:"pa-string" },
+    ],
+  },
+  10: {
+    icon:"conn", title:"Get Form Data",
+    inputs:[
+      { id:"wb10-gfi", name:"GetFormDataInput", type:"doc", req:true, mappedFrom:null },
+    ],
+    outputs:[
+      { id:"wc10-gfdo", name:"GetFormDataOutput",  type:"doc", req:false, mappedTo:"pa-gfdo", dim:true },
+      { id:"wc10-fdr",  name:"FormDataResponse",    type:"obj", req:false, mappedTo:"pa-fdr",  dim:true },
+    ],
+  },
+};
+
+/* Build a single field row (.wf) matching the Workspace pattern */
+function makeField(field, side){
+  // side: "A"|"D" = pipeline cols  "B" = step input  "C" = step output
+  const isB = side === "B", isC = side === "C";
+  const isA = side === "A", isD = side === "D";
+
+  const isMapped = isB ? (field.mappedFrom !== null && field.mappedFrom !== undefined)
+                 : isC ? true
+                 : false;
+
+  // dot class: v=violet(mapped), t=teal(output), w=amber(unmapped-required), n=hollow(unused)
+  let dotCls;
+  if(isA) dotCls = isMapped ? "v" : "n";
+  if(isB) dotCls = isMapped ? "v" : (field.req ? "w" : "n");
+  if(isC) dotCls = "t";
+  if(isD) dotCls = isMapped ? "t" : "n";
+
+  const ttClass = field.type === "str" ? "tt tt-str"
+                : field.type === "obj" ? "tt tt-obj"
+                : field.type === "doc" ? "tt tt-doc"
+                : "tt";
+
+  const req = field.req ? `<span class="req">*</span>` : "";
+  const dimCls = field.dim ? " dim" : "";
+  const indentStyle = field.indent ? ' style="padding-left:20px"' : "";
+
+  const ttVariant = field.type === "str" ? "tt-str" : field.type === "obj" ? "tt-obj" : field.type === "doc" ? "tt-doc" : "";
+  return `<div class="wf${dimCls}" id="${field.id}"${indentStyle}><span class="d ${dotCls}"></span><span class="tt ${ttVariant}">${field.type}</span><span class="nm">${field.name}</span>${req}</div>`;
+}
+
+/* Build the pipeline column (A or D) — full list, active wires determine dot colour */
+function makePipelineCol(side, activeIds){
+  let html = "";
+  let lastGroup = null;
+  PIPELINE_ALL.forEach(f => {
+    if(f.group && f.group !== lastGroup){
+      html += `<div class="wgrp">${f.group}</div>`;
+      lastGroup = f.group;
+    }
+    const fCopy = Object.assign({}, f);
+    // For col A: treat as "mapped" only if this field has an active wire
+    if(side === "A") fCopy.mappedFrom = activeIds.has(f.id) ? f.id : null;
+    // For col D: treat as "mapped" only if this field has an active wire
+    if(side === "D") fCopy.mappedTo = activeIds.has(f.id) ? f.id : null;
+    html += makeField(fCopy, side);
+  });
+  return html;
+}
+
+/* Render the 4-column mapping view for the selected step */
+function renderWireView(){
+  const s = getStep(state.sel);
+  if(!s) return;
+
+  const def = STEP_DEFS[s.n];
+  const title = def ? def.title : s.title;
+  document.getElementById("drawertitle").textContent = `Full mapping · Step ${s.n} · ${title}`;
+
+  // Update B/C column <h4> text (the Workspace uses h4 IDs directly)
+  document.getElementById("colB-title").textContent = `Input — ${title}`;
+  document.getElementById("colC-title").textContent = `Output — ${title}`;
+
+  const colA = document.getElementById("colA");
+  const colB = document.getElementById("colB");
+  const colC = document.getElementById("colC");
+  const colD = document.getElementById("colD");
+
+  // Keep the <h4> header in each column — append content after it
+  function setColContent(col, html){
+    const h4 = col.querySelector("h4");
+    col.innerHTML = "";
+    if(h4) col.appendChild(h4);
+    col.insertAdjacentHTML("beforeend", html);
+  }
+
+  if(!def){
+    setColContent(colB, `<div class="wgrp">No step definition</div>`);
+    setColContent(colC, `<div class="wgrp">No step definition</div>`);
+    setColContent(colA, makePipelineCol("A", new Set()));
+    setColContent(colD, makePipelineCol("D", new Set()));
+    state._wires = [];
+    requestAnimationFrame(drawWires);
+    return;
+  }
+
+  // Collect which pipeline IDs are actively wired for this step
+  const activeIds = new Set();
+  def.inputs.forEach(f  => { const mf = f.mappedFrom; if(mf) activeIds.add(mf); });
+  def.outputs.forEach(f => { if(f.mappedTo) activeIds.add(f.mappedTo); });
+
+  // Col B — step inputs
+  setColContent(colB, def.inputs.map(f => makeField(f, "B")).join(""));
+
+  // Col C — step outputs
+  setColContent(colC, def.outputs.length
+    ? def.outputs.map(f => makeField(f, "C")).join("")
+    : `<div class="wgrp" style="color:#bbb;font-size:11px;padding:12px 8px">No outputs</div>`);
+
+  // Col A — full pipeline list
+  setColContent(colA, makePipelineCol("A", activeIds));
+
+  // Col D — full pipeline list (same fields, different dot logic)
+  setColContent(colD, makePipelineCol("D", activeIds));
+
+  // Wire pairs: A→B for inputs, C→D for outputs
+  const wires = [];
+  def.inputs.forEach(f => { const mf = f.mappedFrom; if(mf) wires.push([mf, f.id]); });
+  def.outputs.forEach(f => { if(f.mappedTo && !f.dim) wires.push([f.id, f.mappedTo]); });
+
+  state._wires = wires;
+  requestAnimationFrame(drawWires);
+}
+
+/* Draw bezier SVG wires — coordinates relative to #wiregrid */
+function drawWires(){
+  const svg  = document.getElementById("wiresvg");
+  const grid = document.getElementById("wiregrid");
+  if((!state.drawerOpen && !state.devView) || !svg || !grid){ if(svg) svg.innerHTML = ""; return; }
+
+  const links = state._wires || [];
+  const g = grid.getBoundingClientRect();
+  svg.innerHTML = "";
+
+  links.forEach(([fromId, toId]) => {
+    const ea = document.getElementById(fromId);
+    const eb = document.getElementById(toId);
+    if(!ea || !eb) return;
+
+    const ra = ea.getBoundingClientRect();
+    const rb = eb.getBoundingClientRect();
+
+    const x1 = ra.right  - g.left;
+    const y1 = ra.top    - g.top + ra.height / 2;
+    const x2 = rb.left   - g.left;
+    const y2 = rb.top    - g.top + rb.height / 2;
+
+    const m = (x1 + x2) / 2;
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d",             `M${x1} ${y1} C ${m} ${y1}, ${m} ${y2}, ${x2} ${y2}`);
+    path.setAttribute("fill",          "none");
+    path.setAttribute("stroke",        "#5753d6");
+    path.setAttribute("stroke-width",  "1.5");
+    path.setAttribute("stroke-opacity","0.8");
+    svg.appendChild(path);
+  });
+}
+
+const appEl     = document.getElementById("app");
+const contentEl = document.getElementById("content");
+
+function collapseChat(){ appEl.classList.remove("chat-full"); state.chatFull=false; setExpandIcon(); }
+function setExpandIcon(){
+  const b = document.getElementById("chatexpand");
+  b.textContent = state.chatFull ? "⤡" : "⤢";
+  b.title = state.chatFull ? "Collapse chat" : "Expand chat";
+}
+document.getElementById("chatexpand").addEventListener("click", ()=>{
+  state.chatFull = !state.chatFull;
+  appEl.classList.toggle("chat-full", state.chatFull);
+  setExpandIcon();
+});
+
+/* ─── Provenance list — default expanded view ─── */
+function openProv(){
+  state.provOpen = true;
+  state.devView  = false;
+  collapseChat();
+  contentEl.classList.add("full-map");
+  // make sure provlist visible, mapview hidden
+  document.getElementById("provlist").style.display = "";
+  document.getElementById("mapview").style.display  = "none";
+  document.getElementById("devtoggle").textContent  = "Show developer view";
+  renderProvList();
+}
+function closeProv(){
+  state.provOpen = false;
+  state.devView  = false;
+  contentEl.classList.remove("full-map");
+  document.getElementById("wiresvg").innerHTML = "";
+}
+
+function renderProvList(){
+  const s = getStep(state.sel);
+  if(!s) return;
+  document.getElementById("provtitle").textContent = `Data connections · Step ${s.n} · ${s.title}`;
+  const summary = AGENT_SUMMARIES[s.n] || "";
+  let inputRows = "";
+
+  s.inputs.forEach(p=>{
+    inputRows += `
+      <div class="prov-row">
+        <div class="prov-icon">←</div>
+        <div class="prov-content">
+          <div class="prov-field">${p.tgt}</div>
+          <div class="prov-desc">Comes from <strong>${p.src.replace(/\//g," › ")}</strong> — ${p.prov.replace("from pipeline input · ","from the flow's starting data — ").replace(/^from step/,"step")}</div>
+        </div>
+        <span class="prov-badge ok">Connected</span>
+      </div>`;
+  });
+
+  s.warnInputs.forEach(w=>{
+    const isMapped  = w.stateKey ? state[w.stateKey] : false;
+    const isProposed= w.stateKey ? state[w.stateKey.replace("Mapped","Proposed")] : false;
+    const src = w.stateKey==="putObjectMapped"   ? "step 1 · Get Document By ID"
+              : w.stateKey==="combinedDocMapped" ? "flow's starting data — id" : "—";
+    const detail = FIELD_DETAILS[w.tgt] || {};
+    if(isMapped){
+      inputRows += `<div class="prov-row"><div class="prov-icon">←</div><div class="prov-content"><div class="prov-field">${w.tgt}</div><div class="prov-desc">Comes from <strong>${src}</strong> — connected by the agent</div></div><span class="prov-badge ok">Connected</span></div>`;
+    } else if(isProposed){
+      inputRows += `<div class="prov-row"><div class="prov-icon">←</div><div class="prov-content"><div class="prov-field">${w.tgt}</div><div class="prov-desc">Agent proposes: <strong>${src}</strong> — waiting for your approval</div></div><span class="prov-badge proposed">Pending</span></div>`;
+    } else {
+      inputRows += `<div class="prov-row gap"><div class="prov-icon warn">⚠</div><div class="prov-content"><div class="prov-field">${w.tgt}</div><div class="prov-desc" style="color:var(--amber)">${detail.why||"No source connected — the flow can't run until this is fixed."}</div></div><span class="prov-badge warn">Missing</span></div>`;
+    }
+  });
+
+  s.optionalInputs.forEach(o=>{
+    const isMapped = o.stateKey ? state[o.stateKey] : false;
+    const detail   = FIELD_DETAILS[o.tgt] || {};
+    inputRows += `<div class="prov-row" style="opacity:.72;border-style:dashed"><div class="prov-icon" style="opacity:.5">←</div><div class="prov-content"><div class="prov-field" style="color:var(--ink-2)">${o.tgt}</div><div class="prov-desc">${isMapped?"Connected by the agent":(detail.why||"Optional — not set")}</div></div><span class="prov-badge" style="background:var(--paper);color:var(--ink-3);border:1px solid var(--line-2)">Optional</span></div>`;
+  });
+
+  let outputRows = "";
+  s.outputs.forEach(o=>{
+    outputRows += `<div class="prov-row"${o.unused?' style="opacity:.65;border-style:dashed"':""}><div class="prov-icon out">→</div><div class="prov-content"><div class="prov-field">${o.src}</div><div class="prov-desc">${o.unused?"Not used by any later step":`Passed on to <strong>${o.dest}</strong>`}</div></div>${o.unused?'<span class="prov-badge" style="background:var(--paper);color:var(--ink-3);border:1px solid var(--line-2)">Unused</span>':'<span class="prov-badge ok">Used</span>'}</div>`;
+  });
+
+  document.getElementById("provbody").innerHTML = `
+    ${summary?`<div class="prov-summary"><span class="si">💬</span><span>${summary}</span></div>`:""}
+    ${inputRows?`<div class="prov-section"><div class="prov-section-label">Data connections — what this step receives</div>${inputRows}</div>`:""}
+    ${outputRows?`<div class="prov-section"><div class="prov-section-label">Outputs — what this step passes on</div>${outputRows}</div>`:""}
+    ${!inputRows&&!outputRows?`<div style="text-align:center;padding:40px;color:var(--ink-3);font-size:13px">No data connections for this step</div>`:""}
+  `;
+}
+
+document.getElementById("closeprov").addEventListener("click", closeProv);
+document.getElementById("devtoggle").addEventListener("click", ()=>{
+  state.devView = !state.devView;
+  const btn = document.getElementById("devtoggle");
+  if(state.devView){
+    document.getElementById("provlist").style.display = "none";
+    document.getElementById("mapview").style.display  = "flex";
+    renderWireView();
+    setTimeout(drawWires, 60);
+    btn.textContent = "← Back to summary";
+  } else {
+    document.getElementById("mapview").style.display  = "none";
+    document.getElementById("provlist").style.display = "";
+    btn.textContent = "Show developer view";
+  }
+});
+
+/* ─── Wire grid (developer view) ─── */
+function openDrawer(){
+  state.drawerOpen = true;
+  collapseChat();
+  contentEl.classList.add("full-map");
+  renderWireView();
+  setTimeout(drawWires, 60);
+}
+function closeDrawer(){
+  state.drawerOpen = false;
+  document.getElementById("wiresvg").innerHTML = "";
+}
+
+document.getElementById("closedrawer").addEventListener("click", ()=>{
+  closeDrawer();
+  document.getElementById("mapview").style.display = "none";
+  document.getElementById("provlist").style.display = "";
+  state.devView = false;
+  document.getElementById("devtoggle").textContent = "Show developer view";
+});
+document.addEventListener("keydown", e=>{
+  if(e.key==="Escape"){
+    if(state.devView){ document.getElementById("closedrawer").click(); }
+    else if(state.provOpen){ closeProv(); }
+  }
+});
+document.getElementById("wirewrap").addEventListener("scroll", ()=>{ if(state.drawerOpen||state.devView) requestAnimationFrame(drawWires); });
+window.addEventListener("resize", ()=>{ if(state.drawerOpen||state.devView) drawWires(); });
+
+/* ─────────── Toast ─────────── */
+let toastTimer;
+function toast(t){ const el=document.getElementById("toast"); el.textContent=t; el.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove("show"),2600); }
+
+/* ─────────── Boot ─────────── */
+renderSteps();
+renderConfig();
+addAgent(`Hi — I'm looking at <b>AdobeSign_Stream_Ops</b>. Three steps are missing data connections before you can publish: step 2, step 8, and step 10. Want me to fix them?`, true);
+</script>
+</body>
+</html>
