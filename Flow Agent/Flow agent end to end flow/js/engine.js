@@ -934,6 +934,12 @@ function init() {
     buildAccordion(state.openAccordionIndex >= 0 ? state.openAccordionIndex : 0);
   });
 
+  // Close full mapping — return to technical view
+  document.getElementById('closeMappingBtn').addEventListener('click', () => {
+    showTab('technical');
+    buildAccordion(state.openAccordionIndex >= 0 ? state.openAccordionIndex : 0);
+  });
+
   // Back to technical view from full mapping
   document.getElementById('mappedDataOnlyToggle').addEventListener('click', (e) => {
     const btn = e.currentTarget;

@@ -54,11 +54,23 @@
         <div class="full-mapping-view hidden" id="fullMappingView">
           <div class="mapping-nav">
             <button class="back-link" id="backToTechnicalBtn">← Return to technical view</button>
-            <div class="toggle-label">
-              <span>Mapped data only</span>
-              <button class="toggle-switch" id="mappedDataOnlyToggle" role="switch" aria-checked="false">
-                <span class="toggle-thumb"></span>
-              </button>
+            <div class="mapping-nav-right">
+              <div class="toggle-label">
+                <span>Mapped data only</span>
+                <button class="toggle-switch" id="mappedDataOnlyToggle" role="switch" aria-checked="false">
+                  <span class="toggle-thumb"></span>
+                </button>
+              </div>
+              <div class="workspace-controls">
+                <button class="icon-btn" title="i/o">i/o</button>
+                <button class="icon-btn" title="Download">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 2v8M5 7l3 3 3-3M3 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="icon-btn" title="Expand">↗</button>
+                <button class="icon-btn" id="closeMappingBtn" title="Close">✕</button>
+              </div>
             </div>
           </div>
           <div id="fullMappingTable"></div>
