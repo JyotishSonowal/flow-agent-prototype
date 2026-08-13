@@ -125,17 +125,25 @@ function renderUserBubble(text, attachmentName) {
 
   const wrap = document.createElement('div');
   wrap.className = 'user-message';
+
+  const inner = document.createElement('div');
+  inner.className = 'user-message-inner';
+
+  // Text bubble
   const bubble = document.createElement('div');
   bubble.className = 'user-bubble';
   bubble.innerHTML = text;
+  inner.appendChild(bubble);
+
+  // File chip — separate block below the bubble
   if (attachmentName) {
     const chip = document.createElement('div');
-    chip.className = 'user-attachment-chip';
-    chip.innerHTML = `📎 ${attachmentName}`;
-    bubble.appendChild(document.createElement('br'));
-    bubble.appendChild(chip);
+    chip.className = 'user-file-chip';
+    chip.textContent = attachmentName;
+    inner.appendChild(chip);
   }
-  wrap.appendChild(bubble);
+
+  wrap.appendChild(inner);
   appendToChat(wrap);
 }
 
