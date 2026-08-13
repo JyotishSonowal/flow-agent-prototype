@@ -278,7 +278,7 @@ const FLOW = {
   step_flow_service_ready: {
     type: 'agent',
     showReasoning: true,
-    agentMessage: `Here's the flow service — both the business logic and technical view with mapping are ready. Review and let me know if anything needs changing.<br><br>If you're happy with it, I can save this flow service.`,
+    agentMessage: `Here's the flow service — both the business logic and technical view with mapping are ready. Review and let me know if anything needs changing.<br><br>If you're happy with it, I can deploy it on design runtime. You can continue to make changes.`,
     showFlowServiceCard: true,
     flowServiceCardState: 'details', // shows "View details" link
     inputType: 'free',
