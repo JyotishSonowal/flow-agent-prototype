@@ -426,7 +426,7 @@ function buildBusinessView() {
   list.innerHTML = '';
   BUSINESS_STEPS.forEach((s, i) => {
     const li = document.createElement('li');
-    li.innerHTML = `${s.title}<div class="step-subtitle">${s.subtitle}</div>`;
+    li.innerHTML = `<span class="step-num">${i + 1}.</span><span class="step-content">${s.title}<div class="step-subtitle">${s.subtitle}</div></span>`;
     list.appendChild(li);
   });
 }
