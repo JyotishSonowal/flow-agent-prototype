@@ -61,7 +61,7 @@
 
 /* ── Accordion ── */
 .accordion { display: flex; flex-direction: column; }
-.accordion-item { border-bottom: 1px solid var(--color-border); }
+.accordion-item { border-bottom: none; }
 .accordion-header {
   display: flex; align-items: center; gap: 8px;
   padding: 10px 14px; cursor: pointer;
