@@ -842,7 +842,10 @@ function advanceTo(stepId) {
 // ── Intent detection ──────────────────────────────────────────────────────────
 function detectIntent(text) {
   const t = text.toLowerCase();
-  if (t.includes('save')) return 'save';
+  if (t.includes('save') || t.includes('deploy') || t.includes('continue') ||
+      t.includes('proceed') || t.includes('publish') || t.includes('launch') ||
+      t.includes('go ahead') || t.includes('confirm') || t.includes('looks good') ||
+      t.includes('good') || t.includes('yes') || t.includes('ok') || t.includes('sure')) return 'save';
   if (t.includes('test') || t.includes('sample')) return 'test';
   if (t.includes('update') || t.includes('mapping') || t.includes('map')) return 'mapping';
   return null;
