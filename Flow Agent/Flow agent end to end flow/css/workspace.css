@@ -93,16 +93,6 @@
   cursor: pointer; text-decoration: underline;
 }
 
-/* ── Mapping toolbar ── */
-.mf-toolbar {
-  display: flex; align-items: center; gap: 16px;
-  padding: 6px 10px; border: 1px solid var(--color-border);
-  border-bottom: none; background: var(--color-surface);
-  font-size: 11px;
-}
-.mf-checkbox-label { display: flex; align-items: center; gap: 5px; cursor: pointer; color: var(--color-text); }
-.mf-checkbox { accent-color: var(--color-accent); width: 12px; height: 12px; cursor: pointer; }
-
 /* ── Mapping grid — 4 equal bordered columns ── */
 .mapping-grid {
   display: grid;
@@ -119,32 +109,49 @@
 
 /* Column header */
 .mf-col-header {
-  background: var(--color-surface);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  padding: 5px 8px; font-weight: 600; font-size: 11px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 4px; height: 30px;
+  padding: 7px 8px; font-weight: 700; font-size: 12px;
+  display: flex; align-items: center; gap: 6px;
+  min-height: 32px;
 }
-.mf-col-header-left { display: flex; align-items: center; gap: 4px; min-width: 0; flex: 1; }
+.mf-col-icon { display: flex; align-items: center; flex-shrink: 0; }
 .mf-col-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mf-col-actions { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
-.mf-icon-btn { background: none; border: none; cursor: pointer; padding: 0 2px; font-size: 11px; color: var(--color-muted); line-height: 1; }
-.mf-icon-btn:hover { color: var(--color-accent); }
 
-/* Doc name row */
-.mf-doc-row {
-  border-bottom: 1px solid var(--color-border);
-  padding: 4px 8px; font-size: 11px;
-  display: flex; align-items: center; gap: 4px;
-  height: 26px; background: #fafafa;
+/* Collapse row */
+.mf-collapse-row {
+  display: flex; align-items: center; gap: 5px;
+  padding: 4px 8px; font-size: 11px; color: var(--color-muted);
+  cursor: pointer; border-bottom: 1px solid var(--color-border);
+  user-select: none;
 }
-.mf-doc-name { color: var(--color-muted); font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mf-collapse-row:hover { color: var(--color-text); }
+.mf-chevron { font-size: 9px; }
 
-/* Field rows */
+/* Fields wrap */
+.mf-fields-wrap { display: flex; flex-direction: column; }
+
+/* Doc row */
+.mf-doc-row {
+  padding: 5px 8px; font-size: 11px;
+  display: flex; align-items: center; gap: 5px;
+  border-bottom: 1px solid var(--color-border);
+}
+.mf-doc-toggle {
+  background: none; border: none; cursor: pointer;
+  padding: 0; display: flex; align-items: center; flex-shrink: 0;
+  color: var(--color-muted);
+}
+.mf-doc-toggle:hover { color: var(--color-text); }
+.mf-doc-name { font-size: 11px; color: var(--color-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Nested field rows — indented */
+.mf-nested-fields { display: flex; flex-direction: column; }
 .mf-field {
   border-bottom: 1px solid var(--color-border);
-  padding: 5px 8px; display: flex; align-items: center; gap: 4px;
-  height: 28px; overflow: hidden;
+  padding: 5px 8px 5px 22px;
+  display: flex; align-items: center; gap: 4px;
+  min-height: 28px; overflow: hidden;
 }
 .mf-field:last-child { border-bottom: none; }
 .mf-name { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
