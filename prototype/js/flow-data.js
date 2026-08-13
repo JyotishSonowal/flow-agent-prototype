@@ -362,8 +362,8 @@ const FLOW = {
     type: 'agent',
     showReasoning: true,
     agentMessage: `I've saved your flow service successfully on design runtime. You can continue refining it, and once you're ready, you can run a test to validate the setup.<br><br>If you prefer I can help you with two additional things:<br>1. Update the mapping<br>2. Test with sample data`,
-    updateFlowCardToActive: true,
-    updateWorkspaceBadgeToActive: true,
+    updateFlowCardToActive: true,       // update old Draft card badge → Active, update workspace badge
+    showFlowServiceCardSaved: true,     // render fresh Active+Viewing card inside this message
     inputType: 'free',
     nextStepId: null, // intent-driven
   },

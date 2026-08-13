@@ -777,6 +777,14 @@ function advanceTo(stepId) {
         body.appendChild(card);
         setFlowCardToDetails(card, () => advanceTo('step_workspace_business_view'));
       }
+      if (step.showFlowServiceCardSaved) {
+        // Fresh Active+Viewing card rendered in the "saved" message body
+        const card = renderFlowServiceCard();
+        updateFlowCardStatus(card, 'active');
+        setFlowCardToViewing(card);
+        state.flowCardInChat = card;
+        body.appendChild(card);
+      }
       if (step.showFlowServiceCardViewing) {
         // Re-render the flow service card in Active+Viewing state (post-mapping update)
         const card = renderFlowServiceCard();
