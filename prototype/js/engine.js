@@ -430,69 +430,56 @@ function buildBusinessView() {
 function buildMappingTable(data, container) {
   container.innerHTML = '';
 
-  // Use a CSS grid: 4 equal cols
-  // Pipeline Input | Input - Put Object | Output - Put Object | Pipeline Output
-  // Connector arrows are drawn as inline elements at the right of Output fields
-  // and left of Pipeline Output fields using a relative-positioned overlay
+  // ── Toolbar ──────────────────────────────────────────────────────────────────
+  const toolbar = document.createElement('div');
+  toolbar.className = 'mf-toolbar';
+  toolbar.innerHTML = `
+    <label class="mf-checkbox-label"><input type="checkbox" class="mf-checkbox"> Recommend Mappings</label>
+    <label class="mf-checkbox-label"><input type="checkbox" class="mf-checkbox"> Show only mapped</label>`;
+  container.appendChild(toolbar);
 
-  const wrap = document.createElement('div');
-  wrap.className = 'mapping-grid';
+  // ── 4-column grid ─────────────────────────────────────────────────────────
+  const grid = document.createElement('div');
+  grid.className = 'mapping-grid';
 
-  const ROW_H = 28; // px per field row
-  const HEADER_H = 28;
-  const DOC_H = 26;
+  const FN_ICON = `<svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="12" font-size="11" font-family="monospace" font-weight="700" fill="#6929c4">fn</text></svg>`;
+  const ACTIONS = `<span class="mf-col-actions"><button class="mf-icon-btn" title="Search">&#128269;</button><button class="mf-icon-btn" title="Copy">&#128203;</button></span>`;
 
-  // ── Column headers ──
-  ['Pipeline Input', 'Input - Put Object', 'Output - Put Object', 'Pipeline Output'].forEach(label => {
-    const h = document.createElement('div');
-    h.className = 'mf-col-header';
-    h.textContent = label;
-    wrap.appendChild(h);
-  });
+  const colDefs = [
+    { label: 'Pipeline Input',     data: data.input,      showIcon: false },
+    { label: 'Input - ' + (data.putObject.doc || 'Put Object'),  data: data.putObject,  showIcon: true  },
+    { label: 'Output - ' + (data.output.doc || 'Put Object'),    data: data.output,     showIcon: true  },
+    { label: 'Pipeline Output',    data: data.pipelineOut, showIcon: false },
+  ];
 
-  // ── Doc rows ──
-  [data.input.doc, data.putObject.doc, data.output.doc, data.pipelineOut.doc].forEach(doc => {
-    const d = document.createElement('div');
-    d.className = 'mf-doc-row';
-    d.innerHTML = `<span class="tag tag-doc">doc</span><span class="mf-doc-name">${doc}</span>`;
-    wrap.appendChild(d);
-  });
+  colDefs.forEach(col => {
+    const colEl = document.createElement('div');
+    colEl.className = 'mf-column';
 
-  // ── Field rows ──
-  const maxLen = Math.max(
-    data.input.fields.length,
-    data.putObject.fields.length,
-    data.output.fields.length,
-    data.pipelineOut.fields.length
-  );
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'mf-col-header';
+    hdr.innerHTML = `<span class="mf-col-header-left">${col.showIcon ? FN_ICON : ''}<span class="mf-col-label">${col.label}</span></span>${ACTIONS}`;
+    colEl.appendChild(hdr);
 
-  for (let i = 0; i < maxLen; i++) {
-    const cols = [data.input.fields, data.putObject.fields, data.output.fields, data.pipelineOut.fields];
-    cols.forEach((fields, colIdx) => {
-      const cell = document.createElement('div');
-      const f = fields[i];
-      if (f) {
-        // Output col (col 3): add a dot on the right if Pipeline Output has a matching field
-        if (colIdx === 2 && data.pipelineOut.fields[i]) {
-          cell.className = 'mf-field mf-field-has-arrow';
-          cell.innerHTML = `<span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span><span class="mf-dot">●</span>`;
-        }
-        // Pipeline Output col (col 4): add arrow on the left if Output has a matching field
-        else if (colIdx === 3 && data.output.fields[i]) {
-          cell.className = 'mf-field mf-field-with-arrow-left';
-          cell.innerHTML = `<span class="mf-arrow-left"><svg viewBox="0 0 40 14" width="40" height="14"><line x1="0" y1="7" x2="32" y2="7" stroke="#4589FF" stroke-width="1.2" stroke-dasharray="2.5,2"/><polygon points="30,3 40,7 30,11" fill="#4589FF"/></svg></span><span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span>`;
-        } else {
-          cell.className = 'mf-field';
-          cell.innerHTML = `<span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span>`;
-        }
-      } else {
-        cell.className = 'mf-field mf-field-empty';
-      }
-      wrap.appendChild(cell);
+    // Doc name row
+    const docRow = document.createElement('div');
+    docRow.className = 'mf-doc-row';
+    docRow.innerHTML = `<span class="tag tag-doc">doc</span><span class="mf-doc-name">${col.data.doc}</span>`;
+    colEl.appendChild(docRow);
+
+    // Fields
+    col.data.fields.forEach(f => {
+      const row = document.createElement('div');
+      row.className = 'mf-field';
+      row.innerHTML = `<span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span>`;
+      colEl.appendChild(row);
     });
-  }
 
-  container.appendChild(wrap);
+    grid.appendChild(colEl);
+  });
+
+  container.appendChild(grid);
 }
 
 function buildAccordion(openIndex) {
