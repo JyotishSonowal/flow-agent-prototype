@@ -119,6 +119,10 @@ function setFlowCardToDetails(cardEl, onClickFn) {
 
 // ── Render: user bubble ───────────────────────────────────────────────────────
 function renderUserBubble(text, attachmentName) {
+  // Hide disclaimer after the first user message
+  const disclaimer = document.querySelector('.disclaimer');
+  if (disclaimer) disclaimer.style.display = 'none';
+
   const wrap = document.createElement('div');
   wrap.className = 'user-message';
   const bubble = document.createElement('div');
@@ -422,7 +426,7 @@ function buildBusinessView() {
   list.innerHTML = '';
   BUSINESS_STEPS.forEach((s, i) => {
     const li = document.createElement('li');
-    li.innerHTML = `${s.title} <div class="step-subtitle">"${s.subtitle}"</div>`;
+    li.innerHTML = `${s.title}<div class="step-subtitle">${s.subtitle}</div>`;
     list.appendChild(li);
   });
 }
