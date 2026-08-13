@@ -145,6 +145,9 @@
 .mf-doc-toggle:hover { color: var(--color-text); }
 .mf-doc-name { font-size: 11px; color: var(--color-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+/* All doc groups wrapper */
+.mf-all-groups { display: flex; flex-direction: column; }
+
 /* Nested field rows — indented */
 .mf-nested-fields { display: flex; flex-direction: column; }
 .mf-field {
@@ -154,6 +157,12 @@
   min-height: 28px; overflow: hidden;
 }
 .mf-field:last-child { border-bottom: none; }
+
+/* Deeper nested doc group (e.g. responseHeaders inside Pipeline Output) */
+.mf-fields-nested-group { border-top: none; }
+.mf-doc-row-nested { padding-left: 14px; }
+.mf-field-deep { padding-left: 32px; }
+
 .mf-name { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
 .tag {
   display: inline-block; font-size: 10px; font-weight: 700;

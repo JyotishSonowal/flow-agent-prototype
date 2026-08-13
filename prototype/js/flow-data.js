@@ -27,6 +27,55 @@ const ACCORDION_STEPS = [
   { num: 9, icon: 'snowflake', title: 'IO streamToString', hasMapping: true, mappingKey: 'step9', expandable: true },
 ];
 
+// ── Full mapping view data (richer, used on "View full mapping") ──────────────
+// Each column has a `docs` array — multiple doc groups can stack in one column.
+// collapsed: true = starts with ⊕ (fields hidden), false = starts with ⊖ (fields shown)
+const MAPPING_DATA_FULL = {
+  input: { docs: [
+    { doc: 'GetDocumentByIDiutput', collapsed: true,  fields: [] },
+    { doc: 'GetDocumentByIDOutput', collapsed: false, fields: [
+      { tag: 'obj', name: 'stream' },
+    ]},
+  ]},
+  putObject: { docs: [
+    { doc: 'putObjectInput', collapsed: false, fields: [
+      { tag: 'str', name: 'bucketName' },
+      { tag: 'str', name: 'objectName' },
+      { tag: 'obj', name: 'stream' },
+      { tag: 'str', name: 'Content-Type' },
+    ]},
+  ]},
+  output: { docs: [
+    { doc: 'GetDocloremispum', collapsed: false, fields: [
+      { tag: 'str', name: 'loremIpsum' },
+      { tag: 'str', name: 'objectName' },
+      { tag: 'obj', name: 'Placeholder' },
+      { tag: 'str', name: 'loremIpsum' },
+      { tag: 'str', name: 'objectName' },
+      { tag: 'obj', name: 'Placeholder' },
+      { tag: 'str', name: 'loremIpsum' },
+      { tag: 'str', name: 'objectName' },
+      { tag: 'obj', name: 'Placeholder' },
+    ]},
+  ]},
+  pipelineOut: { docs: [
+    { doc: 'GetDocloremispum', collapsed: false, fields: [
+      { tag: 'str', name: 'isSuccess' },
+      { tag: 'str', name: 'placeholder' },
+    ]},
+    { doc: 'responseHeaders', collapsed: false, isNested: true, fields: [
+      { tag: 'str', name: 'amd-request-id' },
+      { tag: 'str', name: 'Server' },
+      { tag: 'str', name: 'Content-Length' },
+      { tag: 'str', name: 'Connection' },
+      { tag: 'str', name: 'Content-Type' },
+      { tag: 'str', name: 'amz-version-id' },
+      { tag: 'str', name: 'Last-Modified' },
+      { tag: 'str', name: 'ETag' },
+    ]},
+  ]},
+};
+
 // ── Mapping table data keyed by step ─────────────────────────────────────────
 // Each entry has: input, putObject (middle-left), output (middle-right), pipelineOut
 // Arrows connect output → pipelineOut columns only.

@@ -431,17 +431,72 @@ function buildBusinessView() {
   });
 }
 
+// ── SVG icons for doc toggle ──────────────────────────────────────────────────
+const MINUS_CIRCLE = `<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#6f6f6f" stroke-width="1.2" fill="none"/><line x1="4" y1="7" x2="10" y2="7" stroke="#6f6f6f" stroke-width="1.2"/></svg>`;
+const PLUS_CIRCLE  = `<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#6f6f6f" stroke-width="1.2" fill="none"/><line x1="4" y1="7" x2="10" y2="7" stroke="#6f6f6f" stroke-width="1.2"/><line x1="7" y1="4" x2="7" y2="10" stroke="#6f6f6f" stroke-width="1.2"/></svg>`;
+
+// Normalise data to always use the multi-doc `docs` array format
+function normaliseMappingCol(colData) {
+  if (colData.docs) return colData.docs;
+  // legacy single-doc format → wrap in array
+  return [{ doc: colData.doc, collapsed: false, fields: colData.fields }];
+}
+
+function buildDocGroup(docDef, isNested) {
+  const wrap = document.createElement('div');
+  wrap.className = 'mf-fields-wrap';
+  if (isNested) wrap.classList.add('mf-fields-nested-group');
+
+  // Doc row
+  const docRow = document.createElement('div');
+  docRow.className = 'mf-doc-row';
+  if (isNested) docRow.classList.add('mf-doc-row-nested');
+
+  const docToggle = document.createElement('button');
+  docToggle.className = 'mf-doc-toggle';
+  docToggle.innerHTML = docDef.collapsed ? PLUS_CIRCLE : MINUS_CIRCLE;
+  docRow.appendChild(docToggle);
+
+  const docMeta = document.createElement('span');
+  docMeta.className = 'mf-doc-meta';
+  docMeta.innerHTML = `<span class="tag tag-doc">doc</span><span class="mf-doc-name">${docDef.doc}</span>`;
+  docRow.appendChild(docMeta);
+  wrap.appendChild(docRow);
+
+  // Nested fields
+  const nestedWrap = document.createElement('div');
+  nestedWrap.className = 'mf-nested-fields';
+  if (docDef.collapsed) nestedWrap.style.display = 'none';
+
+  docDef.fields.forEach(f => {
+    const row = document.createElement('div');
+    row.className = 'mf-field' + (isNested ? ' mf-field-deep' : '');
+    row.innerHTML = `<span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span>`;
+    nestedWrap.appendChild(row);
+  });
+  wrap.appendChild(nestedWrap);
+
+  // Toggle behaviour
+  let collapsed = !!docDef.collapsed;
+  docToggle.addEventListener('click', () => {
+    collapsed = !collapsed;
+    nestedWrap.style.display = collapsed ? 'none' : '';
+    docToggle.innerHTML = collapsed ? PLUS_CIRCLE : MINUS_CIRCLE;
+  });
+
+  return wrap;
+}
+
 function buildMappingTable(data, container) {
   container.innerHTML = '';
 
-  // Snowflake icon for middle cols (matches accordion connector icon)
   const SNOWFLAKE = `<img src="icons/icon-agent.png" width="13" height="13" style="display:inline-block;vertical-align:middle;opacity:0.7">`;
 
   const colDefs = [
-    { label: 'Pipeline Input',   colData: data.input,      showIcon: false },
-    { label: 'Input - Put Object',  colData: data.putObject, showIcon: true  },
-    { label: 'Output - Put Object', colData: data.output,    showIcon: true  },
-    { label: 'Pipeline Output',  colData: data.pipelineOut, showIcon: false },
+    { label: 'Pipeline Input',    colData: data.input,      showIcon: false },
+    { label: 'Input - Put Object',   colData: data.putObject, showIcon: true  },
+    { label: 'Output - Put Object',  colData: data.output,    showIcon: true  },
+    { label: 'Pipeline Output',   colData: data.pipelineOut, showIcon: false },
   ];
 
   const grid = document.createElement('div');
@@ -451,69 +506,35 @@ function buildMappingTable(data, container) {
     const colEl = document.createElement('div');
     colEl.className = 'mf-column';
 
-    // ── 1. Column header ─────────────────────────────────────────────────────
+    // ── 1. Column header ──────────────────────────────────────────────────────
     const hdr = document.createElement('div');
     hdr.className = 'mf-col-header';
     hdr.innerHTML = `${col.showIcon ? `<span class="mf-col-icon">${SNOWFLAKE}</span>` : ''}<span class="mf-col-label">${col.label}</span>`;
     colEl.appendChild(hdr);
 
-    // ── 2. Collapse row ──────────────────────────────────────────────────────
+    // ── 2. Collapse row ───────────────────────────────────────────────────────
     const collapseRow = document.createElement('div');
     collapseRow.className = 'mf-collapse-row';
     collapseRow.innerHTML = `<span class="mf-chevron">▲</span><span class="mf-collapse-label">Collapse</span>`;
     colEl.appendChild(collapseRow);
 
-    // Fields container (toggled by both collapse row and doc toggle)
-    const fieldsWrap = document.createElement('div');
-    fieldsWrap.className = 'mf-fields-wrap';
+    // ── 3. Doc groups (one or more) ───────────────────────────────────────────
+    const allGroupsWrap = document.createElement('div');
+    allGroupsWrap.className = 'mf-all-groups';
 
-    // ── 3. Doc row ───────────────────────────────────────────────────────────
-    const docRow = document.createElement('div');
-    docRow.className = 'mf-doc-row';
-
-    const docToggle = document.createElement('button');
-    docToggle.className = 'mf-doc-toggle';
-    docToggle.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#6f6f6f" stroke-width="1.2" fill="none"/><line x1="4" y1="7" x2="10" y2="7" stroke="#6f6f6f" stroke-width="1.2"/></svg>`;
-    docToggle.title = 'Collapse fields';
-    docRow.appendChild(docToggle);
-
-    const docTag = document.createElement('span');
-    docTag.innerHTML = `<span class="tag tag-doc">doc</span><span class="mf-doc-name">${col.colData.doc}</span>`;
-    docRow.appendChild(docTag);
-    fieldsWrap.appendChild(docRow);
-
-    // ── 4. Field rows (indented) ─────────────────────────────────────────────
-    const nestedWrap = document.createElement('div');
-    nestedWrap.className = 'mf-nested-fields';
-
-    col.colData.fields.forEach(f => {
-      const row = document.createElement('div');
-      row.className = 'mf-field';
-      row.innerHTML = `<span class="tag tag-${f.tag}">${f.tag}</span><span class="mf-name">${f.name}</span><span class="required-star">*</span>`;
-      nestedWrap.appendChild(row);
+    const docs = normaliseMappingCol(col.colData);
+    docs.forEach(docDef => {
+      allGroupsWrap.appendChild(buildDocGroup(docDef, !!docDef.isNested));
     });
+    colEl.appendChild(allGroupsWrap);
 
-    fieldsWrap.appendChild(nestedWrap);
-    colEl.appendChild(fieldsWrap);
-
-    // ── Collapse row toggle (collapses entire column content) ────────────────
+    // ── Collapse row toggle ───────────────────────────────────────────────────
     let colCollapsed = false;
     collapseRow.addEventListener('click', () => {
       colCollapsed = !colCollapsed;
-      fieldsWrap.style.display = colCollapsed ? 'none' : '';
+      allGroupsWrap.style.display = colCollapsed ? 'none' : '';
       collapseRow.querySelector('.mf-chevron').textContent = colCollapsed ? '▼' : '▲';
       collapseRow.querySelector('.mf-collapse-label').textContent = colCollapsed ? 'Expand' : 'Collapse';
-    });
-
-    // ── Doc toggle (collapses only the nested fields under this doc) ─────────
-    let docCollapsed = false;
-    docToggle.addEventListener('click', () => {
-      docCollapsed = !docCollapsed;
-      nestedWrap.style.display = docCollapsed ? 'none' : '';
-      // switch between minus (expanded) and plus (collapsed)
-      docToggle.innerHTML = docCollapsed
-        ? `<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#6f6f6f" stroke-width="1.2" fill="none"/><line x1="4" y1="7" x2="10" y2="7" stroke="#6f6f6f" stroke-width="1.2"/><line x1="7" y1="4" x2="7" y2="10" stroke="#6f6f6f" stroke-width="1.2"/></svg>`
-        : `<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#6f6f6f" stroke-width="1.2" fill="none"/><line x1="4" y1="7" x2="10" y2="7" stroke="#6f6f6f" stroke-width="1.2"/></svg>`;
     });
 
     grid.appendChild(colEl);
@@ -689,8 +710,7 @@ function handleSideEffect(effect) {
       break;
 
     case 'open_full_mapping': {
-      const data = state.mappingUpdated ? MAPPING_DATA_UPDATED : MAPPING_DATA_ORIGINAL;
-      buildMappingTable(data, document.getElementById('fullMappingTable'));
+      buildMappingTable(MAPPING_DATA_FULL, document.getElementById('fullMappingTable'));
       showTab('full-mapping');
       document.getElementById('workspaceTabs').classList.add('hidden');
       break;
