@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Stale root-level copies (real source lives in js/ and css/)
+engine.js
+flow-data.js
+
+# Scratch / planning files
+open-workspace-on-create-plan.md
+technical-view.html
+technical-view-v2.html
